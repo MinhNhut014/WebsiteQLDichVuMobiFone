@@ -72,7 +72,6 @@ CREATE TABLE GoiDichVu (
 	HinhAnh NVARCHAR(255),
     MoTa NVARCHAR(1000),
     ThongTinChiTiet NVARCHAR(MAX),
-	TinhNangDV NVARCHAR(1000),
     IDDichVuDN INT NOT NULL FOREIGN KEY REFERENCES DichVuDoanhNghiep(IDDichVuDN)
 );
 
@@ -110,7 +109,6 @@ CREATE TABLE SanPhamDichVuKhac (
 	HinhAnh NVARCHAR(255),
     MoTa NVARCHAR(1000),
     ThongTinChiTiet NVARCHAR(MAX),
-	TinhNangSP NVARCHAR(1000),
     IDLoaiDichVuKhac INT NOT NULL FOREIGN KEY REFERENCES LoaiDichVuKhac(IDLoaiDichVuKhac) ON DELETE CASCADE
 );
 
@@ -207,6 +205,48 @@ CREATE TABLE CTHoaDonDoanhNghiep (
     SoLuong SMALLINT DEFAULT 1,
     ThanhTien INT 
 );
+
+--Bổ sung thêm bảng chức năng tin tức và bình luận bài viết 
+
+-- Bảng chủ đề bài viết
+CREATE TABLE ChuDe (
+    IDChuDe INT IDENTITY(1,1) PRIMARY KEY,
+    TenChuDe NVARCHAR(100) NOT NULL,
+    TenChuDeKhongDau NVARCHAR(100)
+);
+-- Bảng quản lý bài viết
+CREATE TABLE TinTuc(
+    IDTinTuc INT IDENTITY(1,1) PRIMARY KEY,
+    ChuDeID INT,
+    NguoiDungID INT,
+    TieuDe NVARCHAR(255) NOT NULL,
+    TieuDeKhongDau NVARCHAR(255),
+    TomTat TEXT,
+    NoiDung TEXT NOT NULL,
+    NgayDang DATE,
+    LuotXem INT DEFAULT 0,
+    KiemDuyet BIT DEFAULT 0,
+    HienThi BIT DEFAULT 1,
+    FOREIGN KEY (ChuDeID) REFERENCES ChuDe(IDChuDe),
+    FOREIGN KEY (NguoiDungID) REFERENCES NguoiDung(IDNguoiDung)
+);
+-- Bảng bình luận bài viết
+CREATE TABLE BinhLuanBaiViet (
+    IDBinhLuan INT IDENTITY(1,1) PRIMARY KEY,
+    BaiVietID INT,
+    NguoiDungID INT,
+    NoiDungBinhLuan TEXT NOT NULL,
+    NgayDang DATETIME,
+    LuotXem INT DEFAULT 0,
+    KiemDuyet BIT DEFAULT 0,
+    FOREIGN KEY (BaiVietID) REFERENCES TinTuc(IDTinTuc),
+    FOREIGN KEY (NguoiDungID) REFERENCES NguoiDung(IDNguoiDung)
+);
+
+
+---Kiểm tra dữ liệu trong các bảng---
+select *from DichVu;
+select *from GoiDichVu;
 ---Dữ liệu dịch vụ của mobifone
 INSERT INTO DichVu (TenDichVu, MoTa, AnhDichVu)  
 VALUES  
@@ -363,19 +403,16 @@ VALUES
 	(N'Quảng Cáo Số', 2);
 
 ---3. Gói dịch vụ doanh nghiệp
-INSERT INTO GoiDichVu (TenGoiDV, HinhAnh, MoTa, ThongTinChiTiet, IDTinhNang, IDDichVuDN)
+INSERT INTO GoiDichVu (TenGoiDV, HinhAnh, MoTa, ThongTinChiTiet, IDDichVuDN)
 VALUES 
     ('Voice Brandname', 'voice_brandname.png', 
      'Voice Brandname là giải pháp cho phép gán tên thương hiệu của doanh nghiệp trên cuộc gọi từ doanh nghiệp đến khách hàng là thuê bao MobiFone.', 
-     'Voice Brandname giúp doanh nghiệp hiển thị tên thương hiệu khi gọi đến khách hàng.', 
-     1, 1),
+     'Voice Brandname giúp doanh nghiệp hiển thị tên thương hiệu khi gọi đến khách hàng.',1),
 
     ('mBiz360', 'mbiz360.png', 
      'Gói dịch vụ giúp khách hàng Doanh nghiệp tiết kiệm chi phí thuận tiện trong việc Đăng ký sử dụng dịch vụ thông qua hình thức đăng ký SMS hoặc App Mobile', 
-     'mBiz360 giúp tiết kiệm chi phí và thuận tiện trong việc đăng ký dịch vụ thông qua SMS hoặc App Mobile.', 
-     2, 1),
+     'mBiz360 giúp tiết kiệm chi phí và thuận tiện trong việc đăng ký dịch vụ thông qua SMS hoặc App Mobile.',1),
 
     ('MobiData Sponsor', 'MobiData_Sponsor.png', 
      'Tổng đài ảo giúp doanh nghiệp linh hoạt trong liên lạc', 
-     'Cloud PBX là tổng đài điện thoại sử dụng công nghệ điện toán đám mây, giúp doanh nghiệp dễ dàng quản lý cuộc gọi nội bộ và ngoại tuyến.', 
-     3, 1);
+     'Cloud PBX là tổng đài điện thoại sử dụng công nghệ điện toán đám mây, giúp doanh nghiệp dễ dàng quản lý cuộc gọi nội bộ và ngoại tuyến.',1);
