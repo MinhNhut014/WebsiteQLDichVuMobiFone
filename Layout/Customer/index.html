@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>LifeSure - Life Insurance Website Template</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:slnt,wght@-10..0,100..900&display=swap" rel="stylesheet">
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link rel="stylesheet" href="lib/animate/animate.min.css"/>
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+
+        <style>
+        #newsSlider {
+            display: flex;
+            flex-wrap: nowrap; /* Đảm bảo các item không xuống hàng */
+            transition: transform 0.8s ease-in-out;
+            will-change: transform;
+        }
+        
+        .mobifone-news-item {
+            flex: 0 0 calc(100% / 3); /* Hiển thị đúng 3 item */
+            box-sizing: border-box;
+            padding: 0 8px; /* Khoảng cách hợp lý */
+        }
+        
+        .mobifone-news-slider-wrapper {
+            overflow: hidden; /* Ẩn các phần tử thừa */
+            width: 100%; /* Đảm bảo chiều rộng tối đa */
+        }
+        
+        .mobifone-btn-prev, .mobifone-btn-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #007bff;
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        .mobifone-btn-prev:hover, .mobifone-btn-next:hover {
+            background-color: #0056b3;
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .mobifone-btn-prev { left: -70px; }
+        .mobifone-btn-next { right: -70px; }
+        </style>
+        
+        
+    </head>
+
+    <body>
+
+        <!-- Spinner Start -->
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <!-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid topbar px-0 px-lg-4 bg-light py-2 d-none d-lg-block">
+            <div class="container">
+                <div class="row gx-0 align-items-center">
+                    <div class="col-lg-8 text-center text-lg-start mb-lg-0">
+                        <div class="d-flex flex-wrap">
+                            <div class="border-end border-primary pe-3">
+                                <a href="#" class="text-muted small"><i class="fas fa-map-marker-alt text-primary me-2"></i>Tìm Vị Trí</a>
+                            </div>
+                            <div class="ps-3">
+                                <a href="mailto:example@gmail.com" class="text-muted small"><i class="fas fa-envelope text-primary me-2"></i>example@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 text-center text-lg-end">
+                        <div class="d-flex justify-content-end">
+                            <div class="d-flex border-end border-primary pe-3">
+                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                <a class="btn p-0 text-primary me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                <a class="btn p-0 text-primary me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                            <div class="dropdown ms-3">
+                                <a href="#" class="dropdown-toggle text-dark" data-bs-toggle="dropdown"><small><i class="fas fa-globe-europe text-primary me-2"></i>Tiếng Việt</small></a>
+                                <div class="dropdown-menu rounded">
+                                    <a href="#" class="dropdown-item">Tiếng Việt</a>
+                                    <a href="#" class="dropdown-item">English</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light"> 
+                    <a href="#" class="navbar-brand p-0">
+                        <h1 class="text-primary mb-0"><i class="fab fa-slack me-2"></i> LifeSure</h1>
+                        <!-- <img src="img/logo.png" alt="Logo"> -->
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                        <span class="fa fa-bars"></span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                        <div class="navbar-nav">
+                            <a href="index.html" class="nav-item nav-link active">Trang Chủ</a>
+                            <a href="about.html" class="nav-item nav-link">Giới Thiệu</a>
+                            <div class="nav-item dropdown">
+                                <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dịch Vụ</a>
+                                <div class="dropdown-menu">
+                                    <a href="feature.html" class="dropdown-item">Sim</a>
+                                    <a href="team.html" class="dropdown-item">Dịch Vụ Di Động</a>
+                                    <a href="testimonial.html" class="dropdown-item">Dịch Vụ Doanh Nghiệp</a>
+                                    <a href="FAQ.html" class="dropdown-item">Dịch Vụ Khác...</a>
+                                </div>
+                            </div>
+                            <a href="blog.html" class="nav-item nav-link">Tin Tức</a>
+                            <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                            <div class="d-flex align-items-center">
+                                <button class="btn btn-primary btn-md-square rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#searchModal">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                                <a href="#" class="btn btn-outline-primary mx-3">Đăng ký</a>
+                                <a href="#" class="btn btn-primary">Đăng nhập</a>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="d-none d-xl-flex flex-shrink-0 ps-4">
+                        <a href="#" class="btn btn-light btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                            <i class="fa fa-phone-alt fa-2x"></i>
+                            <div class="position-absolute" style="top: 7px; right: 12px;">
+                                <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                            </div>
+                        </a>
+                        <div class="d-flex flex-column ms-3">
+                            <span>Gọi Đến Chúng Tôi</span>
+                            <a href="tel:+ 0123 456 7890"><span class="text-dark">Free: + 0123 456 7890</span></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <!-- Navbar & Hero End -->
+
+        <!-- Modal Search Start -->
+        <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Search by keyword</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body d-flex align-items-center bg-primary">
+                        <div class="input-group w-75 mx-auto d-flex">
+                            <input type="search" class="form-control p-3" placeholder="keywords" aria-describedby="search-icon-1">
+                            <span id="search-icon-1" class="btn bg-light border nput-group-text p-3"><i class="fa fa-search"></i></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Modal Search End -->
+
+
+        <!-- Carousel Start -->
+        <div class="header-carousel owl-carousel">
+            <div class="header-carousel-item bg-primary">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row g-4 align-items-center">
+                            <div class="col-lg-7 animated fadeInLeft">
+                                <div class="text-sm-center text-md-start">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
+                                    <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
+                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
+                                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                        <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-5 animated fadeInRight">
+                                <div class="calrousel-img" style="object-fit: cover;">
+                                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-carousel-item bg-primary">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row gy-4 gy-lg-0 gx-0 gx-lg-5 align-items-center">
+                            <div class="col-lg-5 animated fadeInLeft">
+                                <div class="calrousel-img">
+                                    <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-7 animated fadeInRight">
+                                <div class="text-sm-center text-md-end">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4">Welcome To LifeSure</h4>
+                                    <h1 class="display-1 text-white mb-4">Life Insurance Makes You Happy</h1>
+                                    <p class="mb-5 fs-5">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy... 
+                                    </p>
+                                    <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
+                                        <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#"><i class="fas fa-play-circle me-2"></i> Watch Video</a>
+                                        <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Learn More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Carousel End -->
+
+        <!-- Feature Start -->
+        <div class="container-fluid feature bg-light py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Tính Năng Nổi Bật </h4>
+                    <h1 class="display-4 mb-4">Quản Lý Dịch Vụ MobiFone Hiệu Quả & Tiện Ích</h1>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="feature-item p-4 pt-0">
+                            <div class="feature-icon p-4 mb-4">
+                                <i class="far fa-handshake fa-3x"></i>
+                            </div>
+                            <h4 class="mb-4">Công Ty Uy Tín</h4>
+                            <p class="mb-4">Mobifone là nhà mạng hàng đầu với hơn 20 năm kinh nghiệm trong lĩnh vực viễn thông, cam kết mang đến dịch vụ tốt nhất cho khách hàng...
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="feature-item p-4 pt-0">
+                            <div class="feature-icon p-4 mb-4">
+                                <i class="fa fa-dollar-sign fa-3x"></i>
+                            </div>
+                            <h4 class="mb-4">Hoàn Tiền Mọi Lúc</h4>
+                            <p class="mb-4">Với các chương trình khuyến mãi linh hoạt, Mobifone đảm bảo quyền lợi khách hàng, cho phép hoàn tiền và thay đổi gói cước linh động...
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="feature-item p-4 pt-0">
+                            <div class="feature-icon p-4 mb-4">
+                                <i class="fa fa-bullseye fa-3x"></i>
+                            </div>
+                            <h4 class="mb-4">Gói Cước Linh Hoạt</h4>
+                            <p class="mb-4">Người dùng có thể lựa chọn các gói cước phù hợp với nhu cầu sử dụng, từ data không giới hạn đến các gói combo tiện ích...
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="feature-item p-4 pt-0">
+                            <div class="feature-icon p-4 mb-4">
+                                <i class="fa fa-headphones fa-3x"></i>
+                            </div>
+                            <h4 class="mb-4">Hỗ Trợ 24/7</h4>
+                            <p class="mb-4">Mobifone hỗ trợ khách hàng liên tục với đội ngũ chuyên viên tư vấn giàu kinh nghiệm, sẵn sàng giúp đỡ mọi lúc, mọi nơi...
+                            </p>
+                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Feature End -->
+
+        <!-- About Start -->
+        <div class="container-fluid bg-light about pb-5">
+            <div class="container pb-5">
+                <div class="row g-5">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="about-item-content bg-white rounded p-5 h-100">
+                            <h4 class="text-primary">Giới Thiệu Về MobiFone</h4>
+                            <h1 class="display-4 mb-4">Dịch Vụ Quản Lý Hiệu Quả</h1>
+                            <p>MobiFone không ngừng sáng tạo, đổi mới, kiến tạo hệ sinh thái số mạnh mẽ và hoàn chỉnh, nâng tầm cuộc sống của người Việt và góp phần đưa Việt Nam trở thành quốc gia số.</p>
+                            <p>Chúng tôi cung cấp các dịch vụ hiện đại, tối ưu với đội ngũ nhân sự chất lượng cao trên toàn quốc.</p>
+                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Hệ sinh thái số mạnh mẽ.</p>
+                            <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Dịch vụ khách hàng chuyên nghiệp.</p>
+                            <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Đội ngũ kỹ thuật viên giàu kinh nghiệm.</p>
+                            <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Tìm Hiểu Thêm</a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
+                        <div class="bg-white rounded p-5 h-100">
+                            <div class="row g-4 justify-content-center">
+                                <div class="col-12">
+                                    <div class="rounded bg-light">
+                                        <img src="img/about-3.jpg" class="img-fluid rounded w-100" alt="">
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold">12.000</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Nhân sự toàn quốc</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold">100.000</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Khách hàng doanh nghiệp</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold">63</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Chi nhánh toàn quốc</h4>
+                                    </div>
+                                </div>
+                                <div class="col-sm-6">
+                                    <div class="counter-item bg-light rounded p-3 h-100">
+                                        <div class="counter-counting">
+                                            <span class="text-primary fs-2 fw-bold">100</span>
+                                            <span class="h1 fw-bold text-primary">+</span>
+                                        </div>
+                                        <h4 class="mb-0 text-dark">Chứng chỉ chuyên gia cấp cao</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- About End -->
+
+        <!-- Service Start -->
+        <div class="container-fluid service py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h3 class="text-primary">Dịch Vụ Của Chúng Tôi</h3>
+                    <h2 class="display-4 mb-4">Chúng Tôi Cung Cấp Những Dịch Vụ Tốt Nhất</h2>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-users fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Sim</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-hospital fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Di Động</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-car fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Doanh Nghiệp</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="service-item">
+                            <div class="service-img">
+                                <img src="img/blog-4.png" class="img-fluid rounded-top w-100" alt="">
+                                <div class="service-icon p-3">
+                                    <i class="fa fa-home fa-2x"></i>
+                                </div>
+                            </div>
+                            <div class="service-content p-4">
+                                <div class="service-content-inner">
+                                    <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Khác</a>
+                                    <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
+                                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                        <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Service End -->
+
+        <!-- FAQs Start -->
+        <div class="container-fluid faq-section bg-light py-5">
+            <div class="container py-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
+                        <div class="h-100">
+                            <div class="mb-5">
+                                <h4 class="text-primary">Câu Hỏi Thường Gặp</h4>
+                                <h1 class="display-4 mb-0">Những Câu Hỏi Thường Gặp Về Dịch Vụ MobiFone</h1>
+                            </div>
+                            <div class="accordion" id="accordionExample">
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button border-0" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            Q: Làm thế nào để đăng ký các gói cước 4G của MobiFone?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show active" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body rounded">
+                                            A: Quý khách có thể đăng ký các gói cước 4G của MobiFone bằng cách soạn tin nhắn theo cú pháp <b>[Tên gói] gửi 999</b> hoặc truy cập ứng dụng MyMobiFone để thực hiện đăng ký nhanh chóng.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Q: Làm thế nào để kiểm tra dung lượng data còn lại?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            A: Quý khách có thể kiểm tra dung lượng data còn lại bằng cách soạn tin nhắn <b>KT DATA gửi 999</b> hoặc truy cập ứng dụng MyMobiFone để xem thông tin chi tiết.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Q: Làm thế nào để đổi SIM 4G miễn phí?
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                        <div class="accordion-body">
+                                            A: Quý khách có thể mang CMND/CCCD đến cửa hàng MobiFone gần nhất để được hỗ trợ đổi SIM 4G hoàn toàn miễn phí.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.4s">
+                        <img src="img/carousel-2.png" class="img-fluid w-100" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQs End -->
+
+        <!-- Blog Start -->
+        <div class="container-fluid blog py-5">
+            <div class="container py-5">
+                <div class="text-center mx-auto pb-5" style="max-width: 800px;">
+                    <h4 class="text-primary">Tin Tức MobiFone</h4>
+                    <h1 class="display-4 mb-4">Tin Mới Cập Nhật</h1>
+                    <p class="mb-0">Cập nhật những tin tức mới nhất về các hoạt động, dịch vụ và công nghệ tiên tiến mà MobiFone mang đến cho khách hàng.</p>
+                </div>
+                <div class="position-relative">
+                    <button class="mobifone-btn-prev" onclick="mobifonePrevSlide()">&#10094;</button>
+                    <div class="mobifone-news-slider-wrapper overflow-hidden row g-4 justify-content-center">
+                        <div class="mobifone-news-slider d-flex row g-4 justify-content-center" id="newsSlider">
+                            <div class="mobifone-news-item col-lg-4">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
+                                        <div class="blog-categiry py-2 px-4">
+                                            <span>Kinh Doanh</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content p-4">
+                                        <a href="#" class="h4 d-inline-block mb-3">MobiFone chuyển mình mạnh mẽ để định vị tương lai</a>
+                                        <p class="mb-3">MobiFone không ngừng đổi mới với các giải pháp công nghệ hiện đại...</p>
+                                        <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/mobifone-chuyen-minh-manh-me-de-dinh-vi-tuong-lai-15583" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobifone-news-item col-lg-4">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <img src="img/blog-2.png" class="img-fluid rounded-top w-100" alt="">
+                                        <div class="blog-categiry py-2 px-4">
+                                            <span>Công Nghệ</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content p-4">
+                                        <a href="#" class="h4 d-inline-block mb-3">DATA NGẬP TRÀN - RỘN RÀNG ƯU ĐÃI</a>
+                                        <p class="mb-3">Khởi động ngày mới đầy hứng khởi, chọn ngay gói CLVIP trên ClipTV để...</p>
+                                        <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobifone-news-item col-lg-4">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <img src="img/blog-3.png" class="img-fluid rounded-top w-100" alt="">
+                                        <div class="blog-categiry py-2 px-4">
+                                            <span>Khuyến Mãi</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content p-4">
+                                        <a href="#" class="h4 d-inline-block mb-3">HỌC TIẾNG ANH ĐỈNH CÙNG MOBIENGLISH</a>
+                                        <p class="mb-3">Chào đón mùa xuân rực rỡ, tận hưởng ngay ưu đãi cực đỉnh...</p>
+                                        <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobifone-news-item col-lg-4">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <img src="img/blog-1.png" class="img-fluid rounded-top w-100" alt="">
+                                        <div class="blog-categiry py-2 px-4">
+                                            <span>Công Nghệ</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content p-4">
+                                        <a href="#" class="h4 d-inline-block mb-3">Giải pháp hiện thực hóa ước mơ sử dụng AI hiệu quả</a>
+                                        <p class="mb-3">MobiFone mang đến các giải pháp ứng dụng trí tuệ nhân tạo (AI)...</p>
+                                        <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mobifone-news-item col-lg-4">
+                                <div class="blog-item">
+                                    <div class="blog-img">
+                                        <img src="img/blog-4.png" class="img-fluid rounded-top w-100" alt="">
+                                        <div class="blog-categiry py-2 px-4">
+                                            <span>Gói Cước</span>
+                                        </div>
+                                    </div>
+                                    <div class="blog-content p-4">
+                                        <a href="#" class="h4 d-inline-block mb-3">MobiFone ra mắt gói cước siêu hời dành cho game thủ</a>
+                                        <p class="mb-3">Đáp ứng nhu cầu chơi game trực tuyến của khách hàng, MobiFone...</p>
+                                        <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="mobifone-btn-next" onclick="mobifoneNextSlide()">&#10095;</button>
+                </div>
+            </div>
+        </div>
+        <!-- Blog End -->
+        
+        <!-- Team Start -->
+        <div class="container-fluid team pb-5">
+            <div class="container pb-5">
+                <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
+                    <h4 class="text-primary">Our Team</h4>
+                    <h1 class="display-4 mb-4">Meet Our Expert Team Members</h1>
+                    <p class="mb-0">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur adipisci facilis cupiditate recusandae aperiam temporibus corporis itaque quis facere, numquam, ad culpa deserunt sint dolorem autem obcaecati, ipsam mollitia hic.
+                    </p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-1.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-2.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-3.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+                        <div class="team-item">
+                            <div class="team-img">
+                                <img src="img/team-4.jpg" class="img-fluid rounded-top w-100" alt="">
+                                <div class="team-icon">
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-facebook-f"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-twitter"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-2" href=""><i class="fab fa-linkedin-in"></i></a>
+                                    <a class="btn btn-primary btn-sm-square rounded-pill mb-0" href=""><i class="fab fa-instagram"></i></a>
+                                </div>
+                            </div>
+                            <div class="team-title p-4">
+                                <h4 class="mb-0">David James</h4>
+                                <p class="mb-0">Profession</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Team End -->
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.2s">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-xl-9">
+                        <div class="mb-5">
+                            <div class="row g-4">
+                                <div class="col-md-6 col-lg-6 col-xl-5">
+                                    <div class="footer-item">
+                                        <a href="index.html" class="d-flex align-items-center text-decoration-none">
+                                            <img src="img/logo-1.png" alt="Logo" class="img-fluid rounded-circle me-2" style="width: 60px; height: 60px;">
+                                            <img src="img/logo-3.png" alt="Logo" class="img-fluid" style="height: 60px; width: auto;">
+                                        </a>
+                                        
+                                        <p class="text-white mb-4">Cung cấp giải pháp viễn thông và công nghệ hàng đầu tại Việt Nam...</p>
+                                        <div class="footer-btn d-flex">
+                                            <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-facebook-f"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-twitter"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-3" href="#"><i class="fab fa-instagram"></i></a>
+                                            <a class="btn btn-md-square rounded-circle me-0" href="#"><i class="fab fa-linkedin-in"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-3">
+                                    <div class="footer-item">
+                                        <h4 class="text-white mb-4">Liên Kết Hữu Ích</h4>
+                                        <a href="#"><i class="fas fa-angle-right me-2"></i> Giới Thiệu</a>
+                                        <a href="#"><i class="fas fa-angle-right me-2"></i> Dịch Vụ</a>
+                                        <a href="#"><i class="fas fa-angle-right me-2"></i> Tin Tức</a>
+                                        <a href="#"><i class="fas fa-angle-right me-2"></i> Liên Hệ</a>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 col-lg-6 col-xl-4">
+                                    <div class="footer-item">
+                                        <h4 class="mb-4 text-white">Instagram</h4>
+                                        <div class="row g-3">
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="img/instagram-footer-1.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="img/instagram-footer-1.jpg" data-lightbox="footerInstagram-1" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                           <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="img/instagram-footer-2.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="img/instagram-footer-2.jpg" data-lightbox="footerInstagram-2" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="img/instagram-footer-3.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="img/instagram-footer-3.jpg" data-lightbox="footerInstagram-3" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="img/instagram-footer-4.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="img/instagram-footer-4.jpg" data-lightbox="footerInstagram-4" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                            <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="img/instagram-footer-5.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="img/instagram-footer-5.jpg" data-lightbox="footerInstagram-5" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                           </div>
+                                           <div class="col-4">
+                                                <div class="footer-instagram rounded">
+                                                    <img src="img/instagram-footer-6.jpg" class="img-fluid w-100" alt="">
+                                                    <div class="footer-search-icon">
+                                                        <a href="img/instagram-footer-6.jpg" data-lightbox="footerInstagram-6" class="my-auto"><i class="fas fa-link text-white"></i></a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="pt-5" style="border-top: 1px solid rgba(255, 255, 255, 0.08);">
+                            <div class="row g-0">
+                                <div class="col-12">
+                                    <div class="row g-4">
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="d-flex">
+                                                <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                    <i class="fas fa-map-marker-alt fa-2x"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-white">Address</h4>
+                                                    <p class="mb-0">123 Street New York.USA</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="d-flex">
+                                                <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                    <i class="fas fa-envelope fa-2x"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-white">Mail Us</h4>
+                                                    <p class="mb-0">info@example.com</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6 col-xl-4">
+                                            <div class="d-flex">
+                                                <div class="btn-xl-square bg-primary text-white rounded p-4 me-4">
+                                                    <i class="fa fa-phone-alt fa-2x"></i>
+                                                </div>
+                                                <div>
+                                                    <h4 class="text-white">Telephone</h4>
+                                                    <p class="mb-0">(+012) 3456 7890</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-xl-3">
+                        <div class="footer-item">
+                            <h4 class="text-white mb-4">Newsletter</h4>
+                            <p class="text-white mb-3">Nhận thông tin mới nhất về dịch vụ và ưu đãi từ Mobifone.</p>
+                            <div class="position-relative rounded-pill mb-4">
+                                <input class="form-control rounded-pill w-100 py-3 ps-4 pe-5" type="text" placeholder="Enter your email">
+                                <button type="button" class="btn btn-primary rounded-pill position-absolute top-0 end-0 py-2 mt-2 me-2">SignUp</button>
+                            </div>
+                            <div class="d-flex flex-shrink-0">
+                                <div class="footer-btn">
+                                    <a href="#" class="btn btn-lg-square rounded-circle position-relative wow tada" data-wow-delay=".9s">
+                                        <i class="fa fa-phone-alt fa-2x"></i>
+                                        <div class="position-absolute" style="top: 2px; right: 12px;">
+                                            <span><i class="fa fa-comment-dots text-secondary"></i></span>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="d-flex flex-column ms-3 flex-shrink-0">
+                                    <span>Call to Our Experts</span>
+                                    <a href="tel:+ 0123 456 7890"><span class="text-white">Free: + 0123 456 7890</span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-end mb-md-0">
+                        <span class="text-body"><a href="#" class="border-bottom text-white"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-start text-body">
+                        <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
+                        <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
+                        <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
+                        Designed By <a class="border-bottom text-white" href="https://htmlcodex.com">HTML Codex</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-primary btn-lg-square rounded-circle back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/wow/wow.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/counterup/counterup.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+
+        <script>
+                let currentIndex = 0;
+            const newsContainer = document.getElementById("newsSlider");
+            const newsItems = document.querySelectorAll(".mobifone-news-item");
+            const totalNews = newsItems.length;
+            const visibleItems = 3;
+            const itemWidth = newsItems[0].offsetWidth;
+
+            // Nhân đôi danh sách để tạo hiệu ứng vòng lặp mượt mà
+            const duplicatedNews = [...newsItems, ...newsItems];
+            duplicatedNews.forEach(item => newsContainer.appendChild(item.cloneNode(true)));
+
+            function updateNewsSlider() {
+                newsContainer.style.transition = "transform 0.5s ease-in-out";
+                newsContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+                // Khi đạt đến điểm nhân đôi, reset vị trí để tạo vòng lặp mượt mà
+                if (currentIndex >= totalNews) {
+                    setTimeout(() => {
+                        newsContainer.style.transition = "none";
+                        currentIndex = 0;
+                        newsContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                    }, 500);
+                }
+            }
+
+            function mobifoneNextSlide() {
+                currentIndex++;
+                updateNewsSlider();
+            }
+
+            function mobifonePrevSlide() {
+                if (currentIndex === 0) {
+                    currentIndex = totalNews; // Chuyển về cuối danh sách nhân đôi
+                    newsContainer.style.transition = "none";
+                    newsContainer.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+                }
+                currentIndex--;
+                setTimeout(updateNewsSlider, 10); // Đợi 1 chút trước khi áp dụng transition
+            }
+
+            // Tự động chuyển slide mỗi 3 giây
+            setInterval(mobifoneNextSlide, 3000);
+
+            document.addEventListener("DOMContentLoaded", updateNewsSlider);
+
+        </script>
+        
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+    </body>
+
+</html>
