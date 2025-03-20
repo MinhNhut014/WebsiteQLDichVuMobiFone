@@ -1,0 +1,1 @@
+scaffold-dbcontext "Server=DESKTOP-2108PGG\SQLEXPRESS01;Initial Catalog=qldichvumobifone;TrustServerCertificate=True;Integrated Security=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir "Models" -ContextDir "Data" -Context "ApplicationDbContext" -DataAnnotations -force

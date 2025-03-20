@@ -18,7 +18,9 @@ CREATE TABLE NguoiDung (
     SoDienThoai NVARCHAR(11) UNIQUE,
     DiaChi NVARCHAR(255),
     TenDangNhap NVARCHAR(255) UNIQUE NOT NULL,
-    MatKhau NVARCHAR(1000) NOT NULL
+    MatKhau NVARCHAR(1000) NOT NULL,
+	quyen int default 0,
+	trangthai int default 1
 );
 
 -- Bảng Dịch Vụ (Cha của tất cả các dịch vụ) --
@@ -89,11 +91,10 @@ CREATE TABLE Sim (
     IDSim INT IDENTITY(1,1) PRIMARY KEY,
     IDDichVu INT NOT NULL FOREIGN KEY REFERENCES DichVu(IDDichVu) ON DELETE CASCADE,
     SoThueBao NVARCHAR(11) UNIQUE NOT NULL,
-    LoaiThueBao NVARCHAR(25) NOT NULL CHECK (LoaiThueBao IN ('Trả trước', 'Trả sau')),
+    IDLoaiSo INT NOT NULL FOREIGN KEY REFERENCES LoaiSo(IDLoaiSo),
     KhuVucHoaMang NVARCHAR(255),
     PhiHoaMang INT DEFAULT 0,
-	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim),
-	IDLoaiSo INT NOT NULL FOREIGN KEY REFERENCES LoaiSo(IDLoaiSo),
+	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim)
 );
 
 -- Dịch vụ Khác (Giáo dục, Tài chính, Giải trí, Internet An toàn, Du lịch) --
@@ -211,36 +212,28 @@ CREATE TABLE CTHoaDonDoanhNghiep (
 -- Bảng chủ đề bài viết
 CREATE TABLE ChuDe (
     IDChuDe INT IDENTITY(1,1) PRIMARY KEY,
-    TenChuDe NVARCHAR(100) NOT NULL,
-    TenChuDeKhongDau NVARCHAR(100)
+    TenChuDe NVARCHAR(100) NOT NULL
 );
 -- Bảng quản lý bài viết
 CREATE TABLE TinTuc(
-    IDTinTuc INT IDENTITY(1,1) PRIMARY KEY,
-    ChuDeID INT,
-    NguoiDungID INT,
+    IdTinTuc INT PRIMARY KEY IDENTITY(1,1),
     TieuDe NVARCHAR(255) NOT NULL,
-    TieuDeKhongDau NVARCHAR(255),
-    TomTat TEXT,
-    NoiDung TEXT NOT NULL,
-    NgayDang DATE,
-    LuotXem INT DEFAULT 0,
-    KiemDuyet BIT DEFAULT 0,
-    HienThi BIT DEFAULT 1,
-    FOREIGN KEY (ChuDeID) REFERENCES ChuDe(IDChuDe),
-    FOREIGN KEY (NguoiDungID) REFERENCES NguoiDung(IDNguoiDung)
+    NoiDung NVARCHAR(MAX) NOT NULL, 
+    AnhDaiDien NVARCHAR(255),        
+    NgayDang DATETIME DEFAULT GETDATE(),
+	LuotXem INT Default 0,
+    IdTheLoai INT,
+    FOREIGN KEY (IdTheLoai) REFERENCES ChuDe(IdChuDe)
 );
 -- Bảng bình luận bài viết
 CREATE TABLE BinhLuanBaiViet (
     IDBinhLuan INT IDENTITY(1,1) PRIMARY KEY,
-    BaiVietID INT,
-    NguoiDungID INT,
-    NoiDungBinhLuan TEXT NOT NULL,
-    NgayDang DATETIME,
-    LuotXem INT DEFAULT 0,
-    KiemDuyet BIT DEFAULT 0,
-    FOREIGN KEY (BaiVietID) REFERENCES TinTuc(IDTinTuc),
-    FOREIGN KEY (NguoiDungID) REFERENCES NguoiDung(IDNguoiDung)
+    IdTinTuc INT NOT NULL,
+    HoTen NVARCHAR(100) NOT NULL,
+    NoiDung NVARCHAR(1000) NOT NULL,
+    NgayBinhLuan DATETIME DEFAULT GETDATE(),
+    FOREIGN KEY (IdTinTuc) REFERENCES TinTuc(IdTinTuc) ON DELETE CASCADE,
+    NguoiDungID INT FOREIGN KEY (NguoiDungID) REFERENCES NguoiDung(IDNguoiDung)
 );
 
 
@@ -268,26 +261,26 @@ VALUES
 --2. Dữ liệu bảng loại sim
 INSERT INTO LoaiSo (TenLoaiSo)  
 VALUES  
-    (N'Số thường'),  
-    (N'Số đẹp');
+    (N'Trả Trước'),  
+    (N'Trả Sau');
 --3. Dữ liệu sim
-INSERT INTO Sim (IDDichVu, SoThueBao, LoaiThueBao, KhuVucHoaMang, PhiHoaMang, IDTrangThaiSim, IDLoaiSo)  
+INSERT INTO Sim (IDDichVu, SoThueBao, IDLoaiSo, KhuVucHoaMang, PhiHoaMang, IDTrangThaiSim)  
 VALUES  
-(2, '0783212416', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783213350', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783329026', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783329050', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783213630', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783213710', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783213728', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783214309', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783214370', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783214408', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783218610', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783225810', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783329546', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783329820', 'Trả trước', 'Toàn quốc', 50000, 1, 1),  
-(2, '0783214808', 'Trả trước', 'Toàn quốc', 50000, 1, 1);  
+(2, '0783212416', 1, 'Toàn quốc', 50000,  1),
+(2, '0783329026', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783329050', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783213630', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783213710', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783213728', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783214309', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783214370', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783214408', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783218610', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783225810', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783329546', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783329820', 1, 'Toàn quốc', 50000, 1),  
+(2, '0783214808', 1, 'Toàn quốc', 50000, 1);
+
 
 ----Thông tin dịch vụ di đông của mobifone
 ---1. Loại dịch vụ di động

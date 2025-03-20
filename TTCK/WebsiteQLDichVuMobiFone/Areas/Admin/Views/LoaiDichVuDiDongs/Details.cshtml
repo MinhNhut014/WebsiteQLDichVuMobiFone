@@ -1,0 +1,68 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.LoaiDichVuDiDong
+
+@{
+    ViewData["Title"] = "Chi Tiết Dịch Vụ Di Động";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg rounded-4 p-4 border-0">
+        <h1 class="text-primary fw-bold">Chi Tiết Dịch Vụ Di Động</h1>
+        <hr />
+
+        <div class="mb-4">
+            <h4 class="text-secondary"><i class="fas fa-info-circle"></i> Thông tin dịch vụ</h4>
+            <dl class="row">
+                <dt class="col-sm-4 text-dark fw-bold">Tên Dịch Vụ</dt>
+                <dd class="col-sm-8">@Model.TenLoaiDichVu</dd>
+            </dl>
+        </div>
+
+        <h4 class="text-secondary"><i class="fas fa-list"></i> Danh sách các Loại Gói Đăng Ký</h4>
+
+        @if (Model.LoaiGoiDangKies != null && Model.LoaiGoiDangKies.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th>Tên Loại Gói</th>
+                            <th>Chi tiết</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var loaiGoi in Model.LoaiGoiDangKies)
+                        {
+                            <tr>
+                                <td>@loaiGoi.TenLoaiGoi</td>
+                                <td>
+                                    <a asp-action="Details"
+                                       asp-controller="LoaiGoiDangKies"
+                                       asp-route-id="@loaiGoi.IdloaiGoi"
+                                       class="btn btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-eye"></i> Xem chi tiết
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p class="text-muted">Không có loại gói đăng ký nào thuộc dịch vụ này.</p>
+        }
+
+        <div class="mt-4">
+            <a asp-action="Edit"
+               asp-route-id="@Model.IdloaiDichVu"
+               class="btn btn-warning rounded-pill px-4">
+                <i class="fas fa-edit"></i> Sửa
+            </a>
+            <a asp-action="Index"
+               class="btn btn-secondary rounded-pill px-4">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,49 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.LoaiDichVuDiDong
+
+@{
+    ViewData["Title"] = "Sửa Loại Dịch Vụ";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">Sửa Loại Dịch Vụ</h2>
+    <div class="card shadow-sm p-4 rounded">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <!-- Ẩn ID loại dịch vụ để gửi dữ liệu -->
+            <input type="hidden" asp-for="IdloaiDichVu" />
+
+            <!-- Tên Dịch Vụ (Cố định) -->
+            <div class="form-group mb-3">
+                <label class="fw-bold">Tên Dịch Vụ</label>
+                <input type="text" class="form-control bg-light fw-bold" value="Dịch Vụ Di Động" readonly />
+            </div>
+
+            <!-- Ẩn ID dịch vụ để gửi dữ liệu -->
+            <input type="hidden" asp-for="IddichVu" value="1" />
+
+            <!-- Nhập Tên Loại Dịch Vụ -->
+            <div class="form-group mb-3">
+                <label asp-for="TenLoaiDichVu" class="fw-bold">Tên Loại Dịch Vụ</label>
+                <input asp-for="TenLoaiDichVu" class="form-control" placeholder="Nhập tên loại dịch vụ..." required />
+                <span asp-validation-for="TenLoaiDichVu" class="text-danger"></span>
+            </div>
+
+            <!-- Nút Lưu -->
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-save"></i> Cập nhật
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại
+                </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

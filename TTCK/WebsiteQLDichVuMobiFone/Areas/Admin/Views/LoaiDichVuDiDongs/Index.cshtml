@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.LoaiDichVuDiDong>
+
+@{
+    ViewData["Title"] = "Danh sách Loại Dịch Vụ";
+}
+
+<h1 class="mb-4 text-primary fw-bold">Danh sách Loại Dịch Vụ</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
+        <i class="fa-solid fa-plus"></i> Thêm mới
+    </a>
+</p>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Tên Loại Dịch Vụ</th>
+                <th class="p-3">ID Dịch Vụ</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in Model)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3 text-start fw-medium">@Html.DisplayFor(modelItem => item.TenLoaiDichVu)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IddichVuNavigation.IddichVu)</td>
+                    <td class="p-3 d-flex justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@item.IdloaiDichVu" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.IdloaiDichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
+                            <input type="hidden" name="id" value="@item.IdloaiDichVu" />
+                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

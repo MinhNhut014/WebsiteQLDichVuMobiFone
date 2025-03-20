@@ -1,0 +1,78 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.GoiDangKy
+
+@{
+    ViewData["Title"] = "Chỉnh sửa Gói Đăng Ký";
+}
+
+<div class="card shadow-sm border-0 rounded-3 p-4 bg-light">
+    <h1 class="text-primary fw-bold text-center mb-4">Chỉnh sửa Gói Đăng Ký</h1>
+
+    <form asp-action="Edit">
+        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+        <input type="hidden" asp-for="IdgoiDangKy" />
+
+        <div class="row">
+            <!-- Cột 1 -->
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="TenGoi" class="form-label">📋 Tên Gói</label>
+                    <input asp-for="TenGoi" class="form-control" />
+                    <span asp-validation-for="TenGoi" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="GiaGoi" class="form-label">💰 Giá Gói</label>
+                    <input asp-for="GiaGoi" class="form-control" />
+                    <span asp-validation-for="GiaGoi" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="ThoiHan" class="form-label">⏳ Thời Hạn</label>
+                    <input asp-for="ThoiHan" class="form-control" />
+                    <span asp-validation-for="ThoiHan" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="TinhNang" class="form-label">🚀 Tính Năng</label>
+                    <input asp-for="TinhNang" class="form-control" />
+                    <span asp-validation-for="TinhNang" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="IdloaiGoi" class="form-label">🔖 Loại Gói</label>
+                    <select asp-for="IdloaiGoi" class="form-select" asp-items="ViewBag.IdloaiGoi"></select>
+                    <span asp-validation-for="IdloaiGoi" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Cột 2 -->
+            <div class="col-md-6">
+                <div class="form-group mb-3">
+                    <label asp-for="ThongTinGoi" class="form-label">ℹ️ Thông Tin Gói</label>
+                    <textarea asp-for="ThongTinGoi" class="form-control" rows="6"></textarea>
+                    <span asp-validation-for="ThongTinGoi" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="ThongTinChiTiet" class="form-label">📝 Thông Tin Chi Tiết</label>
+                    <textarea asp-for="ThongTinChiTiet" class="form-control" rows="8"></textarea>
+                    <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Nút hành động -->
+        <div class="text-center mt-4">
+            <input type="submit" value="💾 Lưu" class="btn btn-primary px-4" />
+            <a asp-action="Index" class="btn btn-secondary ms-2">
+                <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
+            </a>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

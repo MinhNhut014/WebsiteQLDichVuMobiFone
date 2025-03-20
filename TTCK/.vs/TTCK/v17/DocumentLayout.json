@@ -1,0 +1,151 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\home\\dichvusim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\home\\dichvusim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\home\\_simlistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\home\\_simlistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\models\\trangthaisim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\models\\trangthaisim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\models\\loaiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\models\\loaiso.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\models\\sim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\models\\sim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\qlduan\\websiteqldichvumobifone\\ttck\\websiteqldichvumobifone\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\admin\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_SimListPartial.cshtml",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\_SimListPartial.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\_SimListPartial.cshtml",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\_SimListPartial.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\_SimListPartial.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAcwBsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T08:38:12.09Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAcwDwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:20:32.11Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TrangThaiSim.cs",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Models\\TrangThaiSim.cs",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Models\\TrangThaiSim.cs",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Models\\TrangThaiSim.cs",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Models\\TrangThaiSim.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAcwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:14:35.326Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoaiSo.cs",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Models\\LoaiSo.cs",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Models\\LoaiSo.cs",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Models\\LoaiSo.cs",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Models\\LoaiSo.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAgwBYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:14:01.932Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Sim.cs",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Models\\Sim.cs",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Models\\Sim.cs",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Models\\Sim.cs",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Models\\Sim.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAQwDAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-20T07:12:47.88Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "dichvusim.cshtml",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\dichvusim.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\dichvusim.cshtml",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\dichvusim.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\dichvusim.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-20T07:10:07.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAHQAAAAAAAAAAAAUwIkAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-19T07:35:27.659Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAwAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-18T15:04:14.807Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

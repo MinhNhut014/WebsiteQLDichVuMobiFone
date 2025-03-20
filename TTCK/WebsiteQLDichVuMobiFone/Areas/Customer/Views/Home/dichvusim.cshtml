@@ -1,0 +1,65 @@
+﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.Sim>
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Our Services</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
+            <li class="breadcrumb-item active text-primary">Sim</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container mt-5">
+    <div class="row">
+        <!-- Khu vực bộ lọc -->
+        <div class="col-md-3 p-3 border rounded bg-light">
+            <h5 class="mb-3">🔎 Bộ lọc tìm kiếm</h5>
+
+            <!-- Tìm kiếm theo số thuê bao -->
+            <div class="mb-4">
+                <form asp-action="dichvusim" method="get">
+                    <label for="search" class="form-label">Tìm kiếm số thuê bao:</label>
+                    <input type="text" name="search" class="form-control" placeholder="Nhập số thuê bao..." value="@ViewBag.Search" />
+                </form>
+            </div>
+
+            <!-- Lọc theo đầu số -->
+            <div class="mb-4">
+                <label class="form-label">Lọc theo đầu số:</label>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach (var dauSo in ViewBag.DauSos as List<string>)
+                    {
+                        bool isSelected = ViewBag.SelectedFilters.Contains(dauSo);
+                        <a asp-action="dichvusim" asp-route-filters="@((isSelected ? string.Join(",", (ViewBag.SelectedFilters as List<string>).Where(f => f != dauSo)) : string.Join(",", ViewBag.SelectedFilters) + "," + dauSo))"
+                           class="btn @(isSelected ? "btn-success" : "btn-outline-success") mb-2">
+                            @dauSo
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <!-- Lọc theo loại thuê bao -->
+            <div>
+                <label class="form-label">Lọc theo loại thuê bao:</label>
+                <div class="d-flex flex-wrap gap-2">
+                    @foreach (var loai in ViewBag.LoaiThueBaos as List<string>)
+                    {
+                        bool isSelected = ViewBag.SelectedFilters.Contains(loai);
+                        <a asp-action="dichvusim" asp-route-filters="@((isSelected ? string.Join(",", (ViewBag.SelectedFilters as List<string>).Where(f => f != loai)) : string.Join(",", ViewBag.SelectedFilters) + "," + loai))"
+                           class="btn @(isSelected ? "btn-info" : "btn-outline-info") mb-2">
+                            @loai
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Khu vực hiển thị danh sách SIM -->
+        <div class="col-md-9">
+            <h5 class="mb-3">Danh sách SIM</h5>
+            @await Html.PartialAsync("_SimListPartial", Model)
+        </div>
+    </div>
+</div>

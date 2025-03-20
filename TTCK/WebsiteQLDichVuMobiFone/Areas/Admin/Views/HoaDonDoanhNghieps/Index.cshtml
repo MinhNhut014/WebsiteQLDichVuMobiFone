@@ -1,0 +1,77 @@
+﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.HoaDonDoanhNghiep>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NgayDatHang)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TongTien)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TenCongTy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoDienThoaiCongTy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EmailCongTy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DiaChiCongTy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdnguoiDungNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdtrangThaiNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayDatHang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TongTien)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TenCongTy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDienThoaiCongTy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmailCongTy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChiCongTy)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdnguoiDungNavigation.IdnguoiDung)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdtrangThaiNavigation.IdtrangThai)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.IdhoaDonDn">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.IdhoaDonDn">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.IdhoaDonDn">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

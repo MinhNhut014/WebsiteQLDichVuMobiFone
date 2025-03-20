@@ -1,0 +1,55 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.GoiDangKy
+
+@{
+    ViewData["Title"] = "Chi Tiết Gói Đăng Ký";
+}
+
+<div class="card shadow-sm border-0 rounded-3 p-4 bg-light">
+    <h1 class="text-primary fw-bold text-center mb-4">Chi Tiết Gói Đăng Ký</h1>
+
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">📋 Tên Gói:</div>
+            <div class="col-sm-8">@Html.DisplayFor(model => model.TenGoi)</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">💰 Giá Gói:</div>
+            <div class="col-sm-8">@Html.DisplayFor(model => model.GiaGoi) VNĐ</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">⏳ Thời Hạn:</div>
+            <div class="col-sm-8">@Html.DisplayFor(model => model.ThoiHan)</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">🚀 Tính Năng:</div>
+            <div class="col-sm-8">@Html.DisplayFor(model => model.TinhNang)</div>
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">ℹ️ Thông Tin Gói:</div>
+            <div class="col-sm-8">@Html.Raw(Model.ThongTinGoi)</div> 
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">📝 Thông Tin Chi Tiết:</div>
+            <div class="col-sm-8">@Html.Raw(Model.ThongTinChiTiet)</div> 
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-sm-4 fw-bold">🔖 Loại Gói:</div>
+            <div class="col-sm-8">@Html.DisplayFor(model => model.IdloaiGoiNavigation.TenLoaiGoi)</div>
+        </div>
+    </div>
+
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.IdgoiDangKy" class="btn btn-warning me-2">
+            <i class="fa-solid fa-pen"></i> Chỉnh sửa
+        </a>
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
+        </a>
+    </div>
+</div>

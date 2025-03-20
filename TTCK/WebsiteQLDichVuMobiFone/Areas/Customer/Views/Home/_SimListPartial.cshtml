@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.Sim>
+
+<table class="table table-bordered table-hover mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Mã SIM</th>
+            <th>Số thuê bao</th>
+            <th>Loại thuê bao</th>
+            <th>Đầu số</th>
+            <th>Khu vực hòa mạng</th>
+            <th>Phí hòa mạng</th>
+            <th>Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Any())
+        {
+            @foreach (var sim in Model)
+            {
+                <tr>
+                    <td>@sim.Idsim</td>
+                    <td>@sim.SoThueBao</td>
+                    <td>@sim.IdloaiSoNavigation?.TenLoaiSo</td>
+                    <td>@sim.SoThueBao.Substring(0, 3)</td>
+                    <td>@sim.KhuVucHoaMang</td>
+                    <td>@sim.PhiHoaMang VNĐ</td>
+                    <td><a href="/SIM/Details/@sim.Idsim" class="btn btn-primary btn-sm">Chọn Mua</a></td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center text-danger">Không có SIM nào phù hợp!</td>
+            </tr>
+        }
+    </tbody>
+</table>

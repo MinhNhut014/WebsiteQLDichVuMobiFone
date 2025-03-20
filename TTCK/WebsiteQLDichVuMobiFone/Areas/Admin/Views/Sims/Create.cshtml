@@ -1,0 +1,50 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.Sim
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Sim</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IddichVu" class="control-label"></label>
+                <select asp-for="IddichVu" class ="form-control" asp-items="ViewBag.IddichVu"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoThueBao" class="control-label"></label>
+                <input asp-for="SoThueBao" class="form-control" />
+                <span asp-validation-for="SoThueBao" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdloaiSo" class="control-label"></label>
+                <select asp-for="IdloaiSo" class ="form-control" asp-items="ViewBag.IdloaiSo"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="KhuVucHoaMang" class="control-label"></label>
+                <input asp-for="KhuVucHoaMang" class="form-control" />
+                <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IdtrangThaiSim" class="control-label"></label>
+                <select asp-for="IdtrangThaiSim" class ="form-control" asp-items="ViewBag.IdtrangThaiSim"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
