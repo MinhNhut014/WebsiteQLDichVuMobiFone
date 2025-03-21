@@ -94,7 +94,8 @@ CREATE TABLE Sim (
     IDLoaiSo INT NOT NULL FOREIGN KEY REFERENCES LoaiSo(IDLoaiSo),
     KhuVucHoaMang NVARCHAR(255),
     PhiHoaMang INT DEFAULT 0,
-	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim)
+	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim),
+	GoiDangKyDiKem INT NULL FOREIGN KEY REFERENCES GoiDangKy(IDGoiDangKy)
 );
 
 -- Dịch vụ Khác (Giáo dục, Tài chính, Giải trí, Internet An toàn, Du lịch) --
@@ -253,8 +254,9 @@ VALUES
 INSERT INTO TrangThaiSim (TenTrangThai)  
 --1. Dữ liệu bảng trạng thái sim
 VALUES  
-    (N'Đang hoạt động'),  
     (N'Chưa kích hoạt'),  
+	(N'Đang giao dịch'), 
+    (N'Đang hoạt động'),  
     (N'Bị khóa một chiều'),  
     (N'Bị khóa hai chiều'),  
     (N'Đã hủy');  
@@ -264,22 +266,22 @@ VALUES
     (N'Trả Trước'),  
     (N'Trả Sau');
 --3. Dữ liệu sim
-INSERT INTO Sim (IDDichVu, SoThueBao, IDLoaiSo, KhuVucHoaMang, PhiHoaMang, IDTrangThaiSim)  
-VALUES  
-(2, '0783212416', 1, 'Toàn quốc', 50000,  1),
-(2, '0783329026', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783329050', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783213630', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783213710', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783213728', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783214309', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783214370', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783214408', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783218610', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783225810', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783329546', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783329820', 1, 'Toàn quốc', 50000, 1),  
-(2, '0783214808', 1, 'Toàn quốc', 50000, 1);
+INSERT INTO Sim (IDDichVu, SoThueBao, IDLoaiSo, KhuVucHoaMang, PhiHoaMang, IDTrangThaiSim, GoiDangKyDiKem)
+VALUES 
+(2, '0783212416', 1, 'Toàn quốc', 50000, 1, NULL),
+(2, '0783329026', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783329050', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783213630', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783213710', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783213728', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783214309', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783214370', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783214408', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783218610', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783225810', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783329546', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783329820', 1, 'Toàn quốc', 50000, 1, NULL),  
+(2, '0783214808', 1, 'Toàn quốc', 50000, 1, NULL)
 
 
 ----Thông tin dịch vụ di đông của mobifone
