@@ -74,7 +74,7 @@ public partial class ApplicationDbContext : DbContext
     {
         modelBuilder.Entity<BinhLuanBaiViet>(entity =>
         {
-            entity.HasKey(e => e.IdbinhLuan).HasName("PK__BinhLuan__5CDBC03C8ADD2E3D");
+            entity.HasKey(e => e.IdbinhLuan).HasName("PK__BinhLuan__5CDBC03C88094B43");
 
             entity.Property(e => e.NgayBinhLuan).HasDefaultValueSql("(getdate())");
 
@@ -85,12 +85,12 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<ChuDe>(entity =>
         {
-            entity.HasKey(e => e.IdchuDe).HasName("PK__ChuDe__5C130CB85D2AE3E8");
+            entity.HasKey(e => e.IdchuDe).HasName("PK__ChuDe__5C130CB8E83FE99B");
         });
 
         modelBuilder.Entity<CthoaDonDichVu>(entity =>
         {
-            entity.HasKey(e => e.IdcthoaDonDv).HasName("PK__CTHoaDon__758AFF358B5FD30F");
+            entity.HasKey(e => e.IdcthoaDonDv).HasName("PK__CTHoaDon__758AFF353B81DF15");
 
             entity.Property(e => e.DonGia).HasDefaultValue(0);
             entity.Property(e => e.SoLuong).HasDefaultValue((short)1);
@@ -104,7 +104,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<CthoaDonDoanhNghiep>(entity =>
         {
-            entity.HasKey(e => e.IdcthoaDonDn).HasName("PK__CTHoaDon__758AFF3D16664D0B");
+            entity.HasKey(e => e.IdcthoaDonDn).HasName("PK__CTHoaDon__758AFF3D678368A7");
 
             entity.Property(e => e.DonGia).HasDefaultValue(0);
             entity.Property(e => e.SoLuong).HasDefaultValue((short)1);
@@ -118,7 +118,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<CthoaDonSim>(entity =>
         {
-            entity.HasKey(e => e.IdcthoaDonSim).HasName("PK__CTHoaDon__447141A066378F6E");
+            entity.HasKey(e => e.IdcthoaDonSim).HasName("PK__CTHoaDon__447141A0266675CB");
 
             entity.Property(e => e.DonGia).HasDefaultValue(0);
             entity.Property(e => e.SoLuong).HasDefaultValue((short)1);
@@ -136,19 +136,19 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<DichVu>(entity =>
         {
-            entity.HasKey(e => e.IddichVu).HasName("PK__DichVu__C0C95928151579E6");
+            entity.HasKey(e => e.IddichVu).HasName("PK__DichVu__C0C959288F861B28");
         });
 
         modelBuilder.Entity<DichVuDoanhNghiep>(entity =>
         {
-            entity.HasKey(e => e.IddichVuDn).HasName("PK__DichVuDo__64ECF5496A047011");
+            entity.HasKey(e => e.IddichVuDn).HasName("PK__DichVuDo__64ECF549EC53ACB7");
 
             entity.HasOne(d => d.IdnhomDichVuNavigation).WithMany(p => p.DichVuDoanhNghieps).HasConstraintName("FK__DichVuDoa__IDNho__656C112C");
         });
 
         modelBuilder.Entity<GoiDangKy>(entity =>
         {
-            entity.HasKey(e => e.IdgoiDangKy).HasName("PK__GoiDangK__72344F025BA7CA4E");
+            entity.HasKey(e => e.IdgoiDangKy).HasName("PK__GoiDangK__72344F02041EDEC9");
 
             entity.Property(e => e.GiaGoi).HasDefaultValue(0);
 
@@ -157,7 +157,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<GoiDangKyDichVuKhac>(entity =>
         {
-            entity.HasKey(e => e.IdgoiDangKy).HasName("PK__GoiDangK__72344F0265EC9D4C");
+            entity.HasKey(e => e.IdgoiDangKy).HasName("PK__GoiDangK__72344F02AF756D8E");
 
             entity.Property(e => e.GiaGoi).HasDefaultValue(0);
 
@@ -166,7 +166,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<GoiDichVu>(entity =>
         {
-            entity.HasKey(e => e.IdgoiDichVu).HasName("PK__GoiDichV__A74519A3277C294D");
+            entity.HasKey(e => e.IdgoiDichVu).HasName("PK__GoiDichV__A74519A3EE006057");
 
             entity.HasOne(d => d.IddichVuDnNavigation).WithMany(p => p.GoiDichVus)
                 .OnDelete(DeleteBehavior.ClientSetNull)
@@ -175,7 +175,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<HoaDonDichVu>(entity =>
         {
-            entity.HasKey(e => e.IdhoaDonDv).HasName("PK__HoaDonDi__C9D2DCF24D952985");
+            entity.HasKey(e => e.IdhoaDonDv).HasName("PK__HoaDonDi__C9D2DCF26DE6F6EB");
 
             entity.Property(e => e.NgayDatHang).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.TongTien).HasDefaultValue(0);
@@ -191,7 +191,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<HoaDonDoanhNghiep>(entity =>
         {
-            entity.HasKey(e => e.IdhoaDonDn).HasName("PK__HoaDonDo__C9D2DCFA64F6709F");
+            entity.HasKey(e => e.IdhoaDonDn).HasName("PK__HoaDonDo__C9D2DCFA61765FA8");
 
             entity.Property(e => e.NgayDatHang).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.TongTien).HasDefaultValue(0);
@@ -207,7 +207,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<HoaDonSim>(entity =>
         {
-            entity.HasKey(e => e.IdhoaDonSim).HasName("PK__HoaDonSi__364462F78442FB61");
+            entity.HasKey(e => e.IdhoaDonSim).HasName("PK__HoaDonSi__364462F789C8312D");
 
             entity.Property(e => e.NgayDatHang).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.TongTien).HasDefaultValue(0);
@@ -227,33 +227,33 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<LoaiDichVuDiDong>(entity =>
         {
-            entity.HasKey(e => e.IdloaiDichVu).HasName("PK__LoaiDich__7911AD8A3656AD28");
+            entity.HasKey(e => e.IdloaiDichVu).HasName("PK__LoaiDich__7911AD8A59F1A439");
 
             entity.HasOne(d => d.IddichVuNavigation).WithMany(p => p.LoaiDichVuDiDongs).HasConstraintName("FK__LoaiDichV__IDDic__5535A963");
         });
 
         modelBuilder.Entity<LoaiDichVuKhac>(entity =>
         {
-            entity.HasKey(e => e.IdloaiDichVuKhac).HasName("PK__LoaiDich__680849BB69DC006E");
+            entity.HasKey(e => e.IdloaiDichVuKhac).HasName("PK__LoaiDich__680849BB5E834386");
 
             entity.HasOne(d => d.IddichVuNavigation).WithMany(p => p.LoaiDichVuKhacs).HasConstraintName("FK__LoaiDichV__IDDic__797309D9");
         });
 
         modelBuilder.Entity<LoaiGoiDangKy>(entity =>
         {
-            entity.HasKey(e => e.IdloaiGoi).HasName("PK__LoaiGoiD__1B03B7B1C7B4877A");
+            entity.HasKey(e => e.IdloaiGoi).HasName("PK__LoaiGoiD__1B03B7B10D02C200");
 
             entity.HasOne(d => d.IdloaiDichVuNavigation).WithMany(p => p.LoaiGoiDangKies).HasConstraintName("FK__LoaiGoiDa__IDLoa__59063A47");
         });
 
         modelBuilder.Entity<LoaiSo>(entity =>
         {
-            entity.HasKey(e => e.IdloaiSo).HasName("PK__LoaiSo__B57A5AFAA6C847F3");
+            entity.HasKey(e => e.IdloaiSo).HasName("PK__LoaiSo__B57A5AFA9EC5676B");
         });
 
         modelBuilder.Entity<NguoiDung>(entity =>
         {
-            entity.HasKey(e => e.IdnguoiDung).HasName("PK__NguoiDun__FCD7DB09C060A175");
+            entity.HasKey(e => e.IdnguoiDung).HasName("PK__NguoiDun__FCD7DB09266B1DDB");
 
             entity.Property(e => e.Quyen).HasDefaultValue(0);
             entity.Property(e => e.Trangthai).HasDefaultValue(1);
@@ -261,28 +261,28 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<NhomDichVuDoanhNghiep>(entity =>
         {
-            entity.HasKey(e => e.IdnhomDichVu).HasName("PK__NhomDich__9E06E4F3223637B2");
+            entity.HasKey(e => e.IdnhomDichVu).HasName("PK__NhomDich__9E06E4F3895980F4");
 
             entity.HasOne(d => d.IddichVuNavigation).WithMany(p => p.NhomDichVuDoanhNghieps).HasConstraintName("FK__NhomDichV__IDDic__619B8048");
         });
 
         modelBuilder.Entity<PhuongThucVanChuyen>(entity =>
         {
-            entity.HasKey(e => e.IdphuongThucVc).HasName("PK__PhuongTh__A8430B57D906E12B");
+            entity.HasKey(e => e.IdphuongThucVc).HasName("PK__PhuongTh__A8430B578C53EB51");
 
             entity.Property(e => e.GiaVanChuyen).HasDefaultValue(0);
         });
 
         modelBuilder.Entity<SanPhamDichVuKhac>(entity =>
         {
-            entity.HasKey(e => e.IdsanPham).HasName("PK__SanPhamD__9D45E58A0CEDB1B0");
+            entity.HasKey(e => e.IdsanPham).HasName("PK__SanPhamD__9D45E58A8BC45FEB");
 
             entity.HasOne(d => d.IdloaiDichVuKhacNavigation).WithMany(p => p.SanPhamDichVuKhacs).HasConstraintName("FK__SanPhamDi__IDLoa__7D439ABD");
         });
 
         modelBuilder.Entity<Sim>(entity =>
         {
-            entity.HasKey(e => e.Idsim).HasName("PK__Sim__A5CFB83CB0058C51");
+            entity.HasKey(e => e.Idsim).HasName("PK__Sim__A5CFB83C617F41D5");
 
             entity.Property(e => e.PhiHoaMang).HasDefaultValue(0);
 
@@ -301,7 +301,7 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<TinTuc>(entity =>
         {
-            entity.HasKey(e => e.IdTinTuc).HasName("PK__TinTuc__B7829676278BD366");
+            entity.HasKey(e => e.IdTinTuc).HasName("PK__TinTuc__B78296765BD9DF0C");
 
             entity.Property(e => e.LuotXem).HasDefaultValue(0);
             entity.Property(e => e.NgayDang).HasDefaultValueSql("(getdate())");
@@ -311,12 +311,12 @@ public partial class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<TrangThaiDonHang>(entity =>
         {
-            entity.HasKey(e => e.IdtrangThai).HasName("PK__TrangTha__55658600682FEE1A");
+            entity.HasKey(e => e.IdtrangThai).HasName("PK__TrangTha__55658600A55BD2C8");
         });
 
         modelBuilder.Entity<TrangThaiSim>(entity =>
         {
-            entity.HasKey(e => e.IdtrangThaiSim).HasName("PK__TrangTha__22D8CDF4F381B356");
+            entity.HasKey(e => e.IdtrangThaiSim).HasName("PK__TrangTha__22D8CDF4CE748B90");
         });
 
         OnModelCreatingPartial(modelBuilder);

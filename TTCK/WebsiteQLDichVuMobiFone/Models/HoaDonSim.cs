@@ -14,7 +14,7 @@ public partial class HoaDonSim
     public int IdhoaDonSim { get; set; }
 
     [Column("IDNguoiDung")]
-    public int IdnguoiDung { get; set; }
+    public int? IdnguoiDung { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? NgayDatHang { get; set; }
@@ -47,13 +47,13 @@ public partial class HoaDonSim
 
     [ForeignKey("IdnguoiDung")]
     [InverseProperty("HoaDonSims")]
-    public virtual NguoiDung IdnguoiDungNavigation { get; set; } = null!;
+    public virtual NguoiDung? IdnguoiDungNavigation { get; set; } = null!;
 
     [ForeignKey("IdphuongThucVc")]
     [InverseProperty("HoaDonSims")]
-    public virtual PhuongThucVanChuyen IdphuongThucVcNavigation { get; set; } = null!;
+    public virtual PhuongThucVanChuyen? IdphuongThucVcNavigation { get; set; } = null!;
 
     [ForeignKey("IdtrangThai")]
     [InverseProperty("HoaDonSims")]
-    public virtual TrangThaiDonHang IdtrangThaiNavigation { get; set; } = null!;
+    public virtual TrangThaiDonHang? IdtrangThaiNavigation { get; set; } = null!;
 }

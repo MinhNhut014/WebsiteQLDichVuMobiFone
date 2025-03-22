@@ -16,8 +16,23 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             _context = context;
         }
 
+        public void GetData()
+        {
+            // Kiểm tra xem người dùng đã đăng nhập chưa bằng cách kiểm tra session "nguoidung"
+            var tenDangNhap = HttpContext.Session.GetString("nguoidung");
+
+            if (!string.IsNullOrEmpty(tenDangNhap))
+            {
+                // Tìm người dùng từ cơ sở dữ liệu bằng tên đăng nhập đã lưu trong session
+                ViewBag.khachHang = _context.NguoiDungs.FirstOrDefault(k => k.TenDangNhap == tenDangNhap);
+            }
+            // Truyền thông tin vào ViewData hoặc ViewBag
+            ViewBag.UserName = tenDangNhap;
+            ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
+        }
         public IActionResult dichvusim(string filters, string search)
         {
+            GetData();
             var sims = _context.Sims.Include(s => s.IdloaiSoNavigation).AsQueryable();
 
             if (!string.IsNullOrEmpty(search))
@@ -45,6 +60,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
         public IActionResult ChonMua(int id, int? maGoi)
         {
+            GetData();
             // Lấy thông tin SIM cần mua
             var sim = _context.Sims.Include(s => s.IdloaiSoNavigation).FirstOrDefault(s => s.Idsim == id);
             if (sim == null)
@@ -105,6 +121,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         [HttpGet]
         public async Task<IActionResult> DangKy(int idSim, int idGoiDangKy)
         {
+            GetData();
             // Lấy thông tin SIM
             var sim = await _context.Sims
                 .Include(s => s.IdloaiSoNavigation)
@@ -154,95 +171,179 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             return View("DangKy");
         }
 
+        // hoàn tất đăng ký sim
+        // hoàn tất đăng ký sim
         [HttpPost]
-        public async Task<IActionResult> TinhTongTien(int idSim, int idGoiDangKy, int phuongThucVanChuyenId)
+        public IActionResult HoanTatDangKySim(HoaDonSim hoaDonModel, int idSim, int idGoiDangKy)
         {
-            // Lấy thông tin SIM
-            var sim = await _context.Sims
-                .FirstOrDefaultAsync(s => s.Idsim == idSim);
+            GetData();
 
-            if (sim == null)
+            // Kiểm tra người dùng đã đăng nhập hay chưa
+            var nguoiDungId = HttpContext.Session.GetString("UserId");
+            if (string.IsNullOrEmpty(nguoiDungId))
             {
-                return Json(new { success = false, message = "Không tìm thấy SIM!" });
+                // Nếu chưa đăng nhập, thông báo và yêu cầu đăng nhập
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập để thực hiện mua SIM.";
+                return RedirectToAction("DangNhap", "NguoiDung");
             }
 
-            // Lấy thông tin gói đăng ký
-            var goiDangKy = await _context.GoiDangKies
-                .FirstOrDefaultAsync(g => g.IdgoiDangKy == idGoiDangKy);
+            // Nếu người dùng đã đăng nhập, gán idNguoiDung từ session
+            hoaDonModel.IdnguoiDung = int.Parse(nguoiDungId);
 
-            if (goiDangKy == null)
+            // Kiểm tra tính hợp lệ của dữ liệu
+            if (!ModelState.IsValid)
             {
-                return Json(new { success = false, message = "Không tìm thấy gói đăng ký!" });
+                TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại thông tin.";
+                return RedirectToAction("DangKy", "Sim");
             }
 
-            // Lấy thông tin phí vận chuyển từ phương thức vận chuyển
-            var phuongThucVanChuyen = await _context.PhuongThucVanChuyens
-                .FirstOrDefaultAsync(ptvc => ptvc.IdphuongThucVc == phuongThucVanChuyenId);
-
-            if (phuongThucVanChuyen == null)
-            {
-                return Json(new { success = false, message = "Không tìm thấy phương thức vận chuyển!" });
-            }
-
-            // Tính tổng tiền mới
-            decimal phiHoaMang = sim.PhiHoaMang ?? 0;
-            decimal giaGoi = goiDangKy.GiaGoi ?? 0;
-            decimal phiVanChuyen = phuongThucVanChuyen.GiaVanChuyen ?? 0;
-
-            decimal tongTien = phiHoaMang + giaGoi + phiVanChuyen;
-
-            return Json(new { success = true, tongTien });
-        }
-
-
-        [HttpPost]
-        public async Task<IActionResult> LuuThongTinDangKy(HoaDonSim hoaDonSim, int idSim, int idGoiDangKy)
-        {
+            using var transaction = _context.Database.BeginTransaction();
             try
             {
-                hoaDonSim.NgayDatHang = DateTime.Now;
-                hoaDonSim.IdtrangThai = 1;
-                _context.HoaDonSims.Add(hoaDonSim);
-                await _context.SaveChangesAsync();
-
-                var cthdSim = new CthoaDonSim
+                // Kiểm tra tính hợp lệ của Phương thức Vận chuyển
+                var phuongThucVanChuyen = _context.PhuongThucVanChuyens.FirstOrDefault(p => p.IdphuongThucVc == hoaDonModel.IdphuongThucVc);
+                if (phuongThucVanChuyen == null)
                 {
-                    IdhoaDonSim = hoaDonSim.IdhoaDonSim,
+                    TempData["ErrorMessage"] = "Phương thức vận chuyển không hợp lệ.";
+                    return RedirectToAction("DangKy", "Sim"); // Quay lại trang đăng ký nếu không có phương thức vận chuyển hợp lệ
+                }
+
+                // Thêm Hóa Đơn SIM
+                var hoaDon = new HoaDonSim
+                {
+                    IdnguoiDung = hoaDonModel.IdnguoiDung,
+                    NgayDatHang = DateTime.Now,
+                    TongTien = hoaDonModel.TongTien,
+                    IdtrangThai = 1, // Trạng thái "Chờ xử lý"
+                    TenKhachHang = hoaDonModel.TenKhachHang,
+                    SoDienThoai = hoaDonModel.SoDienThoai,
+                    Email = hoaDonModel.Email,
+                    DiaDiemNhan = hoaDonModel.DiaDiemNhan,
+                    PhuongThucThanhToan = hoaDonModel.PhuongThucThanhToan,
+                    IdphuongThucVc = hoaDonModel.IdphuongThucVc // Phương thức vận chuyển hợp lệ
+                };
+
+
+                _context.HoaDonSims.Add(hoaDon);
+                _context.SaveChanges();
+
+                // Sau khi đã lưu HoaDonSim, lấy IDHoaDonSim
+                var idHoaDonSim = hoaDon.IdhoaDonSim;
+                // Thêm Chi Tiết Hóa Đơn SIM
+                var chiTietHoaDon = new CthoaDonSim
+                {
+                    IdhoaDonSim = idHoaDonSim,  // Đảm bảo rằng IDHoaDonSim đã tồn tại trong HoaDonSim
                     Idsim = idSim,
                     IdgoiDangKy = idGoiDangKy,
-                    DonGia = hoaDonSim.TongTien,
+                    DonGia = hoaDonModel.TongTien,
                     SoLuong = 1,
-                    ThanhTien = hoaDonSim.TongTien
+                    ThanhTien = hoaDonModel.TongTien
                 };
-                _context.CthoaDonSims.Add(cthdSim);
-                await _context.SaveChangesAsync();
 
-                return RedirectToAction("HoanTatDangKy", new { id = hoaDonSim.IdhoaDonSim });
+                _context.CthoaDonSims.Add(chiTietHoaDon);
+
+                // Cập nhật trạng thái SIM
+                var sim = _context.Sims
+                                  .Include(s => s.IdtrangThaiSimNavigation)  // Bao gồm IdtrangThaiSimNavigation
+                                  .Include(s => s.GoiDangKyDiKemNavigation)  // Bao gồm GoiDangKyDiKemNavigation
+                                  .FirstOrDefault(s => s.Idsim == idSim);
+
+                if (sim != null)
+                {
+                    // Kiểm tra nếu IdtrangThaiSimNavigation không phải là null
+                    if (sim.IdtrangThaiSimNavigation != null)
+                    {
+                        sim.IdtrangThaiSim = 3; // "Đang hoạt động"
+                    }
+                    else
+                    {
+                        throw new Exception("Không tìm thấy thông tin trạng thái SIM.");
+                    }
+
+                    // Kiểm tra nếu GoiDangKyDiKemNavigation là null, gán gói đăng ký mới nếu có
+                    if (sim.GoiDangKyDiKemNavigation == null)
+                    {
+                        var goiDangKy = _context.GoiDangKies.AsNoTracking().FirstOrDefault(g => g.IdgoiDangKy == idGoiDangKy);
+
+                        if (goiDangKy != null)
+                        {
+                            // Thay vì tạo mới, gán đối tượng GoidangKy đã lấy từ DB vào GoiDangKyDiKemNavigation
+                            sim.GoiDangKyDiKemNavigation = goiDangKy;
+                        }
+                        else
+                        {
+                            throw new Exception("Không tìm thấy gói đăng ký đi kèm.");
+                        }
+                    }
+                    else
+                    {
+                        // Trường hợp GoiDangKyDiKemNavigation đã có, kiểm tra và cập nhật lại
+                        var goiDangKy = _context.GoiDangKies.AsNoTracking().FirstOrDefault(g => g.IdgoiDangKy == idGoiDangKy);
+
+                        if (goiDangKy != null)
+                        {
+                            sim.GoiDangKyDiKemNavigation = goiDangKy;
+                        }
+                        else
+                        {
+                            throw new Exception("Không tìm thấy gói đăng ký đi kèm.");
+                        }
+                    }
+
+                    // Cập nhật SIM và lưu thay đổi
+                    _context.Sims.Update(sim);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    throw new Exception("Không tìm thấy thông tin SIM.");
+                }
+
+
+                _context.SaveChanges();
+                transaction.Commit();
+
+                TempData["SuccessMessage"] = "Đăng ký SIM thành công.";
+                return RedirectToAction("ThongBaoHoanTat", "Sim", new { idHoaDon = hoaDon.IdhoaDonSim });
             }
-            catch
+            catch (DbUpdateException dbEx)
             {
-                TempData["Error"] = "Đăng ký thất bại! Vui lòng thử lại.";
-                return RedirectToAction("DangKy", new { idSim, idGoiDangKy });
+                transaction.Rollback();
+                TempData["ErrorMessage"] = "Có lỗi khi cập nhật cơ sở dữ liệu: " + dbEx.Message;
+                if (dbEx.InnerException != null)
+                {
+                    TempData["ErrorMessage"] += " | Inner Exception: " + dbEx.InnerException.Message;
+                }
+                return RedirectToAction("DangKy", "Sim");
+            }
+            catch (Exception ex)
+            {
+                transaction.Rollback();
+                TempData["ErrorMessage"] = "Có lỗi xảy ra khi đăng ký SIM: " + ex.Message;
+                if (ex.InnerException != null)
+                {
+                    TempData["ErrorMessage"] += " | Inner Exception: " + ex.InnerException.Message;
+                }
+                return RedirectToAction("DangKy", "Sim");
             }
         }
+        
 
-        public async Task<IActionResult> HoanTatDangKy(int id)
+        public IActionResult ThongBaoHoanTat(int idhoaDonSim)
         {
-            var hoaDonSim = await _context.HoaDonSims
-                .Include(h => h.CthoaDonSims)
-                .ThenInclude(c => c.IdsimNavigation)
-                .Include(h => h.CthoaDonSims)
-                .ThenInclude(c => c.IdgoiDangKyNavigation)
-                .FirstOrDefaultAsync(h => h.IdhoaDonSim == id);
+            var hoaDonSim = _context.HoaDonSims
+                                    .Include(h => h.IdphuongThucVcNavigation)
+                                    .FirstOrDefault(h => h.IdhoaDonSim == idhoaDonSim);
 
             if (hoaDonSim == null)
             {
-                TempData["Error"] = "Không tìm thấy hóa đơn!";
-                return RedirectToAction("dichvusim");
+                TempData["ErrorMessage"] = "Không tìm thấy thông tin đơn hàng.";
+                return RedirectToAction("Index", "Home");
             }
 
             return View(hoaDonSim);
         }
+
 
     }
 }

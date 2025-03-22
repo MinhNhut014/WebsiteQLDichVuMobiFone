@@ -516,6 +516,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/NguoiDung/DangKy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXERhbmdLeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/NguoiDung/DangNhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXERhbmdOaGFwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -534,6 +542,14 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/Sim/dichvusim.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2ltXGRpY2h2dXNpbS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/Sim/ThongBaoHoanTat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2ltXFRob25nQmFvSG9hblRhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/Sim/ThongTinHoaDon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcU2ltXFRob25nVGluSG9hRG9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/Sim/_SimListPartial.cshtml]

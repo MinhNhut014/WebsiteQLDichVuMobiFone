@@ -30,13 +30,13 @@ public partial class CthoaDonSim
 
     [ForeignKey("IdgoiDangKy")]
     [InverseProperty("CthoaDonSims")]
-    public virtual GoiDangKy IdgoiDangKyNavigation { get; set; } = null!;
+    public virtual GoiDangKy? IdgoiDangKyNavigation { get; set; } = null!;
 
     [ForeignKey("IdhoaDonSim")]
     [InverseProperty("CthoaDonSims")]
-    public virtual HoaDonSim IdhoaDonSimNavigation { get; set; } = null!;
+    public virtual HoaDonSim? IdhoaDonSimNavigation { get; set; } = null!;
 
     [ForeignKey("Idsim")]
     [InverseProperty("CthoaDonSims")]
-    public virtual Sim IdsimNavigation { get; set; } = null!;
+    public virtual Sim? IdsimNavigation { get; set; } = null!;
 }

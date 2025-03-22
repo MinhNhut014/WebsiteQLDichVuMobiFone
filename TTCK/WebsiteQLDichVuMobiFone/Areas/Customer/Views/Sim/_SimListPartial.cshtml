@@ -21,7 +21,9 @@
                     <td>@sim.KhuVucHoaMang</td>
                     <td>@sim.PhiHoaMang VNĐ</td>
                     <td>
-                        <a asp-controller="Sim" asp-action="ChonMua" asp-route-id="@sim.Idsim" class="btn btn-primary btn-sm">Chọn Mua</a>
+                        <a asp-action="ChonMua" asp-controller="Sim" asp-area="Customer" asp-route-id="@sim.Idsim" class="btn btn-primary">
+                            Chọn mua
+                        </a>
                     </td>
                 </tr>
             }

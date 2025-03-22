@@ -1,0 +1,52 @@
+﻿@{
+    ViewData["Title"] = "Đăng Ký Tài Khoản";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card shadow-sm rounded-4 p-4">
+            <h3 class="text-center text-dark mb-4">ĐĂNG KÝ TÀI KHOẢN</h3>
+
+            <form method="post" asp-action="DangKy">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control border-dark" id="email" name="email" placeholder="Nhập email" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="matkhau" class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control border-dark" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="tenDangNhap" class="form-label">Tên Đăng Nhập</label>
+                    <input type="text" class="form-control border-dark" id="tenDangNhap" name="tenDangNhap" placeholder="Nhập tên đăng nhập" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="hoten" class="form-label">Họ và Tên</label>
+                    <input type="text" class="form-control border-dark" id="hoten" name="hoten" placeholder="Nhập họ và tên" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="dienthoai" class="form-label">Số Điện Thoại</label>
+                    <input type="text" class="form-control border-dark" id="dienthoai" name="dienthoai" placeholder="Nhập số điện thoại" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="cccd" class="form-label">CCCD/CMND</label>
+                    <input type="text" class="form-control border-dark" id="cccd" name="cccd" placeholder="Nhập CCCD/CMND" required>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-dark">Đăng Ký</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <span class="text-muted">Đã có tài khoản? </span>
+                <a asp-action="dangNhap" class="text-decoration-none text-dark fw-bold">Đăng nhập ngay</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -13,31 +13,48 @@
         <p class="text-muted">Hoàn tất thông tin để đăng ký SIM và gói cước</p>
     </div>
 
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
     <div class="row g-4">
         <div class="col-md-6">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
                     <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
-                    <form method="post" asp-action="DangKySim">
+                    <form method="post" asp-action="HoanTatDangKySim" asp-controller="Sim">
+                        <input type="hidden" name="idSim" value="@sim?.Idsim" />
+                        <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
+
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Tên khách hàng:</label>
                             <input type="text" name="TenKhachHang" class="form-control border-secondary" placeholder="Nhập tên khách hàng" required />
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Số điện thoại:</label>
                             <input type="text" name="SoDienThoai" class="form-control border-secondary" placeholder="Nhập số điện thoại" required />
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Email:</label>
                             <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email" />
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Địa chỉ nhận hàng:</label>
                             <input type="text" name="DiaDiemNhan" class="form-control border-secondary" placeholder="Nhập địa chỉ nhận hàng" required />
                         </div>
+
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Phương thức vận chuyển:</label>
-                            <select id="phuongThucVanChuyen" name="PhuongThucVanChuyen" class="form-select border-secondary" required>
+                            <select id="phuongThucVanChuyen" name="IdphuongThucVc" class="form-select border-secondary" required>
                                 <option selected disabled>Chọn phương thức vận chuyển</option>
                                 @if (phuongThucVanChuyen != null && phuongThucVanChuyen.Any())
                                 {
@@ -52,6 +69,7 @@
                                 }
                             </select>
                         </div>
+
                         <div class="mb-4">
                             <label class="form-label fw-semibold">Phương thức thanh toán:</label>
                             <select name="PhuongThucThanhToan" class="form-select border-secondary" required>
@@ -61,13 +79,13 @@
                                 <option value="momo">MoMo</option>
                             </select>
                         </div>
-                        <button type="submit" class="btn btn-primary w-100 py-2">Hoàn tất đăng ký</button>
+
+                        <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
                     </form>
                 </div>
             </div>
         </div>
 
-        <!-- Hiển thị thông tin SIM và gói đăng ký -->
         <div class="col-md-6">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
@@ -105,11 +123,11 @@
                         <h5 class="text-danger fw-bold">Chi tiết thanh toán</h5>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Phí hòa mạng:</span>
-                            <span id="phiHoaMang">@(sim?.PhiHoaMang != null && sim.PhiHoaMang != 0 ? sim.PhiHoaMang : "Không xác định") VND</span>
+                            <span id="phiHoaMang">@(sim?.PhiHoaMang ?? 0) VND</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Giá gói cước:</span>
-                            <span id="giaGoiCuoc">@(goiDaChon?.GiaGoi != null && goiDaChon.GiaGoi != 0 ? goiDaChon.GiaGoi : "Không xác định") VND</span>
+                            <span id="giaGoiCuoc">@(goiDaChon?.GiaGoi ?? 0) VND</span>
                         </div>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Phí vận chuyển:</span>

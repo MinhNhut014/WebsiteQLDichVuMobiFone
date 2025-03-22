@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("LoaiGoiDangKy")]
-[Index("TenLoaiGoi", Name = "UQ__LoaiGoiD__9BA443BC41B12744", IsUnique = true)]
+[Index("TenLoaiGoi", Name = "UQ__LoaiGoiD__9BA443BC5BF96F8B", IsUnique = true)]
 public partial class LoaiGoiDangKy
 {
     [Key]
@@ -25,5 +25,5 @@ public partial class LoaiGoiDangKy
 
     [ForeignKey("IdloaiDichVu")]
     [InverseProperty("LoaiGoiDangKies")]
-    public virtual LoaiDichVuDiDong IdloaiDichVuNavigation { get; set; } = null!;
+    public virtual LoaiDichVuDiDong? IdloaiDichVuNavigation { get; set; } = null!;
 }

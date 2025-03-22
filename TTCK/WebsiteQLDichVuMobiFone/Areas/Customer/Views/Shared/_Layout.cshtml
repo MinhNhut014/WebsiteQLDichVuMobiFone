@@ -147,8 +147,20 @@
                             <button class="btn btn-primary btn-md-square rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#searchModal">
                                 <i class="fas fa-search"></i>
                             </button>
-                            <a href="#" class="btn btn-outline-primary mx-3">Đăng ký</a>
-                            <a href="#" class="btn btn-primary">Đăng nhập</a>
+                            @if (ViewBag.UserName != null)
+                            {
+                                <a asp-action="HoSoKhachHang" class="btn btn-primary btn-outline-light">
+                                    <!-- Hiển thị ảnh đại diện người dùng nếu có, nếu không sẽ hiển thị icon mặc định -->
+                                    <img src="@ViewBag.UserAvatar" alt="Ảnh đại diện" class="rounded-circle" width="40" height="40">
+                                    Chào @ViewBag.UserName
+                                </a>
+                            }
+                            else
+                            {
+                                <a asp-controller="NguoiDung" asp-action="DangNhap" class="btn btn-primary btn-outline-light">
+                                    <i class="bi bi-person"></i> Đăng nhập
+                                </a>
+                            }
                         </div>
                     </div>
 

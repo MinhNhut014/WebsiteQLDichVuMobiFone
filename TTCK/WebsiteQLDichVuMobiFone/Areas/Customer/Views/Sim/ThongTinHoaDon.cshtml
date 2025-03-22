@@ -1,0 +1,70 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonSim
+
+@{
+    ViewData["Title"] = "Thông Tin Hóa Đơn";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Thông Tin Hóa Đơn</h2>
+        <p class="text-muted">Chi tiết hóa đơn và trạng thái đơn hàng của bạn</p>
+    </div>
+
+    <div class="card shadow-sm border-0 rounded-4">
+        <div class="card-body p-4">
+            <h4 class="card-title text-success mb-3">Thông tin đơn hàng</h4>
+
+            <div class="mb-3">
+                <strong>Mã hóa đơn:</strong> @Model.IdhoaDonSim
+            </div>
+            <div class="mb-3">
+                <strong>Ngày đặt hàng:</strong> @Model.NgayDatHang?.ToString("dd/MM/yyyy HH:mm")
+            </div>
+            <div class="mb-3">
+                <strong>Khách hàng:</strong> @Model.TenKhachHang
+            </div>
+            <div class="mb-3">
+                <strong>Số điện thoại:</strong> @Model.SoDienThoai
+            </div>
+            <div class="mb-3">
+                <strong>Email:</strong> @(Model.Email ?? "Không có")
+            </div>
+            <div class="mb-3">
+                <strong>Địa điểm nhận hàng:</strong> @Model.DiaDiemNhan
+            </div>
+            <div class="mb-3">
+                <strong>Phương thức thanh toán:</strong> @Model.PhuongThucThanhToan
+            </div>
+            <div class="mb-3">
+                <strong>Phương thức vận chuyển:</strong> @Model.IdphuongThucVcNavigation?.TenVanChuyen
+            </div>
+
+            <hr class="my-4" />
+
+            <h4 class="card-title text-primary">Chi tiết SIM và gói cước</h4>
+            @foreach (var chiTiet in Model.CthoaDonSims)
+            {
+                <div class="mb-3">
+                    <strong>Số thuê bao:</strong> @chiTiet.IdsimNavigation.SoThueBao
+                </div>
+                <div class="mb-3">
+                    <strong>Gói đăng ký đi kèm:</strong> @chiTiet.IdgoiDangKyNavigation?.TenGoi
+                </div>
+                <div class="mb-3">
+                    <strong>Phí hòa mạng:</strong> @chiTiet.IdsimNavigation.PhiHoaMang VND
+                </div>
+                <div class="mb-3">
+                    <strong>Giá gói cước:</strong> @chiTiet.IdgoiDangKyNavigation?.GiaGoi VND
+                </div>
+            }
+
+            <hr class="my-4" />
+
+            <div class="text-center">
+                <h4 class="text-danger fw-bold">Tổng thanh toán: @Model.TongTien?.ToString("N0") VND</h4>
+                <p class="text-muted">Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi!</p>
+                <a href="/" class="btn btn-primary">Quay về trang chủ</a>
+            </div>
+        </div>
+    </div>
+</div>

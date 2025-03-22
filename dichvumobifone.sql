@@ -241,11 +241,22 @@ CREATE TABLE BinhLuanBaiViet (
 ---Kiểm tra dữ liệu trong các bảng---
 select *from DichVu;
 select *from GoiDichVu;
+select * from PhuongThucVanChuyen;
+select *from TrangThaiSim;
+select *from HoaDonSim;
+select *from NguoiDung;
 ---Dữ liệu bảng giao hàng tiết kiệm
 INSERT INTO PhuongThucVanChuyen (TenVanChuyen, MoTa, GiaVanChuyen)
 VALUES 
 ('Giao hàng tiết kiệm', N'Giao hàng trong vòng 5-7 ngày với chi phí thấp', 20000),
 ('Giao hàng J&T', N'Dịch vụ giao hàng nhanh của J&T Express', 40000);
+-- Thêm các trạng thái đơn hàng vào bảng TrangThaiDonHang
+INSERT INTO TrangThaiDonHang (TenTrangThai) 
+VALUES 
+('Chờ xử lý'),  -- Trạng thái khi đơn hàng vừa được tạo
+('Đang giao'),   -- Trạng thái khi đơn hàng đang được vận chuyển
+('Hoàn thành'),  -- Trạng thái khi đơn hàng đã hoàn tất
+('Hủy');         -- Trạng thái khi đơn hàng bị hủy
 ---Dữ liệu dịch vụ của mobifone
 INSERT INTO DichVu (TenDichVu, MoTa, AnhDichVu)  
 VALUES  

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Đăng Nhập";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="col-lg-6 col-md-8 col-sm-10">
+        <div class="card shadow-sm rounded-4 p-4">
+            <h3 class="text-center text-dark mb-4">ĐĂNG NHẬP</h3>
+
+            <form method="post" asp-action="DangNhap">
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control border-dark" id="email" name="tenDangNhapHoacEmail" placeholder="Nhập email của bạn" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="matkhau" class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control border-dark" id="matkhau" name="matKhau" placeholder="Nhập mật khẩu" required>
+                </div>
+
+                <div class="d-grid gap-2 mt-4">
+                    <button type="submit" class="btn btn-dark">Đăng nhập</button>
+                </div>
+            </form>
+
+            <div class="text-center mt-3">
+                <span class="text-muted">Chưa có tài khoản? </span>
+                <a asp-action="DangKy" class="text-decoration-none text-dark fw-bold">Đăng ký ngay</a>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="#" class="text-decoration-none text-primary">Quên mật khẩu?</a>
+            </div>
+        </div>
+    </div>
+</div>

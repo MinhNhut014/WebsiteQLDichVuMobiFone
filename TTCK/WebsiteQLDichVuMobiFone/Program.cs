@@ -7,13 +7,16 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<ApplicationDbContext>();
-
-builder.Services.AddDistributedMemoryCache();
-builder.Services.AddSession(option =>
+builder.Services.AddScoped<IPasswordHasher<NguoiDung>, PasswordHasher<NguoiDung>>();
+// Thêm dịch vụ Session vào container
+builder.Services.AddDistributedMemoryCache();  // Đảm bảo có bộ nhớ đệm
+builder.Services.AddSession(options =>
 {
-    option.Cookie.Name = "ABC";
-    option.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.IdleTimeout = TimeSpan.FromMinutes(30); // Thời gian hết hạn session
+    options.Cookie.HttpOnly = true;  // Cookie chỉ được truy cập qua HTTP
+    options.Cookie.IsEssential = true;  // Đảm bảo cookie không bị block
 });
+
 
 var app = builder.Build();
 
@@ -28,9 +31,11 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 
-app.UseSession();
 
 app.UseRouting();
+
+app.UseSession(); // Đặt ngay sau UseRouting
+app.UseAuthentication(); // Thêm nếu sử dụng Identity
 
 app.UseAuthorization();
 
