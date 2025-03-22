@@ -17,7 +17,7 @@ public partial class GoiDangKy
     [StringLength(255)]
     public string TenGoi { get; set; } = null!;
 
-    public int GiaGoi { get; set; }
+    public int? GiaGoi { get; set; }
 
     [StringLength(50)]
     public string? ThoiHan { get; set; }

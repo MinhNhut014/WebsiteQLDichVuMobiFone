@@ -83,7 +83,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     Idsim = sim.Idsim,
                     SoThueBao = sim.SoThueBao,
                     LoaiThueBao = sim.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định",
-                    MaGoi = goiChon.IdgoiDangKy,
+                    IdgoiDangKy = goiChon.IdgoiDangKy,
                     TenGoi = goiChon.TenGoi,
                     GiaGoi = goiChon.GiaGoi
                 };
@@ -105,23 +105,95 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         [HttpGet]
         public async Task<IActionResult> DangKy(int idSim, int idGoiDangKy)
         {
+            // Lấy thông tin SIM
             var sim = await _context.Sims
                 .Include(s => s.IdloaiSoNavigation)
                 .FirstOrDefaultAsync(s => s.Idsim == idSim);
 
-            var goiDangKy = await _context.GoiDangKies.FirstOrDefaultAsync(g => g.IdgoiDangKy == idGoiDangKy);
-
-            if (sim == null || goiDangKy == null)
+            if (sim == null)
             {
-                TempData["Error"] = "SIM hoặc gói đăng ký không hợp lệ!";
+                TempData["Error"] = "Không tìm thấy thông tin SIM!";
                 return RedirectToAction("ChonMua");
             }
 
-            ViewBag.Sim = sim;
-            ViewBag.GoiDangKy = goiDangKy;
+            // Lấy thông tin gói đăng ký
+            var goiDangKy = await _context.GoiDangKies
+                .FirstOrDefaultAsync(g => g.IdgoiDangKy == idGoiDangKy);
 
-            return View("DangKySim");
+            if (goiDangKy == null)
+            {
+                TempData["Error"] = "Gói đăng ký không hợp lệ!";
+                return RedirectToAction("ChonMua");
+            }
+
+            // Lấy danh sách phương thức vận chuyển
+            var phuongThucVanChuyen = await _context.PhuongThucVanChuyens.ToListAsync();
+
+            if (phuongThucVanChuyen == null || !phuongThucVanChuyen.Any())
+            {
+                TempData["Error"] = "Không có phương thức vận chuyển nào!";
+                return RedirectToAction("ChonMua");
+            }
+
+            // Truyền dữ liệu qua ViewBag
+            ViewBag.Sim = sim;
+            ViewBag.GoiDaChon = goiDangKy;
+            ViewBag.PhuongThucVanChuyen = phuongThucVanChuyen;
+
+            // Tính tổng tiền ban đầu (xử lý null)
+            decimal phiHoaMang = sim.PhiHoaMang ?? 0;
+            decimal giaGoi = goiDangKy.GiaGoi ?? 0;
+            decimal tongTien = phiHoaMang + giaGoi;
+
+            // Truyền tổng tiền chưa bao gồm phí vận chuyển
+            ViewBag.TongTien = tongTien;
+
+            // Truyền phí vận chuyển (chưa tính)
+            ViewBag.PhiVanChuyen = 0; // Mặc định chưa có phí vận chuyển, sẽ được tính sau khi người dùng chọn phương thức vận chuyển
+
+            return View("DangKy");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> TinhTongTien(int idSim, int idGoiDangKy, int phuongThucVanChuyenId)
+        {
+            // Lấy thông tin SIM
+            var sim = await _context.Sims
+                .FirstOrDefaultAsync(s => s.Idsim == idSim);
+
+            if (sim == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy SIM!" });
+            }
+
+            // Lấy thông tin gói đăng ký
+            var goiDangKy = await _context.GoiDangKies
+                .FirstOrDefaultAsync(g => g.IdgoiDangKy == idGoiDangKy);
+
+            if (goiDangKy == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy gói đăng ký!" });
+            }
+
+            // Lấy thông tin phí vận chuyển từ phương thức vận chuyển
+            var phuongThucVanChuyen = await _context.PhuongThucVanChuyens
+                .FirstOrDefaultAsync(ptvc => ptvc.IdphuongThucVc == phuongThucVanChuyenId);
+
+            if (phuongThucVanChuyen == null)
+            {
+                return Json(new { success = false, message = "Không tìm thấy phương thức vận chuyển!" });
+            }
+
+            // Tính tổng tiền mới
+            decimal phiHoaMang = sim.PhiHoaMang ?? 0;
+            decimal giaGoi = goiDangKy.GiaGoi ?? 0;
+            decimal phiVanChuyen = phuongThucVanChuyen.GiaVanChuyen ?? 0;
+
+            decimal tongTien = phiHoaMang + giaGoi + phiVanChuyen;
+
+            return Json(new { success = true, tongTien });
+        }
+
 
         [HttpPost]
         public async Task<IActionResult> LuuThongTinDangKy(HoaDonSim hoaDonSim, int idSim, int idGoiDangKy)

@@ -241,6 +241,11 @@ CREATE TABLE BinhLuanBaiViet (
 ---Kiểm tra dữ liệu trong các bảng---
 select *from DichVu;
 select *from GoiDichVu;
+---Dữ liệu bảng giao hàng tiết kiệm
+INSERT INTO PhuongThucVanChuyen (TenVanChuyen, MoTa, GiaVanChuyen)
+VALUES 
+('Giao hàng tiết kiệm', N'Giao hàng trong vòng 5-7 ngày với chi phí thấp', 20000),
+('Giao hàng J&T', N'Dịch vụ giao hàng nhanh của J&T Express', 40000);
 ---Dữ liệu dịch vụ của mobifone
 INSERT INTO DichVu (TenDichVu, MoTa, AnhDichVu)  
 VALUES  

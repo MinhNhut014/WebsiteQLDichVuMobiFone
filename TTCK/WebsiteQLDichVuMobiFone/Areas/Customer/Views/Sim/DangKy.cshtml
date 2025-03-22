@@ -3,72 +3,138 @@
     var sim = ViewBag.Sim as WebsiteQLDichVuMobiFone.Models.Sim;
     var goiDaChon = ViewBag.GoiDaChon as WebsiteQLDichVuMobiFone.Models.GoiDangKy;
     var phuongThucVanChuyen = ViewBag.PhuongThucVanChuyen as List<WebsiteQLDichVuMobiFone.Models.PhuongThucVanChuyen>;
+    var tongTien = ViewBag.TongTien;
+    var phiVanChuyen = ViewBag.PhiVanChuyen;
 }
 
-<div class="container mt-4">
-    <h3>Đăng Ký SIM</h3>
-    <div class="row">
-        <!-- Form thông tin khách hàng -->
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Đăng Ký SIM</h2>
+        <p class="text-muted">Hoàn tất thông tin để đăng ký SIM và gói cước</p>
+    </div>
+
+    <div class="row g-4">
         <div class="col-md-6">
-            <h4>Thông tin khách hàng</h4>
-            <form method="post" asp-action="DangKySim">
-                <div class="mb-3">
-                    <label for="TenKhachHang" class="form-label">Tên khách hàng:</label>
-                    <input type="text" name="TenKhachHang" class="form-control" required />
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
+                    <form method="post" asp-action="DangKySim">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Tên khách hàng:</label>
+                            <input type="text" name="TenKhachHang" class="form-control border-secondary" placeholder="Nhập tên khách hàng" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Số điện thoại:</label>
+                            <input type="text" name="SoDienThoai" class="form-control border-secondary" placeholder="Nhập số điện thoại" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email:</label>
+                            <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email" />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Địa chỉ nhận hàng:</label>
+                            <input type="text" name="DiaDiemNhan" class="form-control border-secondary" placeholder="Nhập địa chỉ nhận hàng" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Phương thức vận chuyển:</label>
+                            <select id="phuongThucVanChuyen" name="PhuongThucVanChuyen" class="form-select border-secondary" required>
+                                <option selected disabled>Chọn phương thức vận chuyển</option>
+                                @if (phuongThucVanChuyen != null && phuongThucVanChuyen.Any())
+                                {
+                                    @foreach (var ptvc in phuongThucVanChuyen)
+                                    {
+                                        <option value="@ptvc.IdphuongThucVc" data-gia="@ptvc.GiaVanChuyen">@ptvc.TenVanChuyen - @ptvc.GiaVanChuyen VND</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option disabled>Không có phương thức vận chuyển</option>
+                                }
+                            </select>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Phương thức thanh toán:</label>
+                            <select name="PhuongThucThanhToan" class="form-select border-secondary" required>
+                                <option selected disabled>Chọn phương thức thanh toán</option>
+                                <option value="paypal">PayPal</option>
+                                <option value="vnpay">VNPay</option>
+                                <option value="momo">MoMo</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 py-2">Hoàn tất đăng ký</button>
+                    </form>
                 </div>
-                <div class="mb-3">
-                    <label for="SoDienThoai" class="form-label">Số điện thoại:</label>
-                    <input type="text" name="SoDienThoai" class="form-control" required />
-                </div>
-                <div class="mb-3">
-                    <label for="Email" class="form-label">Email:</label>
-                    <input type="email" name="Email" class="form-control" />
-                </div>
-                <div class="mb-3">
-                    <label for="DiaDiemNhan" class="form-label">Địa chỉ nhận hàng:</label>
-                    <input type="text" name="DiaDiemNhan" class="form-control" required />
-                </div>
-                <div class="mb-3">
-                    <label for="PhuongThucVanChuyen" class="form-label">Phương thức vận chuyển:</label>
-                    <select name="PhuongThucVanChuyen" class="form-select" required>
-                        @foreach (var ptvc in phuongThucVanChuyen)
-                        {
-                            <option value="@ptvc.IdphuongThucVc">@ptvc.TenVanChuyen - @ptvc.GiaVanChuyen VND</option>
-                        }
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Hoàn tất đăng ký</button>
-            </form>
+            </div>
         </div>
 
         <!-- Hiển thị thông tin SIM và gói đăng ký -->
         <div class="col-md-6">
-            <h4>Thông tin SIM và gói đăng ký</h4>
-            @if (sim != null && goiDaChon != null)
-            {
-                <p><strong>Số thuê bao:</strong> @sim.SoThueBao</p>
-                <p><strong>Loại thuê bao:</strong> @(sim.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định")</p>
-                <p><strong>Phí hòa mạng:</strong> @sim.PhiHoaMang VND</p>
-                <p><strong>Gói cước:</strong> @goiDaChon.TenGoi - @goiDaChon.GiaGoi VND</p>
-                <p><strong>Thời hạn:</strong> @goiDaChon.ThoiHan ngày</p>
-            }
-            <div class="mt-3 p-3 bg-light">
-                <h5>Tổng tiền</h5>
-                <p>Phí hòa mạng: @sim.PhiHoaMang VND</p>
-                <p>Gói cước: @goiDaChon.GiaGoi VND</p>
-                <p>Phí vận chuyển: <span id="phiVanChuyen">0</span> VND</p>
-                <hr />
-                <p><strong>Tổng cộng: <span id="tongTien">0</span> VND</strong></p>
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-success mb-3">Thông tin SIM và gói đăng ký</h4>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold text-primary">Thông tin SIM</h5>
+                        @if (sim != null)
+                        {
+                            <p><strong>Số thuê bao:</strong> @sim.SoThueBao</p>
+                            <p><strong>Loại thuê bao:</strong> @(sim.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định")</p>
+                            <p><strong>Phí hòa mạng:</strong> @sim.PhiHoaMang VND</p>
+                        }
+                        else
+                        {
+                            <p class="text-danger">Không có thông tin SIM!</p>
+                        }
+                    </div>
+
+                    <div class="mb-4">
+                        <h5 class="fw-bold text-primary">Gói cước đã chọn</h5>
+                        @if (goiDaChon != null)
+                        {
+                            <p><strong>Tên gói:</strong> @goiDaChon.TenGoi</p>
+                            <p><strong>Giá gói:</strong> @goiDaChon.GiaGoi VND</p>
+                            <p><strong>Thời hạn:</strong> @goiDaChon.ThoiHan ngày</p>
+                        }
+                        else
+                        {
+                            <p class="text-danger">Không có thông tin gói cước!</p>
+                        }
+                    </div>
+
+                    <div class="p-3 bg-light rounded-3 text-center">
+                        <h5 class="text-danger fw-bold">Chi tiết thanh toán</h5>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Phí hòa mạng:</span>
+                            <span id="phiHoaMang">@(sim?.PhiHoaMang != null && sim.PhiHoaMang != 0 ? sim.PhiHoaMang : "Không xác định") VND</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Giá gói cước:</span>
+                            <span id="giaGoiCuoc">@(goiDaChon?.GiaGoi != null && goiDaChon.GiaGoi != 0 ? goiDaChon.GiaGoi : "Không xác định") VND</span>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                            <span>Phí vận chuyển:</span>
+                            <span id="phiVanChuyen">@(phiVanChuyen?.ToString("N0") ?? "0") VND</span>
+                        </div>
+                        <div class="d-flex justify-content-between border-top pt-2 mt-2 fw-bold">
+                            <span>Tổng tiền:</span>
+                            <span id="tongTien" class="text-primary">@((tongTien != null) ? tongTien.ToString("N0") : "0") VND</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
 <script>
-    document.querySelector("select[name='PhuongThucVanChuyen']").addEventListener("change", function() {
-        const phiVC = this.options[this.selectedIndex].text.split("-")[1].trim().replace(" VND", "");
-        document.getElementById("phiVanChuyen").textContent = phiVC;
-        const tongTien = parseInt("@sim.PhiHoaMang") + parseInt("@goiDaChon.GiaGoi") + parseInt(phiVC);
-        document.getElementById("tongTien").textContent = tongTien;
+    document.getElementById("phuongThucVanChuyen").addEventListener("change", function () {
+        const selectedOption = this.options[this.selectedIndex];
+        const phiVanChuyen = parseFloat(selectedOption.getAttribute("data-gia")) || 0;
+        const phiHoaMang = parseFloat(@(sim?.PhiHoaMang ?? 0));
+        const giaGoiCuoc = parseFloat(@(goiDaChon?.GiaGoi ?? 0));
+        const tongTien = phiHoaMang + giaGoiCuoc + phiVanChuyen;
+
+        document.getElementById("phiVanChuyen").innerText = phiVanChuyen.toLocaleString() + " VND";
+        document.getElementById("tongTien").innerText = tongTien.toLocaleString() + " VND";
     });
 </script>
