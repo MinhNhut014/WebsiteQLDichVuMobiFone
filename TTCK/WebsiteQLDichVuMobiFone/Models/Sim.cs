@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("Sim")]
-[Index("SoThueBao", Name = "UQ__Sim__F0752C9708795F97", IsUnique = true)]
+[Index("SoThueBao", Name = "UQ__Sim__F0752C97809DEBD4", IsUnique = true)]
 public partial class Sim
 {
     [Key]
@@ -31,8 +31,14 @@ public partial class Sim
     [Column("IDTrangThaiSim")]
     public int IdtrangThaiSim { get; set; }
 
+    public int? GoiDangKyDiKem { get; set; }
+
     [InverseProperty("IdsimNavigation")]
     public virtual ICollection<CthoaDonSim> CthoaDonSims { get; set; } = new List<CthoaDonSim>();
+
+    [ForeignKey("GoiDangKyDiKem")]
+    [InverseProperty("Sims")]
+    public virtual GoiDangKy? GoiDangKyDiKemNavigation { get; set; }
 
     [ForeignKey("IddichVu")]
     [InverseProperty("Sims")]

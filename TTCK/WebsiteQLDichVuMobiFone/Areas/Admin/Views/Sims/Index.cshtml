@@ -22,6 +22,9 @@
                 @Html.DisplayNameFor(model => model.PhiHoaMang)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.GoiDangKyDiKemNavigation)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.IddichVuNavigation)
             </th>
             <th>
@@ -44,6 +47,9 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PhiHoaMang)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GoiDangKyDiKemNavigation.IdgoiDangKy)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IddichVuNavigation.IddichVu)

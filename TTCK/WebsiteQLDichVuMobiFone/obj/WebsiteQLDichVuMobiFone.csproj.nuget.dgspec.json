@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj": {}
+    "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj": {}
   },
   "projects": {
-    "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj": {
+    "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj",
+        "projectUniqueName": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj",
         "projectName": "WebsiteQLDichVuMobiFone",
-        "projectPath": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj",
+        "projectPath": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\obj\\",
+        "outputPath": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

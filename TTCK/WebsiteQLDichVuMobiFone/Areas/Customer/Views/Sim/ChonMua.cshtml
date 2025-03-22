@@ -1,0 +1,136 @@
+﻿@{
+    ViewData["Title"] = "Chọn Mua SIM";
+    var sim = ViewBag.Sim as WebsiteQLDichVuMobiFone.Models.Sim;
+    var goiCuoc = ViewBag.GoiDangKy as List<WebsiteQLDichVuMobiFone.Models.GoiDangKy>;
+    var maGoiDaChon = ViewBag.MaGoiDaChon?.ToString();
+}
+
+<div class="container mt-4">
+    <!-- Breadcrumb chỉ dẫn -->
+    <ul class="nav nav-pills mb-3">
+        <li class="nav-item">
+            <a class="nav-link active">Chọn mua</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled">Đăng ký</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled">Hoàn tất</a>
+        </li>
+    </ul>
+
+    <div class="row">
+        <!-- Thông tin SIM -->
+        <div class="col-md-8">
+            <h4>Thông tin SIM</h4>
+            @if (sim != null)
+            {
+                <p><strong>Số thuê bao:</strong> @sim.SoThueBao</p>
+                <p><strong>Loại thuê bao:</strong> @(sim.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định")</p>
+                <p><strong>Phí hòa mạng:</strong> @sim.PhiHoaMang VND</p>
+                <p><strong>Khu vực:</strong> @sim.KhuVucHoaMang</p>
+                <p><strong>Phí giữ SIM:</strong> Miễn phí</p>
+                <div class="alert alert-warning mt-3">
+                    <strong>Thời gian giữ SIM:</strong> <span id="countdown">03:00</span>
+                </div>
+            }
+            else
+            {
+                <p>Không tìm thấy thông tin SIM.</p>
+            }
+        </div>
+
+        <!-- Giỏ hàng -->
+        <!-- Giỏ hàng -->
+        <div class="col-md-4 bg-light p-3">
+            <h4>Giỏ hàng</h4>
+            @if (TempData["Cart"] != null && TempData["Cart"].ToString() != "")
+            {
+                var cart = Newtonsoft.Json.JsonConvert.DeserializeObject<List<WebsiteQLDichVuMobiFone.Areas.Customer.ViewModels.CartViewModel>>(TempData["Cart"].ToString());
+                var currentItem = cart?.FirstOrDefault(c => c.Idsim == sim?.Idsim);
+
+                if (currentItem != null)
+                {
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p><strong>Số thuê bao:</strong> @currentItem.SoThueBao</p>
+                            <p><strong>Loại thuê bao:</strong> @currentItem.LoaiThueBao</p>
+                            <p><strong>Tên gói:</strong> @currentItem.TenGoi</p>
+                            <p><strong>Giá gói:</strong> @currentItem.GiaGoi VND</p>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <p>Giỏ hàng trống.</p>
+                }
+            }
+            else
+            {
+                <p>Giỏ hàng trống.</p>
+            }
+        </div>
+
+    </div>
+
+    <!-- Chọn gói đăng ký -->
+    <h4 class="mt-4">Chọn gói đăng ký</h4>
+    <form asp-action="ChonMua" method="get" id="formChonGoi">
+        <input type="hidden" name="id" value="@sim?.Idsim" />
+
+        <div class="row">
+            @if (goiCuoc != null && goiCuoc.Count > 0)
+            {
+                foreach (var goi in goiCuoc)
+                {
+                    <div class="col-md-6 mb-3">
+                        <div class="card shadow-sm @(maGoiDaChon == goi.IdgoiDangKy.ToString() ? "border-primary" : "")">
+                            <div class="card-body">
+                                <h5 class="card-title">@goi.TenGoi - @goi.GiaGoi VND / @goi.ThoiHan ngày</h5>
+                                <p class="card-text">@Html.Raw(goi.ThongTinGoi)</p>
+                                <input type="radio" name="maGoi" value="@goi.IdgoiDangKy"
+                                       id="goi-@goi.IdgoiDangKy"
+                                       class="form-check-input"
+                                       @(maGoiDaChon == goi.IdgoiDangKy.ToString() ? "checked" : "")
+                                       onchange="document.getElementById('formChonGoi').submit()" />
+                                <label class="form-check-label" for="goi-@goi.IdgoiDangKy">Chọn gói này</label>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Hiện tại không có gói cước nào khả dụng.</p>
+            }
+        </div>
+    </form>
+
+    <!-- Nút điều hướng -->
+    <a asp-action="QuayLai" class="btn btn-secondary mt-3">Quay lại</a>
+    <a asp-action="DangKy"
+       asp-route-idSim="@sim?.Idsim"
+       asp-route-idGoiDangKy="@(!string.IsNullOrEmpty(maGoiDaChon) ? maGoiDaChon : 0)"
+       class="btn btn-primary mt-3"
+       onclick="return @(!string.IsNullOrEmpty(maGoiDaChon) ? "true" : "alert('Vui lòng chọn gói đăng ký!'); false");">Tiếp tục</a>
+
+
+</div>
+
+<!-- Script đồng hồ đếm ngược -->
+<script>
+    var timeLeft = 180; // 3 phút
+    var countdown = document.getElementById("countdown");
+    var timer = setInterval(function () {
+        var minutes = Math.floor(timeLeft / 60);
+        var seconds = timeLeft % 60;
+        countdown.textContent = minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
+        timeLeft--;
+
+        if (timeLeft < 0) {
+            clearInterval(timer);
+            alert("Hết thời gian giữ SIM. Vui lòng chọn lại.");
+            window.location.href = '@Url.Action("QuayLai", "Sim", new { area = "Customer" })';
+        }
+    }, 1000);
+</script>

@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("NguoiDung")]
-[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BDFA1718EC", IsUnique = true)]
-[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0F8E25B7A", IsUnique = true)]
-[Index("Cccd", Name = "UQ__NguoiDun__A955A0AA2C4EC6E6", IsUnique = true)]
-[Index("Email", Name = "UQ__NguoiDun__A9D105345DAAFE3E", IsUnique = true)]
+[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BD7E83595C", IsUnique = true)]
+[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0530213F8", IsUnique = true)]
+[Index("Cccd", Name = "UQ__NguoiDun__A955A0AA1B45A8A9", IsUnique = true)]
+[Index("Email", Name = "UQ__NguoiDun__A9D105347FAF37FA", IsUnique = true)]
 public partial class NguoiDung
 {
     [Key]

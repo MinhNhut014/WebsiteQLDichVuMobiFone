@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("WebsiteQLDichVuMobiFone")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+41adf98d0bb45bd7e41cd4a586016e55432e1c25")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
 [assembly: System.Reflection.AssemblyProductAttribute("WebsiteQLDichVuMobiFone")]
 [assembly: System.Reflection.AssemblyTitleAttribute("WebsiteQLDichVuMobiFone")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

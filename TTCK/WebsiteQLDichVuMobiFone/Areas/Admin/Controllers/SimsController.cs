@@ -23,7 +23,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/Sims
         public async Task<IActionResult> Index()
         {
-            var applicationDbContext = _context.Sims.Include(s => s.IddichVuNavigation).Include(s => s.IdloaiSoNavigation).Include(s => s.IdtrangThaiSimNavigation);
+            var applicationDbContext = _context.Sims.Include(s => s.GoiDangKyDiKemNavigation).Include(s => s.IddichVuNavigation).Include(s => s.IdloaiSoNavigation).Include(s => s.IdtrangThaiSimNavigation);
             return View(await applicationDbContext.ToListAsync());
         }
 
@@ -36,6 +36,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             }
 
             var sim = await _context.Sims
+                .Include(s => s.GoiDangKyDiKemNavigation)
                 .Include(s => s.IddichVuNavigation)
                 .Include(s => s.IdloaiSoNavigation)
                 .Include(s => s.IdtrangThaiSimNavigation)
@@ -51,6 +52,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/Sims/Create
         public IActionResult Create()
         {
+            ViewData["GoiDangKyDiKem"] = new SelectList(_context.GoiDangKies, "IdgoiDangKy", "IdgoiDangKy");
             ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "IddichVu");
             ViewData["IdloaiSo"] = new SelectList(_context.LoaiSos, "IdloaiSo", "IdloaiSo");
             ViewData["IdtrangThaiSim"] = new SelectList(_context.TrangThaiSims, "IdtrangThaiSim", "IdtrangThaiSim");
@@ -62,7 +64,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim")] Sim sim)
+        public async Task<IActionResult> Create([Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim,GoiDangKyDiKem")] Sim sim)
         {
             if (ModelState.IsValid)
             {
@@ -70,6 +72,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["GoiDangKyDiKem"] = new SelectList(_context.GoiDangKies, "IdgoiDangKy", "IdgoiDangKy", sim.GoiDangKyDiKem);
             ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "IddichVu", sim.IddichVu);
             ViewData["IdloaiSo"] = new SelectList(_context.LoaiSos, "IdloaiSo", "IdloaiSo", sim.IdloaiSo);
             ViewData["IdtrangThaiSim"] = new SelectList(_context.TrangThaiSims, "IdtrangThaiSim", "IdtrangThaiSim", sim.IdtrangThaiSim);
@@ -89,6 +92,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            ViewData["GoiDangKyDiKem"] = new SelectList(_context.GoiDangKies, "IdgoiDangKy", "IdgoiDangKy", sim.GoiDangKyDiKem);
             ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "IddichVu", sim.IddichVu);
             ViewData["IdloaiSo"] = new SelectList(_context.LoaiSos, "IdloaiSo", "IdloaiSo", sim.IdloaiSo);
             ViewData["IdtrangThaiSim"] = new SelectList(_context.TrangThaiSims, "IdtrangThaiSim", "IdtrangThaiSim", sim.IdtrangThaiSim);
@@ -100,7 +104,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim")] Sim sim)
+        public async Task<IActionResult> Edit(int id, [Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim,GoiDangKyDiKem")] Sim sim)
         {
             if (id != sim.Idsim)
             {
@@ -127,6 +131,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+            ViewData["GoiDangKyDiKem"] = new SelectList(_context.GoiDangKies, "IdgoiDangKy", "IdgoiDangKy", sim.GoiDangKyDiKem);
             ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "IddichVu", sim.IddichVu);
             ViewData["IdloaiSo"] = new SelectList(_context.LoaiSos, "IdloaiSo", "IdloaiSo", sim.IdloaiSo);
             ViewData["IdtrangThaiSim"] = new SelectList(_context.TrangThaiSims, "IdtrangThaiSim", "IdtrangThaiSim", sim.IdtrangThaiSim);
@@ -142,6 +147,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             }
 
             var sim = await _context.Sims
+                .Include(s => s.GoiDangKyDiKemNavigation)
                 .Include(s => s.IddichVuNavigation)
                 .Include(s => s.IdloaiSoNavigation)
                 .Include(s => s.IdtrangThaiSimNavigation)

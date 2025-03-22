@@ -1,1515 +1,1515 @@
 {
   "Files": [
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebsiteQLDichVuMobiFone.bundle.scp.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\WebsiteQLDichVuMobiFone.bundle.scp.css",
       "PackagePath": "staticwebassets\\WebsiteQLDichVuMobiFone.z3j8t224au.bundle.scp.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\chart-area-demo.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\chart-area-demo.js",
       "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-area-demo.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\chart-bar-demo.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\chart-bar-demo.js",
       "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-bar-demo.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\chart-pie-demo.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\chart-pie-demo.js",
       "PackagePath": "staticwebassets\\admin\\assets\\demo\\chart-pie-demo.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\datatables-demo.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\demo\\datatables-demo.js",
       "PackagePath": "staticwebassets\\admin\\assets\\demo\\datatables-demo.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\img\\error-404-monochrome.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\assets\\img\\error-404-monochrome.svg",
       "PackagePath": "staticwebassets\\admin\\assets\\img\\error-404-monochrome.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\css\\style.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\css\\style.css",
       "PackagePath": "staticwebassets\\admin\\css\\style.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\css\\style.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\css\\style.min.css",
       "PackagePath": "staticwebassets\\admin\\css\\style.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\css\\style.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\css\\style.min.css.map",
       "PackagePath": "staticwebassets\\admin\\css\\style.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Black.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Black.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-Black.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Bold.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Bold.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-Bold.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-ExtraBold.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-ExtraBold.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-ExtraBold.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-ExtraLight.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-ExtraLight.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-ExtraLight.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Light.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Light.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-Light.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Medium.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Medium.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-Medium.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Regular.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Regular.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-Regular.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-SemiBold.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-SemiBold.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-SemiBold.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Thin.woff2",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\Inter-Thin.woff2",
       "PackagePath": "staticwebassets\\admin\\fonts\\Inter-Thin.woff2"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\demo.html",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\demo.html",
       "PackagePath": "staticwebassets\\admin\\fonts\\demo.html"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\stylesheet.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\fonts\\stylesheet.css",
       "PackagePath": "staticwebassets\\admin\\fonts\\stylesheet.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\js\\script.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\js\\script.js",
       "PackagePath": "staticwebassets\\admin\\js\\script.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\plugins\\chart.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\plugins\\chart.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\chart.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\plugins\\feather.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\plugins\\feather.min.js",
       "PackagePath": "staticwebassets\\admin\\plugins\\feather.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\plugins\\feather.min.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\admin\\plugins\\feather.min.js.map",
       "PackagePath": "staticwebassets\\admin\\plugins\\feather.min.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\css\\site.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\css\\bootstrap.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\customer\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\css\\style.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\css\\style.css",
       "PackagePath": "staticwebassets\\customer\\css\\style.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\js\\main.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\js\\main.js",
       "PackagePath": "staticwebassets\\customer\\js\\main.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\animate\\animate.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\animate\\animate.css",
       "PackagePath": "staticwebassets\\customer\\lib\\animate\\animate.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\animate\\animate.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\animate\\animate.min.css",
       "PackagePath": "staticwebassets\\customer\\lib\\animate\\animate.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\counterup\\counterup.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\counterup\\counterup.min.js",
       "PackagePath": "staticwebassets\\customer\\lib\\counterup\\counterup.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\easing\\easing.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\easing\\easing.js",
       "PackagePath": "staticwebassets\\customer\\lib\\easing\\easing.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\easing\\easing.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\easing\\easing.min.js",
       "PackagePath": "staticwebassets\\customer\\lib\\easing\\easing.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\css\\lightbox.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\css\\lightbox.min.css",
       "PackagePath": "staticwebassets\\customer\\lib\\lightbox\\css\\lightbox.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\close.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\close.png",
       "PackagePath": "staticwebassets\\customer\\lib\\lightbox\\images\\close.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\loading.gif",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\loading.gif",
       "PackagePath": "staticwebassets\\customer\\lib\\lightbox\\images\\loading.gif"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\next.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\next.png",
       "PackagePath": "staticwebassets\\customer\\lib\\lightbox\\images\\next.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\prev.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\images\\prev.png",
       "PackagePath": "staticwebassets\\customer\\lib\\lightbox\\images\\prev.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\js\\lightbox.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\lightbox\\js\\lightbox.min.js",
       "PackagePath": "staticwebassets\\customer\\lib\\lightbox\\js\\lightbox.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\LICENSE",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\LICENSE",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\ajax-loader.gif",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\ajax-loader.gif",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\ajax-loader.gif"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.carousel.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.carousel.css",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.carousel.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.carousel.min.css",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.carousel.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.default.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.default.css",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.theme.default.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.default.min.css",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.theme.default.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.green.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.green.css",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.theme.green.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.theme.green.min.css",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.theme.green.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.video.play.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\assets\\owl.video.play.png",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\assets\\owl.video.play.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\owl.carousel.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\owl.carousel.js",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\owl.carousel.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\owl.carousel.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\owlcarousel\\owl.carousel.min.js",
       "PackagePath": "staticwebassets\\customer\\lib\\owlcarousel\\owl.carousel.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\waypoints\\links.php",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\waypoints\\links.php",
       "PackagePath": "staticwebassets\\customer\\lib\\waypoints\\links.php"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\waypoints\\waypoints.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\waypoints\\waypoints.min.js",
       "PackagePath": "staticwebassets\\customer\\lib\\waypoints\\waypoints.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\wow\\wow.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\wow\\wow.js",
       "PackagePath": "staticwebassets\\customer\\lib\\wow\\wow.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\wow\\wow.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\lib\\wow\\wow.min.js",
       "PackagePath": "staticwebassets\\customer\\lib\\wow\\wow.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_accordion.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_accordion.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_accordion.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_alert.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_alert.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_alert.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_badge.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_badge.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_badge.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_breadcrumb.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_breadcrumb.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_breadcrumb.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_button-group.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_button-group.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_button-group.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_buttons.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_buttons.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_buttons.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_card.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_card.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_card.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_carousel.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_carousel.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_carousel.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_close.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_close.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_close.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_containers.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_containers.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_containers.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_dropdown.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_dropdown.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_dropdown.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_forms.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_forms.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_forms.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_functions.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_functions.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_functions.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_grid.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_grid.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_grid.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_helpers.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_helpers.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_helpers.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_images.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_images.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_images.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_list-group.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_list-group.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_list-group.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_mixins.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_mixins.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_mixins.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_modal.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_modal.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_modal.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_nav.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_nav.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_nav.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_navbar.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_navbar.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_navbar.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_offcanvas.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_offcanvas.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_offcanvas.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_pagination.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_pagination.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_pagination.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_popover.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_popover.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_popover.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_progress.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_progress.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_progress.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_reboot.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_reboot.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_reboot.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_root.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_root.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_root.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_spinners.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_spinners.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_spinners.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_tables.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_tables.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_tables.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_toasts.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_toasts.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_toasts.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_tooltip.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_tooltip.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_tooltip.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_transitions.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_transitions.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_transitions.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_type.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_type.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_type.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_utilities.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_utilities.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_utilities.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_variables.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\_variables.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\_variables.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap-grid.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\bootstrap-grid.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap-reboot.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\bootstrap-reboot.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap-utilities.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\bootstrap-utilities.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\bootstrap.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\bootstrap.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_floating-labels.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-check.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_form-check.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-control.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_form-control.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-range.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_form-range.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-select.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_form-select.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_form-text.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_form-text.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_input-group.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_input-group.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_labels.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_labels.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_labels.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_validation.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\forms\\_validation.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\forms\\_validation.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_clearfix.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_colored-links.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_position.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_position.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_position.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_ratio.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_ratio.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_stretched-link.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_text-truncation.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\helpers\\_visually-hidden.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_alert.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_alert.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_border-radius.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_box-shadow.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_breakpoints.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_buttons.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_buttons.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_caret.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_caret.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_clearfix.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_color-scheme.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_container.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_container.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_container.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_deprecate.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_forms.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_forms.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_gradients.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_gradients.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_grid.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_grid.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_image.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_image.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_image.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_list-group.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_list-group.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_lists.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_lists.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_pagination.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_pagination.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_reset-text.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_resize.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_resize.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_table-variants.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_text-truncate.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_transition.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_transition.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_utilities.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_utilities.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\mixins\\_visually-hidden.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\utilities\\_api.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\utilities\\_api.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\utilities\\_api.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\customer\\scss\\bootstrap\\scss\\vendor\\_rfs.scss",
       "PackagePath": "staticwebassets\\customer\\scss\\bootstrap\\scss\\vendor\\_rfs.scss"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\favicon.ico",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\Avatar.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\Avatar.svg",
       "PackagePath": "staticwebassets\\img\\avatar\\Avatar.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-2.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-2.svg",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-2.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-02.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-02.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-02.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-02.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-02.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-02.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-03.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-03.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-03.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-03.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-03.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-03.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-04.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-04.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-04.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-04.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-04.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-04.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-05.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-05.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-05.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-05.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-face-05.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-face-05.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-01.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-01.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-01.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-01.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-01.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-01.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-02.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-02.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-02.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-02.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-02.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-02.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-03.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-03.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-03.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-03.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-03.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-03.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-04.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-04.png",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-04.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-04.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\avatar\\avatar-illustrated-04.webp",
       "PackagePath": "staticwebassets\\img\\avatar\\avatar-illustrated-04.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\banner\\banner-1.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\banner\\banner-1.jpg",
       "PackagePath": "staticwebassets\\img\\banner\\banner-1.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\01.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\01.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\01.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\01.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\01.webp",
       "PackagePath": "staticwebassets\\img\\categories\\01.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\02.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\02.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\02.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\02.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\02.webp",
       "PackagePath": "staticwebassets\\img\\categories\\02.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\03.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\03.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\03.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\03.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\03.webp",
       "PackagePath": "staticwebassets\\img\\categories\\03.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\04.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\04.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\04.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\04.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\04.webp",
       "PackagePath": "staticwebassets\\img\\categories\\04.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-1.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-1.png",
       "PackagePath": "staticwebassets\\img\\customer\\about-1.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-2.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-2.png",
       "PackagePath": "staticwebassets\\img\\customer\\about-2.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-3.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-3.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\about-3.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\bg-breadcrumb.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\bg-breadcrumb.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\bg-breadcrumb.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-1.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-1.png",
       "PackagePath": "staticwebassets\\img\\customer\\blog-1.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-2.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-2.png",
       "PackagePath": "staticwebassets\\img\\customer\\blog-2.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-3.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-3.png",
       "PackagePath": "staticwebassets\\img\\customer\\blog-3.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-4.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\blog-4.png",
       "PackagePath": "staticwebassets\\img\\customer\\blog-4.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\carousel-2.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\carousel-2.png",
       "PackagePath": "staticwebassets\\img\\customer\\carousel-2.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\contact-img.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\contact-img.png",
       "PackagePath": "staticwebassets\\img\\customer\\contact-img.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-1.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-1.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\instagram-footer-1.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-2.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-2.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\instagram-footer-2.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-3.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-3.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\instagram-footer-3.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-4.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-4.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\instagram-footer-4.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-5.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-5.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\instagram-footer-5.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-6.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-6.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\instagram-footer-6.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\logo-1.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\logo-1.png",
       "PackagePath": "staticwebassets\\img\\customer\\logo-1.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\logo-2.ico",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\logo-2.ico",
       "PackagePath": "staticwebassets\\img\\customer\\logo-2.ico"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\logo-3.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\logo-3.png",
       "PackagePath": "staticwebassets\\img\\customer\\logo-3.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-1.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-1.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\team-1.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-2.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-2.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\team-2.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-3.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-3.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\team-3.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-4.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\team-4.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\team-4.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\testimonial-1.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\testimonial-1.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\testimonial-1.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\testimonial-2.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\testimonial-2.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\testimonial-2.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\testimonial-3.jpg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\testimonial-3.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\testimonial-3.jpg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-1.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-1.png",
       "PackagePath": "staticwebassets\\img\\logo\\logo-1.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-2.ico",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-2.ico",
       "PackagePath": "staticwebassets\\img\\logo\\logo-2.ico"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-3.png",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-3.png",
       "PackagePath": "staticwebassets\\img\\logo\\logo-3.png"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo2.jfif",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo2.jfif",
       "PackagePath": "staticwebassets\\img\\logo\\logo2.jfif"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logomobifone.webp",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logomobifone.webp",
       "PackagePath": "staticwebassets\\img\\logo\\logomobifone.webp"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\404.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\404.svg",
       "PackagePath": "staticwebassets\\img\\svg\\404.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\2 User.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\2 User.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\2 User.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\3-User-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\3-User-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\3-User-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\3-User-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\3-User-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\3-User-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Activity.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Activity.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Activity.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\AddUser.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\AddUser.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\AddUser.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Down.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Down.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Down.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Down2.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Down2.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Down2.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Down3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Down3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Down3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-DownCircle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-DownCircle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-DownCircle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-DownSquare.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-DownSquare.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-DownSquare.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Left.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Left.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Left.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Left2.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Left2.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Left2.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Left3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Left3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Left3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-LeftCircle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-LeftCircle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-LeftCircle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-LeftSquare.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-LeftSquare.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-LeftSquare.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Right.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Right.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Right.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Right2.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Right2.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Right2.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Right3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Right3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Right3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-RightCircle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-RightCircle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-RightCircle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-RightSquare.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-RightSquare.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-RightSquare.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Up.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Up.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Up.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Up2.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Up2.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Up2.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Up3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-Up3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-Up3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-UpCircle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-UpCircle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-UpCircle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-UpSquare.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrow-UpSquare.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrow-UpSquare.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrows-up-down.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Arrows-up-down.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Arrows-up-down.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Bag 3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Bag 3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Bag 3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Bag.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Bag.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Bag.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Bookmark.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Bookmark.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Bookmark.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Buy.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Buy.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Buy.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Calendar.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Calendar.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Calendar.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Call Missed.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Call Missed.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Call Missed.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Call Silent.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Call Silent.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Call Silent.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Call.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Call.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Call.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Calling.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Calling.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Calling.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Camera.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Camera.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Camera.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Category-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Category-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Category-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Category-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Category-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Category-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Chart.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Chart.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Chart.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Chat.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Chat.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Chat.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Close Square.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Close Square.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Close Square.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Danger.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Danger.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Danger.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Delete.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Delete.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Delete.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Discount.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Discount.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Discount.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Discovery.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Discovery.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Discovery.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Document-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Document-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Document-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Document-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Document-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Document-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Download.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Download.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Download.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Edit Square.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Edit Square.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Edit Square.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Edit-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Edit-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Edit-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Edit-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Edit-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Edit-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Filter 2.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Filter 2.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Filter 2.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Filter.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Filter.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Filter.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Folder-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Folder-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Folder-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Folder-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Folder-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Folder-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Game.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Game.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Game.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Graph.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Graph.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Graph.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Heart.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Heart.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Heart.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Hide.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Hide.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Hide.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Home-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Home-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Home-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Home-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Home-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Home-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Image 3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Image 3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Image 3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Image-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Image-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Image-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Image-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Image-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Image-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Info Circle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Info Circle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Info Circle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Info Square.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Info Square.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Info Square.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Location.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Location.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Location.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Lock.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Lock.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Lock.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Login.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Login.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Login.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Logout.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Logout.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Logout.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Menu-toggle-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Menu-toggle-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Menu-toggle-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Menu-toggle-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Menu-toggle-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Menu-toggle-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Message-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Message-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Message-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Message-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Message-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Message-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\More Circle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\More Circle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\More Circle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\More Square.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\More Square.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\More Square.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Notification-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Notification-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Notification-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Notification.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Notification.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Notification.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Download.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Download.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper Download.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Fail.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Fail.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper Fail.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Negative.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Negative.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper Negative.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Plus.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Plus.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper Plus.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Upload.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper Upload.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper Upload.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Paper-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Paper-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Password.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Password.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Password.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Play.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Play.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Play.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Plus.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Plus.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Plus.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Profile.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Profile.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Profile.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Scan.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Scan.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Scan.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Search.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Search.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Search.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Send.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Send.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Send.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Setting-gray.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Setting-gray.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Setting-gray.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Setting-white.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Setting-white.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Setting-white.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Settings-line.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Settings-line.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Settings-line.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Shield Done.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Shield Done.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Shield Done.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Shield Fail.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Shield Fail.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Shield Fail.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Show.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Show.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Show.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Star.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Star.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Star.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Swap.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Swap.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Swap.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Tick Square.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Tick Square.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Tick Square.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Ticket Star.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Ticket Star.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Ticket Star.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Ticket.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Ticket.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Ticket.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Time Square.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Time Square.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Time Square.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\TimeCircle.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\TimeCircle.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\TimeCircle.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Unlock.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Unlock.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Unlock.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Upload.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Upload.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Upload.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Video.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Video.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Video.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Voice 3.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Voice 3.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Voice 3.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Voice.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Voice.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Voice.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Volume Down.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Volume Down.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Volume Down.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Volume Off.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Volume Off.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Volume Off.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Volume Up.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Volume Up.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Volume Up.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Wallet.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Wallet.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Wallet.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Work.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Bulk\\Work.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Bulk\\Work.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\GoogleDrive.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\GoogleDrive.svg",
       "PackagePath": "staticwebassets\\img\\svg\\GoogleDrive.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Logo.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\Logo.svg",
       "PackagePath": "staticwebassets\\img\\svg\\Logo.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\baloon.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\baloon.svg",
       "PackagePath": "staticwebassets\\img\\svg\\baloon.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\customers.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\customers.svg",
       "PackagePath": "staticwebassets\\img\\svg\\customers.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\dropbox.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\dropbox.svg",
       "PackagePath": "staticwebassets\\img\\svg\\dropbox.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\image-frame.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\image-frame.svg",
       "PackagePath": "staticwebassets\\img\\svg\\image-frame.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\move.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\move.svg",
       "PackagePath": "staticwebassets\\img\\svg\\move.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\radio.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\radio.svg",
       "PackagePath": "staticwebassets\\img\\svg\\radio.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\thumbnail.svg",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\thumbnail.svg",
       "PackagePath": "staticwebassets\\img\\svg\\thumbnail.svg"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\js\\site.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\LICENSE",
       "PackagePath": "staticwebassets\\lib\\bootstrap"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
       "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\LICENSE.txt",
       "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\dist\\jquery.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
-      "Id": "C:\\QLDuAn\\WebsiteQLDichVuMobiFone\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {

@@ -3,10 +3,8 @@
 <table class="table table-bordered table-hover mt-3">
     <thead class="table-dark">
         <tr>
-            <th>Mã SIM</th>
             <th>Số thuê bao</th>
             <th>Loại thuê bao</th>
-            <th>Đầu số</th>
             <th>Khu vực hòa mạng</th>
             <th>Phí hòa mạng</th>
             <th>Thao tác</th>
@@ -18,13 +16,13 @@
             @foreach (var sim in Model)
             {
                 <tr>
-                    <td>@sim.Idsim</td>
                     <td>@sim.SoThueBao</td>
                     <td>@sim.IdloaiSoNavigation?.TenLoaiSo</td>
-                    <td>@sim.SoThueBao.Substring(0, 3)</td>
                     <td>@sim.KhuVucHoaMang</td>
                     <td>@sim.PhiHoaMang VNĐ</td>
-                    <td><a href="/SIM/Details/@sim.Idsim" class="btn btn-primary btn-sm">Chọn Mua</a></td>
+                    <td>
+                        <a asp-controller="Sim" asp-action="ChonMua" asp-route-id="@sim.Idsim" class="btn btn-primary btn-sm">Chọn Mua</a>
+                    </td>
                 </tr>
             }
         }

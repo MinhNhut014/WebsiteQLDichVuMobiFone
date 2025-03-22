@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("LoaiDichVuDiDong")]
-[Index("TenLoaiDichVu", Name = "UQ__LoaiDich__EA233FD24EFB410A", IsUnique = true)]
+[Index("TenLoaiDichVu", Name = "UQ__LoaiDich__EA233FD2E8431C0F", IsUnique = true)]
 public partial class LoaiDichVuDiDong
 {
     [Key]
