@@ -33,5 +33,5 @@ public partial class SanPhamDichVuKhac
 
     [ForeignKey("IdloaiDichVuKhac")]
     [InverseProperty("SanPhamDichVuKhacs")]
-    public virtual LoaiDichVuKhac IdloaiDichVuKhacNavigation { get; set; } = null!;
+    public virtual LoaiDichVuKhac? IdloaiDichVuKhacNavigation { get; set; } = null!;
 }

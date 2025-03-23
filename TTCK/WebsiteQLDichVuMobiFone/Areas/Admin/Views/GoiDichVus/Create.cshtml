@@ -1,52 +1,63 @@
-﻿@model WebsiteQLDichVuMobiFone.Models.GoiDichVu
+﻿@model WebsiteQLDichVuMobiFone.Models.SanPhamDichVuKhac
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm Sản Phẩm Dịch Vụ Khác";
 }
 
-<h1>Create</h1>
+<h1 class="mb-4 text-primary fw-bold text-center">
+    <i class="bi bi-plus-circle"></i> Thêm Sản Phẩm Dịch Vụ Khác
+</h1>
 
-<h4>GoiDichVu</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TenGoiDv" class="control-label"></label>
-                <input asp-for="TenGoiDv" class="form-control" />
-                <span asp-validation-for="TenGoiDv" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="HinhAnh" class="control-label"></label>
-                <input asp-for="HinhAnh" class="form-control" />
-                <span asp-validation-for="HinhAnh" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="MoTa" class="control-label"></label>
-                <input asp-for="MoTa" class="form-control" />
-                <span asp-validation-for="MoTa" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ThongTinChiTiet" class="control-label"></label>
-                <input asp-for="ThongTinChiTiet" class="form-control" />
-                <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IddichVuDn" class="control-label"></label>
-                <select asp-for="IddichVuDn" class ="form-control" asp-items="ViewBag.IddichVuDn"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+<div class="card shadow-lg p-4 rounded-4 border-0">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <form asp-action="Create" enctype="multipart/form-data">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="TenSanPham" class="form-label"></label>
+                    <input asp-for="TenSanPham" class="form-control shadow-sm border-primary" />
+                    <span asp-validation-for="TenSanPham" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="HinhAnh" class="form-label"></label>
+                    <input type="file" asp-for="HinhAnh" class="form-control shadow-sm border-primary" />
+                    <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="MoTa" class="form-label"></label>
+                    <textarea asp-for="MoTa" class="form-control shadow-sm border-primary" rows="4" style="resize: none; overflow-y: auto;"></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="ThongTinChiTiet" class="form-label"></label>
+                    <textarea asp-for="ThongTinChiTiet" class="form-control shadow-sm border-primary" rows="6" style="resize: none; overflow-y: auto;"></textarea>
+                    <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="IdloaiDichVuKhac" class="form-label"></label>
+                    <select asp-for="IdloaiDichVuKhac" class="form-control shadow-sm border-primary" asp-items="ViewBag.IdloaiDichVuKhac"></select>
+                </div>
+
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="btn btn-primary shadow-sm px-4">
+                        <i class="fa-solid fa-check"></i> Thêm mới
+                    </button>
+                    <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2">
+                        <i class="fa-solid fa-arrow-left"></i> Quay lại
+                    </a>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

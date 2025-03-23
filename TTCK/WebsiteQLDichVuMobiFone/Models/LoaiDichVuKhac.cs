@@ -22,7 +22,7 @@ public partial class LoaiDichVuKhac
 
     [ForeignKey("IddichVu")]
     [InverseProperty("LoaiDichVuKhacs")]
-    public virtual DichVu IddichVuNavigation { get; set; } = null!;
+    public virtual DichVu? IddichVuNavigation { get; set; } = null!;
 
     [InverseProperty("IdloaiDichVuKhacNavigation")]
     public virtual ICollection<SanPhamDichVuKhac> SanPhamDichVuKhacs { get; set; } = new List<SanPhamDichVuKhac>();

@@ -1,0 +1,124 @@
+﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.LoaiDichVuKhac>
+@{
+    ViewData["Title"] = "Danh mục Dịch Vụ Khác";
+}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Dịch Vụ Của Chúng Tôi</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
+            <li class="breadcrumb-item active text-primary">Khác</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<form method="get" asp-action="Index">
+    <div class="row">
+        <!-- Sidebar Danh mục -->
+        <div class="col-md-4">
+            <aside class="bg-white p-4 rounded-3 shadow-sm">
+                <input type="text" name="searchTerm" value="@ViewBag.SearchTerm"
+                       class="form-control mb-3" placeholder="🔎 Tìm kiếm..."
+                       oninput="this.form.submit()" />
+
+                <h4 class="mb-3 text-primary fw-bold">Loại dịch vụ khác</h4>
+                <ul class="list-unstyled">
+                    @foreach (var danhMuc in Model)
+                    {
+                        <li class="mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox"
+                                       name="selectedCategories" value="@danhMuc.IdloaiDichVuKhac"
+                                @(ViewBag.SelectedCategories.Contains(danhMuc.IdloaiDichVuKhac) ? "checked" : "")
+                                       onchange="this.form.submit()" />
+                                <label class="form-check-label fw-semibold">@danhMuc.TenLoaiDichVu</label>
+                            </div>
+                            <ul class="list-unstyled ms-3">
+                                @foreach (var sanPham in danhMuc.SanPhamDichVuKhacs)
+                                {
+                                    <li>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox"
+                                                   name="selectedProducts" value="@sanPham.IdsanPham"
+                                            @(ViewBag.SelectedCategories.Contains(sanPham.IdsanPham) ? "checked" : "")
+                                                   onchange="this.form.submit()" />
+                                            <label class="form-check-label">@sanPham.TenSanPham</label>
+                                        </div>
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                    }
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Danh sách sản phẩm dịch vụ khác -->
+        <div class="col-md-8">
+            <h4 class="text-primary fw-bold mb-3">Danh sách sản phẩm</h4>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                @foreach (var sanPham in ViewBag.SanPhamDichVu)
+                {
+                    <div class="col">
+                        <div class="card border-0 shadow-sm rounded-3">
+                            <img src="~/img/dichvu/dichvukhac/@sanPham.HinhAnh"
+                                 class="card-img-top img-fluid"
+                                 style="height: 180px; object-fit: cover;"
+                                 alt="@sanPham.TenSanPham">
+                            <div class="card-header bg-primary text-white text-center fw-bold text-truncate">
+                                @sanPham.TenSanPham
+                            </div>
+                            <div class="card-body">
+                                <p class="text-truncate-3" title="@sanPham.MoTa">@sanPham.MoTa</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary w-100">
+                                        <i class="fas fa-check-circle me-1"></i> Đăng ký
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</form>
+
+<!-- CSS HIỆU ỨNG -->
+<style>
+    .card:hover {
+        transform: scale(1.03);
+        transition: 0.3s ease-in-out;
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    }
+
+    .form-check-input:checked {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+        box-shadow: 0 4px 10px rgba(0, 123, 255, 0.4);
+    }
+
+    .card-img-top {
+        object-fit: cover;
+        transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+
+        .card-img-top:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 8px 20px rgba(0, 123, 255, 0.5);
+        }
+
+    .text-truncate-3 {
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+</style>

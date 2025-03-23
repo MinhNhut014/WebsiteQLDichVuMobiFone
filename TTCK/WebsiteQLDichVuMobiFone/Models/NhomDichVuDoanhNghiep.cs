@@ -25,5 +25,5 @@ public partial class NhomDichVuDoanhNghiep
 
     [ForeignKey("IddichVu")]
     [InverseProperty("NhomDichVuDoanhNghieps")]
-    public virtual DichVu IddichVuNavigation { get; set; } = null!;
+    public virtual DichVu? IddichVuNavigation { get; set; } = null!;
 }

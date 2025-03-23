@@ -1,77 +1,60 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.HoaDonDichVu>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Hóa Đơn Dịch Vụ";
 }
 
-<h1>Index</h1>
+<h1 class="mb-4 text-primary fw-bold">Danh sách Hóa Đơn Dịch Vụ</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
+        <i class="fa-solid fa-plus"></i> Thêm mới
+    </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayDatHang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TongTien)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenKhachHang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoDienThoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiaChi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdnguoiDungNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdtrangThaiNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayDatHang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TongTien)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenKhachHang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoDienThoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdnguoiDungNavigation.IdnguoiDung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdtrangThaiNavigation.IdtrangThai)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdhoaDonDv">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdhoaDonDv">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdhoaDonDv">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ngày Đặt Hàng</th>
+                <th class="p-3">Tổng Tiền</th>
+                <th class="p-3">Tên Khách Hàng</th>
+                <th class="p-3">Số Điện Thoại</th>
+                <th class="p-3">Email</th>
+                <th class="p-3">Địa Chỉ</th>
+                <th class="p-3">ID Người Dùng</th>
+                <th class="p-3">ID Trạng Thái</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in Model)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.NgayDatHang)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.TongTien)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.TenKhachHang)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.SoDienThoai)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.DiaChi)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdnguoiDungNavigation.IdnguoiDung)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdtrangThaiNavigation.IdtrangThai)</td>
+                    <td class="p-3 d-flex justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@item.IdhoaDonDv" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.IdhoaDonDv" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
+                            <input type="hidden" name="id" value="@item.IdhoaDonDv" />
+                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

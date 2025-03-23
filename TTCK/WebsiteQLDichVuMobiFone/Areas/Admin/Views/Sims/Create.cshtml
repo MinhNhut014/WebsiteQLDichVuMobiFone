@@ -33,14 +33,16 @@
             </div>
 
             <div class="form-group mb-3">
+                <label asp-for="PhiHoaMang" class="fw-bold">Phí Hòa Mạng</label>
+                <input asp-for="PhiHoaMang" class="form-control" placeholder="Nhập phí hòa mạng..." />
+                <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
                 <label asp-for="IdtrangThaiSim" class="fw-bold">Trạng Thái SIM</label>
                 <select asp-for="IdtrangThaiSim" class="form-control" asp-items="ViewBag.IdtrangThaiSim"></select>
             </div>
 
-            <div class="form-group mb-3">
-                <label asp-for="GoiDangKyDiKem" class="fw-bold">Gói Đăng Ký Đi Kèm</label>
-                <select asp-for="GoiDangKyDiKem" class="form-control" asp-items="ViewBag.GoiDangKyDiKem"></select>
-            </div>
 
             <div class="d-flex gap-2">
                 <button type="submit" class="btn btn-success">

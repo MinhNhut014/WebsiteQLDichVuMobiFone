@@ -64,7 +64,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim,GoiDangKyDiKem")] Sim sim)
+        public async Task<IActionResult> Create([Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim")] Sim sim)
         {
             if (ModelState.IsValid)
             {
@@ -72,7 +72,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["GoiDangKyDiKem"] = new SelectList(_context.GoiDangKies, "IdgoiDangKy", "IdgoiDangKy", sim.GoiDangKyDiKem);
             ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "IddichVu", sim.IddichVu);
             ViewData["IdloaiSo"] = new SelectList(_context.LoaiSos, "IdloaiSo", "IdloaiSo", sim.IdloaiSo);
             ViewData["IdtrangThaiSim"] = new SelectList(_context.TrangThaiSims, "IdtrangThaiSim", "IdtrangThaiSim", sim.IdtrangThaiSim);

@@ -49,24 +49,49 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/GoiDichVus/Create
         public IActionResult Create()
         {
-            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "IddichVuDn");
+            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "TenDichVu");
             return View();
         }
 
         // POST: Admin/GoiDichVus/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+
+        //upload file
+        public string? Upload(IFormFile file)
+        {
+            string? uploadFileName = null;
+            if (file != null)
+            {
+                uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var path = $"wwwroot\\img\\dichvu\\doanhnghiep\\{uploadFileName}";
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+            return uploadFileName;
+        }
+
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdgoiDichVu,TenGoiDv,HinhAnh,MoTa,ThongTinChiTiet,IddichVuDn")] GoiDichVu goiDichVu)
+        public async Task<IActionResult> Create(IFormFile HinhAnh,[Bind("IdgoiDichVu,TenGoiDv,HinhAnh,MoTa,ThongTinChiTiet,IddichVuDn")] GoiDichVu goiDichVu)
         {
             if (ModelState.IsValid)
             {
+
+                // ✨ Xử lý giữ nguyên xuống dòng và thụt đầu dòng
+                goiDichVu.MoTa = goiDichVu.MoTa?.Replace("\n", "<br>");
+                goiDichVu.ThongTinChiTiet = goiDichVu.ThongTinChiTiet?.Replace("\n", "<br>");
+
+                //upload ảnh vào
+                goiDichVu.HinhAnh = Upload(HinhAnh);
+
                 _context.Add(goiDichVu);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "IddichVuDn", goiDichVu.IddichVuDn);
+            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "TenDichVu", goiDichVu.IddichVuDn);
             return View(goiDichVu);
         }
 

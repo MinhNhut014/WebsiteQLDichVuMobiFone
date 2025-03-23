@@ -30,5 +30,5 @@ public partial class GoiDangKyDichVuKhac
 
     [ForeignKey("IdsanPham")]
     [InverseProperty("GoiDangKyDichVuKhacs")]
-    public virtual SanPhamDichVuKhac IdsanPhamNavigation { get; set; } = null!;
+    public virtual SanPhamDichVuKhac? IdsanPhamNavigation { get; set; } = null!;
 }

@@ -31,6 +31,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         }
         public async Task<IActionResult> Index(string searchTerm, List<int> selectedCategories)
         {
+            GetData();
             // Lấy danh sách danh mục dịch vụ di động cùng với loại gói đăng ký
             var danhMucDichVu = _context.LoaiDichVuDiDongs
                                         .Select(dm => new LoaiDichVuDiDong

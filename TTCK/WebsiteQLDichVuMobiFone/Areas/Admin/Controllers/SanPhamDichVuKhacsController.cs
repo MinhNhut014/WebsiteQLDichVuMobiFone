@@ -49,8 +49,24 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/SanPhamDichVuKhacs/Create
         public IActionResult Create()
         {
-            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "IdloaiDichVuKhac");
+            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "TenLoaiDichVu");
             return View();
+        }
+
+        //upload file
+        public string? Upload(IFormFile file)
+        {
+            string? uploadFileName = null;
+            if (file != null)
+            {
+                uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var path = $"wwwroot\\img\\dichvu\\dichvukhac\\{uploadFileName}";
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+            return uploadFileName;
         }
 
         // POST: Admin/SanPhamDichVuKhacs/Create
@@ -58,15 +74,21 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdsanPham,TenSanPham,HinhAnh,MoTa,ThongTinChiTiet,IdloaiDichVuKhac")] SanPhamDichVuKhac sanPhamDichVuKhac)
+        public async Task<IActionResult> Create(IFormFile HinhAnh, [Bind("IdsanPham,TenSanPham,HinhAnh,MoTa,ThongTinChiTiet,IdloaiDichVuKhac")] SanPhamDichVuKhac sanPhamDichVuKhac)
         {
             if (ModelState.IsValid)
             {
+                // ✨ Xử lý giữ nguyên xuống dòng và thụt đầu dòng
+                sanPhamDichVuKhac.MoTa = sanPhamDichVuKhac.MoTa?.Replace("\n", "<br>");
+                sanPhamDichVuKhac.ThongTinChiTiet = sanPhamDichVuKhac.ThongTinChiTiet?.Replace("\n", "<br>");
+
+                //upload ảnh vào
+                sanPhamDichVuKhac.HinhAnh = Upload(HinhAnh);
                 _context.Add(sanPhamDichVuKhac);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "IdloaiDichVuKhac", sanPhamDichVuKhac.IdloaiDichVuKhac);
+            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "TenLoaiDichVu", sanPhamDichVuKhac.IdloaiDichVuKhac);
             return View(sanPhamDichVuKhac);
         }
 
