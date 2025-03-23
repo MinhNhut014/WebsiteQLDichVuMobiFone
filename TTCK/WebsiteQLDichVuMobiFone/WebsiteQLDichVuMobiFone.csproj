@@ -24,6 +24,7 @@
     <Folder Include="Areas\Customer\Data\" />
     <Folder Include="Areas\Customer\Models\" />
     <Folder Include="wwwroot\img\dichvu\" />
+    <Folder Include="wwwroot\img\user\" />
   </ItemGroup>
 
 </Project>

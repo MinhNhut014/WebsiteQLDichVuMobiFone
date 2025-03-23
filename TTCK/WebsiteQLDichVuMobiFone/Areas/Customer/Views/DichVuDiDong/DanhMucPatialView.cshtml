@@ -1,0 +1,33 @@
+﻿@model IEnumerable<LoaiDichVuDiDong>
+
+@{
+    ViewData["Title"] = "DanhMucPatialView";
+}
+
+<aside class="col-md-3 bg-white p-4 rounded shadow-sm">
+    <input type="text" class="form-control mb-3" placeholder="Tìm kiếm">
+    <h2 class="h5">Danh mục sản phẩm</h2>
+    <ul class="list-unstyled">
+        @foreach (var danhMuc in Model)
+        {
+            <li>
+                <div class="form-check d-flex align-items-center">
+                    <input class="form-check-input" type="checkbox" id="category_@danhMuc.IdloaiDichVu" onclick="toggleSubcategories('subcategory_@danhMuc.IdloaiDichVu', 'arrow_@danhMuc.IdloaiDichVu')">
+                    <label class="form-check-label flex-grow-1" for="category_@danhMuc.IdloaiDichVu">@danhMuc.TenLoaiDichVu</label>
+                    <i class="fas fa-caret-right" id="arrow_@danhMuc.IdloaiDichVu" onclick="toggleSubcategories('subcategory_@danhMuc.IdloaiDichVu', 'arrow_@danhMuc.IdloaiDichVu')"></i>
+                </div>
+                <ul class="list-unstyled ms-3 mt-2" id="subcategory_@danhMuc.IdloaiDichVu" style="display: none;">
+                    @foreach (var goiDangKy in danhMuc.LoaiGoiDangKies)
+                    {
+                        <li>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="subcategory_@goiDangKy.IdloaiGoi">
+                                <label class="form-check-label" for="subcategory_@goiDangKy.IdloaiGoi">@goiDangKy.TenLoaiGoi</label>
+                            </div>
+                        </li>
+                    }
+                </ul>
+            </li>
+        }
+    </ul>
+</aside>

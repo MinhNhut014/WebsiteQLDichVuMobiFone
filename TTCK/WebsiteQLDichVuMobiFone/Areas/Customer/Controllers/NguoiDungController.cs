@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -91,32 +92,67 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> DangKy(string hoTen, string soDienThoai, string email, string tenDangNhap, string matKhau, string diaChi)
+        public async Task<IActionResult> DangKy(string hoTen, string soDienThoai, string email, string tenDangNhap, string cccd, string matKhau, string diaChi)
         {
-            // Kiểm tra xem tên đăng nhập, số điện thoại hoặc email đã tồn tại chưa
-            if (await _context.NguoiDungs.AnyAsync(x => x.TenDangNhap == tenDangNhap || x.SoDienThoai == soDienThoai || x.Email == email))
+            try
             {
-                TempData["Error"] = "Tên đăng nhập, số điện thoại hoặc email đã được sử dụng.";
+                // Kiểm tra trùng lặp dữ liệu
+                try
+                {
+                    var tonTaiNguoiDung = await _context.NguoiDungs
+                                .FirstOrDefaultAsync(x => x.TenDangNhap == tenDangNhap || x.SoDienThoai == soDienThoai || x.Email == email);
+
+                    if (tonTaiNguoiDung != null)
+                    {
+                        string loi = "Thông tin đã được sử dụng: ";
+                        if (tonTaiNguoiDung.TenDangNhap == tenDangNhap) loi += "Tên đăng nhập, ";
+                        if (tonTaiNguoiDung.SoDienThoai == soDienThoai) loi += "Số điện thoại, ";
+                        if (tonTaiNguoiDung.Email == email) loi += "Email, ";
+
+                        TempData["Error"] = loi.TrimEnd(',', ' ');
+                        return View();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = $"Lỗi khi kiểm tra dữ liệu trùng lặp: {ex.Message}";
+                    return View();
+                }
+
+                // Tạo người dùng mới
+                var nguoiDung = new NguoiDung
+                {
+                    HoTen = hoTen,
+                    SoDienThoai = soDienThoai,
+                    Email = email,
+                    AnhDaiDien = "user.jpg",
+                    Cccd = cccd,
+                    TenDangNhap = tenDangNhap,
+                    MatKhau = _passwordHasher.HashPassword(null, matKhau),
+                    DiaChi = diaChi
+                };
+
+                // Lưu vào cơ sở dữ liệu
+                try
+                {
+                    _context.Add(nguoiDung);
+                    await _context.SaveChangesAsync();
+                }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = $"Lỗi khi lưu dữ liệu vào cơ sở dữ liệu: {ex.Message}";
+                    return View();
+                }
+
+                TempData["Success"] = "Đăng ký thành công! Vui lòng đăng nhập.";
+                return RedirectToAction("DangNhap");
+            }
+            catch (Exception ex)
+            {
+                TempData["Error"] = $"Lỗi không xác định: {ex.Message}";
                 return View();
             }
-
-            // Tạo người dùng mới
-            var nguoiDung = new NguoiDung
-            {
-                HoTen = hoTen,
-                SoDienThoai = soDienThoai,
-                Email = email,
-                TenDangNhap = tenDangNhap,  // Lưu tên đăng nhập
-                MatKhau = _passwordHasher.HashPassword(null, matKhau),  // Mã hóa mật khẩu
-                DiaChi = diaChi  // Lưu địa chỉ
-            };
-
-            // Lưu vào cơ sở dữ liệu
-            _context.Add(nguoiDung);
-            await _context.SaveChangesAsync();
-
-            TempData["Success"] = "Đăng ký thành công! Vui lòng đăng nhập.";
-            return RedirectToAction("DangNhap");
         }
 
         // Change Password

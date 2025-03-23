@@ -317,6 +317,7 @@ wwwroot\img\svg\Logo.svg
 wwwroot\img\svg\move.svg
 wwwroot\img\svg\radio.svg
 wwwroot\img\svg\thumbnail.svg
+wwwroot\img\user\user.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css
 wwwroot\lib\bootstrap\dist\css\bootstrap.css.map

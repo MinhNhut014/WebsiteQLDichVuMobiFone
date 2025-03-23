@@ -1,89 +1,53 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.NguoiDung>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Người Dùng";
 }
 
-<h1>Index</h1>
+<h1 class="mb-4 text-primary fw-bold">Danh sách Người Dùng</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
+        <i class="fa-solid fa-plus"></i> Thêm mới
+    </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.AnhDaiDien)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HoTen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cccd)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SoDienThoai)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DiaChi)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TenDangNhap)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MatKhau)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quyen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Trangthai)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.AnhDaiDien)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoTen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cccd)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoDienThoai)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DiaChi)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenDangNhap)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MatKhau)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quyen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Trangthai)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdnguoiDung">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdnguoiDung">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdnguoiDung">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ảnh Đại Diện</th>
+                <th class="p-3">Họ Tên</th>
+                <th class="p-3">Tên Đăng Nhập</th>
+                <th class="p-3">Mật Khẩu</th>
+                <th class="p-3">Quyền</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in Model)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3"><img src="~/img/user/@Html.DisplayFor(modelItem => item.AnhDaiDien)" alt="Ảnh đại diện" class="img-fluid rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" /></td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.HoTen)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.TenDangNhap)</td>
+                    <td class="p-3">******</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.Quyen)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.Trangthai)</td>
+                    <td class="p-3 d-flex justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@item.IdnguoiDung" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.IdnguoiDung" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.IdnguoiDung" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

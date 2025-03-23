@@ -1,68 +1,77 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.NguoiDung
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm Người Dùng";
 }
 
-<h1>Create</h1>
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">Thêm Người Dùng</h2>
+    <div class="card shadow-sm p-4 rounded">
+        <form asp-action="Create" method="post">
+            <div asp-validation-summary="All" class="text-danger"></div>
 
-<h4>NguoiDung</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AnhDaiDien" class="control-label"></label>
-                <input asp-for="AnhDaiDien" class="form-control" />
+            <div class="form-group mb-3">
+                <label asp-for="AnhDaiDien" class="fw-bold">Ảnh Đại Diện</label>
+                <input asp-for="AnhDaiDien" class="form-control" placeholder="Nhập đường dẫn ảnh..." />
                 <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="HoTen" class="control-label"></label>
-                <input asp-for="HoTen" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="HoTen" class="fw-bold">Họ Tên</label>
+                <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên..." />
                 <span asp-validation-for="HoTen" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Cccd" class="control-label"></label>
-                <input asp-for="Cccd" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Cccd" class="fw-bold">CCCD</label>
+                <input asp-for="Cccd" class="form-control" placeholder="Nhập CCCD..." />
                 <span asp-validation-for="Cccd" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Email" class="control-label"></label>
-                <input asp-for="Email" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="fw-bold">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Nhập email..." />
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="SoDienThoai" class="control-label"></label>
-                <input asp-for="SoDienThoai" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="SoDienThoai" class="fw-bold">Số Điện Thoại</label>
+                <input asp-for="SoDienThoai" class="form-control" placeholder="Nhập số điện thoại..." />
                 <span asp-validation-for="SoDienThoai" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DiaChi" class="control-label"></label>
-                <input asp-for="DiaChi" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="DiaChi" class="fw-bold">Địa Chỉ</label>
+                <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ..." />
                 <span asp-validation-for="DiaChi" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="TenDangNhap" class="control-label"></label>
-                <input asp-for="TenDangNhap" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="TenDangNhap" class="fw-bold">Tên Đăng Nhập</label>
+                <input asp-for="TenDangNhap" class="form-control" placeholder="Nhập tên đăng nhập..." />
                 <span asp-validation-for="TenDangNhap" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="MatKhau" class="control-label"></label>
-                <input asp-for="MatKhau" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="MatKhau" class="fw-bold">Mật Khẩu</label>
+                <input asp-for="MatKhau" class="form-control" type="password" placeholder="Nhập mật khẩu..." />
                 <span asp-validation-for="MatKhau" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success">
+                    <i class="fa-solid fa-check"></i> Lưu
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại
+                </a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

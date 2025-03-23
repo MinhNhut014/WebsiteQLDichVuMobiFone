@@ -7,6 +7,15 @@
         <div class="card shadow-sm rounded-4 p-4">
             <h3 class="text-center text-dark mb-4">ĐĂNG KÝ TÀI KHOẢN</h3>
 
+            @if (TempData["Success"] != null)
+            {
+                <div class="alert alert-success">@TempData["Success"]</div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger">@TempData["Error"]</div>
+            }
+
             <form method="post" asp-action="DangKy">
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
@@ -30,12 +39,17 @@
 
                 <div class="mb-3">
                     <label for="dienthoai" class="form-label">Số Điện Thoại</label>
-                    <input type="text" class="form-control border-dark" id="dienthoai" name="dienthoai" placeholder="Nhập số điện thoại" required>
+                    <input type="text" class="form-control border-dark" id="dienthoai" name="soDienThoai" placeholder="Nhập số điện thoại" required>
                 </div>
 
                 <div class="mb-3">
                     <label for="cccd" class="form-label">CCCD/CMND</label>
                     <input type="text" class="form-control border-dark" id="cccd" name="cccd" placeholder="Nhập CCCD/CMND" required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="diaChi" class="form-label">Địa chỉ</label>
+                    <input type="text" class="form-control border-dark" id="diaChi" name="diaChi" placeholder="Nhập địa chỉ" required>
                 </div>
 
                 <div class="d-grid gap-2 mt-4">
@@ -45,7 +59,7 @@
 
             <div class="text-center mt-3">
                 <span class="text-muted">Đã có tài khoản? </span>
-                <a asp-action="dangNhap" class="text-decoration-none text-dark fw-bold">Đăng nhập ngay</a>
+                <a asp-action="DangNhap" class="text-decoration-none text-dark fw-bold">Đăng nhập ngay</a>
             </div>
         </div>
     </div>

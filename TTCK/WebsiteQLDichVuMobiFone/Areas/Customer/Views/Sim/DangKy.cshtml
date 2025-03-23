@@ -119,8 +119,8 @@
                         }
                     </div>
 
-                    <div class="p-3 bg-light rounded-3 text-center">
-                        <h5 class="text-danger fw-bold">Chi tiết thanh toán</h5>
+                    <div class="bg-light p-3 rounded-3 text-center">
+                        <h5 class="text-danger">Chi tiết thanh toán</h5>
                         <div class="d-flex justify-content-between mb-2">
                             <span>Phí hòa mạng:</span>
                             <span id="phiHoaMang">@(sim?.PhiHoaMang ?? 0) VND</span>
@@ -135,7 +135,7 @@
                         </div>
                         <div class="d-flex justify-content-between border-top pt-2 mt-2 fw-bold">
                             <span>Tổng tiền:</span>
-                            <span id="tongTien" class="text-primary">@((tongTien != null) ? tongTien.ToString("N0") : "0") VND</span>
+                            <span id="tongTien">@((tongTien != null) ? tongTien.ToString("N0") : "0") VND</span>
                         </div>
                     </div>
                 </div>
@@ -154,5 +154,7 @@
 
         document.getElementById("phiVanChuyen").innerText = phiVanChuyen.toLocaleString() + " VND";
         document.getElementById("tongTien").innerText = tongTien.toLocaleString() + " VND";
+        document.getElementById("inputTongTien").value = tongTien;
     });
 </script>
+

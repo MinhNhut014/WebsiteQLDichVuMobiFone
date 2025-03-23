@@ -1,71 +1,55 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.Sim>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách SIM";
 }
 
-<h1>Index</h1>
+<h1 class="mb-4 text-primary fw-bold">Danh sách SIM</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
+        <i class="fa-solid fa-plus"></i> Thêm mới
+    </a>
 </p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.SoThueBao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.KhuVucHoaMang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PhiHoaMang)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.GoiDangKyDiKemNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IddichVuNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdloaiSoNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdtrangThaiSimNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.SoThueBao)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.KhuVucHoaMang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PhiHoaMang)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.GoiDangKyDiKemNavigation.IdgoiDangKy)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IddichVuNavigation.IddichVu)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdloaiSoNavigation.IdloaiSo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdtrangThaiSimNavigation.IdtrangThaiSim)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Idsim">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Idsim">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Idsim">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+
+<div class="table-responsive">
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Số Thuê Bao</th>
+                <th class="p-3">Khu Vực Hòa Mạng</th>
+                <th class="p-3">Phí Hòa Mạng</th>
+                <th class="p-3">Gói Đăng Ký Đi Kèm</th>
+                <th class="p-3">Dịch Vụ</th>
+                <th class="p-3">Loại Số</th>
+                <th class="p-3">Trạng Thái SIM</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in Model)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.SoThueBao)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.KhuVucHoaMang)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.PhiHoaMang)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.GoiDangKyDiKemNavigation.IdgoiDangKy)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IddichVuNavigation.IddichVu)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdloaiSoNavigation.IdloaiSo)</td>
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdtrangThaiSimNavigation.IdtrangThaiSim)</td>
+                    <td class="p-3 d-flex justify-content-center">
+                        <a asp-action="Edit" asp-route-id="@item.Idsim" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.Idsim" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-action="Delete" asp-route-id="@item.Idsim" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

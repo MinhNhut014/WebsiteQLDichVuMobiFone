@@ -33,7 +33,11 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         public IActionResult dichvusim(string filters, string search)
         {
             GetData();
-            var sims = _context.Sims.Include(s => s.IdloaiSoNavigation).AsQueryable();
+            var sims = _context.Sims
+                            .Include(s => s.IdloaiSoNavigation)
+                            .Where(s => s.IdtrangThaiSim == 1) // Chỉ hiển thị SIM ở trạng thái 1
+                            .OrderByDescending(s => s.Idsim)    // Hiển thị các SIM mới nhất lên đầu
+                            .AsQueryable();
 
             if (!string.IsNullOrEmpty(search))
             {
@@ -194,7 +198,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             if (!ModelState.IsValid)
             {
                 TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại thông tin.";
-                return RedirectToAction("DangKy", "Sim");
+                return RedirectToAction("DangKy", "Sim", new { idSim, idGoiDangKy });
             }
 
             using var transaction = _context.Database.BeginTransaction();
@@ -205,15 +209,31 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 if (phuongThucVanChuyen == null)
                 {
                     TempData["ErrorMessage"] = "Phương thức vận chuyển không hợp lệ.";
-                    return RedirectToAction("DangKy", "Sim"); // Quay lại trang đăng ký nếu không có phương thức vận chuyển hợp lệ
+                    return RedirectToAction("DangKy", "Sim", new { idSim, idGoiDangKy }); // Quay lại trang đăng ký nếu không có phương thức vận chuyển hợp lệ
                 }
 
+                var sim = _context.Sims
+                                  .Include(s => s.IdtrangThaiSimNavigation)  // Bao gồm IdtrangThaiSimNavigation
+                                  .Include(s => s.GoiDangKyDiKemNavigation)  // Bao gồm GoiDangKyDiKemNavigation
+                                  .FirstOrDefault(s => s.Idsim == idSim);
+                var goiDangKy = _context.GoiDangKies.AsNoTracking().FirstOrDefault(g => g.IdgoiDangKy == idGoiDangKy);
+
+                if (sim == null || goiDangKy == null)
+                {
+                    TempData["ErrorMessage"] = "Thông tin SIM hoặc gói đăng ký không hợp lệ.";
+                    return RedirectToAction("DangKy", "Sim", new { idSim, idGoiDangKy });
+                }
+
+                decimal phiHoaMang = sim.PhiHoaMang ?? 0;
+                decimal giaGoi = goiDangKy.GiaGoi ?? 0;
+                decimal phiVanChuyen = phuongThucVanChuyen.GiaVanChuyen ?? 0;
+                int tongTien = (int)Math.Round(phiHoaMang + giaGoi + phiVanChuyen);
                 // Thêm Hóa Đơn SIM
                 var hoaDon = new HoaDonSim
                 {
                     IdnguoiDung = hoaDonModel.IdnguoiDung,
                     NgayDatHang = DateTime.Now,
-                    TongTien = hoaDonModel.TongTien,
+                    TongTien = tongTien,
                     IdtrangThai = 1, // Trạng thái "Chờ xử lý"
                     TenKhachHang = hoaDonModel.TenKhachHang,
                     SoDienThoai = hoaDonModel.SoDienThoai,
@@ -237,17 +257,13 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     IdgoiDangKy = idGoiDangKy,
                     DonGia = hoaDonModel.TongTien,
                     SoLuong = 1,
-                    ThanhTien = hoaDonModel.TongTien
+                    ThanhTien = tongTien
                 };
 
                 _context.CthoaDonSims.Add(chiTietHoaDon);
 
                 // Cập nhật trạng thái SIM
-                var sim = _context.Sims
-                                  .Include(s => s.IdtrangThaiSimNavigation)  // Bao gồm IdtrangThaiSimNavigation
-                                  .Include(s => s.GoiDangKyDiKemNavigation)  // Bao gồm GoiDangKyDiKemNavigation
-                                  .FirstOrDefault(s => s.Idsim == idSim);
-
+                
                 if (sim != null)
                 {
                     // Kiểm tra nếu IdtrangThaiSimNavigation không phải là null
@@ -263,8 +279,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     // Kiểm tra nếu GoiDangKyDiKemNavigation là null, gán gói đăng ký mới nếu có
                     if (sim.GoiDangKyDiKemNavigation == null)
                     {
-                        var goiDangKy = _context.GoiDangKies.AsNoTracking().FirstOrDefault(g => g.IdgoiDangKy == idGoiDangKy);
-
+                        
                         if (goiDangKy != null)
                         {
                             // Thay vì tạo mới, gán đối tượng GoidangKy đã lấy từ DB vào GoiDangKyDiKemNavigation
@@ -278,7 +293,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     else
                     {
                         // Trường hợp GoiDangKyDiKemNavigation đã có, kiểm tra và cập nhật lại
-                        var goiDangKy = _context.GoiDangKies.AsNoTracking().FirstOrDefault(g => g.IdgoiDangKy == idGoiDangKy);
+                        
 
                         if (goiDangKy != null)
                         {
@@ -314,7 +329,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 {
                     TempData["ErrorMessage"] += " | Inner Exception: " + dbEx.InnerException.Message;
                 }
-                return RedirectToAction("DangKy", "Sim");
+                return RedirectToAction("DangKy", "Sim", new { idSim, idGoiDangKy });
             }
             catch (Exception ex)
             {
@@ -324,16 +339,16 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 {
                     TempData["ErrorMessage"] += " | Inner Exception: " + ex.InnerException.Message;
                 }
-                return RedirectToAction("DangKy", "Sim");
+                return RedirectToAction("DangKy", "Sim", new { idSim, idGoiDangKy });
             }
         }
-        
 
-        public IActionResult ThongBaoHoanTat(int idhoaDonSim)
+
+        public IActionResult ThongBaoHoanTat(int idHoaDon)
         {
             var hoaDonSim = _context.HoaDonSims
                                     .Include(h => h.IdphuongThucVcNavigation)
-                                    .FirstOrDefault(h => h.IdhoaDonSim == idhoaDonSim);
+                                    .FirstOrDefault(h => h.IdhoaDonSim == idHoaDon);
 
             if (hoaDonSim == null)
             {
@@ -343,6 +358,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             return View(hoaDonSim);
         }
+
 
 
     }
