@@ -201,6 +201,7 @@ wwwroot\img\dichvu\doanhnghiep\933a18f2-c2bd-48fe-8d08-6f7f303b3460_MobiVideoSMS
 wwwroot\img\dichvu\doanhnghiep\9f8e4d34-60b6-405b-badc-9b96eb04be38_ProConnect.jpg
 wwwroot\img\dichvu\doanhnghiep\c8c2255e-e51f-476e-9d6d-2393a95a50b5_MobiFoneSIPTrunk.png
 wwwroot\img\dichvu\doanhnghiep\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png
+wwwroot\img\icon\sim.png
 wwwroot\img\logo\logo-1.png
 wwwroot\img\logo\logo-2.ico
 wwwroot\img\logo\logo2.jfif

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Aue6tny45DDxmhFCcNix6d1CnJQvvWYGSjcRc4k9pBo=",
+  "Hash": "12prD/eCl6afQNVZgD6uEs/b6w7JpD0sfQl7wg3eCsc=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -4320,6 +4320,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\dichvu\\doanhnghiep\\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/icon/sim#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "tor72ouoc5",
+      "Integrity": "E/Z9LI9zJy7+f5B+H6r1XlhWWvJ+CZjXqBeobqekEcA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\icon\\sim.png"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-1.png",
@@ -24935,6 +24956,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY="
+        }
+      ]
+    },
+    {
+      "Route": "img/icon/sim.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2731"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E/Z9LI9zJy7+f5B+H6r1XlhWWvJ+CZjXqBeobqekEcA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 24 Mar 2025 09:41:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-E/Z9LI9zJy7+f5B+H6r1XlhWWvJ+CZjXqBeobqekEcA="
+        }
+      ]
+    },
+    {
+      "Route": "img/icon/sim.tor72ouoc5.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2731"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"E/Z9LI9zJy7+f5B+H6r1XlhWWvJ+CZjXqBeobqekEcA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 24 Mar 2025 09:41:31 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "tor72ouoc5"
+        },
+        {
+          "Name": "label",
+          "Value": "img/icon/sim.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-E/Z9LI9zJy7+f5B+H6r1XlhWWvJ+CZjXqBeobqekEcA="
         }
       ]
     },

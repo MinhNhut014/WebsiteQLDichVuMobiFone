@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Đăng Ký DichVu";
+    var goiDaChon = ViewBag.GoiDaChon as WebsiteQLDichVuMobiFone.Models.GoiDangKy;
+    var tongTien = ViewBag.TongTien;
+}
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Đăng Ký Dịch Vụ</h2>
+        <p class="text-muted">Hoàn tất thông tin để đăng ký dịch vụ</p>
+    </div>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
+                    <form method="post" asp-controller="DichVuDiDong" asp-action="HoanTatDangKyDichVu">
+                        <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Tên khách hàng:</label>
+                            <input type="text" name="TenKhachHang" class="form-control border-secondary" placeholder="Nhập tên khách hàng" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Số điện thoại:</label>
+                            <input type="text" name="SoDienThoai" class="form-control border-secondary" placeholder="Nhập số điện thoại" required />
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email:</label>
+                            <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email" />
+                        </div>
+
+                        <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-success mb-3">Thông tin gói đăng ký</h4>
+
+                    <div class="mb-4">
+                        @if (goiDaChon != null)
+                        {
+                            <p><strong>Tên gói:</strong> @goiDaChon.TenGoi</p>
+                            <p><strong>Giá gói:</strong> @goiDaChon.GiaGoi VND</p>
+                            <p><strong>Thời hạn:</strong> @goiDaChon.ThoiHan ngày</p>
+                        }
+                        else
+                        {
+                            <p class="text-danger">Không có thông tin gói cước!</p>
+                        }
+                    </div>
+
+                    <div class="bg-light p-3 rounded-3 text-center">
+                        <h5 class="text-danger">Chi tiết thanh toán</h5>
+                        <div class="d-flex justify-content-between border-top pt-2 mt-2 fw-bold">
+                            <span>Tổng tiền:</span>
+                            <span id="tongTien">@((ViewBag.TongTien != null) ? ViewBag.TongTien.ToString("N0") : "0") VND</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

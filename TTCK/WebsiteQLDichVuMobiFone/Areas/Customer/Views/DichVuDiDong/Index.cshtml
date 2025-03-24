@@ -64,29 +64,32 @@
         </div>
 
         <!-- Phần hiển thị gói đăng ký -->
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3">
             <h4 class="text-primary fw-bold mb-3">Danh sách gói đăng ký</h4>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach (var goi in ViewBag.GoiDangKy)
                 {
                     <div class="col">
                         <div class="card border-0 shadow-sm rounded-3">
+                            <a asp-controller="DichVuDiDong" asp-action="ChiTietDichVu" asp-route-id="@goi.IdgoiDangKy">
                             <div class="card-header bg-primary text-white text-center fw-bold">
                                 @goi.TenGoi
                             </div>
+                            </a>
                             <div class="card-body">
                                 <p class="mb-2">
                                     <i class="fas fa-wallet me-1"></i>
-                                    Giá: <strong>@goi.GiaGoi đ / @goi.ThoiHan</strong>
+                                    Giá: <strong>@goi.GiaGoi đ / @goi.ThoiHan Ngày</strong>
                                 </p>
                                 <p class="mb-3">
                                     <i class="fas fa-phone-alt me-1"></i>
                                     Tính năng: <strong>@goi.TinhNang</strong>
                                 </p>
                                 <div class="d-grid">
-                                    <button class="btn btn-primary w-100">
+                                    <a asp-controller="DichVuDiDong" asp-action="DangKyDichVu" asp-route-id="@goi.IdgoiDangKy"
+                                       class="btn btn-primary w-100">
                                         <i class="fas fa-check-circle me-1"></i> Đăng ký
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

@@ -34,7 +34,7 @@ public partial class HoaDonDichVu
     public string? Email { get; set; }
 
     [StringLength(255)]
-    public string DiaChi { get; set; } = null!;
+    public string? DiaChi { get; set; } = null!;
 
     [InverseProperty("IdhoaDonDvNavigation")]
     public virtual ICollection<CthoaDonDichVu> CthoaDonDichVus { get; set; } = new List<CthoaDonDichVu>();

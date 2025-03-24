@@ -817,6 +817,10 @@
       "PackagePath": "staticwebassets\\img\\dichvu\\doanhnghiep\\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png"
     },
     {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
+      "PackagePath": "staticwebassets\\img\\icon\\sim.png"
+    },
+    {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\logo\\logo-1.png",
       "PackagePath": "staticwebassets\\img\\logo\\logo-1.png"
     },
