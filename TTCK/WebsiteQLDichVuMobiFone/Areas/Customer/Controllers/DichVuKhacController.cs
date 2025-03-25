@@ -64,5 +64,31 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             return View(danhMucs);
         }
+        public IActionResult ChiTietSanPham(int id)
+        {
+            GetData();
+
+            var sanPham = _context.SanPhamDichVuKhacs
+                            .Include(sp => sp.GoiDangKyDichVuKhacs)
+                            .FirstOrDefault(sp => sp.IdsanPham == id);
+
+            if (sanPham == null)
+            {
+                return NotFound();
+            }
+
+            // Lấy các gói đăng ký liên quan
+            ViewBag.GoiDangKyDichVuKhac = _context.GoiDangKyDichVuKhacs
+                                                  .Where(g => g.IdsanPham == id)
+                                                  .ToList();
+
+            // Lấy các dịch vụ liên quan dựa theo loại dịch vụ
+            ViewBag.DichVuLienQuan = _context.SanPhamDichVuKhacs
+                                             .Where(sp => sp.IdloaiDichVuKhac == sanPham.IdloaiDichVuKhac && sp.IdsanPham != id)
+                                             .ToList();
+
+            return View(sanPham);
+        }
+
     }
 }

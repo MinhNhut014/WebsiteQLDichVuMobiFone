@@ -67,9 +67,11 @@
                                  class="card-img-top img-fluid"
                                  style="height: 180px; object-fit: cover;"
                                  alt="@sanPham.TenSanPham">
+                            <a asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@sanPham.IdsanPham">
                             <div class="card-header bg-primary text-white text-center fw-bold text-truncate">
                                 @sanPham.TenSanPham
                             </div>
+                            </a>
                             <div class="card-body">
                                 <p class="text-truncate-3" title="@sanPham.MoTa">@sanPham.MoTa</p>
                                 <div class="d-grid">

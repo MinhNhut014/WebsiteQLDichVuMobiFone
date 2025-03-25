@@ -105,7 +105,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "IdloaiDichVuKhac", sanPhamDichVuKhac.IdloaiDichVuKhac);
+            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "TenLoaiDichVu", sanPhamDichVuKhac.IdloaiDichVuKhac);
             return View(sanPhamDichVuKhac);
         }
 
@@ -141,7 +141,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "IdloaiDichVuKhac", sanPhamDichVuKhac.IdloaiDichVuKhac);
+            ViewData["IdloaiDichVuKhac"] = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "TenLoaiDichVu", sanPhamDichVuKhac.IdloaiDichVuKhac);
             return View(sanPhamDichVuKhac);
         }
 

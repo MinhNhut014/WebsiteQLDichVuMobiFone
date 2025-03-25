@@ -1,0 +1,140 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.SanPhamDichVuKhac
+
+@{
+    ViewData["Title"] = "Chi Tiết Dịch Vụ - " + Model.TenSanPham;
+}
+
+<div class="container mt-5">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
+            <li class="breadcrumb-item"><a href="#">Khác</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.TenSanPham</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <div class="col-md-8">
+            
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex align-items-center">
+                    <img src="~/img/dichvu/dichvukhac/@Model.HinhAnh" alt="@Model.TenSanPham" class="img-thumbnail me-4" style="width: 120px; height: 120px; object-fit: cover;">
+                    <div class="flex-grow-1">
+                        <h3 class="fw-bold mb-2 text-primary">@Model.TenSanPham</h3>
+                        <p class="text-muted mb-3" style="line-height: 1.5;">@Html.Raw(Model.MoTa)</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-4">
+                <h5 class="fw-bold text-secondary mb-3">Gói Đăng Ký Dịch Vụ</h5>
+                <div class="overflow-hidden position-relative" style="max-height: 300px;">
+                    <div class="d-flex flex-nowrap gap-3" id="goiDangKySlider">
+                        @if (ViewBag.GoiDangKyDichVuKhac != null && ViewBag.GoiDangKyDichVuKhac.Count > 0)
+                        {
+                            @foreach (var goi in ViewBag.GoiDangKyDichVuKhac)
+                            {
+                                <div class="card border-0 shadow-sm rounded-3" style="min-width: 250px;">
+                                    <div class="card-body text-center">
+                                        <h6 class="fw-bold">@goi.TenGoi</h6>
+                                        <p class="text-primary mb-2">Giá: @goi.GiaGoi VNĐ</p>
+                                        <p>Thời hạn: @goi.ThoiHan</p>
+                                        <a href="#" class="btn btn-success w-100">
+                                            <i class="fas fa-check-circle me-1"></i> Đăng ký
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                        }
+                        else
+                        {
+                            <p>Chưa có gói đăng ký dịch vụ nào.</p>
+                        }
+                    </div>
+                    <button class="btn btn-light position-absolute top-50 start-0 translate-middle-y border-0" id="prevBtn">&#10094;</button>
+                    <button class="btn btn-light position-absolute top-50 end-0 translate-middle-y border-0" id="nextBtn">&#10095;</button>
+                </div>
+            </div>
+
+            <div class="mb-4">
+                <h5 class="fw-bold text-secondary mb-3">Thông Tin Chi Tiết</h5>
+                <div class="bg-light p-4 rounded-3 shadow-sm">
+                    <p class="mb-0" style="line-height: 1.7;">@Html.Raw(Model.ThongTinChiTiet)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <h5 class="fw-bold mb-3 text-secondary">Dịch vụ liên quan</h5>
+
+            @if (ViewBag.DichVuLienQuan != null && ((IEnumerable<dynamic>)ViewBag.DichVuLienQuan).Any())
+            {
+                @foreach (var dv in ViewBag.DichVuLienQuan)
+                {
+                    <div class="col">
+                        <div class="card border-0 shadow-sm rounded-3" style="min-height: 320px;">
+                            <img src="~/img/dichvu/dichvukhac/@dv.HinhAnh" class="card-img-top img-fluid" style="height: 180px; object-fit: cover;" alt="@dv.TenSanPham">
+                            <a asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@dv.IdsanPham">
+                                <div class="card-header bg-primary text-white text-center fw-bold text-truncate">@dv.TenSanPham</div>
+                            </a>
+                            <div class="card-body">
+                                <p class="text-truncate-3" title="@dv.MoTa" style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">@dv.MoTa</p>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary w-100">
+                                        <i class="fas fa-check-circle me-1"></i> Đăng ký
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Không có dịch vụ liên quan.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<script>
+    const slider = document.getElementById('goiDangKySlider');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    prevBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: -300, behavior: 'smooth' });
+    });
+
+    nextBtn.addEventListener('click', () => {
+        slider.scrollBy({ left: 300, behavior: 'smooth' });
+    });
+</script>
+
+<style>
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+    }
+
+    .img-thumbnail {
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border: none;
+        transition: background-color 0.3s;
+    }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+</style>

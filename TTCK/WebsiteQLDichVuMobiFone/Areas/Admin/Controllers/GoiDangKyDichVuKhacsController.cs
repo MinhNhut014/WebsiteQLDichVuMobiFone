@@ -49,7 +49,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/GoiDangKyDichVuKhacs/Create
         public IActionResult Create()
         {
-            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "IdsanPham");
+            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "TenSanPham");
             return View();
         }
 
@@ -66,7 +66,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "IdsanPham", goiDangKyDichVuKhac.IdsanPham);
+            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "TenSanPham", goiDangKyDichVuKhac.IdsanPham);
             return View(goiDangKyDichVuKhac);
         }
 
@@ -83,7 +83,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "IdsanPham", goiDangKyDichVuKhac.IdsanPham);
+            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "TenSanPham", goiDangKyDichVuKhac.IdsanPham);
             return View(goiDangKyDichVuKhac);
         }
 
@@ -119,7 +119,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "IdsanPham", goiDangKyDichVuKhac.IdsanPham);
+            ViewData["IdsanPham"] = new SelectList(_context.SanPhamDichVuKhacs, "IdsanPham", "TenSanPham", goiDangKyDichVuKhac.IdsanPham);
             return View(goiDangKyDichVuKhac);
         }
 
