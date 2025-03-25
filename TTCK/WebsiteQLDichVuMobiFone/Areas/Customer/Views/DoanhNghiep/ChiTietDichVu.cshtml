@@ -1,0 +1,111 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.GoiDichVu
+
+@{
+    ViewData["Title"] = "Chi Tiết Giải Pháp - " + Model.TenGoiDv;
+}
+
+<div class="container mt-5">
+    <!-- Đường dẫn breadcrumb -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
+            <li class="breadcrumb-item"><a href="#">Doanh Nghiệp</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.TenGoiDv</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Phần nội dung chính -->
+        <div class="col-md-8">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body d-flex align-items-center">
+                    <img src="~/img/dichvu/doanhnghiep/@Model.HinhAnh" alt="@Model.TenGoiDv" class="img-thumbnail me-4" style="width: 120px; height: 120px; object-fit: cover;">
+                    <div class="flex-grow-1">
+                        <h3 class="fw-bold mb-2 text-primary">@Model.TenGoiDv</h3>
+                        <p class="text-muted mb-3" style="line-height: 1.5;">@Html.Raw(Model.MoTa)</p>
+                        <button class="btn btn-danger px-4 py-2">Đăng ký</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Thông tin chi tiết -->
+            <div class="mb-4">
+                <h5 class="fw-bold text-secondary mb-3">Thông Tin Chi Tiết</h5>
+                <div class="bg-light p-4 rounded-3 shadow-sm">
+                    <p class="mb-0" style="line-height: 1.7;">@Html.Raw(Model.ThongTinChiTiet)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Phần sản phẩm khác (Danh sách dịch vụ liên quan) -->
+        <div class="col-md-4">
+            <h5 class="fw-bold mb-3 text-secondary">Dịch vụ liên quan</h5>
+
+            @if (ViewBag.DichVuLienQuan != null && ViewBag.DichVuLienQuan.Count > 0)
+            {
+                @foreach (var dv in ViewBag.DichVuLienQuan)
+                {
+                    <div class="col">
+                        <div class="card border-0 shadow-sm rounded-3">
+                            <img src="~/img/dichvu/doanhnghiep/@dv.HinhAnh" class="card-img-top img-fluid"
+                                 style="height: 180px; object-fit: cover;" alt="@dv.TenGoiDv">
+                            <a asp-controller="DoanhNghiep" asp-action="ChiTietDichVu" asp-route-id="@dv.IdgoiDichVu">
+                                <div class="card-header bg-primary text-white text-center fw-bold text-truncate">
+                                    @dv.TenGoiDv
+                                </div>
+                            </a>
+                            <div class="card-body">
+                                <p class="text-truncate-3" title="@dv.MoTa">
+                                    @dv.MoTa
+                                </p>
+                                <div class="d-grid">
+                                    <button class="btn btn-primary w-100">
+                                        <i class="fas fa-check-circle me-1"></i> Đăng ký
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>Không có dịch vụ liên quan.</p>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- CSS tùy chỉnh -->
+<style>
+    .breadcrumb {
+        background-color: transparent;
+        padding: 0;
+        margin-bottom: 1rem;
+    }
+
+    .card {
+        border: none;
+        border-radius: 12px;
+    }
+
+    .img-thumbnail {
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+    }
+
+    p {
+        line-height: 1.6;
+        margin-bottom: 1rem;
+    }
+
+    .btn-danger {
+        background-color: #ff4757;
+        border: none;
+        transition: background-color 0.3s;
+    }
+
+        .btn-danger:hover {
+            background-color: #e84118;
+        }
+</style>

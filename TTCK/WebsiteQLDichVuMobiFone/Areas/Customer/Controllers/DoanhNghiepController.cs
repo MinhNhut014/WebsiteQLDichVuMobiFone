@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using WebsiteQLDichVuMobiFone.Data;
 using WebsiteQLDichVuMobiFone.Models;
 
@@ -59,6 +60,27 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.SearchTerm = searchTerm;
 
             return View(danhMucDichVu);
+        }
+        public async Task<IActionResult> ChiTietDichVu(int id)
+        {
+            var goiDichVu = await _context.GoiDichVus
+                                         .Include(g => g.IddichVuDnNavigation)
+                                         .ThenInclude(dv => dv.GoiDichVus)
+                                         .FirstOrDefaultAsync(g => g.IdgoiDichVu == id);
+
+            if (goiDichVu == null)
+            {
+                return NotFound();
+            }
+
+            // Lấy danh sách dịch vụ liên quan cùng nhóm nhưng loại trừ chính nó
+            var dichVuLienQuan = goiDichVu.IddichVuDnNavigation?.GoiDichVus
+                                        .Where(g => g.IdgoiDichVu != id)
+                                        .ToList();
+
+            ViewBag.DichVuLienQuan = dichVuLienQuan;
+
+            return View(goiDichVu);
         }
 
     }

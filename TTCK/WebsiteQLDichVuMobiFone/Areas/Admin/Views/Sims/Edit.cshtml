@@ -1,61 +1,63 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.Sim
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edit SIM";
 }
 
-<h1>Edit</h1>
+<h1>Edit SIM</h1>
 
-<h4>Sim</h4>
-<hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Idsim" />
+
             <div class="form-group">
-                <label asp-for="IddichVu" class="control-label"></label>
+                <label asp-for="IddichVu" class="control-label">Dịch vụ</label>
                 <select asp-for="IddichVu" class="form-control" asp-items="ViewBag.IddichVu"></select>
                 <span asp-validation-for="IddichVu" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="SoThueBao" class="control-label"></label>
+                <label asp-for="SoThueBao" class="control-label">Số thuê bao</label>
                 <input asp-for="SoThueBao" class="form-control" />
                 <span asp-validation-for="SoThueBao" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="IdloaiSo" class="control-label"></label>
+                <label asp-for="IdloaiSo" class="control-label">Loại số</label>
                 <select asp-for="IdloaiSo" class="form-control" asp-items="ViewBag.IdloaiSo"></select>
                 <span asp-validation-for="IdloaiSo" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="KhuVucHoaMang" class="control-label"></label>
+                <label asp-for="KhuVucHoaMang" class="control-label">Khu vực hòa mạng</label>
                 <input asp-for="KhuVucHoaMang" class="form-control" />
                 <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="PhiHoaMang" class="control-label"></label>
+                <label asp-for="PhiHoaMang" class="control-label">Phí hòa mạng</label>
                 <input asp-for="PhiHoaMang" class="form-control" />
                 <span asp-validation-for="PhiHoaMang" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="IdtrangThaiSim" class="control-label"></label>
+                <label asp-for="IdtrangThaiSim" class="control-label">Trạng thái SIM</label>
                 <select asp-for="IdtrangThaiSim" class="form-control" asp-items="ViewBag.IdtrangThaiSim"></select>
                 <span asp-validation-for="IdtrangThaiSim" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="GoiDangKyDiKem" class="control-label"></label>
-                <select asp-for="GoiDangKyDiKem" class="form-control" asp-items="ViewBag.GoiDangKyDiKem"></select>
+                <label asp-for="GoiDangKyDiKem" class="control-label">Gói đăng ký đi kèm</label>
+                <select asp-for="GoiDangKyDiKem" class="form-control" asp-items="ViewBag.GoiDangKyDiKem">
+                    <option value="0">-- Không chọn --</option> <!-- Giá trị 0 để kiểm tra null -->
+                </select>
                 <span asp-validation-for="GoiDangKyDiKem" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+
+            <button type="submit" class="btn btn-primary">Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary">Trở về</a>
         </form>
     </div>
 </div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-

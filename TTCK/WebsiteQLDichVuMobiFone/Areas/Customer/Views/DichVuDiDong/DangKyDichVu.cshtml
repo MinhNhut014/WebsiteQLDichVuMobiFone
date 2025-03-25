@@ -1,34 +1,54 @@
 ﻿@{
-    ViewData["Title"] = "Đăng Ký DichVu";
+    ViewData["Title"] = "Đăng Ký Dịch Vụ";
     var goiDaChon = ViewBag.GoiDaChon as WebsiteQLDichVuMobiFone.Models.GoiDangKy;
-    var tongTien = ViewBag.TongTien;
+    var tongTien = ViewBag.TongTien ?? 0;
 }
+
 <div class="container mt-5">
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary">Đăng Ký Dịch Vụ</h2>
         <p class="text-muted">Hoàn tất thông tin để đăng ký dịch vụ</p>
     </div>
+
+    <!-- Hiển thị thông báo thành công -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+
+    <!-- Hiển thị thông báo lỗi -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
     <div class="row g-4">
+        <!-- Form đăng ký dịch vụ -->
         <div class="col-md-6">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
                     <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
+
                     <form method="post" asp-controller="DichVuDiDong" asp-action="HoanTatDangKyDichVu">
+                        <!-- Truyền ID gói đăng ký ẩn -->
                         <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
 
+                        <!-- Nhập tên khách hàng -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Tên khách hàng:</label>
-                            <input type="text" name="TenKhachHang" class="form-control border-secondary" placeholder="Nhập tên khách hàng" required />
+                            <input type="text" name="TenKhachHang" class="form-control border-secondary" required placeholder="Nhập tên khách hàng" />
                         </div>
 
+                        <!-- Nhập số điện thoại -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Số điện thoại:</label>
-                            <input type="text" name="SoDienThoai" class="form-control border-secondary" placeholder="Nhập số điện thoại" required />
+                            <input type="text" name="SoDienThoai" class="form-control border-secondary" required placeholder="Nhập số điện thoại" />
                         </div>
 
+                        <!-- Nhập email -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Email:</label>
-                            <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email" />
+                            <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email (nếu có)" />
                         </div>
 
                         <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
@@ -37,6 +57,7 @@
             </div>
         </div>
 
+        <!-- Thông tin gói đăng ký -->
         <div class="col-md-6">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
@@ -46,7 +67,7 @@
                         @if (goiDaChon != null)
                         {
                             <p><strong>Tên gói:</strong> @goiDaChon.TenGoi</p>
-                            <p><strong>Giá gói:</strong> @goiDaChon.GiaGoi VND</p>
+                            <p><strong>Giá gói:</strong> @goiDaChon.GiaGoi?.ToString("N0") VND</p>
                             <p><strong>Thời hạn:</strong> @goiDaChon.ThoiHan ngày</p>
                         }
                         else
@@ -55,11 +76,12 @@
                         }
                     </div>
 
+                    <!-- Thông tin thanh toán -->
                     <div class="bg-light p-3 rounded-3 text-center">
                         <h5 class="text-danger">Chi tiết thanh toán</h5>
                         <div class="d-flex justify-content-between border-top pt-2 mt-2 fw-bold">
                             <span>Tổng tiền:</span>
-                            <span id="tongTien">@((ViewBag.TongTien != null) ? ViewBag.TongTien.ToString("N0") : "0") VND</span>
+                            <span>@((tongTien != null) ? Convert.ToInt32(tongTien).ToString("N0") : "0") VND</span>
                         </div>
                     </div>
                 </div>

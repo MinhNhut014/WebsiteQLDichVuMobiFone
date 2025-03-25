@@ -74,10 +74,11 @@
                         <div class="card border-0 shadow-sm rounded-3">
                             <img src="~/img/dichvu/doanhnghiep/@goi.HinhAnh" class="card-img-top img-fluid"
                                  style="height: 180px; object-fit: cover;" alt="@goi.TenGoiDv">
+                            <a asp-controller="DoanhNghiep" asp-action="ChiTietDichVu" asp-route-id="@goi.IdgoiDichVu">
                             <div class="card-header bg-primary text-white text-center fw-bold text-truncate">
                                 @goi.TenGoiDv
                             </div>
-
+                            </a>
                             <div class="card-body">
                                 <p class="text-truncate-3" title="@goi.MoTa">
                                     @goi.MoTa

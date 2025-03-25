@@ -83,27 +83,35 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             return View(goiDangKy);
         }
         [HttpGet]
-        public async Task<IActionResult> DangKyDichVu(int id)
+        public IActionResult DangKyDichVu(int id)
         {
-            GetData();
-            var goiDangKy = await _context.GoiDangKies.FindAsync(id);
+            // Kiểm tra ID gói dịch vụ được truyền vào
+            Console.WriteLine("ID được truyền vào: " + id);
 
+            // Tìm kiếm gói đăng ký trong cơ sở dữ liệu
+            var goiDangKy = _context.GoiDangKies.FirstOrDefault(g => g.IdgoiDangKy == id);
+
+            // Kiểm tra gói đăng ký có tồn tại không
             if (goiDangKy == null)
             {
-                TempData["Error"] = "Không tìm thấy gói dịch vụ.";
-                return RedirectToAction("DanhSachDichVu");
+                TempData["ErrorMessage"] = "Gói dịch vụ không tồn tại.";
+                return RedirectToAction("Index");  // Điều hướng về trang chủ hoặc trang khác phù hợp
             }
 
-            ViewBag.GoiDaChon = goiDangKy; // Chỉ định rõ biến lưu gói dịch vụ đã chọn
-            ViewBag.DanhSachGoiDichVu = _context.GoiDangKies.ToList(); // Danh sách tất cả gói dịch vụ (nếu cần)
+            ViewBag.GoiDaChon = goiDangKy;
             ViewBag.TongTien = goiDangKy.GiaGoi;
             return View();
         }
 
+
+
+        // Xử lý hoàn tất đăng ký dịch vụ
         [HttpPost]
-        public async Task<IActionResult> HoanTatDangKyDichVu(HoaDonDichVu hoaDon, int idGoiDangKy)
+        public async Task<IActionResult> HoanTatDangKyDichVu(HoaDonDichVu hoaDon, int idGoiDangKy, [FromForm] string SoDienThoai)
         {
             GetData();
+
+            // Kiểm tra đăng nhập
             var nguoiDungId = HttpContext.Session.GetString("UserId");
             if (string.IsNullOrEmpty(nguoiDungId))
             {
@@ -111,61 +119,102 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 return RedirectToAction("DangNhap", "NguoiDung");
             }
 
-            // Kiểm tra số điện thoại trong bảng SIM
-            var sim = await _context.Sims.FirstOrDefaultAsync(s => s.SoThueBao == hoaDon.SoDienThoai);
-            if (sim == null)
+            // Kiểm tra số điện thoại trống
+            if (string.IsNullOrEmpty(SoDienThoai))
             {
-                TempData["ErrorMessage"] = "SIM không tồn tại.";
-                return RedirectToAction("DangKyDichVu", new { idGoiDangKy });
+                TempData["ErrorMessage"] = "Vui lòng nhập số điện thoại.";
+                return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
             }
 
-            if (sim.IdtrangThaiSim != 3)
-            {
-                TempData["ErrorMessage"] = "SIM chưa kích hoạt.";
-                return RedirectToAction("DangKyDichVu", new { idGoiDangKy });
-            }
-
-            hoaDon.IdnguoiDung = int.Parse(nguoiDungId);
-            hoaDon.NgayDatHang = DateTime.Now;
-            hoaDon.IdtrangThai = 1; // Trạng thái "Chờ xử lý"
-            hoaDon.DiaChi = null; // Địa chỉ mặc định là không có
-
-            var goiDangKy = await _context.GoiDangKies.FindAsync(idGoiDangKy);
-            if (goiDangKy == null)
-            {
-                TempData["ErrorMessage"] = "Gói dịch vụ không hợp lệ.";
-                return RedirectToAction("DangKyDichVu", new { idGoiDangKy });
-            }
-
-            hoaDon.TongTien = goiDangKy.GiaGoi;
-
-            using var transaction = await _context.Database.BeginTransactionAsync();
             try
             {
-                _context.HoaDonDichVus.Add(hoaDon);
-                await _context.SaveChangesAsync();
-
-                var chiTietHoaDon = new CthoaDonDichVu
+                // Kiểm tra số thuê bao trong bảng SIM
+                var sim = await _context.Sims.FirstOrDefaultAsync(s => s.SoThueBao == SoDienThoai);
+                if (sim == null || sim.IdtrangThaiSim != 3)  // Trạng thái SIM kích hoạt (IdtrangThaiSim == 3)
                 {
-                    IdhoaDonDv = hoaDon.IdhoaDonDv,
-                    IdgoiDangKy = idGoiDangKy,
-                    DonGia = goiDangKy.GiaGoi,
-                    SoLuong = 1,
-                    ThanhTien = goiDangKy.GiaGoi
-                };
+                    TempData["ErrorMessage"] = "SIM không tồn tại hoặc chưa kích hoạt.";
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
 
-                _context.CthoaDonDichVus.Add(chiTietHoaDon);
-                await _context.SaveChangesAsync();
+                // Kiểm tra gói đăng ký
+                var goiDangKy = await _context.GoiDangKies.FindAsync(idGoiDangKy);
+                if (goiDangKy == null)
+                {
+                    TempData["ErrorMessage"] = "Gói dịch vụ không tồn tại.";
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
 
-                await transaction.CommitAsync();
-                TempData["SuccessMessage"] = "Đăng ký dịch vụ thành công.";
-                return RedirectToAction("ThongBaoHoanTat", new { idHoaDon = hoaDon.IdhoaDonDv });
+                // Kiểm tra SIM đã đăng ký gói này chưa
+                bool daDangKy = await _context.CthoaDonDichVus.AnyAsync(ct =>
+                    ct.IdgoiDangKy == idGoiDangKy && ct.IdhoaDonDvNavigation.SoDienThoai == SoDienThoai);
+
+                if (daDangKy)
+                {
+                    TempData["ErrorMessage"] = "Số thuê bao này đã đăng ký gói dịch vụ này rồi.";
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
+
+                // Thiết lập thông tin hóa đơn
+                hoaDon.SoDienThoai = SoDienThoai;
+                hoaDon.IdnguoiDung = int.Parse(nguoiDungId);
+                hoaDon.NgayDatHang = DateTime.Now;
+                hoaDon.IdtrangThai = 1; // Trạng thái "Chờ xử lý"
+                hoaDon.TongTien = goiDangKy.GiaGoi;
+
+                // Gán giá trị mặc định cho DiaChi nếu NULL
+                if (string.IsNullOrEmpty(hoaDon.DiaChi))
+                {
+                    hoaDon.DiaChi = "Không có";
+                }
+
+                // Bắt đầu transaction
+                using var transaction = await _context.Database.BeginTransactionAsync();
+
+                try
+                {
+                    // Thêm hóa đơn vào bảng HoaDonDichVu
+                    _context.HoaDonDichVus.Add(hoaDon);
+                    await _context.SaveChangesAsync();
+
+                    // Thêm chi tiết hóa đơn vào bảng CthoaDonDichVu
+                    var chiTietHoaDon = new CthoaDonDichVu
+                    {
+                        IdhoaDonDv = hoaDon.IdhoaDonDv,
+                        IdgoiDangKy = idGoiDangKy,
+                        DonGia = goiDangKy.GiaGoi,
+                        SoLuong = 1,
+                        ThanhTien = goiDangKy.GiaGoi
+                    };
+                    _context.CthoaDonDichVus.Add(chiTietHoaDon);
+                    await _context.SaveChangesAsync();
+
+                    // Cập nhật gói đăng ký vào SIM đã kiểm tra
+                    sim.GoiDangKyDiKem = idGoiDangKy; // Cột IdgoiDangKy trong bảng SIM
+                    _context.Sims.Update(sim);
+                    await _context.SaveChangesAsync();
+
+                    await transaction.CommitAsync();
+
+                    TempData["SuccessMessage"] = "Đăng ký dịch vụ thành công.";
+                    return RedirectToAction("ThongBaoHoanTat", new { idHoaDon = hoaDon.IdhoaDonDv });
+                }
+                catch (DbUpdateException dbEx)
+                {
+                    await transaction.RollbackAsync();
+                    TempData["ErrorMessage"] = "Lỗi cơ sở dữ liệu: " + dbEx.InnerException?.Message;
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
+                catch (Exception ex)
+                {
+                    await transaction.RollbackAsync();
+                    TempData["ErrorMessage"] = "Lỗi không xác định: " + ex.Message;
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
             }
             catch (Exception ex)
             {
-                await transaction.RollbackAsync();
-                TempData["ErrorMessage"] = "Có lỗi xảy ra: " + ex.Message;
-                return RedirectToAction("DangKyDichVu", new { idGoiDangKy });
+                TempData["ErrorMessage"] = "Lỗi hệ thống: " + ex.Message;
+                return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
             }
         }
         public IActionResult ThongBaoHoanTat(int idHoaDon)
