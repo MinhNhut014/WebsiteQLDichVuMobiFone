@@ -25,25 +25,25 @@ public partial class HoaDonDoanhNghiep
     public int IdtrangThai { get; set; }
 
     [StringLength(255)]
-    public string TenCongTy { get; set; } = null!;
+    public string? TenCongTy { get; set; } = null!;
 
     [StringLength(11)]
-    public string SoDienThoaiCongTy { get; set; } = null!;
+    public string? SoDienThoaiCongTy { get; set; } = null!;
 
     [StringLength(100)]
     public string? EmailCongTy { get; set; }
 
     [StringLength(255)]
-    public string DiaChiCongTy { get; set; } = null!;
+    public string? DiaChiCongTy { get; set; } = null!;
 
     [InverseProperty("IdhoaDonDnNavigation")]
     public virtual ICollection<CthoaDonDoanhNghiep> CthoaDonDoanhNghieps { get; set; } = new List<CthoaDonDoanhNghiep>();
 
     [ForeignKey("IdnguoiDung")]
     [InverseProperty("HoaDonDoanhNghieps")]
-    public virtual NguoiDung IdnguoiDungNavigation { get; set; } = null!;
+    public virtual NguoiDung? IdnguoiDungNavigation { get; set; } = null!;
 
     [ForeignKey("IdtrangThai")]
     [InverseProperty("HoaDonDoanhNghieps")]
-    public virtual TrangThaiDonHang IdtrangThaiNavigation { get; set; } = null!;
+    public virtual TrangThaiDonHang? IdtrangThaiNavigation { get; set; } = null!;
 }

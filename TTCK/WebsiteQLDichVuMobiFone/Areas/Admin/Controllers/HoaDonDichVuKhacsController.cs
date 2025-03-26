@@ -11,33 +11,32 @@ using WebsiteQLDichVuMobiFone.Models;
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    public class HoaDonDichVusController : Controller
+    public class HoaDonDichVuKhacsController : Controller
     {
         private readonly ApplicationDbContext _context;
 
-        public HoaDonDichVusController(ApplicationDbContext context)
+        public HoaDonDichVuKhacsController(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        // GET: Admin/HoaDonDichVus
+        // GET: Admin/HoaDonDichVuKhacs
         public async Task<IActionResult> Index()
         {
             var hoaDonDichVus = await _context.HoaDonDichVus
                 .Include(h => h.IdnguoiDungNavigation)
                 .Include(h => h.IdtrangThaiNavigation)
                 .Where(h => h.CthoaDonDichVus
-                    .Any(ct => ct.IdgoiDangKy != null))
+                    .Any(ct => ct.IdgoiDangKyDvk != null))
                 .Where(h => h.CthoaDonDichVus
-                    .All(ct => ct.IdgoiDangKyDvk == null)) // Chỉ giữ lại các hóa đơn không chứa IdgoiDangKyDvk
+                    .All(ct => ct.IdgoiDangKy == null)) // Chỉ giữ lại các hóa đơn không chứa IdgoiDangKyDvk
                 .OrderByDescending(h => h.NgayDatHang)
                 .ToListAsync();
 
             return View(hoaDonDichVus);
         }
 
-
-        // GET: Admin/HoaDonDichVus/Details/5
+        // GET: Admin/HoaDonDichVuKhacs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -57,7 +56,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             return View(hoaDonDichVu);
         }
 
-        // GET: Admin/HoaDonDichVus/Create
+        // GET: Admin/HoaDonDichVuKhacs/Create
         public IActionResult Create()
         {
             ViewData["IdnguoiDung"] = new SelectList(_context.NguoiDungs, "IdnguoiDung", "IdnguoiDung");
@@ -65,7 +64,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             return View();
         }
 
-        // POST: Admin/HoaDonDichVus/Create
+        // POST: Admin/HoaDonDichVuKhacs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -83,7 +82,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             return View(hoaDonDichVu);
         }
 
-        // GET: Admin/HoaDonDichVus/Edit/5
+        // GET: Admin/HoaDonDichVuKhacs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -101,7 +100,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             return View(hoaDonDichVu);
         }
 
-        // POST: Admin/HoaDonDichVus/Edit/5
+        // POST: Admin/HoaDonDichVuKhacs/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -138,7 +137,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             return View(hoaDonDichVu);
         }
 
-        // GET: Admin/HoaDonDichVus/Delete/5
+        // GET: Admin/HoaDonDichVuKhacs/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -158,7 +157,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             return View(hoaDonDichVu);
         }
 
-        // POST: Admin/HoaDonDichVus/Delete/5
+        // POST: Admin/HoaDonDichVuKhacs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)

@@ -1,0 +1,42 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonDoanhNghiep
+
+@{
+    ViewData["Title"] = "Thông Báo Hoàn Tất Đăng Ký Dịch Vụ";
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-success">Đăng Ký Dịch Vụ Thành Công</h2>
+        <p class="text-muted">Chúc mừng bạn đã đăng ký thành công dịch vụ. Vui lòng kiểm tra thông tin dưới đây.</p>
+    </div>
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="row g-4">
+        <div class="col-md-12">
+            <div class="card shadow-sm border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-primary mb-3">Thông tin đơn hàng</h4>
+
+                    <p><strong>Mã đơn hàng:</strong> @Model.IdhoaDonDn</p>
+                    <p><strong>Tên khách hàng:</strong> @Model.TenCongTy</p>
+                    <p><strong>Số điện thoại:</strong> @Model.SoDienThoaiCongTy</p>
+                    <p><strong>Email:</strong> @Model.EmailCongTy</p>
+                    <p><strong>Tổng tiền:</strong> @Model.DiaChiCongTy</p>
+
+                    <h5 class="text-success mt-4">Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Đơn hàng của bạn đang được xử lý.</h5>
+
+                    <a href="@Url.Action("Index", "Home")" class="btn btn-primary w-100 py-2 mt-4">Quay lại trang chủ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

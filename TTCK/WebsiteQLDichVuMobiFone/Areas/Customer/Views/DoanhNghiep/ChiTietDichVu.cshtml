@@ -24,7 +24,10 @@
                     <div class="flex-grow-1">
                         <h3 class="fw-bold mb-2 text-primary">@Model.TenGoiDv</h3>
                         <p class="text-muted mb-3" style="line-height: 1.5;">@Html.Raw(Model.MoTa)</p>
-                        <button class="btn btn-danger px-4 py-2">Đăng ký</button>
+                        <a asp-controller="DoanhNghiep" asp-action="DangKyDichVu" asp-route-id="@Model.IdgoiDichVu"
+                           class="btn btn-primary px-4 py-2">
+                            <i class="fas fa-check-circle me-1"></i> Đăng ký
+                        </a>
                     </div>
                 </div>
             </div>
@@ -59,9 +62,10 @@
                                     @dv.MoTa
                                 </p>
                                 <div class="d-grid">
-                                    <button class="btn btn-primary w-100">
+                                    <a asp-controller="DoanhNghiep" asp-action="DangKyDichVu" asp-route-id="@dv.IdgoiDichVu"
+                                       class="btn btn-primary w-100">
                                         <i class="fas fa-check-circle me-1"></i> Đăng ký
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

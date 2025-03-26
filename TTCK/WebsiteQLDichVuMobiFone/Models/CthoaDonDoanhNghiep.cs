@@ -27,9 +27,9 @@ public partial class CthoaDonDoanhNghiep
 
     [ForeignKey("IdgoiDichVu")]
     [InverseProperty("CthoaDonDoanhNghieps")]
-    public virtual GoiDichVu IdgoiDichVuNavigation { get; set; } = null!;
+    public virtual GoiDichVu? IdgoiDichVuNavigation { get; set; } = null!;
 
     [ForeignKey("IdhoaDonDn")]
     [InverseProperty("CthoaDonDoanhNghieps")]
-    public virtual HoaDonDoanhNghiep IdhoaDonDnNavigation { get; set; } = null!;
+    public virtual HoaDonDoanhNghiep? IdhoaDonDnNavigation { get; set; } = null!;
 }

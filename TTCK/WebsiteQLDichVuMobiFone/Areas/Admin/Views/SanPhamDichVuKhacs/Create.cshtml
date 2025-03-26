@@ -4,41 +4,60 @@
     ViewData["Title"] = "Thêm Sản Phẩm Dịch Vụ";
 }
 
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="card shadow-lg border-0 rounded-4">
-        <div class="card-header bg-gradient text-white text-center" style="background: linear-gradient(135deg, #007bff, #0056b3);">
+        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
             <h2 class="mb-0">➕ Thêm Sản Phẩm Dịch Vụ Khác</h2>
         </div>
         <div class="card-body p-4">
             <form asp-action="Create" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="TenSanPham" class="form-label fw-bold">📄 Tên Sản Phẩm</label>
+                <div class="form-group mb-4">
+                    <label asp-for="TenSanPham" class="form-label fw-semibold">📄 Tên Sản Phẩm</label>
                     <input asp-for="TenSanPham" class="form-control rounded-3 shadow-sm" />
                     <span asp-validation-for="TenSanPham" class="text-danger"></span>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="HinhAnh" class="form-label fw-bold">🖼️ Hình Ảnh</label>
+                <div class="form-group mb-4">
+                    <label asp-for="HinhAnh" class="form-label fw-semibold">🖼️ Hình Ảnh</label>
                     <input asp-for="HinhAnh" type="file" class="form-control rounded-3 shadow-sm" />
                     <span asp-validation-for="HinhAnh" class="text-danger"></span>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="MoTa" class="form-label fw-bold">📝 Mô Tả</label>
+                <div class="form-group mb-4">
+                    <label asp-for="MoTa" class="form-label fw-semibold">📝 Mô Tả</label>
                     <textarea asp-for="MoTa" class="form-control rounded-3 shadow-sm" rows="3" style="resize: none;"></textarea>
                     <span asp-validation-for="MoTa" class="text-danger"></span>
                 </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="ThongTinChiTiet" class="form-label fw-bold">📋 Thông Tin Chi Tiết</label>
-                    <textarea asp-for="ThongTinChiTiet" class="form-control rounded-3 shadow-sm" rows="6" style="resize: none;"></textarea>
+                <div class="form-group mb-4">
+                    <label asp-for="ThongTinChiTiet" class="form-label fw-semibold">📋 Thông Tin Chi Tiết</label>
+                    <textarea asp-for="ThongTinChiTiet" id="ThongTinChiTiet" class="form-control rounded-3 shadow-sm" rows="6" style="resize: none;"></textarea>
                     <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
                 </div>
 
+                <button type="button" class="btn btn-outline-secondary mb-3" onclick="showPreview()">👁️ Xem trước</button>
+
+                <div id="previewModal" class="modal fade" tabindex="-1">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Xem trước nội dung</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div id="previewContent" class="p-3 border rounded bg-light" style="max-height: 500px; overflow-y: auto;"></div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group mb-4">
-                    <label asp-for="IdloaiDichVuKhac" class="form-label fw-bold">📂 Loại Dịch Vụ Khác</label>
+                    <label asp-for="IdloaiDichVuKhac" class="form-label fw-semibold">📂 Loại Dịch Vụ Khác</label>
                     <select asp-for="IdloaiDichVuKhac" class="form-select rounded-3 shadow-sm" asp-items="ViewBag.IdloaiDichVuKhac"></select>
                 </div>
 
@@ -55,4 +74,21 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+    <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+    <script>
+        CKEDITOR.replace('ThongTinChiTiet', {
+            height: 300,
+            extraPlugins: 'table',
+            filebrowserUploadUrl: '/DichVu/Upload',
+            filebrowserUploadMethod: 'form',
+            allowedContent: true
+        });
+
+        function showPreview() {
+            var editorData = CKEDITOR.instances.ThongTinChiTiet.getData();
+            document.getElementById("previewContent").innerHTML = editorData;
+            var previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
+            previewModal.show();
+        }
+    </script>
 }

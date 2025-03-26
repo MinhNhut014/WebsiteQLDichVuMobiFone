@@ -190,6 +190,8 @@ wwwroot\img\customer\testimonial-3.jpg
 wwwroot\img\dichvu\dichvukhac\7ce3da83-49ed-4f87-8008-be4de9ec680e_MobiFoneMoney.png
 wwwroot\img\dichvu\dichvukhac\9ee4b8fb-db52-401a-bd4a-fe4f08f91be3_LiXi.jpg
 wwwroot\img\dichvu\dichvukhac\a360cc20-a11b-45ea-a3f6-15cbba1e226d_CongThiDaiHocMobiEdu.png
+wwwroot\img\dichvu\dichvukhac\b014284c-8940-4af0-ba6e-cb8d1b06155c_Spotifydata.jpg
+wwwroot\img\dichvu\dichvukhac\c83f31c2-d5c4-424b-bdad-0497cc891e71_Tiktokdata.jpg
 wwwroot\img\dichvu\dichvukhac\d9cdc63a-a119-4aee-a03d-0db8d77d7e70_Travellink.jpg
 wwwroot\img\dichvu\dichvukhac\df14ce38-7578-4205-a328-39a856bae90c_VieON.png
 wwwroot\img\dichvu\dichvukhac\eb537608-98a7-4643-b33e-a982e9d33f86_Mobistudy.png

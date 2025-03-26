@@ -85,6 +85,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         [HttpGet]
         public IActionResult DangKyDichVu(int id)
         {
+            GetData();
             // Kiểm tra ID gói dịch vụ được truyền vào
             Console.WriteLine("ID được truyền vào: " + id);
 
@@ -102,8 +103,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.TongTien = goiDangKy.GiaGoi;
             return View();
         }
-
-
 
         // Xử lý hoàn tất đăng ký dịch vụ
         [HttpPost]

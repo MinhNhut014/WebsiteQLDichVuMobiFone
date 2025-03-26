@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Đăng Ký Dịch Vụ";
+    var goiDaChon = ViewBag.GoiDaChon as WebsiteQLDichVuMobiFone.Models.GoiDichVu;
+    var tongTien = ViewBag.TongTien ?? 0;
+}
+
+<div class="container mt-5">
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-primary">Đăng Ký Dịch Vụ</h2>
+        <p class="text-muted">Hoàn tất thông tin để đăng ký dịch vụ</p>
+    </div>
+
+    <!-- Hiển thị thông báo thành công -->
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
+    }
+
+    <!-- Hiển thị thông báo lỗi -->
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
+    }
+
+    <div class="row g-4">
+        <!-- Form đăng ký dịch vụ -->
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-primary mb-3">Thông tin Công Ty</h4>
+
+                    <form method="post" asp-controller="DoanhNghiep" asp-action="HoanTatDangKyDichVu">
+                        <!-- Truyền ID gói đăng ký ẩn -->
+                        <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDichVu" />
+
+                        <!-- Nhập tên khách hàng -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Tên Công Ty:</label>
+                            <input type="text" name="TenCongTy" class="form-control border-primary shadow-sm" required placeholder="Nhập tên khách hàng" />
+                        </div>
+
+                        <!-- Nhập số điện thoại -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Số Điện Thoại Công Ty:</label>
+                            <input type="text" name="SoDienThoai" class="form-control border-primary shadow-sm" required placeholder="Nhập số điện thoại" />
+                        </div>
+
+                        <!-- Nhập email -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Email Công Ty:</label>
+                            <input type="email" name="Email" class="form-control border-primary shadow-sm" placeholder="Nhập email (nếu có)" />
+                        </div>
+
+                        <!-- Nhập Địa chỉ công ty -->
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Địa Chỉ Công Ty:</label>
+                            <input type="text" name="DiaChi" class="form-control border-primary shadow-sm" placeholder="Nhập địa chỉ của công ty" />
+                        </div>
+
+                        <div class="d-flex justify-content-between">
+                            <a asp-action="Index" class="btn btn-outline-secondary px-4">Quay lại</a>
+                            <button type="submit" class="btn btn-success px-4">Hoàn tất đăng ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Thông tin gói đăng ký -->
+        <div class="col-md-6">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-body p-4">
+                    <h4 class="card-title text-success mb-3">Thông tin gói đăng ký</h4>
+
+                    <div class="mb-4">
+                        @if (goiDaChon != null)
+                        {
+                            <p><strong>Tên Dịch Vụ:</strong> @goiDaChon.TenGoiDv</p>
+                            <p>
+                                <strong>Hình Ảnh:</strong><img src="~/img/dichvu/doanhnghiep/@goiDaChon.HinhAnh" class="card-img-top img-fluid rounded shadow-sm"
+                                                               style="height: 180px; object-fit: cover;" alt="@goiDaChon.TenGoiDv">
+                            </p>
+                            <p><strong>Thông Tin Dịch Vụ:</strong> @goiDaChon.MoTa</p>
+                        }
+                        else
+                        {
+                            <p class="text-danger">Không có thông tin dịch vụ!</p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
