@@ -3,28 +3,16 @@
   "WorkspaceRootPath": "C:\\DuLieuoD\\TTCK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\admin\\views\\sanphamdichvukhacs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\admin\\views\\sanphamdichvukhacs\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\admin\\views\\goidichvus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\admin\\views\\goidichvus\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\admin\\views\\sanphamdichvukhacs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\admin\\views\\sanphamdichvukhacs\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\doanhnghiep\\chitietdichvu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\doanhnghiep\\chitietdichvu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\dichvukhac\\chitietsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\dichvukhac\\chitietsanpham.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\admin\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\admin\\controllers\\sanphamdichvukhacscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\admin\\controllers\\sanphamdichvukhacscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\dichvudidong\\chitietdichvu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\dichvudidong\\chitietdichvu.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,84 +22,45 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChiTietSanPham.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\ChiTietSanPham.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\ChiTietSanPham.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\ChiTietSanPham.cshtml",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\ChiTietSanPham.cshtml",
-              "ViewState": "AgIAADUAAAAAAAAAAAAAAD8AAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T13:37:32.561Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Edit.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Edit.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Edit.cshtml*",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Edit.cshtml*",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\GoiDichVus\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\GoiDichVus\\Index.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\GoiDichVus\\Index.cshtml*",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\GoiDichVus\\Index.cshtml*",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAAB0AAABkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T13:26:57.039Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAACQAAAAAAAAAAAAswDgAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T13:20:18.642Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_LayoutAdmin.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\Shared\\_LayoutAdmin.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAABQAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T13:03:54.844Z",
+              "WhenOpened": "2025-03-26T15:04:42.362Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Create.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Create.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Create.cshtml*",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Views\\SanPhamDichVuKhacs\\Create.cshtml*",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAAF4AAAAAAAAAAAAAAA==",
+              "Title": "ChiTietDichVu.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\ChiTietDichVu.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\ChiTietDichVu.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\ChiTietDichVu.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\ChiTietDichVu.cshtml",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-26T13:03:47.612Z",
+              "WhenOpened": "2025-03-26T15:04:05.262Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "SanPhamDichVuKhacsController.cs",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\SanPhamDichVuKhacsController.cs",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\SanPhamDichVuKhacsController.cs",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\SanPhamDichVuKhacsController.cs",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Admin\\Controllers\\SanPhamDichVuKhacsController.cs",
+              "DocumentIndex": 2,
+              "Title": "ChiTietDichVu.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\ChiTietDichVu.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\ChiTietDichVu.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\ChiTietDichVu.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\ChiTietDichVu.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-26T13:03:37.911Z",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-26T15:03:58.547Z",
               "EditorCaption": ""
             }
           ]

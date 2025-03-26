@@ -44,8 +44,10 @@
                 <h5 class="text-primary mb-0">Thông tin gói cước</h5>
                 <a href="#" class="text-decoration-underline text-primary fw-bold" id="btnThongTinChiTiet">Thông tin chi tiết</a>
             </div>
-            <div class="p-4 rounded bg-light shadow-sm mt-3">
-                <p>@Html.Raw(Model.ThongTinChiTiet)</p>
+            <div class="mb-4">
+                <div class="bg-light p-4 rounded-3 shadow-sm" style="overflow-x: auto;">
+                    @Html.Raw(Model.ThongTinChiTiet)
+                </div>
             </div>
         </div>
     </div>

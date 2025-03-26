@@ -27,8 +27,9 @@
             @foreach (var item in Model)
             {
                 <tr class="text-center border-bottom">
-                    <td class="p-3 text-start fw-medium"><img src="~/img/dichvu/doanhnghiep/@item.TenGoiDv" /></td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.HinhAnh)</td>
+                    <td class="p-3 text-start fw-medium">@Html.DisplayFor(modelItem => item.TenGoiDv)</td>
+                    <td class="p-3"><img src="~/img/dichvu/doanhnghiep/@item.HinhAnh" /></td>
+
                     <td class="p-3">@Html.DisplayFor(modelItem => item.MoTa)</td>
                     <td class="p-3">@Html.DisplayFor(modelItem => item.IddichVuDnNavigation.TenDichVu)</td>
                     <td class="p-3 d-flex justify-content-center">

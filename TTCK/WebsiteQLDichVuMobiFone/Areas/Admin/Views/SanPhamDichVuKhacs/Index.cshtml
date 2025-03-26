@@ -1,59 +1,42 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.SanPhamDichVuKhac>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Sản Phẩm Dịch Vụ Khác";
 }
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.TenSanPham)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HinhAnh)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.MoTa)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ThongTinChiTiet)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdloaiDichVuKhacNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.TenSanPham)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HinhAnh)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.MoTa)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.ThongTinChiTiet)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdloaiDichVuKhacNavigation.IdloaiDichVuKhac)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdsanPham">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdsanPham">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdsanPham">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold">📋 Danh sách Sản Phẩm Dịch Vụ Khác</h2>
+        <a asp-action="Create" class="btn btn-success rounded-3">➕ Thêm Sản Phẩm</a>
+    </div>
+    <table class="table table-hover shadow-sm">
+        <thead class="table-dark">
+            <tr>
+                <th>Tên Sản Phẩm</th>
+                <th>Hình Ảnh</th>
+                <th>Mô Tả</th>
+                <th>Loại Dịch Vụ</th>
+                <th>Hành động</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TenSanPham</td>
+                    <td>
+                        <img src="~/img/dichvu/dichvukhac/@item.HinhAnh" alt="Ảnh Sản Phẩm" class="img-thumbnail" style="width: 80px; height: auto;" />
+                    </td>
+                    <td>@item.MoTa</td>
+                    <td>@item.IdloaiDichVuKhacNavigation?.TenLoaiDichVu</td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.IdsanPham" class="btn btn-warning btn-sm">✏️ Sửa</a>
+                        <a asp-action="Details" asp-route-id="@item.IdsanPham" class="btn btn-info btn-sm">🔍 Xem</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdsanPham" class="btn btn-danger btn-sm">🗑️ Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <a asp-action="Index" class="btn btn-secondary mt-3">🔙 Quay lại</a>
+</div>
