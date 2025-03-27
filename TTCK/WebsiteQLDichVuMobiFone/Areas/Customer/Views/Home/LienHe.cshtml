@@ -1,0 +1,150 @@
+﻿@{
+    ViewData["Title"] = "LienHe";
+}
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f9;
+    }
+
+    .contact-section {
+        background-color: white;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        padding: 40px;
+        margin-bottom: 30px;
+    }
+
+    .contact-info h5 {
+        font-weight: bold;
+        color: #007bff;
+        margin-bottom: 15px;
+    }
+
+    .contact-info p {
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    .contact-info .info-box {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        height: 150px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .map-container {
+        height: 350px;
+        width: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .contact-form {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .form-control {
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+</style>
+
+<!-- Thêm thư viện Leaflet.js để tích hợp OpenStreetMap -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Liên Hệ Với Chúng Tôi</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+            <li class="breadcrumb-item active text-primary"><a href="#">Liên Hệ</a></li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container mt-5">
+    <div class="contact-section">
+        <h3 class="text-center mb-4">LIÊN HỆ</h3>
+        <div class="row text-center contact-info mb-4">
+            <div class="col-md-3">
+                <div class="info-box">
+                    <div>
+                        <h5>Địa chỉ cửa hàng</h5>
+                        <p>Số 93 Trần Hưng Đạo, Phường Mỹ Quý, TP. Long Xuyên, Tỉnh An Giang</p>
+                        <a href="@( "https://www.google.com/maps/place/MobiFone+T%E1%BB%89nh+An+Giang/@10.3647412,105.4499995,17z/data=!4m14!1m7!3m6!1s0x310a7307d5714811:0xcda168ec36f6ae1f!2sMobiFone+T%E1%BB%89nh+An+Giang!8m2!3d10.363823!4d105.4508417!16s%2Fg%2F11f1wchhf0!3m5!1s0x310a7307d5714811:0xcda168ec36f6ae1f!8m2!3d10.363823!4d105.4508417!16s%2Fg%2F11f1wchhf0?entry=ttu&g_ep=EgoyMDI1MDMyNC4wIKXMDSoASAFQAw%3D%3D" )" target="_blank">Xem bản đồ</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <div>
+                        <h5>Giờ làm việc</h5>
+                        <p>Thứ 2 - Thứ 6: 08:00 - 17:00<br>Thứ 7 - CN: 10:00 - 21:00</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <div>
+                        <h5>Điện thoại</h5>
+                        <p>Bán hàng: +84 376 973 584<br>Hỗ trợ kỹ thuật: +84 972 994 999</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="info-box">
+                    <div>
+                        <h5>Địa chỉ email</h5>
+                        <p>Bán hàng: customer@mobifone.vn<br>Hỗ trợ kỹ thuật: support@mobifone.vn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div id="map" class="map-container"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="contact-form">
+                    <h5 class="mb-3">Để lại lời nhắn</h5>
+                    <form>
+                        <input type="text" class="form-control" placeholder="Họ và tên" required>
+                        <input type="email" class="form-control" placeholder="Địa chỉ email" required>
+                        <input type="text" class="form-control" placeholder="Số điện thoại" required>
+                        <textarea class="form-control" rows="4" placeholder="Nội dung tin nhắn"></textarea>
+                        <button type="submit" class="btn btn-primary mt-2">Gửi lời nhắn</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    
+    // Tọa độ chuẩn xác của Mobifone An Giang trên Google Maps
+    var map = L.map('map').setView([10.3647412,105.4499995], 17);
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    L.marker([10.363823, 105.4508417]).addTo(map)
+        .bindPopup("<b>Mobifone An Giang</b><br>93 Trần Hưng Đạo, TP. Long Xuyên, An Giang")
+        .openPopup();
+</script>

@@ -825,6 +825,50 @@
       "PackagePath": "staticwebassets\\img\\dichvu\\doanhnghiep\\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png"
     },
     {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\camket.jpg",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\camket.jpg"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\cocau.jpg",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\cocau.jpg"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu1.jpg",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu1.jpg"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_camket.png",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu_camket.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_cocau.png",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu_cocau.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_congkhaitt.png",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu_congkhaitt.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_lichsu.png",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu_lichsu.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_qlchatluong.png",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu_qlchatluong.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_tamnhinsumenh.png",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\gioithieu_tamnhinsumenh.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\lichsu.jpg",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\lichsu.jpg"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\qlchatluong.jpg",
+      "PackagePath": "staticwebassets\\img\\gioithieu\\qlchatluong.jpg"
+    },
+    {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
       "PackagePath": "staticwebassets\\img\\icon\\sim.png"
     },
@@ -1347,6 +1391,10 @@
     {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\svg\\thumbnail.svg",
       "PackagePath": "staticwebassets\\img\\svg\\thumbnail.svg"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg",
+      "PackagePath": "staticwebassets\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"
     },
     {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\user.jpg",

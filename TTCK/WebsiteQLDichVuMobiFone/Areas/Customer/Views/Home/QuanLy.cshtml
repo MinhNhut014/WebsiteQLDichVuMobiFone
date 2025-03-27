@@ -1,0 +1,124 @@
+﻿@{
+    ViewData["Title"] = "Quản Lý Chất Lượng Dịch Vụ";
+}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Giới Thiệu Về MobiFone</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Giới Thiệu</a></li>
+            <li class="breadcrumb-item active text-primary">Quản Lý Chất Lượng Dịch Vụ</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container my-5">
+    <div class="card p-3">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="~/img/gioithieu/qlchatluong.jpg" class="img-fluid rounded" alt="MobiFone Customer Service">
+            </div>
+            <div class="col-md-8">
+                <ul>
+                    <li>Các dịch vụ được cung cấp</li>
+                    <li>Các quy chuẩn kỹ thuật, tiêu chuẩn áp dụng cho các dịch vụ được cung cấp</li>
+                    <li>Bản công bố chất lượng</li>
+                    <li>Báo cáo định kỳ về chất lượng</li>
+                    <li>Kết quả kiểm tra định kỳ</li>
+                    <li>Địa chỉ tiếp nhận khiếu nại</li>
+                    <li>Quy trình tiếp nhận khiếu nại</li>
+                    <li>Thông tin hỗ trợ khách hàng</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <a asp-action="LichSu" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_lichsu.png" class="mx-auto" alt="Lịch sử hình thành">
+                    <div class="card-body">
+                        <h5 class="card-title">Lịch sử hình thành</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="CoCau" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_cocau.png" class="mx-auto" alt="Cơ cấu tổ chức">
+                    <div class="card-body">
+                        <h5 class="card-title">Cơ cấu tổ chức</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="CamKet" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_camket.png" class="mx-auto" alt="Cam kết khách hàng">
+                    <div class="card-body">
+                        <h5 class="card-title">Cam kết khách hàng</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="TamNhin" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_tamnhinsumenh.png" class="mx-auto" alt="Tầm nhìn sứ mệnh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tầm nhìn sứ mệnh</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="QuanLy" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_qlchatluong.png" class="mx-auto" alt="Quản lý chất lượng">
+                    <div class="card-body">
+                        <h5 class="card-title">Quản lý chất lượng dịch vụ</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="CongKhai" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_congkhaitt.png" class="mx-auto" alt="Công khai thông tin">
+                    <div class="card-body">
+                        <h5 class="card-title">Công khai thông tin</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .card {
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+        border-bottom: 3px solid #007bff;
+        display: inline-block;
+        padding-bottom: 5px;
+        font-size: 1.5rem;
+    }
+
+    .content-section {
+        margin-bottom: 20px;
+    }
+</style>

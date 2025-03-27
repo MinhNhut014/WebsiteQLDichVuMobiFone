@@ -56,6 +56,6 @@ app.UseEndpoints(endpoints =>
 });
 app.MapControllerRoute(
     name: "default",
-    pattern: "{area=Customer}/{controller=DichVuDiDong}/{action=Index}/{id?}");
+    pattern: "{area=Customer}/{controller=Home}/{action=GioiThieu}/{id?}");
 
 app.Run();

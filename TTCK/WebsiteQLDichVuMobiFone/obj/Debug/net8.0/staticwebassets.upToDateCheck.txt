@@ -203,6 +203,17 @@ wwwroot\img\dichvu\doanhnghiep\933a18f2-c2bd-48fe-8d08-6f7f303b3460_MobiVideoSMS
 wwwroot\img\dichvu\doanhnghiep\9f8e4d34-60b6-405b-badc-9b96eb04be38_ProConnect.jpg
 wwwroot\img\dichvu\doanhnghiep\c8c2255e-e51f-476e-9d6d-2393a95a50b5_MobiFoneSIPTrunk.png
 wwwroot\img\dichvu\doanhnghiep\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png
+wwwroot\img\gioithieu\camket.jpg
+wwwroot\img\gioithieu\cocau.jpg
+wwwroot\img\gioithieu\gioithieu_camket.png
+wwwroot\img\gioithieu\gioithieu_cocau.png
+wwwroot\img\gioithieu\gioithieu_congkhaitt.png
+wwwroot\img\gioithieu\gioithieu_lichsu.png
+wwwroot\img\gioithieu\gioithieu_qlchatluong.png
+wwwroot\img\gioithieu\gioithieu_tamnhinsumenh.png
+wwwroot\img\gioithieu\gioithieu1.jpg
+wwwroot\img\gioithieu\lichsu.jpg
+wwwroot\img\gioithieu\qlchatluong.jpg
 wwwroot\img\icon\sim.png
 wwwroot\img\logo\logo-1.png
 wwwroot\img\logo\logo-2.ico
@@ -334,6 +345,7 @@ wwwroot\img\svg\Logo.svg
 wwwroot\img\svg\move.svg
 wwwroot\img\svg\radio.svg
 wwwroot\img\svg\thumbnail.svg
+wwwroot\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg
 wwwroot\img\user\user.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

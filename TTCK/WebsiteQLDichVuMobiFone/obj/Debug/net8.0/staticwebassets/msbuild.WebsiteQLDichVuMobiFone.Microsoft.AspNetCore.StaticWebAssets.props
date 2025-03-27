@@ -3690,6 +3690,204 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\camket.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/camket.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w2yyrwnzqp</Fingerprint>
+      <Integrity>+HNjjMHEMhbHI5+XQHvQgUlsa57bP8CyAU9925NPcBU=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\camket.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\cocau.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/cocau.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>i28rqoycbp</Fingerprint>
+      <Integrity>ZsR4y3k2miDe0nbAEwFIIbzbftCWdmnrzFHltp7bu0Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\cocau.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>lojoryhifz</Fingerprint>
+      <Integrity>pcy6MMpQPJMVl+WMjEjeTQyF6gNLPtar8xBvDnHCr6E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_camket.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu_camket.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>b6t9rbeh9g</Fingerprint>
+      <Integrity>Dd3hwrXZcXX4krswvdImLmseAOYE2JKa9mgZYpOss0Q=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_camket.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_cocau.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu_cocau.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>59sjhy12bu</Fingerprint>
+      <Integrity>yR76WM1/LZgjdXkvOjC1YWmrsHw8DjvhH0mo+/EX8Eo=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_cocau.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_congkhaitt.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu_congkhaitt.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>z8goazc1dx</Fingerprint>
+      <Integrity>veFlzEEhmorq6Az1KqxC4Nes/J5ZlbY04aWhcTyFbDc=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_congkhaitt.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_lichsu.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu_lichsu.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3e6ephsfq0</Fingerprint>
+      <Integrity>2zT1wI8wwoR6vlEA0yFRcPF9BdLhh9AOFfvHb47iilM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_lichsu.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_qlchatluong.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu_qlchatluong.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>oczo70zr4y</Fingerprint>
+      <Integrity>+B+Bvo1ptl4dobzABiIi5/o0cGwwmxg1gMUACbI2pBg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_qlchatluong.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_tamnhinsumenh.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/gioithieu_tamnhinsumenh.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>cbqxa2s3rh</Fingerprint>
+      <Integrity>eBXNnXreXr5RnNOSa72MZUAWtU92xt+Zz3aO/N4fQNg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\gioithieu_tamnhinsumenh.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\lichsu.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/lichsu.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>prrce06v05</Fingerprint>
+      <Integrity>lQWYAPBy9GUrYyT8pBz8hJsnrosjtN8eCvowKeWcUZk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\lichsu.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\qlchatluong.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/gioithieu/qlchatluong.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>yf66f86fav</Fingerprint>
+      <Integrity>HhXg1igrRXdLcQEIa7dA4Ttw1tdU2mK+x8WGbiVSn6w=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\gioithieu\qlchatluong.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\icon\sim.png'))">
       <SourceType>Package</SourceType>
       <SourceId>WebsiteQLDichVuMobiFone</SourceId>
@@ -6047,6 +6245,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\svg\thumbnail.svg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>x6jyqrwg11</Fingerprint>
+      <Integrity>qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\user.jpg'))">
       <SourceType>Package</SourceType>

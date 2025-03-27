@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "S/RBC5n3nihnmQSFv7e2HkLaznY7x/yyBco+i2Xawe4=",
+  "Hash": "6vROwtHGVlvizGodwSFfnG/YTHJf01GrKd2g5KeULgk=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -4364,6 +4364,237 @@
       "OriginalItemSpec": "wwwroot\\img\\dichvu\\doanhnghiep\\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png"
     },
     {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\camket.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/camket#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "w2yyrwnzqp",
+      "Integrity": "+HNjjMHEMhbHI5+XQHvQgUlsa57bP8CyAU9925NPcBU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\camket.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\cocau.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/cocau#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "i28rqoycbp",
+      "Integrity": "ZsR4y3k2miDe0nbAEwFIIbzbftCWdmnrzFHltp7bu0Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\cocau.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_camket.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu_camket#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b6t9rbeh9g",
+      "Integrity": "Dd3hwrXZcXX4krswvdImLmseAOYE2JKa9mgZYpOss0Q=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu_camket.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_cocau.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu_cocau#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "59sjhy12bu",
+      "Integrity": "yR76WM1/LZgjdXkvOjC1YWmrsHw8DjvhH0mo+/EX8Eo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu_cocau.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_congkhaitt.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu_congkhaitt#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "z8goazc1dx",
+      "Integrity": "veFlzEEhmorq6Az1KqxC4Nes/J5ZlbY04aWhcTyFbDc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu_congkhaitt.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_lichsu.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu_lichsu#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "3e6ephsfq0",
+      "Integrity": "2zT1wI8wwoR6vlEA0yFRcPF9BdLhh9AOFfvHb47iilM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu_lichsu.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_qlchatluong.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu_qlchatluong#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "oczo70zr4y",
+      "Integrity": "+B+Bvo1ptl4dobzABiIi5/o0cGwwmxg1gMUACbI2pBg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu_qlchatluong.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_tamnhinsumenh.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu_tamnhinsumenh#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "cbqxa2s3rh",
+      "Integrity": "eBXNnXreXr5RnNOSa72MZUAWtU92xt+Zz3aO/N4fQNg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu_tamnhinsumenh.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu1.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/gioithieu1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lojoryhifz",
+      "Integrity": "pcy6MMpQPJMVl+WMjEjeTQyF6gNLPtar8xBvDnHCr6E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\gioithieu1.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\lichsu.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/lichsu#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "prrce06v05",
+      "Integrity": "lQWYAPBy9GUrYyT8pBz8hJsnrosjtN8eCvowKeWcUZk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\lichsu.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\qlchatluong.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/gioithieu/qlchatluong#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yf66f86fav",
+      "Integrity": "HhXg1igrRXdLcQEIa7dA4Ttw1tdU2mK+x8WGbiVSn6w=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\gioithieu\\qlchatluong.jpg"
+    },
+    {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
       "SourceId": "WebsiteQLDichVuMobiFone",
       "SourceType": "Discovered",
@@ -7113,6 +7344,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\svg\\thumbnail.svg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6jyqrwg11",
+      "Integrity": "qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\user.jpg",
@@ -25166,6 +25418,908 @@
       ]
     },
     {
+      "Route": "img/gioithieu/camket.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\camket.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "128125"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+HNjjMHEMhbHI5+XQHvQgUlsa57bP8CyAU9925NPcBU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 04:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+HNjjMHEMhbHI5+XQHvQgUlsa57bP8CyAU9925NPcBU="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/camket.w2yyrwnzqp.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\camket.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "128125"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+HNjjMHEMhbHI5+XQHvQgUlsa57bP8CyAU9925NPcBU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 04:47:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "w2yyrwnzqp"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/camket.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+HNjjMHEMhbHI5+XQHvQgUlsa57bP8CyAU9925NPcBU="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/cocau.i28rqoycbp.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\cocau.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "148006"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZsR4y3k2miDe0nbAEwFIIbzbftCWdmnrzFHltp7bu0Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 04:53:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "i28rqoycbp"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/cocau.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZsR4y3k2miDe0nbAEwFIIbzbftCWdmnrzFHltp7bu0Q="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/cocau.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\cocau.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "148006"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ZsR4y3k2miDe0nbAEwFIIbzbftCWdmnrzFHltp7bu0Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 04:53:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ZsR4y3k2miDe0nbAEwFIIbzbftCWdmnrzFHltp7bu0Q="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_camket.b6t9rbeh9g.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_camket.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20868"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dd3hwrXZcXX4krswvdImLmseAOYE2JKa9mgZYpOss0Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:53:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b6t9rbeh9g"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu_camket.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dd3hwrXZcXX4krswvdImLmseAOYE2JKa9mgZYpOss0Q="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_camket.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_camket.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20868"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Dd3hwrXZcXX4krswvdImLmseAOYE2JKa9mgZYpOss0Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:53:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Dd3hwrXZcXX4krswvdImLmseAOYE2JKa9mgZYpOss0Q="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_cocau.59sjhy12bu.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_cocau.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yR76WM1/LZgjdXkvOjC1YWmrsHw8DjvhH0mo+/EX8Eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:53:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "59sjhy12bu"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu_cocau.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yR76WM1/LZgjdXkvOjC1YWmrsHw8DjvhH0mo+/EX8Eo="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_cocau.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_cocau.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16617"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yR76WM1/LZgjdXkvOjC1YWmrsHw8DjvhH0mo+/EX8Eo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:53:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yR76WM1/LZgjdXkvOjC1YWmrsHw8DjvhH0mo+/EX8Eo="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_congkhaitt.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_congkhaitt.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17098"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"veFlzEEhmorq6Az1KqxC4Nes/J5ZlbY04aWhcTyFbDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:54:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-veFlzEEhmorq6Az1KqxC4Nes/J5ZlbY04aWhcTyFbDc="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_congkhaitt.z8goazc1dx.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_congkhaitt.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17098"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"veFlzEEhmorq6Az1KqxC4Nes/J5ZlbY04aWhcTyFbDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:54:27 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "z8goazc1dx"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu_congkhaitt.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-veFlzEEhmorq6Az1KqxC4Nes/J5ZlbY04aWhcTyFbDc="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_lichsu.3e6ephsfq0.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_lichsu.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19763"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2zT1wI8wwoR6vlEA0yFRcPF9BdLhh9AOFfvHb47iilM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:52:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3e6ephsfq0"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu_lichsu.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2zT1wI8wwoR6vlEA0yFRcPF9BdLhh9AOFfvHb47iilM="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_lichsu.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_lichsu.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19763"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2zT1wI8wwoR6vlEA0yFRcPF9BdLhh9AOFfvHb47iilM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:52:52 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2zT1wI8wwoR6vlEA0yFRcPF9BdLhh9AOFfvHb47iilM="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_qlchatluong.oczo70zr4y.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_qlchatluong.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+B+Bvo1ptl4dobzABiIi5/o0cGwwmxg1gMUACbI2pBg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:54:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oczo70zr4y"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu_qlchatluong.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+B+Bvo1ptl4dobzABiIi5/o0cGwwmxg1gMUACbI2pBg="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_qlchatluong.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_qlchatluong.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "17816"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+B+Bvo1ptl4dobzABiIi5/o0cGwwmxg1gMUACbI2pBg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:54:11 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+B+Bvo1ptl4dobzABiIi5/o0cGwwmxg1gMUACbI2pBg="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_tamnhinsumenh.cbqxa2s3rh.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_tamnhinsumenh.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eBXNnXreXr5RnNOSa72MZUAWtU92xt+Zz3aO/N4fQNg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:53:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "cbqxa2s3rh"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu_tamnhinsumenh.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-eBXNnXreXr5RnNOSa72MZUAWtU92xt+Zz3aO/N4fQNg="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu_tamnhinsumenh.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu_tamnhinsumenh.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13915"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"eBXNnXreXr5RnNOSa72MZUAWtU92xt+Zz3aO/N4fQNg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:53:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-eBXNnXreXr5RnNOSa72MZUAWtU92xt+Zz3aO/N4fQNg="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu1.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "211605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pcy6MMpQPJMVl+WMjEjeTQyF6gNLPtar8xBvDnHCr6E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:33:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pcy6MMpQPJMVl+WMjEjeTQyF6gNLPtar8xBvDnHCr6E="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/gioithieu1.lojoryhifz.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\gioithieu1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "211605"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pcy6MMpQPJMVl+WMjEjeTQyF6gNLPtar8xBvDnHCr6E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 03:33:49 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lojoryhifz"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/gioithieu1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pcy6MMpQPJMVl+WMjEjeTQyF6gNLPtar8xBvDnHCr6E="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/lichsu.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\lichsu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1494463"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lQWYAPBy9GUrYyT8pBz8hJsnrosjtN8eCvowKeWcUZk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 04:11:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lQWYAPBy9GUrYyT8pBz8hJsnrosjtN8eCvowKeWcUZk="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/lichsu.prrce06v05.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\lichsu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1494463"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lQWYAPBy9GUrYyT8pBz8hJsnrosjtN8eCvowKeWcUZk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 04:11:18 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "prrce06v05"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/lichsu.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-lQWYAPBy9GUrYyT8pBz8hJsnrosjtN8eCvowKeWcUZk="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/qlchatluong.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\qlchatluong.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "117983"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HhXg1igrRXdLcQEIa7dA4Ttw1tdU2mK+x8WGbiVSn6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 05:13:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-HhXg1igrRXdLcQEIa7dA4Ttw1tdU2mK+x8WGbiVSn6w="
+        }
+      ]
+    },
+    {
+      "Route": "img/gioithieu/qlchatluong.yf66f86fav.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\gioithieu\\qlchatluong.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "117983"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"HhXg1igrRXdLcQEIa7dA4Ttw1tdU2mK+x8WGbiVSn6w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 05:13:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yf66f86fav"
+        },
+        {
+          "Name": "label",
+          "Value": "img/gioithieu/qlchatluong.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-HhXg1igrRXdLcQEIa7dA4Ttw1tdU2mK+x8WGbiVSn6w="
+        }
+      ]
+    },
+    {
       "Route": "img/icon/sim.png",
       "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\icon\\sim.png",
       "Selectors": [],
@@ -35904,6 +37058,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-HGaHoXk7hUsg8myURoolfrUNHp0BJHVqhGieuOMA7gA="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "130335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 09:33:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.x6jyqrwg11.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "130335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Mar 2025 09:33:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6jyqrwg11"
+        },
+        {
+          "Name": "label",
+          "Value": "img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg="
         }
       ]
     },

@@ -149,7 +149,7 @@
     <div class="container-fluid nav-bar px-0 px-lg-4 py-lg-0">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light">
-                <a href="#" class="navbar-brand d-flex align-items-center">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand d-flex align-items-center">
                     <img src="~/img/logo/logo-1.png" alt="MobiFone Logo" class="logo-img rounded-circle me-2">
                     <span class="text-primary fw-bold fs-4">MobiFone</span>
                 </a>
@@ -158,8 +158,8 @@
                 </button>
                 <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
                     <div class="navbar-nav">
-                        <a href="index.html" class="nav-item nav-link active">Trang Chủ</a>
-                        <a href="about.html" class="nav-item nav-link">Giới Thiệu</a>
+                        <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Trang Chủ</a>
+                        <a asp-controller="Home" asp-action="GioiThieu" class="nav-item nav-link">Giới Thiệu</a>
                         <div class="nav-item dropdown">
                             <a href="service.html" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Dịch Vụ</a>
                             <div class="dropdown-menu">
@@ -170,7 +170,7 @@
                             </div>
                         </div>
                         <a href="blog.html" class="nav-item nav-link">Tin Tức</a>
-                        <a href="contact.html" class="nav-item nav-link">Liên Hệ</a>
+                        <a asp-controller="Home" asp-action="LienHe" class="nav-item nav-link">Liên Hệ</a>
                         <div class="d-flex align-items-center">
                             <button class="btn btn-primary btn-md-square rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#searchModal">
                                 <i class="fas fa-search"></i>
@@ -190,7 +190,7 @@
                                         Chào @ViewBag.UserName
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a asp-controller="NguoiDung" asp-action="HoSoKhachHang" class="dropdown-item">Hồ Sơ Khách Hàng</a>
+                                        <a asp-controller="NguoiDung" asp-action="HoSoNguoiDung" class="dropdown-item">Hồ Sơ Khách Hàng</a>
                                         <a asp-controller="NguoiDung" asp-action="DangXuat" class="dropdown-item">Đăng Xuất</a>
                                     </div>
                                 </div>

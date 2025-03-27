@@ -25,6 +25,7 @@
     <Folder Include="Areas\Customer\Models\" />
     <Folder Include="wwwroot\img\dichvu\doanhnghiep\" />
     <Folder Include="wwwroot\img\dichvu\dichvukhac\" />
+    <Folder Include="wwwroot\img\gioithieu\" />
     <Folder Include="wwwroot\img\user\" />
   </ItemGroup>
 

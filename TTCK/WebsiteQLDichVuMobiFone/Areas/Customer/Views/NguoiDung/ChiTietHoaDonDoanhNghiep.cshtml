@@ -1,0 +1,62 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonDoanhNghiep
+
+<h2 class="text-primary">Chi tiết hóa đơn doanh nghiệp</h2>
+
+<h4>Thông Tin Hóa Đơn</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>ID Hóa Đơn</th>
+        <td>@Model.IdhoaDonDn</td>
+    </tr>
+    <tr>
+        <th>Ngày Đặt Hàng</th>
+        <td>@Model.NgayDatHang?.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Tổng Tiền</th>
+        <td>@Model.TongTien?.ToString("N0") VNĐ</td>
+    </tr>
+</table>
+
+<h4>Thông Tin Công Ty</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>Tên Công Ty</th>
+        <td>@Model.TenCongTy</td>
+    </tr>
+    <tr>
+        <th>Email Công Ty</th>
+        <td>@Model.EmailCongTy</td>
+    </tr>
+    <tr>
+        <th>Số Điện Thoại Công Ty</th>
+        <td>@Model.SoDienThoaiCongTy</td>
+    </tr>
+    <tr>
+        <th>Địa Chỉ Công Ty</th>
+        <td>@Model.DiaChiCongTy</td>
+    </tr>
+</table>
+
+<h4>Chi Tiết Dịch Vụ</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>Ảnh</th>
+            <th>Tên Gói Dịch Vụ</th>
+            <th>Mô Tả </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CthoaDonDoanhNghieps)
+        {
+            <tr>
+                <td><img src="~/img/dichvu/doanhnghiep/@item.IdgoiDichVuNavigation?.HinhAnh" style="width=50px; height=auto;" /></td>
+                <td>@item.IdgoiDichVuNavigation?.TenGoiDv</td>
+                <td>@item.IdgoiDichVuNavigation.MoTa</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Quay Lại</a>

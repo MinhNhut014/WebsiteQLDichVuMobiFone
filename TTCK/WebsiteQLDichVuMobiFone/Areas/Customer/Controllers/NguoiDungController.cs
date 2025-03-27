@@ -80,7 +80,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         // Logout
         public IActionResult DangXuat()
         {
-            HttpContext.Session.SetString("nguoidung", string.Empty);
+            HttpContext.Session.Clear(); // Xóa toàn bộ dữ liệu trong session
             return RedirectToAction("Index", "Home");
         }
 
@@ -155,7 +155,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             }
         }
 
-        // Change Password
         public IActionResult DoiMatKhau()
         {
             return View();
@@ -167,56 +166,176 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             var tenDangNhap = HttpContext.Session.GetString("nguoidung");
             if (string.IsNullOrEmpty(tenDangNhap))
             {
-                TempData["Error"] = "Bạn cần đăng nhập để thay đổi mật khẩu.";
+                TempData["Loi"] = "Bạn cần đăng nhập để thay đổi mật khẩu.";
                 return RedirectToAction("DangNhap");
             }
 
             var nguoiDung = await _context.NguoiDungs.FirstOrDefaultAsync(x => x.TenDangNhap == tenDangNhap);
             if (nguoiDung == null)
             {
-                TempData["Error"] = "Không tìm thấy người dùng.";
+                TempData["Loi"] = "Không tìm thấy tài khoản người dùng.";
                 return RedirectToAction("DangNhap");
             }
 
-            var result = _passwordHasher.VerifyHashedPassword(nguoiDung, nguoiDung.MatKhau, matKhauCu);
-            if (result != PasswordVerificationResult.Success)
+            if (_passwordHasher.VerifyHashedPassword(nguoiDung, nguoiDung.MatKhau, matKhauCu) != PasswordVerificationResult.Success)
             {
-                TempData["Error"] = "Mật khẩu cũ không đúng.";
+                TempData["Loi"] = "Mật khẩu cũ không đúng.";
                 return View();
             }
 
             if (matKhauMoi != xacNhanMatKhau)
             {
-                TempData["Error"] = "Mật khẩu mới và xác nhận mật khẩu không khớp.";
+                TempData["Loi"] = "Mật khẩu mới và xác nhận mật khẩu không khớp.";
                 return View();
             }
 
             nguoiDung.MatKhau = _passwordHasher.HashPassword(nguoiDung, matKhauMoi);
             _context.Update(nguoiDung);
             await _context.SaveChangesAsync();
-
-            TempData["Success"] = "Mật khẩu đã được thay đổi thành công.";
+            TempData["ThanhCong"] = "Mật khẩu đã được thay đổi thành công.";
             return RedirectToAction("HoSoNguoiDung");
         }
 
-        // Profile (HoSoNguoiDung)
-        public IActionResult HoSoNguoiDung()
+        public IActionResult HoSoNguoiDung(string section = "hoso")
+        {
+            GetData();
+            var tenDangNhap = HttpContext.Session.GetString("nguoidung");
+            if (string.IsNullOrEmpty(tenDangNhap))
+            {
+                TempData["Loi"] = "Vui lòng đăng nhập để xem hồ sơ cá nhân.";
+                return RedirectToAction("DangNhap");
+            }
+
+            var nguoiDung = _context.NguoiDungs
+                     .Include(x => x.HoaDonDichVus.OrderByDescending(hd => hd.NgayDatHang))
+                         .ThenInclude(hd => hd.IdtrangThaiNavigation)
+                     .Include(x => x.HoaDonDichVus.OrderByDescending(hd => hd.NgayDatHang))
+                         .ThenInclude(hd => hd.CthoaDonDichVus)
+                     .Include(x => x.HoaDonDoanhNghieps.OrderByDescending(hd => hd.NgayDatHang))
+                         .ThenInclude(hd => hd.IdtrangThaiNavigation)
+                     .Include(x => x.HoaDonSims.OrderByDescending(hd => hd.NgayDatHang))
+                         .ThenInclude(hd => hd.IdtrangThaiNavigation)
+                     .FirstOrDefault(x => x.TenDangNhap == tenDangNhap);
+
+
+            if (nguoiDung == null)
+            {
+                TempData["Loi"] = "Không tìm thấy tài khoản người dùng.";
+                return RedirectToAction("DangNhap");
+            }
+
+            if (nguoiDung.Trangthai == 0) // Kiểm tra tài khoản có bị khóa không
+            {
+                TempData["Loi"] = "Tài khoản của bạn đã bị khóa. Vui lòng liên hệ hỗ trợ.";
+                return RedirectToAction("DangNhap");
+            }
+
+            // Khởi tạo danh sách rỗng nếu cần thiết để tránh lỗi null reference
+            nguoiDung.HoaDonDichVus ??= new List<HoaDonDichVu>();
+            nguoiDung.HoaDonDoanhNghieps ??= new List<HoaDonDoanhNghiep>();
+            nguoiDung.HoaDonSims ??= new List<HoaDonSim>();
+
+            TempData["ThanhCong"] = "Thông tin hồ sơ được tải thành công.";
+            ViewBag.Section = section; // Xác định phần nội dung hiển thị
+            return View(nguoiDung);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> CapNhatHoSo(IFormFile AnhDaiDien, NguoiDung nguoiDungMoi)
         {
             var tenDangNhap = HttpContext.Session.GetString("nguoidung");
             if (string.IsNullOrEmpty(tenDangNhap))
             {
-                TempData["Error"] = "Vui lòng đăng nhập.";
+                TempData["Loi"] = "Bạn cần đăng nhập để cập nhật thông tin.";
                 return RedirectToAction("DangNhap");
             }
 
-            var nguoiDung = _context.NguoiDungs.FirstOrDefault(x => x.TenDangNhap == tenDangNhap);
+            var nguoiDung = await _context.NguoiDungs.FirstOrDefaultAsync(x => x.TenDangNhap == tenDangNhap);
             if (nguoiDung == null)
             {
-                TempData["Error"] = "Không tìm thấy người dùng.";
+                TempData["Loi"] = "Không tìm thấy tài khoản người dùng.";
                 return RedirectToAction("DangNhap");
             }
 
-            return View(nguoiDung);
+            nguoiDung.HoTen = nguoiDungMoi.HoTen;
+            nguoiDung.Email = nguoiDungMoi.Email;
+            nguoiDung.SoDienThoai = nguoiDungMoi.SoDienThoai;
+            nguoiDung.DiaChi = nguoiDungMoi.DiaChi;
+            nguoiDung.Cccd = nguoiDungMoi.Cccd;
+            nguoiDung.AnhDaiDien = Upload(AnhDaiDien);
+
+            _context.Update(nguoiDung);
+            await _context.SaveChangesAsync();
+
+            TempData["ThanhCong"] = "Thông tin hồ sơ đã được cập nhật thành công.";
+            return RedirectToAction("HoSoNguoiDung");
         }
+        public string? Upload(IFormFile file)
+        {
+            string? uploadFileName = null;
+            if (file != null)
+            {
+                uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var path = $"wwwroot\\img\\user\\{uploadFileName}";
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+            return uploadFileName;
+        }
+        public async Task<IActionResult> ChiTietHoaDonDichVu(int id)
+        {
+            var hoaDon = await _context.HoaDonDichVus
+                                .Include(x => x.CthoaDonDichVus)
+                                    .ThenInclude(x => x.IdgoiDangKyNavigation)
+                                .Include(x => x.CthoaDonDichVus)
+                                    .ThenInclude(x => x.IdgoiDangKyDvkNavigation)
+                                .Include(x => x.IdnguoiDungNavigation) // Thêm thông tin người dùng
+                                .FirstOrDefaultAsync(x => x.IdhoaDonDv == id);
+
+            if (hoaDon == null)
+            {
+                return NotFound();
+            }
+
+            return View(hoaDon);
+        }
+
+
+        // Chi tiết hóa đơn doanh nghiệp
+        public async Task<IActionResult> ChiTietHoaDonDoanhNghiep(int id)
+        {
+            var hoaDon = await _context.HoaDonDoanhNghieps
+                .Include(x => x.CthoaDonDoanhNghieps)
+                    .ThenInclude(x => x.IdgoiDichVuNavigation)
+                .Include(x => x.IdnguoiDungNavigation) // Thêm thông tin người dùng
+                .FirstOrDefaultAsync(x => x.IdhoaDonDn == id);
+
+            if (hoaDon == null)
+            {
+                return NotFound();
+            }
+
+            return View(hoaDon);
+        }
+
+
+        // Chi tiết hóa đơn SIM
+        public async Task<IActionResult> ChiTietHoaDonSim(int id)
+        {
+            var hoaDonSim = await _context.HoaDonSims
+                .Include(x => x.CthoaDonSims)
+                    .ThenInclude(x => x.IdgoiDangKyNavigation)
+                .FirstOrDefaultAsync(x => x.IdhoaDonSim == id);
+
+            if (hoaDonSim == null)
+            {
+                return NotFound();
+            }
+
+            return View(hoaDonSim);
+        }
+
     }
 }

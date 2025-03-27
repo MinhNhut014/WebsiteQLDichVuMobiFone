@@ -38,6 +38,45 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             GetData();
             return View();
         }
-        
+        public IActionResult LienHe()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult GioiThieu()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult LichSu()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult CamKet()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult CoCau()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult QuanLy()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult TamNhin()
+        {
+            GetData();
+            return View();
+        }
+        public IActionResult CongKhai()
+        {
+            GetData();
+            return View();
+        }
     }
 }

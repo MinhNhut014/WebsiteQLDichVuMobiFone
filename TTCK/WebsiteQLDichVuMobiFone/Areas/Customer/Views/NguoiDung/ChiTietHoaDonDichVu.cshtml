@@ -1,0 +1,64 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonDichVu
+
+<h2 class="text-primary">Chi tiết hóa đơn dịch vụ</h2>
+
+<h4>Thông Tin Hóa Đơn</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>ID Hóa Đơn</th>
+        <td>@Model.IdhoaDonDv</td>
+    </tr>
+    <tr>
+        <th>Ngày Đặt Hàng</th>
+        <td>@Model.NgayDatHang?.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Tổng Tiền</th>
+        <td>@Model.TongTien?.ToString("N0") VNĐ</td>
+    </tr>
+</table>
+
+<h4>Thông Tin Người Đặt Hàng</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>Họ Tên</th>
+        <td>@Model.IdnguoiDungNavigation?.HoTen</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.IdnguoiDungNavigation?.Email</td>
+    </tr>
+    <tr>
+        <th>Số Điện Thoại</th>
+        <td>@Model.IdnguoiDungNavigation?.SoDienThoai</td>
+    </tr>
+    <tr>
+        <th>Địa Chỉ</th>
+        <td>@Model.IdnguoiDungNavigation?.DiaChi</td>
+    </tr>
+</table>
+
+<h4>Chi Tiết Dịch Vụ</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>Tên Gói</th>
+            <th>Đơn Giá</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CthoaDonDichVus)
+        {
+            <tr>
+                <td>@item.IdgoiDangKyNavigation?.TenGoi</td>
+                <td>@item.DonGia?.ToString("N0") VNĐ</td>
+                <td>@item.SoLuong</td>
+                <td>@item.ThanhTien?.ToString("N0") VNĐ</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Quay Lại</a>

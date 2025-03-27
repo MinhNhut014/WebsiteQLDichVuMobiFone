@@ -1,0 +1,125 @@
+﻿@{
+    ViewData["Title"] = "Cam Kết Khách Hàng";
+}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Giới Thiệu Về MobiFone</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+            <li class="breadcrumb-item"><a href="#">Giới Thiệu</a></li>
+            <li class="breadcrumb-item active text-primary">Cam Kết Khách Hàng</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container my-5">
+    <div class="row shadow p-4 rounded">
+        <div class="col-md-6">
+            <img src="~/img/gioithieu/camket.jpg" class="img-fluid rounded" alt="Dịch vụ khách hàng">
+        </div>
+        <div class="col-md-6">
+            <h5 class="fw-bold">Thái độ niềm nở</h5>
+            <p>Chúng ta tiếp đón khách hàng với lời chào, cái cúi, nụ cười và ánh mắt thân thiện. Nếu có thể, hãy gọi tên khách hàng.</p>
+
+            <h5 class="fw-bold">Thấu hiểu nhu cầu</h5>
+            <p>Chúng ta tìm hiểu, lắng nghe, dự đoán, xác nhận lại để thấu hiểu đúng nhu cầu của khách hàng.</p>
+
+            <h5 class="fw-bold">Tư vấn hiệu quả</h5>
+            <p>Với những nhu cầu, mong muốn của khách hàng, chúng ta cam kết đưa ra những giải pháp phù hợp, tư vấn đầy đủ và trình bày hiệu quả các giải pháp đưa ra, đảm bảo tối đa lợi ích và nhu cầu của khách hàng.</p>
+
+            <h5 class="fw-bold">Trải nghiệm khác biệt</h5>
+            <p>Chúng ta cam kết mang đến những trải nghiệm tốt đẹp, khác biệt cho khách hàng. Đảm bảo mỗi một chi tiết nhỏ bất kỳ của MobiFone đều mang lại cảm xúc và trải nghiệm tốt nhất cho khách hàng.</p>
+
+            <h5 class="fw-bold">Tin tưởng trọn vẹn</h5>
+            <p>Chúng ta cam kết mang lại sự tin tưởng trọn vẹn với khách hàng. Trung thực với khách hàng là cách bảo vệ chính chúng ta và bảo vệ chính khách hàng. Cam kết không nói hoa hồng là sản phẩm chủ đạo của MobiFone. Bên cạnh đó, khuyến khích nhân viên đóng góp ý kiến về chất lượng sản phẩm, dịch vụ để nâng cao phục vụ của mình.</p>
+        </div>
+    </div>
+</div>
+<div class="container py-5">
+    <div class="row g-4">
+        <div class="col-md-4">
+            <a asp-action="LichSu" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_lichsu.png" class="mx-auto" alt="Lịch sử hình thành">
+                    <div class="card-body">
+                        <h5 class="card-title">Lịch sử hình thành</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="CoCau" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_cocau.png" class="mx-auto" alt="Cơ cấu tổ chức">
+                    <div class="card-body">
+                        <h5 class="card-title">Cơ cấu tổ chức</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="CamKet" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_camket.png" class="mx-auto" alt="Cam kết khách hàng">
+                    <div class="card-body">
+                        <h5 class="card-title">Cam kết khách hàng</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="TamNhin" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_tamnhinsumenh.png" class="mx-auto" alt="Tầm nhìn sứ mệnh">
+                    <div class="card-body">
+                        <h5 class="card-title">Tầm nhìn sứ mệnh</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="QuanLy" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_qlchatluong.png" class="mx-auto" alt="Quản lý chất lượng">
+                    <div class="card-body">
+                        <h5 class="card-title">Quản lý chất lượng dịch vụ</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <a asp-action="CongKhai" class="text-decoration-none">
+                <div class="card text-center p-3 shadow-sm">
+                    <img src="~/img/gioithieu/gioithieu_congkhaitt.png" class="mx-auto" alt="Công khai thông tin">
+                    <div class="card-body">
+                        <h5 class="card-title">Công khai thông tin</h5>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f9fa;
+    }
+
+    .card {
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .title {
+        border-bottom: 3px solid #007bff;
+        display: inline-block;
+        padding-bottom: 5px;
+        font-size: 1.5rem;
+    }
+
+    .content-section {
+        margin-bottom: 20px;
+    }
+</style>
