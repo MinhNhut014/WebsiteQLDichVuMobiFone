@@ -7,70 +7,84 @@
 <div class="container mt-4">
     <h2 class="text-primary mb-3">Thêm Người Dùng</h2>
     <div class="card shadow-sm p-4 rounded">
-        <form asp-action="Create" method="post">
+        <form asp-action="Create" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="All" class="text-danger"></div>
 
-            <div class="form-group mb-3">
-                <label asp-for="AnhDaiDien" class="fw-bold">Ảnh Đại Diện</label>
-                <input asp-for="AnhDaiDien" class="form-control" placeholder="Nhập đường dẫn ảnh..." />
-                <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+            <div class="row">
+                <!-- Cột bên trái -->
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="AnhDaiDien" class="fw-bold">Ảnh Đại Diện</label>
+                        <input type="file" asp-for="AnhDaiDien" class="form-control" placeholder="Nhập đường dẫn ảnh..." onchange="previewImage(this)" />
+                        <img id="avatarPreview" class="mt-2 rounded-circle" width="100" height="100" style="object-fit: cover;" />
+                        <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="HoTen" class="fw-bold">Họ Tên</label>
+                        <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên..." />
+                        <span asp-validation-for="HoTen" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Cccd" class="fw-bold">CCCD</label>
+                        <input asp-for="Cccd" class="form-control" placeholder="Nhập CCCD..." />
+                        <span asp-validation-for="Cccd" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="Email" class="fw-bold">Email</label>
+                        <input asp-for="Email" class="form-control" placeholder="Nhập email..." />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Cột bên phải -->
+                <div class="col-md-6">
+                    <div class="form-group mb-3">
+                        <label asp-for="SoDienThoai" class="fw-bold">Số Điện Thoại</label>
+                        <input asp-for="SoDienThoai" class="form-control" placeholder="Nhập số điện thoại..." />
+                        <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="DiaChi" class="fw-bold">Địa Chỉ</label>
+                        <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ..." />
+                        <span asp-validation-for="DiaChi" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="TenDangNhap" class="fw-bold">Tên Đăng Nhập</label>
+                        <input asp-for="TenDangNhap" class="form-control" placeholder="Nhập tên đăng nhập..." />
+                        <span asp-validation-for="TenDangNhap" class="text-danger"></span>
+                    </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="MatKhau" class="fw-bold">Mật Khẩu</label>
+                        <input asp-for="MatKhau" class="form-control" type="password" placeholder="Nhập mật khẩu..." />
+                        <span asp-validation-for="MatKhau" class="text-danger"></span>
+                    </div>
+                </div>
             </div>
 
-            <div class="form-group mb-3">
-                <label asp-for="HoTen" class="fw-bold">Họ Tên</label>
-                <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên..." />
-                <span asp-validation-for="HoTen" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="Cccd" class="fw-bold">CCCD</label>
-                <input asp-for="Cccd" class="form-control" placeholder="Nhập CCCD..." />
-                <span asp-validation-for="Cccd" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="Email" class="fw-bold">Email</label>
-                <input asp-for="Email" class="form-control" placeholder="Nhập email..." />
-                <span asp-validation-for="Email" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="SoDienThoai" class="fw-bold">Số Điện Thoại</label>
-                <input asp-for="SoDienThoai" class="form-control" placeholder="Nhập số điện thoại..." />
-                <span asp-validation-for="SoDienThoai" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="DiaChi" class="fw-bold">Địa Chỉ</label>
-                <input asp-for="DiaChi" class="form-control" placeholder="Nhập địa chỉ..." />
-                <span asp-validation-for="DiaChi" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="TenDangNhap" class="fw-bold">Tên Đăng Nhập</label>
-                <input asp-for="TenDangNhap" class="form-control" placeholder="Nhập tên đăng nhập..." />
-                <span asp-validation-for="TenDangNhap" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="MatKhau" class="fw-bold">Mật Khẩu</label>
-                <input asp-for="MatKhau" class="form-control" type="password" placeholder="Nhập mật khẩu..." />
-                <span asp-validation-for="MatKhau" class="text-danger"></span>
-            </div>
-
-            <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa-solid fa-check"></i> Lưu
-                </button>
+            <div class="d-flex justify-content-between mt-4">
                 <a asp-action="Index" class="btn btn-secondary">
                     <i class="fa-solid fa-arrow-left"></i> Quay lại
                 </a>
+                <button type="submit" class="btn btn-success">
+                    <i class="fa-solid fa-check"></i> Lưu
+                </button>
             </div>
         </form>
     </div>
 </div>
 
 @section Scripts {
+    <script>
+        function previewImage(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('avatarPreview').src = e.target.result;
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

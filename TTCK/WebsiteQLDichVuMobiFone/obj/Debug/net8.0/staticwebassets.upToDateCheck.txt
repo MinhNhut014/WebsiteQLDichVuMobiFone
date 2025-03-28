@@ -352,6 +352,8 @@ wwwroot\img\tintuc\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg
 wwwroot\img\tintuc\tintuc1.jpg
 wwwroot\img\tintuc\tintuc2.jpg
 wwwroot\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg
+wwwroot\img\user\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg
+wwwroot\img\user\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg
 wwwroot\img\user\user.jpg
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap.css

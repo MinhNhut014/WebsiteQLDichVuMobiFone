@@ -4,16 +4,15 @@
     ViewData["Title"] = "Danh sách Người Dùng";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Người Dùng</h1>
-
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">Danh sách Người Dùng</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
 
 <div class="table-responsive">
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
         <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
                 <th class="p-3">Ảnh Đại Diện</th>
@@ -29,25 +28,69 @@
             @foreach (var item in Model)
             {
                 <tr class="text-center border-bottom">
-                    <td class="p-3"><img src="~/img/user/@Html.DisplayFor(modelItem => item.AnhDaiDien)" alt="Ảnh đại diện" class="img-fluid rounded-circle" style="width: 40px; height: 40px; object-fit: cover;" /></td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.HoTen)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.TenDangNhap)</td>
+                    <td class="p-3">
+                        <img src="~/img/user/@item.AnhDaiDien" alt="Ảnh đại diện" class="img-fluid rounded-circle" style="width: 50px; height: 50px; object-fit: cover;" />
+                    </td>
+                    <td class="p-3">@item.HoTen</td>
+                    <td class="p-3">@item.TenDangNhap</td>
                     <td class="p-3">******</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.Quyen)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.Trangthai)</td>
-                    <td class="p-3 d-flex justify-content-center">
-                        <a asp-action="Edit" asp-route-id="@item.IdnguoiDung" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+
+                    <!-- Dropdown chỉnh sửa quyền -->
+                    <td class="p-3">
+                        <form asp-action="UpdateRole" method="post">
+                            <input type="hidden" name="id" value="@item.IdnguoiDung" />
+                            <select name="quyen" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                <option value="0" selected="@(item.Quyen == 0)">User</option>
+                                <option value="1" selected="@(item.Quyen == 1)">Admin</option>
+                            </select>
+                        </form>
+                    </td>
+
+                    <!-- Dropdown chỉnh sửa trạng thái -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatus" method="post">
+                            <input type="hidden" name="id" value="@item.IdnguoiDung" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                <option value="1" selected="@(item.Trangthai == 1)">Hoạt động</option>
+                                <option value="0" selected="@(item.Trangthai == 0)">Khóa</option>
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IdnguoiDung" class="btn btn-warning btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-pen"></i>
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.IdnguoiDung" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                        <a asp-action="Details" asp-route-id="@item.IdnguoiDung" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a asp-action="Delete" asp-route-id="@item.IdnguoiDung" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdnguoiDung, '@item.HoTen')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-trash"></i>
                         </a>
+
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, hoTen) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa tài khoản '" + hoTen + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/NguoiDungs/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

@@ -51,19 +51,28 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         public async Task<IActionResult> DangNhap(string tenDangNhapHoacEmail, string matKhau)
         {
             var nguoiDung = await _context.NguoiDungs
-                .FirstOrDefaultAsync(m => m.TenDangNhap == tenDangNhapHoacEmail || m.Email == tenDangNhapHoacEmail);
+            .FirstOrDefaultAsync(m => m.TenDangNhap == tenDangNhapHoacEmail || m.Email == tenDangNhapHoacEmail);
 
             if (nguoiDung != null)
             {
+                // Kiểm tra trạng thái tài khoản
+                if (nguoiDung.Trangthai != 1)
+                {
+                    TempData["Error"] = "Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.";
+                    return View();
+                }
+
+
+                // Kiểm tra mật khẩu
                 if (_passwordHasher.VerifyHashedPassword(nguoiDung, nguoiDung.MatKhau, matKhau) == PasswordVerificationResult.Success)
                 {
-                    // Lưu thông tin người dùng vào session
+                    // Lưu thông tin vào session
                     HttpContext.Session.SetString("nguoidung", nguoiDung.TenDangNhap);
                     HttpContext.Session.SetString("UserId", nguoiDung.IdnguoiDung.ToString());
                     HttpContext.Session.SetString("UserAvatar", string.IsNullOrEmpty(nguoiDung.AnhDaiDien) ? "https://via.placeholder.com/150" : nguoiDung.AnhDaiDien);
 
                     // Chuyển hướng người dùng đến trang chính
-                    return RedirectToAction("Index", "Home", new { area = "" });
+                    return RedirectToAction("Index", "Home", new { area = "Customer" });
                 }
                 else
                 {
@@ -76,6 +85,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             }
 
             return View();
+
         }
         // Logout
         public IActionResult DangXuat()

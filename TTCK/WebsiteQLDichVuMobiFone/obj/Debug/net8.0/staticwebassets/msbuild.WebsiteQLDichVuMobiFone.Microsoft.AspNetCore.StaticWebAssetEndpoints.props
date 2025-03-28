@@ -4248,6 +4248,30 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x6jyqrwg11"},{"Name":"integrity","Value":"sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"130335"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 09:33:22 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 15:57:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.yccwiogbuv.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yccwiogbuv"},{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 15:57:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"20542"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u002286wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 15:30:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.rqfptt8t65.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"rqfptt8t65"},{"Name":"integrity","Value":"sha256-86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"20542"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u002286wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 15:30:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/user.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\user.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

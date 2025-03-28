@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "l3QgCB8/gPkFz4tzPrPeiZbdMMiW9jNQqWgk9IKZ9JE=",
+  "Hash": "gaMYTs4WMtOjwShhPqTBklUeHVjAubCAuGQxRoKv7fA=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -7491,6 +7491,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yccwiogbuv",
+      "Integrity": "boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user\\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rqfptt8t65",
+      "Integrity": "86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user\\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\user.jpg",
@@ -37758,6 +37800,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Mar 2025 15:57:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.yccwiogbuv.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Mar 2025 15:57:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yccwiogbuv"
+        },
+        {
+          "Name": "label",
+          "Value": "img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20542"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Mar 2025 15:30:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.rqfptt8t65.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "20542"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 28 Mar 2025 15:30:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rqfptt8t65"
+        },
+        {
+          "Name": "label",
+          "Value": "img/user/fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg="
         }
       ]
     },
