@@ -1,0 +1,79 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.TinTuc
+
+@{
+    ViewData["Title"] = Model.TieuDe;
+    var user = ViewBag.khachHang as NguoiDung; // Lấy thông tin người dùng từ ViewBag
+}
+
+<div class="container mt-4">
+    <!-- Tiêu đề bài viết -->
+    <h2 class="fw-bold text-primary">@Model.TieuDe</h2>
+    <p class="text-muted">
+        📅 Ngày đăng: @Model.NgayDang?.ToString("dd/MM/yyyy") | 🏷 Chủ đề: <span class="text-info">@Model.IdTheLoaiNavigation?.TenChuDe</span>
+    </p>
+
+    <!-- Nội dung bài viết -->
+    <div class="content" style="font-size: 1.1rem; line-height: 1.6;">
+        @Html.Raw(Model.NoiDung)
+    </div>
+
+    <hr>
+
+    <!-- 🔽 Phần bình luận -->
+    <!-- Form bình luận -->
+    @if (user != null)
+    {
+        <h4>💬 Bình luận</h4>
+        <form method="post" action="@Url.Action("ThemBinhLuan", "TinTucs", new { area = "Customer" })">
+            <input type="hidden" name="idTinTuc" value="@Model.IdTinTuc" />
+            <textarea name="noiDung" class="form-control mb-2" rows="3" placeholder="Nhập bình luận của bạn..." required></textarea>
+            <button type="submit" class="btn btn-primary">Gửi bình luận</button>
+        </form>
+    }
+    else
+    {
+        <p class="text-danger">Bạn cần <a href="@Url.Action("DangNhap", "NguoiDung")">đăng nhập</a> để bình luận.</p>
+    }
+
+    <hr>
+
+    <!-- Danh sách bình luận -->
+    <h4>📢 Bình luận (@Model.BinhLuanBaiViets.Count())</h4>
+
+    @if (Model.BinhLuanBaiViets.Any())
+    {
+        @foreach (var bl in Model.BinhLuanBaiViets.OrderByDescending(b => b.NgayBinhLuan))
+        {
+            <div class="d-flex align-items-start mb-4 p-3 border rounded bg-light">
+                <!-- Ảnh đại diện -->
+                <img src="~/img/user/@(bl.NguoiDung?.AnhDaiDien ?? "default-avatar.png")"
+                     class="rounded-circle me-3"
+                     style="width: 50px; height: 50px; object-fit: cover;"
+                     alt="Avatar">
+
+                <div>
+                    <!-- Tên người dùng và ngày bình luận -->
+                    <strong>@bl.HoTen</strong>
+                    <span class="text-muted" style="font-size: 0.9rem;"> - @bl.NgayBinhLuan?.ToString("dd/MM/yyyy HH:mm")</span>
+
+                    <!-- Nội dung bình luận -->
+                    <p class="mt-1">@bl.NoiDung</p>
+                </div>
+            </div>
+        }
+    }
+    else
+    {
+        <p class="text-muted">🚀 Chưa có bình luận nào. Hãy là người đầu tiên bình luận!</p>
+    }
+</div>
+
+<!-- CSS -->
+<style>
+    .content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>

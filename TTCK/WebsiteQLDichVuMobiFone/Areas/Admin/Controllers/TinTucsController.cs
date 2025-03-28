@@ -52,16 +52,64 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "IdchuDe");
             return View();
         }
+        //upload file
+        public string? Upload(IFormFile file)
+        {
+            string? uploadFileName = null;
+            if (file != null)
+            {
+                uploadFileName = Guid.NewGuid().ToString() + "_" + file.FileName;
+                var path = $"wwwroot\\img\\tintuc\\{uploadFileName}";
+                using (var stream = new FileStream(path, FileMode.Create))
+                {
+                    file.CopyTo(stream);
+                }
+            }
+            return uploadFileName;
+        }
+        [HttpPost]
+        public async Task<IActionResult> UploadImage(IFormFile upload)
+        {
+            if (upload != null && upload.Length > 0)
+            {
+                // Giữ nguyên tên ảnh khi lưu
+                var fileName = Path.GetFileName(upload.FileName);
+                var filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/tintuc", fileName);
+
+                // Kiểm tra nếu tệp đã tồn tại thì thêm timestamp để tránh ghi đè
+                if (System.IO.File.Exists(filePath))
+                {
+                    string extension = Path.GetExtension(fileName);
+                    string nameWithoutExt = Path.GetFileNameWithoutExtension(fileName);
+                    fileName = $"{nameWithoutExt}_{DateTime.Now:yyyyMMddHHmmss}{extension}";
+                    filePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/tintuc", fileName);
+                }
+
+                // Lưu ảnh vào thư mục
+                using (var stream = new FileStream(filePath, FileMode.Create))
+                {
+                    await upload.CopyToAsync(stream);
+                }
+
+                // Trả về đường dẫn ảnh để CKEditor hiển thị
+                var url = $"/img/tintuc/{fileName}";
+                return Json(new { uploaded = 1, fileName = fileName, url = url });
+            }
+
+            return Json(new { uploaded = 0, error = new { message = "Lỗi khi tải ảnh lên" } });
+        }
+
 
         // POST: Admin/TinTucs/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
+        public async Task<IActionResult> Create(IFormFile AnhDaiDien, [Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
         {
             if (ModelState.IsValid)
             {
+                tinTuc.AnhDaiDien = Upload(AnhDaiDien);
                 _context.Add(tinTuc);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -92,7 +140,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
+        public async Task<IActionResult> Edit(IFormFile AnhDaiDien, int id, [Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
         {
             if (id != tinTuc.IdTinTuc)
             {
@@ -103,6 +151,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 try
                 {
+                    tinTuc.AnhDaiDien = Upload(AnhDaiDien);
                     _context.Update(tinTuc);
                     await _context.SaveChangesAsync();
                 }
@@ -119,7 +168,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "IdchuDe", tinTuc.IdTheLoai);
+            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "TenChuDe", tinTuc.IdTheLoai);
             return View(tinTuc);
         }
 

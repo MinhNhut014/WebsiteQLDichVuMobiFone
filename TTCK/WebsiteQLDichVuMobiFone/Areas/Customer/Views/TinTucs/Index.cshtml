@@ -1,0 +1,112 @@
+﻿@model List<WebsiteQLDichVuMobiFone.Models.TinTuc>
+@using WebsiteQLDichVuMobiFone.Models
+
+@{
+    ViewData["Title"] = "Tin tức";
+    var chuDeList = ViewBag.ChuDeList as List<ChuDe>;
+    int currentPage = ViewBag.CurrentPage;
+    int totalPages = ViewBag.TotalPages;
+}
+<!-- Header Start -->
+<div class="container-fluid bg-breadcrumb">
+    <div class="container text-center py-5" style="max-width: 900px;">
+        <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Tin Tức</h4>
+        <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
+            <li class="breadcrumb-item active text-primary">Tin Tức</li>
+        </ol>
+    </div>
+</div>
+<!-- Header End -->
+<div class="container mt-4">
+    <!-- Tiêu đề & Bộ lọc -->
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h3 class="mb-0" style="font-size: 1.5rem; font-weight: bold; text-transform: uppercase; text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); border-bottom: 2px solid #007bff; display: inline-block; padding-bottom: 5px;">
+            📰 Tin Tức Mới Nhất
+        </h3>
+
+        <!-- Bộ lọc chủ đề -->
+        <div style="min-width: 250px;">
+            <form method="get">
+                <select name="chuDeId" class="form-select form-select-lg p-2" onchange="this.form.submit()">
+                    <option value="">-- Tất cả chủ đề --</option>
+                    @foreach (var chuDe in chuDeList)
+                    {
+                        <option value="@chuDe.IdchuDe" selected="@(chuDe.IdchuDe.ToString() == Context.Request.Query["chuDeId"])">
+                            @chuDe.TenChuDe
+                        </option>
+                    }
+                </select>
+            </form>
+        </div>
+    </div>
+
+    <!-- Danh sách bài viết (4 thẻ trên 1 hàng) -->
+    <div class="row">
+        @foreach (var tin in Model)
+        {
+            <div class="col-md-3 col-sm-6 mb-4">
+                <div class="card h-100 shadow-sm border-0 rounded-3" style="transition: transform 0.3s, box-shadow 0.3s;">
+                    <img src="~/img/tintuc/@tin.AnhDaiDien" class="card-img-top" alt="Ảnh đại diện" style="height: 150px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="card-title text-primary" style="font-size: 0.95rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                            @tin.TieuDe
+                        </h6>
+                        <p class="card-text text-muted mb-1" style="font-size: 0.85rem;">
+                            📅 @tin.NgayDang?.ToString("dd/MM/yyyy") - 👀 @tin.LuotXem lượt xem
+                        </p>
+                        <p class="text-info mb-1" style="font-size: 0.85rem;">Chủ đề: @tin.IdTheLoaiNavigation?.TenChuDe</p>
+
+                        <a asp-controller="TinTucs" asp-action="ChiTiet" asp-route-id="@tin.IdTinTuc" class="btn btn-sm btn-primary mt-auto">
+                            Đọc tiếp →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Phân trang -->
+    @if (totalPages > 1)
+    {
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center mt-4">
+                <!-- Nút Previous -->
+                <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage - 1, chuDeId = Context.Request.Query["chuDeId"] })">«</a>
+                </li>
+
+                <!-- Nút số trang -->
+                @for (int i = 1; i <= totalPages; i++)
+                {
+                    <li class="page-item @(i == currentPage ? "active" : "")">
+                        <a class="page-link" href="@Url.Action("Index", new { page = i, chuDeId = Context.Request.Query["chuDeId"] })">@i</a>
+                    </li>
+                }
+
+                <!-- Nút Next -->
+                <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = currentPage + 1, chuDeId = Context.Request.Query["chuDeId"] })">»</a>
+                </li>
+            </ul>
+        </nav>
+    }
+</div>
+
+<!-- CSS Hover cho thẻ tin tức -->
+<style>
+    .card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Tùy chỉnh phân trang */
+    .pagination .page-link {
+        color: #007bff;
+    }
+
+    .pagination .active .page-link {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+</style>

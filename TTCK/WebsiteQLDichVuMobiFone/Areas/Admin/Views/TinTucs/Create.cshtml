@@ -4,44 +4,135 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1 class="mb-4">📰 Thêm Tin Tức Mới</h1>
 
-<h4>TinTuc</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TieuDe" class="control-label"></label>
-                <input asp-for="TieuDe" class="form-control" />
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <form asp-action="Create" enctype="multipart/form-data" class="shadow p-4 rounded bg-white">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <!-- Tiêu đề tin tức -->
+            <div class="form-group mb-3">
+                <label asp-for="TieuDe" class="fw-semibold">📌 Tiêu đề</label>
+                <input asp-for="TieuDe" class="form-control" placeholder="Nhập tiêu đề tin tức..." />
                 <span asp-validation-for="TieuDe" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="NoiDung" class="control-label"></label>
-                <input asp-for="NoiDung" class="form-control" />
+
+            <!-- Ảnh đại diện -->
+            <div class="form-group mb-3">
+                <label asp-for="AnhDaiDien" class="fw-semibold">🖼 Ảnh đại diện</label>
+                <input type="file" asp-for="AnhDaiDien" class="form-control" onchange="previewImage(event)" />
+                <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+                <div class="mt-2">
+                    <img id="imagePreview" class="img-thumbnail d-none" style="max-width: 100%; height: auto;" />
+                </div>
+            </div>
+
+            <!-- Thể loại -->
+            <div class="form-group mb-3">
+                <label asp-for="IdTheLoai" class="fw-semibold">📂 Thể loại</label>
+                <select asp-for="IdTheLoai" class="form-control" asp-items="ViewBag.IdTheLoai"></select>
+            </div>
+
+            <!-- Nội dung tin tức -->
+            <div class="form-group mb-3">
+                <label asp-for="NoiDung" class="fw-semibold">📋 Nội Dung</label>
+                <textarea asp-for="NoiDung" id="ThongTinChiTiet" class="form-control" rows="6" style="resize: none;"></textarea>
                 <span asp-validation-for="NoiDung" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="AnhDaiDien" class="control-label"></label>
-                <input asp-for="AnhDaiDien" class="form-control" />
-                <span asp-validation-for="AnhDaiDien" class="text-danger"></span>
+
+            <!-- Nút xem trước nội dung -->
+            <button type="button" class="btn btn-outline-secondary mb-3" onclick="showPreview()">👁️ Xem trước</button>
+
+            <!-- Modal xem trước -->
+            <div id="previewModal" class="modal fade" tabindex="-1">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Xem trước nội dung</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="previewContent" class="p-3 border rounded bg-light" style="max-height: 500px; overflow-y: auto;"></div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IdTheLoai" class="control-label"></label>
-                <select asp-for="IdTheLoai" class ="form-control" asp-items="ViewBag.IdTheLoai"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <!-- Nút tạo tin -->
+            <div class="text-center">
+                <input type="submit" value="📝 Đăng Tin" class="btn btn-primary px-4" />
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-outline-dark">⬅ Quay lại danh sách</a>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    
+    <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+    <script>
+        // Khởi tạo CKEditor
+        CKEDITOR.replace('ThongTinChiTiet', {
+            height: 300,
+            extraPlugins: 'table',
+            filebrowserUploadUrl: '/Admin/TinTucs/UploadImage',
+            filebrowserUploadMethod: 'form',
+            allowedContent: true,
+            extraAllowedContent: 'table tr th td tbody thead tfoot'
+        });
+
+        // Xem trước nội dung tin tức
+        function showPreview() {
+            var editorData = CKEDITOR.instances.ThongTinChiTiet.getData();
+            document.getElementById("previewContent").innerHTML = editorData;
+            var previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
+            previewModal.show();
+        }
+
+        // Xem trước ảnh đại diện
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('imagePreview');
+                output.src = reader.result;
+                output.classList.remove('d-none');
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
 }
+
+<style>
+    /* Giao diện form */
+    form {
+        background-color: #f8f9fa;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Hiệu ứng modal */
+    #previewContent table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #previewContent th, #previewContent td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #previewContent th {
+        background-color: #f8f9fa;
+        text-align: center;
+    }
+</style>

@@ -345,6 +345,12 @@ wwwroot\img\svg\Logo.svg
 wwwroot\img\svg\move.svg
 wwwroot\img\svg\radio.svg
 wwwroot\img\svg\thumbnail.svg
+wwwroot\img\tintuc\2cc13bd8-36a1-441d-a8d2-3fcb7671689e_tintuc1.jpg
+wwwroot\img\tintuc\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg
+wwwroot\img\tintuc\ab46396d-043d-4f7e-8378-adecebaacb29_tintuc1.jpg
+wwwroot\img\tintuc\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg
+wwwroot\img\tintuc\tintuc1.jpg
+wwwroot\img\tintuc\tintuc2.jpg
 wwwroot\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg
 wwwroot\img\user\user.jpg
 wwwroot\js\site.js

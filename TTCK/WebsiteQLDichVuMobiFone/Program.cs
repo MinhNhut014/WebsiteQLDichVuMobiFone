@@ -27,6 +27,12 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
+var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/img/tintuc");
+if (!Directory.Exists(path))
+{
+    Directory.CreateDirectory(path);
+}
+
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -56,6 +62,6 @@ app.UseEndpoints(endpoints =>
 });
 app.MapControllerRoute(
     name: "default",
-    pattern: "{area=Customer}/{controller=Home}/{action=GioiThieu}/{id?}");
+    pattern: "{area=Customer}/{controller=TinTucs}/{action=Index}/{id?}");
 
 app.Run();
