@@ -4,47 +4,80 @@
     ViewData["Title"] = "Danh sách SIM";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách SIM</h1>
-
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">📜 Danh sách SIM</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
+<form asp-action="Index" method="get">
+    <label for="idLoaiSo">Lọc theo chủ đề:</label>
+    <select name="idLoaiSo" id="idLoaiSo" class="form-select" onchange="this.form.submit()">
+        <option value="">Tất cả</option>
+        @foreach (var item in ViewBag.LoaiSim as SelectList)
+        {
+            <option value="@item.Value" selected="@(item.Value == ViewContext.HttpContext.Request.Query["idLoaiSo"] ? "selected" : null)">
+                @item.Text
+            </option>
+        }
+    </select>
+</form>
 
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 <div class="table-responsive">
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
         <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
-                <th class="p-3">Số Thuê Bao</th>
-                <th class="p-3">Khu Vực Hòa Mạng</th>
-                <th class="p-3">Phí Hòa Mạng</th>
-                <th class="p-3">Gói Đăng Ký Đi Kèm</th>
-                <th class="p-3">Dịch Vụ</th>
-                <th class="p-3">Loại Số</th>
-                <th class="p-3">Trạng Thái SIM</th>
-                <th class="p-3">Hành động</th>
+                <th class="p-3">📞 Số Thuê Bao</th>
+                <th class="p-3">📍 Khu Vực Hòa Mạng</th>
+                <th class="p-3">💰 Phí Hòa Mạng</th>
+                <th class="p-3">📦 Gói Đăng Ký Đi Kèm</th>
+                <th class="p-3">🔗 Dịch Vụ</th>
+                <th class="p-3">🔢 Loại Số</th>
+                <th class="p-3">✅ Trạng Thái SIM</th>
+                <th class="p-3">⚙️ Hành động</th>
             </tr>
         </thead>
         <tbody class="bg-light">
             @foreach (var item in Model)
             {
                 <tr class="text-center border-bottom">
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.SoThueBao)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.KhuVucHoaMang)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.PhiHoaMang)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.GoiDangKyDiKemNavigation.IdgoiDangKy)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IddichVuNavigation.IddichVu)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdloaiSoNavigation.IdloaiSo)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdtrangThaiSimNavigation.IdtrangThaiSim)</td>
-                    <td class="p-3 d-flex justify-content-center">
-                        <a asp-action="Edit" asp-route-id="@item.Idsim" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                    <td class="p-3 fw-medium">@item.SoThueBao</td>
+                    <td class="p-3">@item.KhuVucHoaMang</td>
+                    <td class="p-3 text-success fw-bold">@item.PhiHoaMang?.ToString("N0") đ</td>
+                    <td class="p-3">@item.GoiDangKyDiKemNavigation?.TenGoi</td>
+                    <td class="p-3">@item.IddichVuNavigation?.TenDichVu</td>
+                    <td class="p-3">@item.IdloaiSoNavigation?.TenLoaiSo</td>
+
+                    <!-- Dropdown chỉnh sửa trạng thái SIM -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatus" method="post">
+                            <input type="hidden" name="id" value="@item.Idsim" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiSim)
+                                {
+                                    <option value="@trangThai.IdtrangThaiSim" selected="@(item.IdtrangThaiSim == trangThai.IdtrangThaiSim)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.Idsim" class="btn btn-warning btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-pen"></i>
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.Idsim" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                        <a asp-action="Details" asp-route-id="@item.Idsim" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a asp-action="Delete" asp-route-id="@item.Idsim" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.Idsim, '@item.SoThueBao')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-trash"></i>
                         </a>
                     </td>
@@ -53,3 +86,27 @@
         </tbody>
     </table>
 </div>
+
+<a asp-action="Index" class="btn btn-secondary mt-3">
+    <i class="fa-solid fa-arrow-left"></i> Quay lại
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, soThueBao) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa SIM '" + soThueBao + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Sims/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

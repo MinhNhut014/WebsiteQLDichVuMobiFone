@@ -57,6 +57,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdloaiSo,TenLoaiSo")] LoaiSo loaiSo)
         {
+            
             if (ModelState.IsValid)
             {
                 _context.Add(loaiSo);
@@ -118,38 +119,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/LoaiSoes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var loaiSo = await _context.LoaiSos
-                .FirstOrDefaultAsync(m => m.IdloaiSo == id);
-            if (loaiSo == null)
-            {
-                return NotFound();
-            }
-
-            return View(loaiSo);
-        }
-
-        // POST: Admin/LoaiSoes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var loaiSo = await _context.LoaiSos.FindAsync(id);
-            if (loaiSo != null)
+            var loaiso = await _context.LoaiSos.FindAsync(id);
+            if (loaiso != null)
             {
-                _context.LoaiSos.Remove(loaiSo);
+                _context.LoaiSos.Remove(loaiso);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool LoaiSoExists(int id)
         {
             return _context.LoaiSos.Any(e => e.IdloaiSo == id);

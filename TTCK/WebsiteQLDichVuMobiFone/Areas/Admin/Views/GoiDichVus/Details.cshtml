@@ -1,48 +1,44 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.GoiDichVu
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Gói Dịch Vụ";
 }
 
-<h1>Details</h1>
+<div class="container mt-4">
+    <div class="card shadow-lg rounded-4 p-4">
+        <h2 class="text-primary text-center fw-bold">
+            <i class="fas fa-file-alt"></i> Chi Tiết Gói Dịch Vụ
+        </h2>
+        <hr />
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <img src="~/img/dichvu/doanhnghiep/@Model.HinhAnh" class="img-fluid rounded-3 shadow-sm" alt="Ảnh gói dịch vụ" style="max-width: 100%; height: auto;">
+            </div>
+            <div class="col-md-8">
+                <h3 class="fw-bold">@Model.TenGoiDv</h3>
+                </br>
+                <h6><strong>📂 Danh mục:</strong> @Model.IddichVuDnNavigation?.TenDichVu</h6>
+                </br>
+                <h6><strong>📜 Mô Tả:</strong> @Model.MoTa</h6>
+            </div>
+        </div>
 
-<div>
-    <h4>GoiDichVu</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenGoiDv)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenGoiDv)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HinhAnh)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HinhAnh)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.MoTa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.MoTa)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ThongTinChiTiet)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ThongTinChiTiet)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IddichVuDnNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IddichVuDnNavigation.IddichVuDn)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdgoiDichVu">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <div class="card bg-light mt-4 p-3 border-0 shadow-sm rounded-3">
+            <h4 class="fw-bold text-dark">
+                <i class="fas fa-info-circle"></i> Thông Tin Chi Tiết
+            </h4>
+            <div class="mt-2 p-2 border rounded bg-white">
+                @Html.Raw(Model.ThongTinChiTiet)
+            </div>
+        </div>
+
+        <div class="mt-4 text-center">
+            <a asp-action="Index" class="btn btn-secondary rounded-3 shadow-sm">
+                <i class="fas fa-arrow-left"></i> Quay lại danh sách
+            </a>
+            <a asp-action="Edit" asp-route-id="@Model.IdgoiDichVu" class="btn btn-primary rounded-3 shadow-sm">
+                <i class="fas fa-edit"></i> Chỉnh sửa
+            </a>
+        </div>
+    </div>
 </div>

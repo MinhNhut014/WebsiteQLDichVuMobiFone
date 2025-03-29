@@ -19,12 +19,71 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         {
             _context = context;
         }
-
-        // GET: Admin/HoaDonSims
-        public async Task<IActionResult> Index()
+        public void GetData()
         {
-            var applicationDbContext = _context.HoaDonSims.Include(h => h.IdnguoiDungNavigation).Include(h => h.IdphuongThucVcNavigation).Include(h => h.IdtrangThaiNavigation);
-            return View(await applicationDbContext.ToListAsync());
+            // Kiểm tra xem người dùng đã đăng nhập chưa bằng cách kiểm tra session "nguoidung"
+            var tenDangNhap = HttpContext.Session.GetString("nguoidung");
+
+            if (!string.IsNullOrEmpty(tenDangNhap))
+            {
+                // Tìm người dùng từ cơ sở dữ liệu bằng tên đăng nhập đã lưu trong session
+                ViewBag.khachHang = _context.NguoiDungs.FirstOrDefault(k => k.TenDangNhap == tenDangNhap);
+            }
+            // Truyền thông tin vào ViewData hoặc ViewBag
+            ViewBag.UserName = tenDangNhap;
+            ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
+        }
+        // GET: Admin/HoaDonSims
+        public async Task<IActionResult> Index(DateTime? fromDate, DateTime? toDate)
+        {
+            var ngayDatHangList = await _context.HoaDonSims
+                .Where(h => h.NgayDatHang.HasValue) // Lọc bỏ giá trị null
+                .Select(h => h.NgayDatHang.Value.Date) // Chỉ lấy phần ngày (không lấy giờ)
+                .Distinct()
+                .OrderBy(d => d)
+                .ToListAsync();
+
+            ViewData["NgayDatHangList"] = ngayDatHangList; // Truyền danh sách ngày vào View
+
+            // Truy vấn danh sách hóa đơn SIM
+            var query = _context.HoaDonSims
+                .Include(h => h.IdnguoiDungNavigation)
+                .Include(h => h.IdphuongThucVcNavigation)
+                .Include(h => h.IdtrangThaiNavigation)
+                .OrderByDescending(h => h.NgayDatHang) // Sắp xếp theo ngày đặt hàng mới nhất
+                .AsQueryable();
+
+            // Lọc theo khoảng ngày nếu được chọn
+            if (fromDate.HasValue && toDate.HasValue)
+            {
+                // Lấy khoảng từ 00:00:00 đến 23:59:59 để tránh lỗi lọc sai
+                DateTime from = fromDate.Value.Date;
+                DateTime to = toDate.Value.Date.AddDays(1).AddTicks(-1);
+
+                query = query.Where(h => h.NgayDatHang >= from && h.NgayDatHang <= to);
+            }
+            // Truy vấn danh sách trạng thái đơn hàng
+            ViewBag.TrangThaiDonHang = await _context.TrangThaiDonHangs.ToListAsync();
+
+            return View(await query.ToListAsync());
+        }
+
+        // POST: Cập nhật trạng thái hóa đơn sim
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatus(int id, int trangthai)
+        {
+            var hdsim = await _context.HoaDonSims.FindAsync(id);
+            if (hdsim == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiDonHangs.AnyAsync(t => t.IdtrangThai == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hdsim.IdtrangThai = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
         }
 
         // GET: Admin/HoaDonSims/Details/5
@@ -134,41 +193,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/HoaDonSims/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var hoaDonSim = await _context.HoaDonSims
-                .Include(h => h.IdnguoiDungNavigation)
-                .Include(h => h.IdphuongThucVcNavigation)
-                .Include(h => h.IdtrangThaiNavigation)
-                .FirstOrDefaultAsync(m => m.IdhoaDonSim == id);
-            if (hoaDonSim == null)
-            {
-                return NotFound();
-            }
-
-            return View(hoaDonSim);
-        }
-
-        // POST: Admin/HoaDonSims/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var hoaDonSim = await _context.HoaDonSims.FindAsync(id);
-            if (hoaDonSim != null)
+            var hdsim = await _context.HoaDonSims.FindAsync(id);
+            if (hdsim != null)
             {
-                _context.HoaDonSims.Remove(hoaDonSim);
+                _context.HoaDonSims.Remove(hdsim);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool HoaDonSimExists(int id)
         {
             return _context.HoaDonSims.Any(e => e.IdhoaDonSim == id);

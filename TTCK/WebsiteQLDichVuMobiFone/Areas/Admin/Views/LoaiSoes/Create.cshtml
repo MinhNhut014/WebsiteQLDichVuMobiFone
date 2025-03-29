@@ -4,29 +4,27 @@
     ViewData["Title"] = "Thêm Loại Số";
 }
 
-<div class="container mt-4">
-    <h2 class="text-primary mb-3">Thêm Loại Số</h2>
-    <div class="card shadow-sm p-4 rounded">
-        <form asp-action="Create" method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
+            <h2 class="mb-0">➕ Thêm Loại Số Mới</h2>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
 
-            <!-- Nhập Tên Loại Số -->
-            <div class="form-group mb-3">
-                <label asp-for="TenLoaiSo" class="fw-bold">Tên Loại Số</label>
-                <input asp-for="TenLoaiSo" class="form-control" placeholder="Nhập tên loại số..." required />
-                <span asp-validation-for="TenLoaiSo" class="text-danger"></span>
-            </div>
+                <div class="form-group mb-4">
+                    <label asp-for="TenLoaiSo" class="form-label fw-semibold">📋 Tên Loại Số</label>
+                    <input asp-for="TenLoaiSo" class="form-control rounded-3 shadow-sm" placeholder="Nhập tên loại số..." required />
+                    <span asp-validation-for="TenLoaiSo" class="text-danger"></span>
+                </div>
 
-            <!-- Nút Lưu -->
-            <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa-solid fa-check"></i> Lưu
-                </button>
-                <a asp-action="Index" class="btn btn-secondary">
-                    <i class="fa-solid fa-arrow-left"></i> Quay lại
-                </a>
-            </div>
-        </form>
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
+                    <button type="submit" class="btn btn-primary rounded-3 px-4">💾 Lưu</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

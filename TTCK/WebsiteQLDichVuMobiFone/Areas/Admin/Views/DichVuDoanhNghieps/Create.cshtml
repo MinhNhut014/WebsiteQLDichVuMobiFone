@@ -1,37 +1,68 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.DichVuDoanhNghiep
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Thêm Dịch Vụ Doanh Nghiệp";
 }
 
-<h1>Create</h1>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card shadow-lg border-0 rounded-4">
+                <div class="card-header bg-gradient text-white text-center rounded-top-4">
+                    <h2 class="fw-bold">
+                        <i class="bi bi-plus-circle"></i> Thêm Dịch Vụ Doanh Nghiệp
+                    </h2>
+                </div>
+                <div class="card-body p-4">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-<h4>DichVuDoanhNghiep</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="TenDichVu" class="control-label"></label>
-                <input asp-for="TenDichVu" class="form-control" />
-                <span asp-validation-for="TenDichVu" class="text-danger"></span>
+                        <!-- Tên dịch vụ -->
+                        <div class="mb-3">
+                            <label asp-for="TenDichVu" class="form-label fw-semibold">
+                                <i class="bi bi-card-text"></i> Tên Dịch Vụ
+                            </label>
+                            <input asp-for="TenDichVu" class="form-control form-control-lg border-secondary shadow-sm"
+                                   placeholder="Nhập tên dịch vụ..." />
+                            <span asp-validation-for="TenDichVu" class="text-danger"></span>
+                        </div>
+
+                        <!-- Nhóm dịch vụ -->
+                        <div class="mb-3">
+                            <label asp-for="IdnhomDichVu" class="form-label fw-semibold">
+                                <i class="bi bi-list-ul"></i> Nhóm Dịch Vụ
+                            </label>
+                            <select asp-for="IdnhomDichVu" class="form-select form-select-lg border-secondary shadow-sm"
+                                    asp-items="ViewBag.IdnhomDichVu">
+                                <option value="">-- Chọn nhóm dịch vụ --</option>
+                            </select>
+                            <span asp-validation-for="IdnhomDichVu" class="text-danger"></span>
+                        </div>
+
+                        <!-- Nút thao tác -->
+                        <div class="text-center mt-4">
+                            <button type="submit" class="btn btn-primary btn-lg shadow-sm px-4 rounded-pill">
+                                <i class="fa-solid fa-check"></i> Thêm mới
+                            </button>
+                            <a asp-action="Index" class="btn btn-outline-secondary btn-lg shadow-sm px-4 ms-2 rounded-pill">
+                                <i class="fa-solid fa-arrow-left"></i> Quay lại
+                            </a>
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IdnhomDichVu" class="control-label"></label>
-                <select asp-for="IdnhomDichVu" class ="form-control" asp-items="ViewBag.IdnhomDichVu"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<style>
+    .bg-gradient {
+        background: linear-gradient(45deg, #007bff, #6610f2);
+    }
+</style>

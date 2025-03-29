@@ -4,39 +4,86 @@
     ViewData["Title"] = "Danh sách Sản Phẩm Dịch Vụ Khác";
 }
 
-<div class="container mt-4">
-    <div class="d-flex justify-content-between align-items-center mb-3">
-        <h2 class="fw-bold">📋 Danh sách Sản Phẩm Dịch Vụ Khác</h2>
-        <a asp-action="Create" class="btn btn-success rounded-3">➕ Thêm Sản Phẩm</a>
-    </div>
-    <table class="table table-hover shadow-sm">
-        <thead class="table-dark">
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">Danh sách Sản Phẩm Dịch Vụ Khác</h1>
+    <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
+        <i class="fa-solid fa-plus"></i> Thêm mới
+    </a>
+</div>
+<form asp-action="Index" method="get">
+    <label for="idLoaiDichVuKhac">Lọc theo loại dịch vụ:</label>
+    <select name="idLoaiDichVuKhac" id="idLoaiDichVuKhac" class="form-select" onchange="this.form.submit()">
+        <option value="">Tất cả</option>
+        @foreach (var item in ViewBag.LoaiDichVuKhac as SelectList)
+        {
+            <option value="@item.Value" selected="@(item.Value == ViewContext.HttpContext.Request.Query["idLoaiDichVuKhac"] ? "selected" : null)">
+                @item.Text
+            </option>
+        }
+    </select>
+</form>
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
-                <th>Tên Sản Phẩm</th>
-                <th>Hình Ảnh</th>
-                <th>Mô Tả</th>
-                <th>Loại Dịch Vụ</th>
-                <th>Hành động</th>
+                <th class="p-3">Hình Ảnh</th>
+                <th class="p-3 text-start">Tên Sản Phẩm</th>
+                
+                <th class="p-3">Mô Tả</th>
+                <th class="p-3">Dịch Vụ</th>
+                <th class="p-3">Hành động</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody class="bg-light">
             @foreach (var item in Model)
             {
-                <tr>
-                    <td>@item.TenSanPham</td>
-                    <td>
-                        <img src="~/img/dichvu/dichvukhac/@item.HinhAnh" alt="Ảnh Sản Phẩm" class="img-thumbnail" style="width: 80px; height: auto;" />
+                <tr class="text-center border-bottom">
+                    <td class="p-3">
+                        <img src="~/img/dichvu/dichvukhac/@item.HinhAnh" alt="Ảnh Sản Phẩm" class="rounded shadow-sm" style="width: 80px; height: 80px; object-fit: cover;" />
                     </td>
-                    <td>@item.MoTa</td>
-                    <td>@item.IdloaiDichVuKhacNavigation?.TenLoaiDichVu</td>
-                    <td>
-                        <a asp-action="Edit" asp-route-id="@item.IdsanPham" class="btn btn-warning btn-sm">✏️ Sửa</a>
-                        <a asp-action="Details" asp-route-id="@item.IdsanPham" class="btn btn-info btn-sm">🔍 Xem</a>
-                        <a asp-action="Delete" asp-route-id="@item.IdsanPham" class="btn btn-danger btn-sm">🗑️ Xóa</a>
+                    <td class="p-3 text-start fw-medium">@item.TenSanPham</td>
+                    
+                    <td class="p-3 text-start">@item.MoTa</td>
+                    <td class="p-3">@item.IdloaiDichVuKhacNavigation?.TenLoaiDichVu</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IdsanPham" class="btn btn-warning btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-action="Details" asp-route-id="@item.IdsanPham" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdsanPham, '@item.TenSanPham')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
-    <a asp-action="Index" class="btn btn-secondary mt-3">🔙 Quay lại</a>
 </div>
+
+<a asp-action="Index" class="btn btn-secondary mt-3">
+    <i class="fa-solid fa-arrow-left"></i> Quay lại
+</a>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenSanPham) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa sản phẩm '" + tenSanPham + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/SanPhamDichVuKhac/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

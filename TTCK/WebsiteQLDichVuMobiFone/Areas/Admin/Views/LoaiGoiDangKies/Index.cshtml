@@ -4,12 +4,12 @@
     ViewData["Title"] = "Danh sách Loại Gói Đăng Ký";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Loại Gói Đăng Ký</h1>
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">📜 Danh sách Loại Gói Đăng Ký</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
 <form method="get" class="row mb-3">
     <div class="col-md-4">
         <label for="idLoaiDichVu" class="form-label">Lọc theo Dịch Vụ Di Động:</label>
@@ -56,12 +56,10 @@
                     <a asp-action="Details" asp-route-id="@item.IdloaiGoi" class="btn btn-info btn-sm mx-1">
                         <i class="fa-solid fa-eye"></i>
                     </a>
-                    <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                        <input type="hidden" name="id" value="@item.IdloaiGoi" />
-                        <button type="submit" class="btn btn-danger btn-sm mx-1">
-                            <i class="fa-solid fa-trash"></i>
-                        </button>
-                    </form>
+                    <a href="javascript:void(0);" onclick="confirmDelete(@item.IdloaiGoi, '@item.TenLoaiGoi')"
+                       class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
                 </td>
             </tr>
         }
@@ -86,4 +84,24 @@
             });
     }
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenLoaiGoi) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa loại gói đăng ký '" + tenLoaiGoi + "' này không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/LoaiGoiDangKies/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>
+
     

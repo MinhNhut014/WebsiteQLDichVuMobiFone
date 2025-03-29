@@ -4,36 +4,37 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<div class="card shadow-sm p-4 rounded-4 border-0">
+    <h2 class="text-center text-primary mb-4">Chỉnh sửa Loại Gói Đăng Ký</h2>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <form asp-action="Edit">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <input type="hidden" asp-for="IdloaiGoi" />
 
-<h4>LoaiGoiDangKy</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdloaiGoi" />
-            <div class="form-group">
-                <label asp-for="TenLoaiGoi" class="control-label"></label>
-                <input asp-for="TenLoaiGoi" class="form-control" />
-                <span asp-validation-for="TenLoaiGoi" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="IdloaiDichVu" class="control-label"></label>
-                <select asp-for="IdloaiDichVu" class="form-control" asp-items="ViewBag.IdloaiDichVu"></select>
-                <span asp-validation-for="IdloaiDichVu" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+                <div class="mb-3">
+                    <label asp-for="TenLoaiGoi" class="form-label fw-bold">Tên Loại Gói</label>
+                    <input asp-for="TenLoaiGoi" class="form-control rounded-3" placeholder="Nhập tên loại gói" />
+                    <span asp-validation-for="TenLoaiGoi" class="text-danger"></span>
+                </div>
+
+                <div class="mb-3">
+                    <label asp-for="IdloaiDichVu" class="form-label fw-bold">Loại Dịch Vụ</label>
+                    <select asp-for="IdloaiDichVu" class="form-select rounded-3" asp-items="ViewBag.IdloaiDichVu"></select>
+                    <span asp-validation-for="IdloaiDichVu" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-secondary rounded-3">Quay lại</a>
+                    <input type="submit" value="Lưu thay đổi" class="btn btn-success rounded-3" />
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

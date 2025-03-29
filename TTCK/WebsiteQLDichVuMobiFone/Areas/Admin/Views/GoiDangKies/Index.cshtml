@@ -4,12 +4,12 @@
     ViewData["Title"] = "Danh sách Gói Đăng Ký";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Gói Đăng Ký</h1>
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">📜 Danh sách Gói Đăng Ký</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
 <form method="get" class="row mb-3">
     <div class="col-md-4">
         <label for="idLoaiDichVu" class="form-label">Lọc theo Dịch Vụ Di Động:</label>
@@ -43,8 +43,6 @@
                 <th class="p-3">Giá Gói</th>
                 <th class="p-3">Thời Hạn</th>
                 <th class="p-3">Tính Năng</th>
-                <th class="p-3">Thông Tin Gói</th>
-                <th class="p-3">Thông Tin Chi Tiết</th>
                 <th class="p-3">ID Loại Gói</th>
                 <th class="p-3">Hành động</th>
             </tr>
@@ -57,8 +55,6 @@
                     <td class="p-3">@item.GiaGoi</td>
                     <td class="p-3">@item.ThoiHan</td>
                     <td class="p-3">@item.TinhNang</td>
-                    <td class="p-3">@item.ThongTinGoi</td>
-                    <td class="p-3">@item.ThongTinChiTiet</td>
                     <td class="p-3">@item.IdloaiGoiNavigation.TenLoaiGoi</td>
                     <td class="p-3 d-flex justify-content-center">
                         <a asp-action="Edit" asp-route-id="@item.IdgoiDangKy" class="btn btn-warning btn-sm mx-1">
@@ -67,18 +63,35 @@
                         <a asp-action="Details" asp-route-id="@item.IdgoiDangKy" class="btn btn-info btn-sm text-white mx-1">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                            <input type="hidden" name="id" value="@item.IdgoiDangKy" />
-                            <button type="submit" class="btn btn-danger btn-sm mx-1">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdgoiDangKy, '@item.TenGoi')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenGoi) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa SIM '" + tenGoi + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/Sim/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>
 
 <script>
     function updateLoaiGoiOptions(idLoaiDichVu) {

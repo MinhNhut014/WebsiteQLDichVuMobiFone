@@ -4,21 +4,21 @@
     ViewData["Title"] = "Danh sách Dịch Vụ";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Dịch Vụ</h1>
-
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">Danh sách Dịch Vụ</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
 
 <div class="table-responsive">
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
         <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
+                <th class="p-3">Ảnh Dịch Vụ</th>
                 <th class="p-3">Tên Dịch Vụ</th>
                 <th class="p-3">Mô Tả</th>
-                <th class="p-3">Ảnh Dịch Vụ</th>
+                
                 <th class="p-3">Hành động</th>
             </tr>
         </thead>
@@ -26,25 +26,46 @@
             @foreach (var item in Model)
             {
                 <tr class="text-center border-bottom">
-                    <td class="p-3 text-start fw-medium">@Html.DisplayFor(modelItem => item.TenDichVu)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.MoTa)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.AnhDichVu)</td>
-                    <td class="p-3 d-flex justify-content-center">
-                        <a asp-action="Edit" asp-route-id="@item.IddichVu" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                    <td class="p-3">
+                        <img src="~/img/dichvu/@item.AnhDichVu" alt="Ảnh dịch vụ" class="img-fluid rounded shadow-sm" style="width: 80px; height: 80px; object-fit: cover;" />
+                    </td>
+                    <td class="p-3 text-start fw-medium">@item.TenDichVu</td>
+                    <td class="p-3 text-start text-truncate" style="max-width: 300px;">@item.MoTa</td>
+                    
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IddichVu" class="btn btn-warning btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-pen"></i>
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.IddichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                        <a asp-action="Details" asp-route-id="@item.IddichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                            <input type="hidden" name="id" value="@item.IddichVu" />
-                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IddichVu, '@item.TenDichVu')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenDichVu) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc muốn xóa dịch vụ '" + tenDichVu + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/DichVus/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

@@ -1,54 +1,62 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.GoiDangKy
 
 @{
-    ViewData["Title"] = "Chi Tiết Gói Đăng Ký";
+    ViewData["Title"] = "Xem Chi Tiết Gói Đăng Ký";
 }
 
 <div class="card shadow-sm border-0 rounded-3 p-4 bg-light">
     <h1 class="text-primary fw-bold text-center mb-4">Chi Tiết Gói Đăng Ký</h1>
 
-    <div class="card-body">
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">📋 Tên Gói:</div>
-            <div class="col-sm-8">@Html.DisplayFor(model => model.TenGoi)</div>
+    <div class="row">
+        <!-- Cột 1 -->
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label class="form-label">📋 Tên Gói</label>
+                <p>@Model.TenGoi</p>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="form-label">💰 Giá Gói</label>
+                <p>@Model.GiaGoi</p>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="form-label">⏳ Thời Hạn</label>
+                <p>@Model.ThoiHan</p>
+            </div>
+
+            <div class="form-group mb-3">
+                <label class="form-label">🚀 Tính Năng</label>
+                <p>@Model.TinhNang</p>
+            </div>
         </div>
 
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">💰 Giá Gói:</div>
-            <div class="col-sm-8">@Html.DisplayFor(model => model.GiaGoi) VNĐ</div>
-        </div>
+        <!-- Cột 2 -->
+        <div class="col-md-6">
+            <div class="form-group mb-3">
+                <label class="form-label">🔖 Loại Gói</label>
+                <p>@Model.IdloaiGoiNavigation?.TenLoaiGoi</p> <!-- Loại Gói liên kết với bảng hoặc mô hình của bạn -->
+            </div>
 
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">⏳ Thời Hạn:</div>
-            <div class="col-sm-8">@Html.DisplayFor(model => model.ThoiHan)</div>
+            <div class="form-group mb-3">
+                <label class="form-label">ℹ️ Thông Tin Gói</label>
+                <p>@Html.Raw(Model.ThongTinGoi)</p>
+            </div>
         </div>
+    </div>
 
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">🚀 Tính Năng:</div>
-            <div class="col-sm-8">@Html.DisplayFor(model => model.TinhNang)</div>
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">ℹ️ Thông Tin Gói:</div>
-            <div class="col-sm-8">@Html.Raw(Model.ThongTinGoi)</div> 
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">📝 Thông Tin Chi Tiết:</div>
-            <div class="col-sm-8">@Html.Raw(Model.ThongTinChiTiet)</div> 
-        </div>
-
-        <div class="row mb-3">
-            <div class="col-sm-4 fw-bold">🔖 Loại Gói:</div>
-            <div class="col-sm-8">@Html.DisplayFor(model => model.IdloaiGoiNavigation.TenLoaiGoi)</div>
+    <!-- Cột 3: Thông Tin Chi Tiết -->
+    <div class="col-md-12">
+        <div class="form-group mb-3">
+            <label class="form-label fw-bold">📋 Thông Tin Chi Tiết</label>
+            <div class="shadow-sm p-3 bg-light" style="border-radius: 8px; max-height: 500px; overflow-y: auto;">
+                @Html.Raw(Model.ThongTinChiTiet) <!-- Hiển thị nội dung chi tiết với HTML đã được render -->
+            </div>
         </div>
     </div>
 
     <div class="text-center mt-4">
-        <a asp-action="Edit" asp-route-id="@Model?.IdgoiDangKy" class="btn btn-warning me-2">
-            <i class="fa-solid fa-pen"></i> Chỉnh sửa
-        </a>
-        <a asp-action="Index" class="btn btn-secondary">
+        <a asp-action="Index" class="btn btn-secondary ms-2">
             <i class="fa-solid fa-arrow-left"></i> Quay lại danh sách
         </a>
     </div>

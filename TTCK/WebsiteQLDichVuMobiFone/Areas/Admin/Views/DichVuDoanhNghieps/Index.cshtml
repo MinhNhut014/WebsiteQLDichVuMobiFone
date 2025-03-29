@@ -4,20 +4,31 @@
     ViewData["Title"] = "Danh sách Dịch Vụ Doanh Nghiệp";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Dịch Vụ Doanh Nghiệp</h1>
-
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">Danh sách Dịch Vụ Doanh Nghiệp</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
+<form asp-action="Index" method="get">
+    <label for="idnhomDichVu">Lọc theo nhóm dịch vụ:</label>
+    <select name="idnhomDichVu" id="idnhomDichVu" class="form-select" onchange="this.form.submit()">
+        <option value="">Tất cả</option>
+        @foreach (var item in ViewBag.NhomDichVu as SelectList)
+        {
+            <option value="@item.Value" selected="@(item.Value == ViewContext.HttpContext.Request.Query["idnhomDichVu"] ? "selected" : null)">
+                @item.Text
+            </option>
+        }
+    </select>
+</form>
 
 <div class="table-responsive">
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
         <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
                 <th class="p-3">Tên Dịch Vụ</th>
-                <th class="p-3">ID Nhóm Dịch Vụ</th>
+                <th class="p-3">Nhóm Dịch Vụ</th>
                 <th class="p-3">Hành động</th>
             </tr>
         </thead>
@@ -26,23 +37,40 @@
             {
                 <tr class="text-center border-bottom">
                     <td class="p-3 text-start fw-medium">@Html.DisplayFor(modelItem => item.TenDichVu)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdnhomDichVuNavigation.IdnhomDichVu)</td>
-                    <td class="p-3 d-flex justify-content-center">
-                        <a asp-action="Edit" asp-route-id="@item.IddichVuDn" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdnhomDichVuNavigation.TenNhom)</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IddichVuDn" class="btn btn-warning btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-pen"></i>
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.IddichVuDn" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                        <a asp-action="Details" asp-route-id="@item.IddichVuDn" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                            <input type="hidden" name="id" value="@item.IddichVuDn" />
-                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IddichVuDn, '@item.TenDichVu')" class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenDichVu) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa dịch vụ '" + tenDichVu + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/DichVuDoanhNghieps/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

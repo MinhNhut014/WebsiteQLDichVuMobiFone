@@ -21,11 +21,22 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/TinTucs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? idTheLoai)
         {
-            var applicationDbContext = _context.TinTucs.Include(t => t.IdTheLoaiNavigation);
-            return View(await applicationDbContext.ToListAsync());
+            var query = _context.TinTucs
+                .Include(t => t.IdTheLoaiNavigation)
+                .OrderByDescending(t => t.NgayDang) // Sắp xếp theo ngày đăng mới nhất
+                .AsQueryable();
+
+            if (idTheLoai.HasValue)
+            {
+                query = query.Where(t => t.IdTheLoai == idTheLoai);
+            }
+
+            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "TenChuDe", idTheLoai);
+            return View(await query.ToListAsync());
         }
+
 
         // GET: Admin/TinTucs/Details/5
         public async Task<IActionResult> Details(int? id)

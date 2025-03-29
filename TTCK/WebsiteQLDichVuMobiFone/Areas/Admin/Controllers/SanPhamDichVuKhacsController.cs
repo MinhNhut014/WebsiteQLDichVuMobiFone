@@ -21,10 +21,23 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/SanPhamDichVuKhacs
-        public async Task<IActionResult> Index()
+        // GET: Admin/SanPhamDichVuKhacs
+        public async Task<IActionResult> Index(int? idLoaiDichVuKhac)
         {
-            var applicationDbContext = _context.SanPhamDichVuKhacs.Include(s => s.IdloaiDichVuKhacNavigation);
-            return View(await applicationDbContext.ToListAsync());
+            var query = _context.SanPhamDichVuKhacs
+                .Include(s => s.IdloaiDichVuKhacNavigation)
+                .AsQueryable();
+
+            // Lọc theo loại dịch vụ nếu có chọn
+            if (idLoaiDichVuKhac.HasValue)
+            {
+                query = query.Where(s => s.IdloaiDichVuKhac == idLoaiDichVuKhac);
+            }
+
+            // Load danh sách loại dịch vụ khác để hiển thị bộ lọc
+            ViewBag.LoaiDichVuKhac = new SelectList(_context.LoaiDichVuKhacs, "IdloaiDichVuKhac", "TenLoaiDichVu", idLoaiDichVuKhac);
+
+            return View(await query.ToListAsync());
         }
 
         // GET: Admin/SanPhamDichVuKhacs/Details/5

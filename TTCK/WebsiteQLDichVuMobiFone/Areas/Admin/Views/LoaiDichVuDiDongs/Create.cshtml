@@ -5,15 +5,18 @@
 }
 
 <div class="container mt-4">
-    <h2 class="text-primary mb-3">Thêm Loại Dịch Vụ</h2>
-    <div class="card shadow-sm p-4 rounded">
+    <h2 class="text-primary mb-3">
+        <i class="fa-solid fa-plus-circle"></i> Thêm Loại Dịch Vụ
+    </h2>
+
+    <div class="card shadow-lg p-4 rounded border-0">
         <form asp-action="Create" method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
 
             <!-- Tên Dịch Vụ (Cố định) -->
             <div class="form-group mb-3">
                 <label class="fw-bold">Tên Dịch Vụ</label>
-                <input type="text" class="form-control bg-light fw-bold" value="Dịch Vụ Di Động" readonly />
+                <input type="text" class="form-control bg-light text-primary fw-bold" value="Dịch Vụ Di Động" readonly />
             </div>
 
             <!-- Ẩn ID dịch vụ để gửi dữ liệu -->
@@ -22,16 +25,16 @@
             <!-- Nhập Tên Loại Dịch Vụ -->
             <div class="form-group mb-3">
                 <label asp-for="TenLoaiDichVu" class="fw-bold">Tên Loại Dịch Vụ</label>
-                <input asp-for="TenLoaiDichVu" class="form-control" placeholder="Nhập tên loại dịch vụ..." required />
+                <input asp-for="TenLoaiDichVu" class="form-control border-primary" placeholder="Nhập tên loại dịch vụ..." required />
                 <span asp-validation-for="TenLoaiDichVu" class="text-danger"></span>
             </div>
 
             <!-- Nút Lưu -->
             <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-success">
+                <button type="submit" class="btn btn-success shadow-sm">
                     <i class="fa-solid fa-check"></i> Lưu
                 </button>
-                <a asp-action="Index" class="btn btn-secondary">
+                <a asp-action="Index" class="btn btn-secondary shadow-sm">
                     <i class="fa-solid fa-arrow-left"></i> Quay lại
                 </a>
             </div>
@@ -44,4 +47,3 @@
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
 }
-

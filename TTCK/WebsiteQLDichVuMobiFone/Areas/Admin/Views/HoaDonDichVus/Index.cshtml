@@ -4,16 +4,49 @@
     ViewData["Title"] = "Danh sách Hóa Đơn Dịch Vụ";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Hóa Đơn Dịch Vụ</h1>
-
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">📜 Danh sách Hóa Đơn Dịch Vụ</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
+<form asp-action="Index" method="get" class="row mb-3">
+    <div class="col-md-4">
+        <label for="fromDate" class="form-label">Từ ngày:</label>
+        <select id="fromDate" name="fromDate" class="form-select" onchange="this.form.submit()">
+            <option value="">-- Chọn ngày bắt đầu --</option>
+            @foreach (var date in ViewData["NgayDatHangList"] as List<DateTime>)
+            {
+                <option value="@date.ToString("yyyy-MM-dd")"
+                        selected="@(date.ToString("yyyy-MM-dd") == Context.Request.Query["fromDate"] ? "selected" : null)">
+                    @date.ToString("dd/MM/yyyy")
+                </option>
+            }
+        </select>
+    </div>
 
+    <div class="col-md-4">
+        <label for="toDate" class="form-label">Đến ngày:</label>
+        <select id="toDate" name="toDate" class="form-select" onchange="this.form.submit()">
+            <option value="">-- Chọn ngày kết thúc --</option>
+            @foreach (var date in ViewData["NgayDatHangList"] as List<DateTime>)
+            {
+                <option value="@date.ToString("yyyy-MM-dd")"
+                        selected="@(date.ToString("yyyy-MM-dd") == Context.Request.Query["toDate"] ? "selected" : null)">
+                    @date.ToString("dd/MM/yyyy")
+                </option>
+            }
+        </select>
+    </div>
+</form>
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
 <div class="table-responsive">
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
         <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
                 <th class="p-3">Ngày Đặt Hàng</th>
@@ -22,8 +55,7 @@
                 <th class="p-3">Số Điện Thoại</th>
                 <th class="p-3">Email</th>
                 <th class="p-3">Địa Chỉ</th>
-                <th class="p-3">ID Người Dùng</th>
-                <th class="p-3">ID Trạng Thái</th>
+                <th class="p-3">Trạng Thái</th>
                 <th class="p-3">Hành động</th>
             </tr>
         </thead>
@@ -37,24 +69,53 @@
                     <td class="p-3">@Html.DisplayFor(modelItem => item.SoDienThoai)</td>
                     <td class="p-3">@Html.DisplayFor(modelItem => item.Email)</td>
                     <td class="p-3">@Html.DisplayFor(modelItem => item.DiaChi)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdnguoiDungNavigation.IdnguoiDung)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IdtrangThaiNavigation.IdtrangThai)</td>
-                    <td class="p-3 d-flex justify-content-center">
-                        <a asp-action="Edit" asp-route-id="@item.IdhoaDonDv" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                    <!-- Dropdown chỉnh sửa trạng thái -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatus" method="post">
+                            <input type="hidden" name="id" value="@item.IdhoaDonDv" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiDonHang)
+                                {
+                                    <option value="@trangThai.IdtrangThai" selected="@(item.IdtrangThai == trangThai.IdtrangThai)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IdhoaDonDv" class="btn btn-warning btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-pen"></i>
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.IdhoaDonDv" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                        <a asp-action="Details" asp-route-id="@item.IdhoaDonDv" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                            <input type="hidden" name="id" value="@item.IdhoaDonDv" />
-                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdhoaDonDv, '@item.TenKhachHang')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenKhachHang) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa hóa đơn của khách hàng '" + tenKhachHang + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/HoaDonDichVus/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

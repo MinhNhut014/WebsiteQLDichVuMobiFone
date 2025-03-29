@@ -79,7 +79,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/LoaiGoiDangKies/Create
         public IActionResult Create()
         {
-            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "IdloaiDichVu");
+            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "TenLoaiDichVu");
             return View();
         }
 
@@ -96,7 +96,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "IdloaiDichVu", loaiGoiDangKy.IdloaiDichVu);
+            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "TenLoaiDichVu", loaiGoiDangKy.IdloaiDichVu);
             return View(loaiGoiDangKy);
         }
 
@@ -113,7 +113,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "IdloaiDichVu", loaiGoiDangKy.IdloaiDichVu);
+            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "TenLoaiDichVu", loaiGoiDangKy.IdloaiDichVu);
             return View(loaiGoiDangKy);
         }
 
@@ -149,44 +149,23 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "IdloaiDichVu", loaiGoiDangKy.IdloaiDichVu);
+            ViewData["IdloaiDichVu"] = new SelectList(_context.LoaiDichVuDiDongs, "IdloaiDichVu", "IdloaTenLoaiDichVuiDichVu", loaiGoiDangKy.IdloaiDichVu);
             return View(loaiGoiDangKy);
         }
 
         // GET: Admin/LoaiGoiDangKies/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var loaiGoiDangKy = await _context.LoaiGoiDangKies
-                .Include(l => l.IdloaiDichVuNavigation)
-                .FirstOrDefaultAsync(m => m.IdloaiGoi == id);
-            if (loaiGoiDangKy == null)
-            {
-                return NotFound();
-            }
-
-            return View(loaiGoiDangKy);
-        }
-
-        // POST: Admin/LoaiGoiDangKies/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var loaiGoiDangKy = await _context.LoaiGoiDangKies.FindAsync(id);
-            if (loaiGoiDangKy != null)
+            var loaigoi = await _context.LoaiGoiDangKies.FindAsync(id);
+            if (loaigoi != null)
             {
-                _context.LoaiGoiDangKies.Remove(loaiGoiDangKy);
+                _context.LoaiGoiDangKies.Remove(loaigoi);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool LoaiGoiDangKyExists(int id)
         {
             return _context.LoaiGoiDangKies.Any(e => e.IdloaiGoi == id);

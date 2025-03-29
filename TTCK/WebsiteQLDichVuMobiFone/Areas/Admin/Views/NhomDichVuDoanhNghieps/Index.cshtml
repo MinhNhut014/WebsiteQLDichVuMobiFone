@@ -4,19 +4,18 @@
     ViewData["Title"] = "Danh sách Nhóm Dịch Vụ Doanh Nghiệp";
 }
 
-<h1 class="mb-4 text-primary fw-bold">Danh sách Nhóm Dịch Vụ Doanh Nghiệp</h1>
-
-<p>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">Danh sách Nhóm Dịch Vụ Doanh Nghiệp</h1>
     <a asp-action="Create" class="btn btn-primary shadow-sm px-4">
         <i class="fa-solid fa-plus"></i> Thêm mới
     </a>
-</p>
+</div>
 
 <div class="table-responsive">
-    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
         <thead class="bg-gradient bg-primary text-white text-center">
             <tr>
-                <th class="p-3">Tên Nhóm</th>
+                <th class="p-3 text-start">Tên Nhóm</th>
                 <th class="p-3">ID Dịch Vụ</th>
                 <th class="p-3">Hành động</th>
             </tr>
@@ -25,24 +24,42 @@
             @foreach (var item in Model)
             {
                 <tr class="text-center border-bottom">
-                    <td class="p-3 text-start fw-medium">@Html.DisplayFor(modelItem => item.TenNhom)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.IddichVuNavigation.IddichVu)</td>
-                    <td class="p-3 d-flex justify-content-center">
-                        <a asp-action="Edit" asp-route-id="@item.IdnhomDichVu" class="btn btn-warning btn-sm rounded-circle shadow-sm mx-1">
+                    <td class="p-3 text-start fw-medium">@item.TenNhom</td>
+                    <td class="p-3">@item.IddichVuNavigation.IddichVu</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Edit" asp-route-id="@item.IdnhomDichVu" class="btn btn-warning btn-sm rounded-circle shadow-sm">
                             <i class="fa-solid fa-pen"></i>
                         </a>
-                        <a asp-action="Details" asp-route-id="@item.IdnhomDichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
+                        <a asp-action="Details" asp-route-id="@item.IdnhomDichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                            <input type="hidden" name="id" value="@item.IdnhomDichVu" />
-                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdnhomDichVu, '@item.TenNhom')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenNhom) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa nhóm '" + tenNhom + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/NhomDichVuDoanhNghieps/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

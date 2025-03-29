@@ -49,8 +49,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
         // POST: Cập nhật quyền người dùng
         [HttpPost]
-        // POST: Cập nhật quyền người dùng
-        [HttpPost]
         public async Task<IActionResult> UpdateRole(int id, int quyen)
         {
             var user = await _context.NguoiDungs.FindAsync(id);

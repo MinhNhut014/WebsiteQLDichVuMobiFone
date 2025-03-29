@@ -19,14 +19,12 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         {
             _context = context;
         }
-
         // GET: Admin/GoiDichVus
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.GoiDichVus.Include(g => g.IddichVuDnNavigation);
             return View(await applicationDbContext.ToListAsync());
         }
-
         // GET: Admin/GoiDichVus/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -108,7 +106,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "IddichVuDn", goiDichVu.IddichVuDn);
+            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "TenDichVu", goiDichVu.IddichVuDn);
             return View(goiDichVu);
         }
 
@@ -117,7 +115,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdgoiDichVu,TenGoiDv,HinhAnh,MoTa,ThongTinChiTiet,IddichVuDn")] GoiDichVu goiDichVu)
+        public async Task<IActionResult> Edit(IFormFile? HinhAnh, int id, [Bind("IdgoiDichVu,TenGoiDv,MoTa,ThongTinChiTiet,IddichVuDn")] GoiDichVu goiDichVu)
         {
             if (id != goiDichVu.IdgoiDichVu)
             {
@@ -128,7 +126,26 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(goiDichVu);
+                    var dv = await _context.GoiDichVus.FindAsync(id);
+                    if (dv == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Cập nhật thông tin mới từ form
+                    dv.TenGoiDv = goiDichVu.TenGoiDv;
+                    dv.MoTa = goiDichVu.MoTa;
+                    dv.ThongTinChiTiet = goiDichVu.ThongTinChiTiet;
+                    dv.IddichVuDn = goiDichVu.IddichVuDn;
+
+                    // Nếu có ảnh mới, cập nhật ảnh
+                    if (HinhAnh != null && HinhAnh.Length > 0)
+                    {
+                        dv.HinhAnh = Upload(HinhAnh);
+                    }
+                    // Nếu không có ảnh mới, giữ nguyên ảnh cũ (không cần gán lại)
+
+                    _context.Update(dv);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -144,44 +161,24 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "IddichVuDn", goiDichVu.IddichVuDn);
+
+            ViewData["IddichVuDn"] = new SelectList(_context.DichVuDoanhNghieps, "IddichVuDn", "TenDichVu", goiDichVu.IddichVuDn);
             return View(goiDichVu);
         }
 
         // GET: Admin/GoiDichVus/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var goiDichVu = await _context.GoiDichVus
-                .Include(g => g.IddichVuDnNavigation)
-                .FirstOrDefaultAsync(m => m.IdgoiDichVu == id);
-            if (goiDichVu == null)
-            {
-                return NotFound();
-            }
-
-            return View(goiDichVu);
-        }
-
-        // POST: Admin/GoiDichVus/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var goiDichVu = await _context.GoiDichVus.FindAsync(id);
-            if (goiDichVu != null)
+            var gdv = await _context.GoiDichVus.FindAsync(id);
+            if (gdv != null)
             {
-                _context.GoiDichVus.Remove(goiDichVu);
+                _context.GoiDichVus.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool GoiDichVuExists(int id)
         {
             return _context.GoiDichVus.Any(e => e.IdgoiDichVu == id);

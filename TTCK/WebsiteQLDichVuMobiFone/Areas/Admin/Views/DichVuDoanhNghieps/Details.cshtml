@@ -1,30 +1,77 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.DichVuDoanhNghiep
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Dịch Vụ Doanh Nghiệp";
 }
 
-<h1>Details</h1>
+<div class="container mt-4">
+    <div class="card shadow-lg rounded-4 p-4 border-0">
+        <h1 class="text-primary fw-bold">Chi Tiết Dịch Vụ Doanh Nghiệp</h1>
+        <hr />
 
-<div>
-    <h4>DichVuDoanhNghiep</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenDichVu)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenDichVu)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdnhomDichVuNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdnhomDichVuNavigation.IdnhomDichVu)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IddichVuDn">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <div class="mb-4">
+            <h4 class="text-secondary"><i class="fas fa-info-circle"></i> Thông tin dịch vụ</h4>
+            <dl class="row">
+                <dt class="col-sm-4 text-dark fw-bold">Tên Dịch Vụ</dt>
+                <dd class="col-sm-8">@Model.TenDichVu</dd>
+
+                <dt class="col-sm-4 text-dark fw-bold">Nhóm Dịch Vụ</dt>
+                <dd class="col-sm-8">@Model.IdnhomDichVuNavigation?.TenNhom</dd>
+            </dl>
+        </div>
+
+        <h4 class="text-secondary"><i class="fas fa-list"></i> Danh sách gói dịch vụ</h4>
+
+        @if (Model.GoiDichVus != null && Model.GoiDichVus.Any())
+        {
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="bg-primary text-white">
+                        <tr>
+                            <th>Hình Ảnh</th>
+                            <th>Tên Gói</th>
+                            <th>Mô Tả</th>
+                            <th>Thao Tác</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var goi in Model.GoiDichVus)
+                        {
+                            <tr>
+                                <td class="p-3">
+                                    <img src="~/img/dichvu/doanhnghiep/@goi.HinhAnh" alt="Hình ảnh dịch vụ" class="img-fluid rounded" style="width: 50px; height: 50px; object-fit: cover;" />
+                                </td>
+                                <td>@goi.TenGoiDv</td>
+                                <td>@goi.MoTa</td>
+                                <td>
+                                    <a asp-action="Details"
+                                       asp-controller="GoiDichVus"
+                                       asp-route-id="@goi.IdgoiDichVu"
+                                       class="btn btn-outline-primary btn-sm">
+                                        <i class="fa-solid fa-eye"></i> Xem chi tiết
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+        else
+        {
+            <p class="text-muted">Không có gói dịch vụ nào thuộc dịch vụ này.</p>
+        }
+
+        <div class="mt-4">
+            <a asp-action="Edit"
+               asp-route-id="@Model.IddichVuDn"
+               class="btn btn-warning rounded-pill px-4">
+                <i class="fas fa-edit"></i> Sửa
+            </a>
+            <a asp-action="Index"
+               class="btn btn-secondary rounded-pill px-4">
+                <i class="fas fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+    </div>
 </div>

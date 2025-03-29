@@ -4,55 +4,61 @@
     ViewData["Title"] = "Thêm SIM";
 }
 
-<div class="container mt-4">
-    <h2 class="text-primary mb-3">Thêm SIM</h2>
-    <div class="card shadow-sm p-4 rounded">
-        <form asp-action="Create" method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
+            <h2 class="mb-0">➕ Thêm SIM Mới</h2>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Create" method="post">
+                <div asp-validation-summary="All" class="text-danger mb-3"></div>
+                <div class="row">
+                    <!-- Cột bên trái -->
+                    <div class="col-md-6">
+                        <!-- Ẩn ID dịch vụ để gửi dữ liệu -->
+                        <input type="hidden" asp-for="IddichVu" value="2" />
+                        <div class="form-group mb-4">
+                            <label asp-for="SoThueBao" class="form-label fw-semibold">📞 Số Thuê Bao</label>
+                            <input asp-for="SoThueBao" class="form-control rounded-3 shadow-sm" placeholder="Nhập số thuê bao..." />
+                            <span asp-validation-for="SoThueBao" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="PhiHoaMang" class="form-label fw-semibold">💰 Phí Hòa Mạng</label>
+                            <input asp-for="PhiHoaMang" class="form-control rounded-3 shadow-sm" placeholder="Nhập phí hòa mạng..." />
+                            <span asp-validation-for="PhiHoaMang" class="text-danger"></span>
+                        </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="IdloaiSo" class="form-label fw-semibold">🔢 Loại Số</label>
+                            <select asp-for="IdloaiSo" class="form-control rounded-3 shadow-sm" asp-items="ViewBag.IdloaiSo"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        
 
-            <div class="form-group mb-3">
-                <label asp-for="IddichVu" class="fw-bold">Dịch Vụ</label>
-                <select asp-for="IddichVu" class="form-control" asp-items="ViewBag.IddichVu"></select>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="SoThueBao" class="fw-bold">Số Thuê Bao</label>
-                <input asp-for="SoThueBao" class="form-control" placeholder="Nhập số thuê bao..." />
-                <span asp-validation-for="SoThueBao" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="IdloaiSo" class="fw-bold">Loại Số</label>
-                <select asp-for="IdloaiSo" class="form-control" asp-items="ViewBag.IdloaiSo"></select>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="KhuVucHoaMang" class="fw-bold">Khu Vực Hòa Mạng</label>
-                <input asp-for="KhuVucHoaMang" class="form-control" placeholder="Nhập khu vực hòa mạng..." />
-                <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="PhiHoaMang" class="fw-bold">Phí Hòa Mạng</label>
-                <input asp-for="PhiHoaMang" class="form-control" placeholder="Nhập phí hòa mạng..." />
-                <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
-            </div>
-
-            <div class="form-group mb-3">
-                <label asp-for="IdtrangThaiSim" class="fw-bold">Trạng Thái SIM</label>
-                <select asp-for="IdtrangThaiSim" class="form-control" asp-items="ViewBag.IdtrangThaiSim"></select>
-            </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="KhuVucHoaMang" class="form-label fw-semibold">🌍 Khu Vực Hòa Mạng</label>
+                            <input asp-for="KhuVucHoaMang" class="form-control rounded-3 shadow-sm" placeholder="Nhập khu vực hòa mạng..." />
+                            <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
+                        </div>
 
 
-            <div class="d-flex gap-2">
-                <button type="submit" class="btn btn-success">
-                    <i class="fa-solid fa-check"></i> Lưu
-                </button>
-                <a asp-action="Index" class="btn btn-secondary">
-                    <i class="fa-solid fa-arrow-left"></i> Quay lại
-                </a>
-            </div>
-        </form>
+
+                        <div class="form-group mb-4">
+                            <label asp-for="IdtrangThaiSim" class="form-label fw-semibold">📋 Trạng Thái SIM</label>
+                            <select asp-for="IdtrangThaiSim" class="form-control rounded-3 shadow-sm" asp-items="ViewBag.IdtrangThaiSim"></select>
+                        </div>
+                    </div>
+                </div>
+                
+
+                
+
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
+                    <button type="submit" class="btn btn-primary rounded-3 px-4">💾 Lưu</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
 

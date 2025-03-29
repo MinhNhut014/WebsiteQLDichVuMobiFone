@@ -1,56 +1,66 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonDoanhNghiep
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Tạo Hóa Đơn Doanh Nghiệp";
 }
 
-<h1>Create</h1>
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">
+        <i class="fa-solid fa-file-invoice"></i> Tạo Hóa Đơn Doanh Nghiệp
+    </h2>
 
-<h4>HoaDonDoanhNghiep</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+    <div class="card shadow-lg p-4 rounded border-0">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdnguoiDung" class="control-label"></label>
-                <select asp-for="IdnguoiDung" class ="form-control" asp-items="ViewBag.IdnguoiDung"></select>
+
+            <div class="form-group mb-3">
+                <label asp-for="IdnguoiDung" class="fw-bold">Người Dùng</label>
+                <select asp-for="IdnguoiDung" class="form-control border-primary" asp-items="ViewBag.IdnguoiDung"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="IdtrangThai" class="control-label"></label>
-                <select asp-for="IdtrangThai" class ="form-control" asp-items="ViewBag.IdtrangThai"></select>
+
+            <div class="form-group mb-3">
+                <label asp-for="IdtrangThai" class="fw-bold">Trạng Thái</label>
+                <select asp-for="IdtrangThai" class="form-control border-primary" asp-items="ViewBag.IdtrangThai"></select>
             </div>
-            <div class="form-group">
-                <label asp-for="TenCongTy" class="control-label"></label>
-                <input asp-for="TenCongTy" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="TenCongTy" class="fw-bold">Tên Công Ty</label>
+                <input asp-for="TenCongTy" class="form-control border-primary" placeholder="Nhập tên công ty..." />
                 <span asp-validation-for="TenCongTy" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="SoDienThoaiCongTy" class="control-label"></label>
-                <input asp-for="SoDienThoaiCongTy" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="SoDienThoaiCongTy" class="fw-bold">Số Điện Thoại Công Ty</label>
+                <input asp-for="SoDienThoaiCongTy" class="form-control border-primary" placeholder="Nhập số điện thoại công ty..." />
                 <span asp-validation-for="SoDienThoaiCongTy" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="EmailCongTy" class="control-label"></label>
-                <input asp-for="EmailCongTy" class="form-control" />
+
+            <div class="form-group mb-3">
+                <label asp-for="EmailCongTy" class="fw-bold">Email Công Ty</label>
+                <input asp-for="EmailCongTy" class="form-control border-primary" placeholder="Nhập email công ty..." />
                 <span asp-validation-for="EmailCongTy" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="DiaChiCongTy" class="control-label"></label>
-                <input asp-for="DiaChiCongTy" class="form-control" />
+
+            <div class="form-group mb-4">
+                <label asp-for="DiaChiCongTy" class="fw-bold">Địa Chỉ Công Ty</label>
+                <input asp-for="DiaChiCongTy" class="form-control border-primary" placeholder="Nhập địa chỉ công ty..." />
                 <span asp-validation-for="DiaChiCongTy" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="d-flex gap-2">
+                <button type="submit" class="btn btn-success shadow-sm">
+                    <i class="fa-solid fa-check"></i> Lưu
+                </button>
+                <a asp-action="Index" class="btn btn-secondary shadow-sm">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại
+                </a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

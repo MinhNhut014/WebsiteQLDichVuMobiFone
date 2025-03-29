@@ -37,7 +37,9 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
             var nhomDichVuDoanhNghiep = await _context.NhomDichVuDoanhNghieps
                 .Include(n => n.IddichVuNavigation)
+                .Include(n => n.DichVuDoanhNghieps) // Lấy danh sách dịch vụ doanh nghiệp thuộc nhóm này
                 .FirstOrDefaultAsync(m => m.IdnhomDichVu == id);
+
             if (nhomDichVuDoanhNghiep == null)
             {
                 return NotFound();
@@ -45,6 +47,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
             return View(nhomDichVuDoanhNghiep);
         }
+
 
         // GET: Admin/NhomDichVuDoanhNghieps/Create
         public IActionResult Create()
@@ -58,15 +61,16 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdnhomDichVu,IddichVu,TenNhom")] NhomDichVuDoanhNghiep nhomDichVuDoanhNghiep)
+        public async Task<IActionResult> Create([Bind("IdnhomDichVu,TenNhom")] NhomDichVuDoanhNghiep nhomDichVuDoanhNghiep)
         {
+            nhomDichVuDoanhNghiep.IddichVu = 3; // Gán tự động ID Dịch Vụ = 3
+
             if (ModelState.IsValid)
             {
                 _context.Add(nhomDichVuDoanhNghiep);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "IddichVu", nhomDichVuDoanhNghiep.IddichVu);
             return View(nhomDichVuDoanhNghiep);
         }
 
@@ -124,36 +128,16 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/NhomDichVuDoanhNghieps/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var nhomDichVuDoanhNghiep = await _context.NhomDichVuDoanhNghieps
-                .Include(n => n.IddichVuNavigation)
-                .FirstOrDefaultAsync(m => m.IdnhomDichVu == id);
-            if (nhomDichVuDoanhNghiep == null)
-            {
-                return NotFound();
-            }
-
-            return View(nhomDichVuDoanhNghiep);
-        }
-
-        // POST: Admin/NhomDichVuDoanhNghieps/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var nhomDichVuDoanhNghiep = await _context.NhomDichVuDoanhNghieps.FindAsync(id);
-            if (nhomDichVuDoanhNghiep != null)
+            var nhomdn = await _context.NhomDichVuDoanhNghieps.FindAsync(id);
+            if (nhomdn != null)
             {
-                _context.NhomDichVuDoanhNghieps.Remove(nhomDichVuDoanhNghiep);
+                _context.NhomDichVuDoanhNghieps.Remove(nhomdn);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

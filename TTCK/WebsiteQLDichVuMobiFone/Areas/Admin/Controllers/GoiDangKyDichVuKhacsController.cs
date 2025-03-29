@@ -21,9 +21,11 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/GoiDangKyDichVuKhacs
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? loiGoi)
         {
-            var applicationDbContext = _context.GoiDangKyDichVuKhacs.Include(g => g.IdsanPhamNavigation);
+            var applicationDbContext = _context.GoiDangKyDichVuKhacs
+                .Include(g => g.IdsanPhamNavigation)
+            .OrderByDescending(s => s.IdgoiDangKy); // Sắp xếp mới nhất
             return View(await applicationDbContext.ToListAsync());
         }
 

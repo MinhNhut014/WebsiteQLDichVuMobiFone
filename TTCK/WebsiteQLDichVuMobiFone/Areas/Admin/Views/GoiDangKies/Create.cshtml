@@ -5,61 +5,78 @@
 }
 
 <h1 class="mb-4 text-primary fw-bold text-center">
-    <i class="bi bi-plus-circle"></i> Thêm Gói Đăng Ký
+    📦 Thêm Gói Đăng Ký
 </h1>
 
 <div class="card shadow-lg p-4 rounded-4 border-0">
     <div class="row">
-        <div class="col-md-8 offset-md-2">
+        <div class="col-md-10 offset-md-1">
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label asp-for="TenGoi" class="form-label"></label>
-                            <input asp-for="TenGoi" class="form-control shadow-sm border-primary" />
+                            <label asp-for="TenGoi" class="form-label fw-semibold">
+                                🏷️ Tên Gói
+                            </label>
+                            <input asp-for="TenGoi" class="form-control shadow-sm border-primary rounded-3" placeholder="Nhập tên gói" />
                             <span asp-validation-for="TenGoi" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label asp-for="GiaGoi" class="form-label"></label>
-                            <input asp-for="GiaGoi" class="form-control shadow-sm border-primary" type="number" step="0.01" />
+                            <label asp-for="GiaGoi" class="form-label fw-semibold">
+                                💸 Giá Gói
+                            </label>
+                            <input asp-for="GiaGoi" class="form-control shadow-sm border-primary rounded-3" type="number" step="0.01" placeholder="Nhập giá gói" />
                             <span asp-validation-for="GiaGoi" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-3">
-                            <label asp-for="ThoiHan" class="form-label"></label>
-                            <input asp-for="ThoiHan" class="form-control shadow-sm border-primary" />
+                            <label asp-for="ThoiHan" class="form-label fw-semibold">
+                                📅 Thời Hạn
+                            </label>
+                            <input asp-for="ThoiHan" class="form-control shadow-sm border-primary rounded-3" placeholder="Nhập thời hạn" />
                             <span asp-validation-for="ThoiHan" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="TinhNang" class="form-label"></label>
-                            <input asp-for="TinhNang" class="form-control shadow-sm border-primary" />
-                            <span asp-validation-for="TinhNang" class="text-danger"></span>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label asp-for="IdloaiGoi" class="form-label"></label>
-                            <select asp-for="IdloaiGoi" class="form-control shadow-sm border-primary" asp-items="ViewBag.IdloaiGoi"></select>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="form-group mb-3">
-                            <label asp-for="ThongTinGoi" class="form-label"></label>
-                            <textarea asp-for="ThongTinGoi" class="form-control shadow-sm border-primary" rows="7" style="resize: none; overflow-y: auto;"></textarea>
+                            <label asp-for="TinhNang" class="form-label fw-semibold">
+                                ⚙️ Tính Năng
+                            </label>
+                            <input asp-for="TinhNang" class="form-control shadow-sm border-primary rounded-3" placeholder="Nhập tính năng" />
+                            <span asp-validation-for="TinhNang" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group mb-3">
+                            <label asp-for="IdloaiGoi" class="form-label fw-semibold">
+                                🏷️ Loại Gói
+                            </label>
+                            <select asp-for="IdloaiGoi" class="form-control shadow-sm border-primary rounded-3" asp-items="ViewBag.IdloaiGoi">
+                                <option value="">Chọn loại gói</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group mb-3">
+                            <label asp-for="ThongTinGoi" class="form-label fw-semibold">
+                                📋 Thông Tin Gói
+                            </label>
+                            <textarea asp-for="ThongTinGoi" class="form-control shadow-sm border-primary rounded-3" rows="4" style="resize: none;" placeholder="Mô tả thông tin gói..."></textarea>
                             <span asp-validation-for="ThongTinGoi" class="text-danger"></span>
                         </div>
 
                         <div class="form-group mb-4">
-                            <label asp-for="ThongTinChiTiet" class="form-label fw-semibold">📋 Thông Tin Chi Tiết</label>
-                            <textarea asp-for="ThongTinChiTiet" id="ThongTinChiTiet" class="form-control rounded-3 shadow-sm" rows="6" style="resize: none;"></textarea>
+                            <label asp-for="ThongTinChiTiet" class="form-label fw-semibold">
+                                📋 Thông Tin Chi Tiết
+                            </label>
+                            <textarea asp-for="ThongTinChiTiet" id="ThongTinChiTiet" class="form-control rounded-3 shadow-sm" rows="6" style="resize: none;" placeholder="Nhập chi tiết thông tin gói..."></textarea>
                             <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
                         </div>
-
-                        <button type="button" class="btn btn-outline-secondary mb-3" onclick="showPreview()">👁️ Xem trước</button>
+                        <button type="button" class="btn btn-secondary mb-3" onclick="showPreview()">👁️ Xem trước</button>
 
                         <div id="previewModal" class="modal fade" tabindex="-1">
                             <div class="modal-dialog modal-lg">
@@ -69,7 +86,7 @@
                                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                                     </div>
                                     <div class="modal-body">
-                                        <div id="previewContent" class="p-3 border rounded bg-light" style="max-height: 500px; overflow-y: auto;"></div>
+                                        <div id="previewContent" class="p-3 border rounded" style="background-color: #f9f9f9; max-height: 500px; overflow-y: auto;"></div>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
@@ -77,27 +94,27 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
 
                 <div class="form-group text-center mt-4">
-                    <button type="submit" class="btn btn-primary shadow-sm px-4">
-                        <i class="fa-solid fa-check"></i> Thêm mới
+                    <button type="submit" class="btn btn-primary shadow-sm px-4 rounded-3">
+                        ✅ Thêm mới
                     </button>
-                    <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2">
-                        <i class="fa-solid fa-arrow-left"></i> Quay lại
+                    <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 rounded-3 ms-2">
+                        ⬅️ Quay lại
                     </a>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-    <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
+     }
+
     <script>
         CKEDITOR.replace('ThongTinChiTiet', {
             height: 300,

@@ -1,63 +1,73 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.Sim
 
 @{
-    ViewData["Title"] = "Edit SIM";
+    ViewData["Title"] = "Chỉnh sửa SIM";
 }
 
-<h1>Edit SIM</h1>
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
+            <h2 class="mb-0">✏️ Chỉnh sửa SIM</h2>
+        </div>
+        <div class="card-body p-4">
+            <form asp-action="Edit" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+                <input type="hidden" asp-for="Idsim" />
+                <div class="row">
+                    <!-- Cột bên trái -->
+                    <div class="col-md-6">
+                        <!-- Ẩn ID dịch vụ để gửi dữ liệu -->
+                        <input type="hidden" asp-for="IddichVu" value="2" />
 
-<div class="row">
-    <div class="col-md-6">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="Idsim" />
+                        <div class="form-group mb-4">
+                            <label asp-for="SoThueBao" class="form-label fw-semibold">📞 Số Thuê Bao</label>
+                            <input asp-for="SoThueBao" class="form-control rounded-3 shadow-sm" placeholder="Nhập số thuê bao..." />
+                        </div>
 
-            <div class="form-group">
-                <label asp-for="IddichVu" class="control-label">Dịch vụ</label>
-                <select asp-for="IddichVu" class="form-control" asp-items="ViewBag.IddichVu"></select>
-                <span asp-validation-for="IddichVu" class="text-danger"></span>
-            </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="PhiHoaMang" class="form-label fw-semibold">💰 Phí Hòa Mạng</label>
+                            <input asp-for="PhiHoaMang" class="form-control rounded-3 shadow-sm" placeholder="Nhập phí hòa mạng..." />
+                        </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="IdloaiSo" class="form-label fw-semibold">🔢 Loại Số</label>
+                            <select asp-for="IdloaiSo" class="form-control rounded-3 shadow-sm" asp-items="ViewBag.IdloaiSo"></select>
+                        </div>
+                    </div>
 
-            <div class="form-group">
-                <label asp-for="SoThueBao" class="control-label">Số thuê bao</label>
-                <input asp-for="SoThueBao" class="form-control" />
-                <span asp-validation-for="SoThueBao" class="text-danger"></span>
-            </div>
+                    <!-- Cột bên phải -->
+                    <div class="col-md-6">
+                        
 
-            <div class="form-group">
-                <label asp-for="IdloaiSo" class="control-label">Loại số</label>
-                <select asp-for="IdloaiSo" class="form-control" asp-items="ViewBag.IdloaiSo"></select>
-                <span asp-validation-for="IdloaiSo" class="text-danger"></span>
-            </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="KhuVucHoaMang" class="form-label fw-semibold">🌍 Khu Vực Hòa Mạng</label>
+                            <input asp-for="KhuVucHoaMang" class="form-control rounded-3 shadow-sm" placeholder="Nhập khu vực hòa mạng..." />
+                        </div>
 
-            <div class="form-group">
-                <label asp-for="KhuVucHoaMang" class="control-label">Khu vực hòa mạng</label>
-                <input asp-for="KhuVucHoaMang" class="form-control" />
-                <span asp-validation-for="KhuVucHoaMang" class="text-danger"></span>
-            </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="IdtrangThaiSim" class="form-label fw-semibold">📋 Trạng Thái SIM</label>
+                            <select asp-for="IdtrangThaiSim" class="form-control rounded-3 shadow-sm" asp-items="ViewBag.IdtrangThaiSim"></select>
+                        </div>
 
-            <div class="form-group">
-                <label asp-for="PhiHoaMang" class="control-label">Phí hòa mạng</label>
-                <input asp-for="PhiHoaMang" class="form-control" />
-                <span asp-validation-for="PhiHoaMang" class="text-danger"></span>
-            </div>
+                        <div class="form-group mb-4">
+                            <label asp-for="GoiDangKyDiKem" class="form-label fw-semibold">📦 Gói Đăng Ký Đi Kèm</label>
+                            <select asp-for="GoiDangKyDiKem" class="form-control rounded-3 shadow-sm" asp-items="ViewBag.GoiDangKyDiKem">
+                                <option value="0">-- Không chọn --</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
 
-            <div class="form-group">
-                <label asp-for="IdtrangThaiSim" class="control-label">Trạng thái SIM</label>
-                <select asp-for="IdtrangThaiSim" class="form-control" asp-items="ViewBag.IdtrangThaiSim"></select>
-                <span asp-validation-for="IdtrangThaiSim" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label asp-for="GoiDangKyDiKem" class="control-label">Gói đăng ký đi kèm</label>
-                <select asp-for="GoiDangKyDiKem" class="form-control" asp-items="ViewBag.GoiDangKyDiKem">
-                    <option value="0">-- Không chọn --</option> <!-- Giá trị 0 để kiểm tra null -->
-                </select>
-                <span asp-validation-for="GoiDangKyDiKem" class="text-danger"></span>
-            </div>
-
-            <button type="submit" class="btn btn-primary">Lưu</button>
-            <a asp-action="Index" class="btn btn-secondary">Trở về</a>
-        </form>
+                <div class="d-flex justify-content-between">
+                    <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
+                    <button type="submit" class="btn btn-primary rounded-3 px-4">💾 Lưu</button>
+                </div>
+            </form>
+        </div>
     </div>
 </div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

@@ -1,80 +1,91 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.GoiDichVu
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Chỉnh Sửa Gói Dịch Vụ Doanh Nghiệp";
 }
 
-<h1>Edit</h1>
+<h1 class="mb-4 text-center">✏️ Chỉnh Sửa Gói Dịch Vụ Doanh Nghiệp</h1>
 
-<h4>GoiDichVu</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<div class="row justify-content-center">
+    <div class="col-md-10">
+        <form asp-action="Edit" class="shadow p-4 rounded bg-white" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
             <input type="hidden" asp-for="IdgoiDichVu" />
-            <div class="form-group">
-                <label asp-for="TenGoiDv" class="control-label"></label>
-                <input asp-for="TenGoiDv" class="form-control" />
-                <span asp-validation-for="TenGoiDv" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="HinhAnh" class="form-label fw-bold">🖼️ Hình Ảnh</label>
-                <input asp-for="HinhAnh" type="file" class="form-control rounded-3 shadow-sm" />
-                <span asp-validation-for="HinhAnh" class="text-danger"></span>
-                <div class="mt-3">
-                    <img src="~/img/dichvu/doanhnghiep/" alt="Ảnh hiện tại" class="img-thumbnail" style="max-width: 200px; height: auto;" />
+
+            <div class="row">
+                <!-- Cột trái: Ảnh đại diện -->
+                <div class="col-md-4 text-center">
+                    <label asp-for="HinhAnh" class="fw-semibold">🖼 Ảnh Đại Diện</label>
+                    <input type="file" asp-for="HinhAnh" class="form-control" onchange="previewImage(event)" />
+                    <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                    <div class="mt-3">
+                        <img id="imagePreview" src="~/img/dichvu/doanhnghiep/@Model.HinhAnh" class="img-thumbnail" style="max-width: 100%; height: auto;" />
+                    </div>
                 </div>
-            </div>
-            <div class="form-group">
-                <label asp-for="MoTa" class="control-label"></label>
-                <input asp-for="MoTa" class="form-control" />
-                <span asp-validation-for="MoTa" class="text-danger"></span>
-            </div>
-            <div class="form-group mb-3">
-                <label asp-for="ThongTinChiTiet" class="form-label fw-bold">📋 Thông Tin Chi Tiết</label>
-                <textarea asp-for="ThongTinChiTiet" id="ThongTinChiTiet" class="form-control rounded-3 shadow-sm" rows="6" style="resize: none;"></textarea>
-                <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
-            </div>
 
-            <button type="button" class="btn btn-secondary mb-3" onclick="showPreview()">👁️ Xem trước</button>
+                <!-- Cột phải: Thông tin gói dịch vụ -->
+                <div class="col-md-8">
+                    <div class="form-group mb-3">
+                        <label asp-for="TenGoiDv" class="fw-semibold">📌 Tên Gói Dịch Vụ</label>
+                        <input asp-for="TenGoiDv" class="form-control" placeholder="Nhập tên gói dịch vụ..." />
+                        <span asp-validation-for="TenGoiDv" class="text-danger"></span>
+                    </div>
 
-            <div id="previewModal" class="modal fade" tabindex="-1">
-                <div class="modal-dialog modal-lg">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">Xem trước nội dung</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div class="modal-body">
-                            <div id="previewContent" class="p-3 border rounded" style="background-color: #f9f9f9; max-height: 500px; overflow-y: auto;"></div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                        </div>
+                    <div class="form-group mb-3">
+                        <label asp-for="MoTa" class="fw-semibold">📝 Mô Tả</label>
+                        <textarea asp-for="MoTa" class="form-control" rows="3" style="resize: none;"></textarea>
+                        <span asp-validation-for="MoTa" class="text-danger"></span>
+                    </div>
+
+                    <div class="form-group mb-3">
+                        <label asp-for="IddichVuDn" class="fw-semibold">📂 Danh mục Dịch Vụ</label>
+                        <select asp-for="IddichVuDn" class="form-control" asp-items="ViewBag.IddichVuDn"></select>
                     </div>
                 </div>
             </div>
-            <div class="form-group">
-                <label asp-for="IddichVuDn" class="control-label"></label>
-                <select asp-for="IddichVuDn" class="form-control" asp-items="ViewBag.IddichVuDn"></select>
-                <span asp-validation-for="IddichVuDn" class="text-danger"></span>
+
+            <!-- Thông tin chi tiết chiếm trọn hai cột -->
+            <div class="form-group mb-3">
+                <label asp-for="ThongTinChiTiet" class="fw-semibold">📋 Thông Tin Chi Tiết</label>
+                <textarea asp-for="ThongTinChiTiet" id="ThongTinChiTiet" class="form-control" rows="6" style="resize: none;"></textarea>
+                <span asp-validation-for="ThongTinChiTiet" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="d-flex justify-content-between">
+                <button type="button" class="btn btn-outline-secondary" onclick="showPreview()">👁️ Xem trước</button>
+                <button type="submit" class="btn btn-primary px-4">💾 Lưu thay đổi</button>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
+<div class="text-center mt-3">
+    <a asp-action="Index" class="btn btn-outline-dark">⬅ Quay lại danh sách</a>
+</div>
+
+<!-- Modal xem trước -->
+<div id="previewModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Xem trước nội dung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div id="previewContent" class="p-3 border rounded bg-light" style="max-height: 500px; overflow-y: auto;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 @section Scripts {
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
     <script src="https://cdn.ckeditor.com/4.20.2/standard/ckeditor.js"></script>
     <script>
         CKEDITOR.replace('ThongTinChiTiet', {
@@ -91,5 +102,38 @@
             var previewModal = new bootstrap.Modal(document.getElementById('previewModal'));
             previewModal.show();
         }
+
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('imagePreview');
+                output.src = reader.result;
+                output.classList.remove('d-none');
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
     </script>
 }
+
+<style>
+    form {
+        background-color: #f8f9fa;
+        border-radius: 12px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    #previewContent table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    #previewContent th, #previewContent td {
+        border: 1px solid #ddd;
+        padding: 8px;
+    }
+
+    #previewContent th {
+        background-color: #f8f9fa;
+        text-align: center;
+    }
+</style>

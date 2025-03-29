@@ -21,10 +21,23 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/DichVuDoanhNghieps
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? idnhomDichVu)
         {
-            var applicationDbContext = _context.DichVuDoanhNghieps.Include(d => d.IdnhomDichVuNavigation);
-            return View(await applicationDbContext.ToListAsync());
+            var query = _context.DichVuDoanhNghieps
+                .Include(d => d.IdnhomDichVuNavigation)
+                .OrderByDescending(d => d.IddichVuDn) // Sắp xếp mới nhất
+                .AsQueryable();
+
+            // Lọc theo nhóm dịch vụ nếu có chọn
+            if (idnhomDichVu.HasValue)
+            {
+                query = query.Where(d => d.IdnhomDichVu == idnhomDichVu.Value);
+            }
+
+            // Load danh sách nhóm dịch vụ để hiển thị bộ lọc
+            ViewBag.NhomDichVu = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "TenNhom", idnhomDichVu);
+
+            return View(await query.ToListAsync());
         }
 
         // GET: Admin/DichVuDoanhNghieps/Details/5
@@ -37,6 +50,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
             var dichVuDoanhNghiep = await _context.DichVuDoanhNghieps
                 .Include(d => d.IdnhomDichVuNavigation)
+                .Include(d => d.GoiDichVus) // Lấy danh sách gói dịch vụ thuộc dịch vụ này
                 .FirstOrDefaultAsync(m => m.IddichVuDn == id);
             if (dichVuDoanhNghiep == null)
             {
@@ -49,7 +63,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/DichVuDoanhNghieps/Create
         public IActionResult Create()
         {
-            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "IdnhomDichVu");
+            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "TenNhom");
             return View();
         }
 
@@ -66,7 +80,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "IdnhomDichVu", dichVuDoanhNghiep.IdnhomDichVu);
+            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "TenNhom", dichVuDoanhNghiep.IdnhomDichVu);
             return View(dichVuDoanhNghiep);
         }
 
@@ -83,7 +97,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "IdnhomDichVu", dichVuDoanhNghiep.IdnhomDichVu);
+            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "TenNhom", dichVuDoanhNghiep.IdnhomDichVu);
             return View(dichVuDoanhNghiep);
         }
 
@@ -119,41 +133,21 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "IdnhomDichVu", dichVuDoanhNghiep.IdnhomDichVu);
+            ViewData["IdnhomDichVu"] = new SelectList(_context.NhomDichVuDoanhNghieps, "IdnhomDichVu", "TenNhom", dichVuDoanhNghiep.IdnhomDichVu);
             return View(dichVuDoanhNghiep);
         }
 
         // GET: Admin/DichVuDoanhNghieps/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var dichVuDoanhNghiep = await _context.DichVuDoanhNghieps
-                .Include(d => d.IdnhomDichVuNavigation)
-                .FirstOrDefaultAsync(m => m.IddichVuDn == id);
-            if (dichVuDoanhNghiep == null)
-            {
-                return NotFound();
-            }
-
-            return View(dichVuDoanhNghiep);
-        }
-
-        // POST: Admin/DichVuDoanhNghieps/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var dichVuDoanhNghiep = await _context.DichVuDoanhNghieps.FindAsync(id);
-            if (dichVuDoanhNghiep != null)
+            var dv = await _context.DichVuDoanhNghieps.FindAsync(id);
+            if (dv != null)
             {
-                _context.DichVuDoanhNghieps.Remove(dichVuDoanhNghiep);
+                _context.DichVuDoanhNghieps.Remove(dv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 

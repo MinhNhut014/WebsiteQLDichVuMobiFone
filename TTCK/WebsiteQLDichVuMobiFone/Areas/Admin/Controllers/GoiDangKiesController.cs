@@ -117,7 +117,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdloaiGoi"] = new SelectList(_context.LoaiGoiDangKies, "IdloaiGoi", "IdloaiGoi", goiDangKy.IdloaiGoi);
+            ViewData["IdloaiGoi"] = new SelectList(_context.LoaiGoiDangKies, "IdloaiGoi", "TenLoaiGoi", goiDangKy.IdloaiGoi);
             return View(goiDangKy);
         }
 
@@ -157,44 +157,23 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdloaiGoi"] = new SelectList(_context.LoaiGoiDangKies, "IdloaiGoi", "IdloaiGoi", goiDangKy.IdloaiGoi);
+            ViewData["IdloaiGoi"] = new SelectList(_context.LoaiGoiDangKies, "IdloaiGoi", "TenLoaiGoi", goiDangKy.IdloaiGoi);
             return View(goiDangKy);
         }
 
         // GET: Admin/GoiDangKies/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var goiDangKy = await _context.GoiDangKies
-                .Include(g => g.IdloaiGoiNavigation)
-                .FirstOrDefaultAsync(m => m.IdgoiDangKy == id);
-            if (goiDangKy == null)
-            {
-                return NotFound();
-            }
-
-            return View(goiDangKy);
-        }
-
-        // POST: Admin/GoiDangKies/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var goiDangKy = await _context.GoiDangKies.FindAsync(id);
-            if (goiDangKy != null)
+            var goidk = await _context.GoiDangKies.FindAsync(id);
+            if (goidk != null)
             {
-                _context.GoiDangKies.Remove(goiDangKy);
+                _context.GoiDangKies.Remove(goidk);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool GoiDangKyExists(int id)
         {
             return _context.GoiDangKies.Any(e => e.IdgoiDangKy == id);

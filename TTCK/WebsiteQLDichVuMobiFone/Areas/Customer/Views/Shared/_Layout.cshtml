@@ -178,22 +178,36 @@
                             @if (ViewBag.UserName != null)
                             {
                                 <div class="nav-item dropdown">
-                                    <button class="btn btn-primary rounded-pill px-3 py-2 d-flex align-items-center dropdown-toggle"
-                                            type="button"
-                                            data-bs-toggle="dropdown"
-                                            aria-expanded="false">
-                                        <img src="~/img/user/@ViewBag.UserAvatar"
-                                             alt="Ảnh đại diện"
-                                             class="rounded-circle me-2 border border-light"
-                                             width="30"
-                                             height="30">
-                                        Chào @ViewBag.UserName
+                                    <button class="nav-user-btn dropdown-btn d-flex align-items-center bg-transparent border-0" title="Hồ sơ của tôi" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <span class="nav-user-img">
+                                            <picture>
+                                                <source srcset="~/img/user/@ViewBag.UserAvatar" type="image/webp">
+                                                <img src="~/img/user/@ViewBag.UserAvatar" alt="@ViewBag.UserName" class="rounded-circle" width="35" height="35">
+                                            </picture>
+                                        </span>
+                                        <!-- Thông tin người dùng -->
+                                        <div class="ms-2 d-flex flex-column">
+                                            <span class="text-black small">Xin chào,</span>
+                                            <span class="text-black fw-bold">@ViewBag.UserName</span>
+                                        </div>
+
                                     </button>
-                                    <div class="dropdown-menu">
-                                        <a asp-controller="NguoiDung" asp-action="HoSoNguoiDung" class="dropdown-item">Hồ Sơ Khách Hàng</a>
-                                        <a asp-controller="NguoiDung" asp-action="DangXuat" class="dropdown-item">Đăng Xuất</a>
-                                    </div>
+                                    <ul class="dropdown-menu shadow-sm rounded-3 border-0">
+                                        <li>
+                                            <a asp-controller="NguoiDung" asp-action="HoSoNguoiDung" class="dropdown-item d-flex align-items-center">
+                                                <i data-feather="user" class="me-2"></i>
+                                                <span>Hồ Sơ Khách Hàng</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a asp-controller="DangNhap" asp-action="DangXuat" class="dropdown-item d-flex align-items-center text-danger">
+                                                <i data-feather="log-out" class="me-2"></i>
+                                                <span>Đăng Xuất</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
+
                             }
                             else
                             {

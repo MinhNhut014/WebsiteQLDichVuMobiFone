@@ -38,21 +38,25 @@
                     <span asp-validation-for="TinhNang" class="text-danger"></span>
                 </div>
 
+                
+            </div>
+
+            <!-- Cột 2 -->
+            <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label asp-for="IdloaiGoi" class="form-label">🔖 Loại Gói</label>
                     <select asp-for="IdloaiGoi" class="form-select" asp-items="ViewBag.IdloaiGoi"></select>
                     <span asp-validation-for="IdloaiGoi" class="text-danger"></span>
                 </div>
-            </div>
-
-            <!-- Cột 2 -->
-            <div class="col-md-6">
                 <div class="form-group mb-3">
                     <label asp-for="ThongTinGoi" class="form-label">ℹ️ Thông Tin Gói</label>
                     <textarea asp-for="ThongTinGoi" class="form-control" rows="6"></textarea>
                     <span asp-validation-for="ThongTinGoi" class="text-danger"></span>
                 </div>
 
+                
+            </div>
+            <div class="col-md-12">
                 <div class="form-group mb-3">
                     <label asp-for="ThongTinChiTiet" class="form-label fw-bold">📋 Thông Tin Chi Tiết</label>
                     <textarea asp-for="ThongTinChiTiet" id="ThongTinChiTiet" class="form-control rounded-3 shadow-sm" rows="6" style="resize: none;"></textarea>

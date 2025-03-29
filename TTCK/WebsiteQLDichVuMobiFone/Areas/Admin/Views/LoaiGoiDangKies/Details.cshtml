@@ -6,26 +6,22 @@
 
 <div class="container mt-4">
     <div class="card shadow-lg rounded-4 p-4 border-0">
-        <h1 class="text-primary fw-bold">Chi Tiết Loại Gói Đăng Ký</h1>
-        <hr />
+        <h1 class="text-primary fw-bold text-center">Chi Tiết Loại Gói Đăng Ký</h1>
+        <hr class="my-4" />
 
         <div class="mb-4">
             <h4 class="text-secondary"><i class="fas fa-info-circle"></i> Thông tin chi tiết</h4>
-            <dl class="row">
-                <dt class="col-sm-4 text-dark fw-bold">Tên Loại Gói</dt>
-                <dd class="col-sm-8">@Model.TenLoaiGoi</dd>
-
-                <dt class="col-sm-4 text-dark fw-bold">Loại Dịch Vụ</dt>
-                <dd class="col-sm-8">@Model.IdloaiDichVuNavigation.TenLoaiDichVu</dd>
-            </dl>
+            <div class="p-3 bg-light rounded">
+                <p class="mb-2"><strong class="text-dark">Tên Loại Gói:</strong> @Model.TenLoaiGoi</p>
+                <p class="mb-2"><strong class="text-dark">Loại Dịch Vụ:</strong> @Model.IdloaiDichVuNavigation.TenLoaiDichVu</p>
+            </div>
         </div>
 
         <h4 class="text-secondary"><i class="fas fa-list"></i> Danh sách các Gói Đăng Ký</h4>
-
         @if (Model.GoiDangKies != null && Model.GoiDangKies.Any())
         {
             <div class="table-responsive">
-                <table class="table table-hover align-middle">
+                <table class="table table-striped table-hover align-middle">
                     <thead class="bg-primary text-white">
                         <tr>
                             <th>Tên Gói</th>
@@ -65,10 +61,10 @@
         }
         else
         {
-            <p class="text-muted">Không có gói đăng ký nào thuộc loại này.</p>
+            <p class="text-muted text-center">Không có gói đăng ký nào thuộc loại này.</p>
         }
 
-        <div class="mt-4">
+        <div class="mt-4 text-center">
             <a asp-action="Edit"
                asp-route-id="@Model.IdloaiGoi"
                class="btn btn-warning rounded-pill px-4">
@@ -81,4 +77,3 @@
         </div>
     </div>
 </div>
-

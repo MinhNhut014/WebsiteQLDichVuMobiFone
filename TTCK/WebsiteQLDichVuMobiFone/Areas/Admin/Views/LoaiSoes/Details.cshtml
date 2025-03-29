@@ -1,24 +1,23 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.LoaiSo
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Loại Số";
 }
 
-<h1>Details</h1>
-
-<div>
-    <h4>LoaiSo</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenLoaiSo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenLoaiSo)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdloaiSo">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
+            <h2 class="mb-0">📋 Chi Tiết Loại Số</h2>
+        </div>
+        <div class="card-body p-4">
+            <dl class="row">
+                <dt class="col-sm-3 fw-semibold">📌 Tên Loại Số</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.TenLoaiSo)</dd>
+            </dl>
+            <div class="d-flex justify-content-between mt-4">
+                <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
+                <a asp-action="Edit" asp-route-id="@Model?.IdloaiSo" class="btn btn-primary rounded-3 px-4">✏️ Chỉnh sửa</a>
+            </div>
+        </div>
+    </div>
 </div>
