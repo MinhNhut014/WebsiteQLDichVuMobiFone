@@ -129,40 +129,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/BinhLuanBaiViets/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var binhLuanBaiViet = await _context.BinhLuanBaiViets
-                .Include(b => b.IdTinTucNavigation)
-                .Include(b => b.NguoiDung)
-                .FirstOrDefaultAsync(m => m.IdbinhLuan == id);
-            if (binhLuanBaiViet == null)
-            {
-                return NotFound();
-            }
-
-            return View(binhLuanBaiViet);
-        }
-
-        // POST: Admin/BinhLuanBaiViets/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var binhLuanBaiViet = await _context.BinhLuanBaiViets.FindAsync(id);
-            if (binhLuanBaiViet != null)
+            var gdv = await _context.BinhLuanBaiViets.FindAsync(id);
+            if (gdv != null)
             {
-                _context.BinhLuanBaiViets.Remove(binhLuanBaiViet);
+                _context.BinhLuanBaiViets.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool BinhLuanBaiVietExists(int id)
         {
             return _context.BinhLuanBaiViets.Any(e => e.IdbinhLuan == id);

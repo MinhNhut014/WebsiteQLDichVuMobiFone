@@ -2364,6 +2364,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uurpy3txgt"},{"Name":"integrity","Value":"sha256-ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/eb537608-98a7-4643-b33e-a982e9d33f86_Mobistudy.png"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2155"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 23 Mar 2025 10:50:30 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.5wzxmvtk72.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5wzxmvtk72"},{"Name":"integrity","Value":"sha256-C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"222445"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 04:03:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"222445"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 04:03:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/dichvu/doanhnghiep/10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -4224,6 +4236,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"222445"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 04:05:05 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image.77h6wmm953.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"77h6wmm953"},{"Name":"integrity","Value":"sha256-k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"65734"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 05:51:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"65734"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 05:51:39 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -4235,6 +4259,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"osm2n1oma6"},{"Name":"integrity","Value":"sha256-GAUxFwFr20Gr9XCjaBpEtPWCq2ktgvTAxueFUESxqQM="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"136008"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GAUxFwFr20Gr9XCjaBpEtPWCq2ktgvTAxueFUESxqQM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 06:28:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 05:49:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.yccwiogbuv.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yccwiogbuv"},{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 05:49:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/Tiktokdata.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\Tiktokdata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 05:50:03 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/Tiktokdata.yccwiogbuv.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\Tiktokdata.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yccwiogbuv"},{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/Tiktokdata.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Sun, 30 Mar 2025 05:50:03 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/tintuc1.5wzxmvtk72.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\tintuc1.jpg'))</AssetFile>

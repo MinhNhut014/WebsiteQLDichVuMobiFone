@@ -2,6 +2,7 @@
 
 @{
     ViewData["Title"] = "Chi tiết tin tức";
+    var binhLuans = ViewBag.BinhLuans as List<WebsiteQLDichVuMobiFone.Models.BinhLuanBaiViet>;
 }
 
 <div class="container mt-4">
@@ -13,7 +14,7 @@
             <div class="text-center mb-3">
                 @if (!string.IsNullOrEmpty(Model.AnhDaiDien))
                 {
-                    <img src="@Model.AnhDaiDien" class="img-fluid rounded shadow" style="max-width: 500px; max-height: 300px;" alt="Ảnh đại diện tin tức">
+                    <img src="~/img/tintuc/@Model.AnhDaiDien" class="img-fluid rounded shadow" style="max-width: 500px; max-height: 300px;" alt="Ảnh đại diện tin tức">
                 }
                 else
                 {
@@ -30,7 +31,7 @@
             </div>
 
             <div class="mb-3">
-                <strong>Chủ đề:</strong> @Model.IdTheLoaiNavigation?.IdchuDe
+                <strong>Chủ đề:</strong> @Model.IdTheLoaiNavigation?.TenChuDe
             </div>
 
             <hr />
@@ -41,6 +42,30 @@
                     @Html.Raw(Model.NoiDung)
                 </div>
             </div>
+
+            <hr />
+
+            <!-- Hiển thị danh sách bình luận -->
+            <div class="mt-4">
+                <h4 class="text-primary">Bình luận</h4>
+                @if (binhLuans != null && binhLuans.Any())
+                {
+                    <ul class="list-group">
+                        @foreach (var bl in binhLuans)
+                        {
+                            <li class="list-group-item">
+                                <strong>@bl.NguoiDung.HoTen</strong> - <span class="text-muted">@bl.NgayBinhLuan?.ToString("dd/MM/yyyy HH:mm")</span>
+                                <p class="mt-1">@bl.NoiDung</p>
+                            </li>
+                        }
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">Chưa có bình luận nào.</p>
+                }
+            </div>
+
         </div>
         <div class="card-footer text-end">
             <a asp-action="Edit" asp-route-id="@Model?.IdTinTuc" class="btn btn-warning">Chỉnh sửa</a>

@@ -50,6 +50,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
             var sanPhamDichVuKhac = await _context.SanPhamDichVuKhacs
                 .Include(s => s.IdloaiDichVuKhacNavigation)
+                .Include(s => s.GoiDangKyDichVuKhacs)
                 .FirstOrDefaultAsync(m => m.IdsanPham == id);
             if (sanPhamDichVuKhac == null)
             {
@@ -127,7 +128,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdsanPham,TenSanPham,HinhAnh,MoTa,ThongTinChiTiet,IdloaiDichVuKhac")] SanPhamDichVuKhac sanPhamDichVuKhac)
+        public async Task<IActionResult> Edit(IFormFile? HinhAnh, int id, [Bind("IdsanPham,TenSanPham,HinhAnh,MoTa,ThongTinChiTiet,IdloaiDichVuKhac")] SanPhamDichVuKhac sanPhamDichVuKhac)
         {
             if (id != sanPhamDichVuKhac.IdsanPham)
             {
@@ -138,7 +139,26 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 try
                 {
-                    _context.Update(sanPhamDichVuKhac);
+                    var dv = await _context.SanPhamDichVuKhacs.FindAsync(id);
+                    if (dv == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Cập nhật thông tin mới từ form
+                    dv.TenSanPham = sanPhamDichVuKhac.TenSanPham;
+                    dv.MoTa = sanPhamDichVuKhac.MoTa;
+                    dv.ThongTinChiTiet = sanPhamDichVuKhac.ThongTinChiTiet;
+                    dv.IdloaiDichVuKhac = sanPhamDichVuKhac.IdloaiDichVuKhac;
+
+                    // Nếu có ảnh mới, cập nhật ảnh
+                    if (HinhAnh != null && HinhAnh.Length > 0)
+                    {
+                        dv.HinhAnh = Upload(HinhAnh);
+                    }
+                    // Nếu không có ảnh mới, giữ nguyên ảnh cũ (không cần gán lại)
+
+                    _context.Update(dv);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -159,39 +179,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/SanPhamDichVuKhacs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var sanPhamDichVuKhac = await _context.SanPhamDichVuKhacs
-                .Include(s => s.IdloaiDichVuKhacNavigation)
-                .FirstOrDefaultAsync(m => m.IdsanPham == id);
-            if (sanPhamDichVuKhac == null)
-            {
-                return NotFound();
-            }
-
-            return View(sanPhamDichVuKhac);
-        }
-
-        // POST: Admin/SanPhamDichVuKhacs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var sanPhamDichVuKhac = await _context.SanPhamDichVuKhacs.FindAsync(id);
-            if (sanPhamDichVuKhac != null)
+            var gdv = await _context.SanPhamDichVuKhacs.FindAsync(id);
+            if (gdv != null)
             {
-                _context.SanPhamDichVuKhacs.Remove(sanPhamDichVuKhac);
+                _context.SanPhamDichVuKhacs.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool SanPhamDichVuKhacExists(int id)
         {
             return _context.SanPhamDichVuKhacs.Any(e => e.IdsanPham == id);

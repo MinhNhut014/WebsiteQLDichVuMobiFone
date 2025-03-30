@@ -1,59 +1,65 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.BinhLuanBaiViet>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Danh sách Bình Luận";
 }
 
-<h1>Index</h1>
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">Danh sách Bình Luận</h1>
+</div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.HoTen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NoiDung)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NgayBinhLuan)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdTinTucNavigation)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.NguoiDung)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.HoTen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NoiDung)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NgayBinhLuan)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdTinTucNavigation.IdTinTuc)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NguoiDung.IdnguoiDung)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdbinhLuan">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdbinhLuan">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdbinhLuan">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Họ Tên</th>
+                <th class="p-3">Nội Dung</th>
+                <th class="p-3">Ngày Bình Luận</th>
+                <th class="p-3">Tin Tức</th>
+                <th class="p-3">Người Dùng</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in Model)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@item.HoTen</td>
+                    <td class="p-3">@item.NoiDung</td>
+                    <td class="p-3">@item.NgayBinhLuan?.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td class="p-3">@item.IdTinTucNavigation?.TieuDe</td>
+                    <td class="p-3">@item.NguoiDung?.HoTen</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Details" asp-route-id="@item.IdbinhLuan" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdbinhLuan, '@item.HoTen')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, hoTen) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa bình luận của '" + hoTen + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/BinhLuanBaiViets/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>

@@ -37,6 +37,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
             var loaiDichVuKhac = await _context.LoaiDichVuKhacs
                 .Include(l => l.IddichVuNavigation)
+                .Include(l => l.SanPhamDichVuKhacs)
                 .FirstOrDefaultAsync(m => m.IdloaiDichVuKhac == id);
             if (loaiDichVuKhac == null)
             {
@@ -60,6 +61,8 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdloaiDichVuKhac,IddichVu,TenLoaiDichVu")] LoaiDichVuKhac loaiDichVuKhac)
         {
+            // Gán ID Dịch Vụ cố định cho loại dịch vụ di động
+            loaiDichVuKhac.IddichVu = 4;
             if (ModelState.IsValid)
             {
                 _context.Add(loaiDichVuKhac);
@@ -103,6 +106,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 try
                 {
+                    loaiDichVuKhac.IddichVu = 4;
                     _context.Update(loaiDichVuKhac);
                     await _context.SaveChangesAsync();
                 }
@@ -124,39 +128,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/LoaiDichVuKhacs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var loaiDichVuKhac = await _context.LoaiDichVuKhacs
-                .Include(l => l.IddichVuNavigation)
-                .FirstOrDefaultAsync(m => m.IdloaiDichVuKhac == id);
-            if (loaiDichVuKhac == null)
-            {
-                return NotFound();
-            }
-
-            return View(loaiDichVuKhac);
-        }
-
-        // POST: Admin/LoaiDichVuKhacs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var loaiDichVuKhac = await _context.LoaiDichVuKhacs.FindAsync(id);
-            if (loaiDichVuKhac != null)
+            var gdv = await _context.LoaiDichVuKhacs.FindAsync(id);
+            if (gdv != null)
             {
-                _context.LoaiDichVuKhacs.Remove(loaiDichVuKhac);
+                _context.LoaiDichVuKhacs.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool LoaiDichVuKhacExists(int id)
         {
             return _context.LoaiDichVuKhacs.Any(e => e.IdloaiDichVuKhac == id);

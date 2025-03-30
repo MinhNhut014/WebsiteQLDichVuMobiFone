@@ -53,6 +53,15 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            // Lấy danh sách bình luận thuộc tin tức này
+            var binhLuans = await _context.BinhLuanBaiViets
+                .Where(b => b.IdTinTuc == id)
+                .Include(b => b.NguoiDung) // Lấy thông tin người bình luận
+                .OrderByDescending(b => b.NgayBinhLuan)
+                .ToListAsync();
+
+            ViewBag.BinhLuans = binhLuans;
+
 
             return View(tinTuc);
         }
@@ -60,7 +69,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/TinTucs/Create
         public IActionResult Create()
         {
-            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "IdchuDe");
+            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "TenChuDe");
             return View();
         }
         //upload file
@@ -125,7 +134,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "IdchuDe", tinTuc.IdTheLoai);
+            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "TenChuDe", tinTuc.IdTheLoai);
             return View(tinTuc);
         }
 
@@ -142,7 +151,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
-            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "IdchuDe", tinTuc.IdTheLoai);
+            ViewData["IdTheLoai"] = new SelectList(_context.ChuDes, "IdchuDe", "TenChuDe", tinTuc.IdTheLoai);
             return View(tinTuc);
         }
 
@@ -151,7 +160,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(IFormFile AnhDaiDien, int id, [Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
+        public async Task<IActionResult> Edit(IFormFile? AnhDaiDien, int id, [Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
         {
             if (id != tinTuc.IdTinTuc)
             {
@@ -162,7 +171,25 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 try
                 {
-                    tinTuc.AnhDaiDien = Upload(AnhDaiDien);
+                    var tinTucCu = await _context.TinTucs.AsNoTracking().FirstOrDefaultAsync(t => t.IdTinTuc == id);
+                    if (tinTucCu == null)
+                    {
+                        return NotFound();
+                    }
+
+                    // Nếu không chọn ảnh mới, giữ nguyên ảnh cũ
+                    if (AnhDaiDien != null)
+                    {
+                        tinTuc.AnhDaiDien = Upload(AnhDaiDien);
+                    }
+                    else
+                    {
+                        tinTuc.AnhDaiDien = tinTucCu.AnhDaiDien;
+                    }
+
+                    // Cập nhật ngày đăng thành ngày hiện tại khi chỉnh sửa
+                    tinTuc.NgayDang = DateTime.Now;
+
                     _context.Update(tinTuc);
                     await _context.SaveChangesAsync();
                 }
@@ -184,39 +211,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/TinTucs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var tinTuc = await _context.TinTucs
-                .Include(t => t.IdTheLoaiNavigation)
-                .FirstOrDefaultAsync(m => m.IdTinTuc == id);
-            if (tinTuc == null)
-            {
-                return NotFound();
-            }
-
-            return View(tinTuc);
-        }
-
-        // POST: Admin/TinTucs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var tinTuc = await _context.TinTucs.FindAsync(id);
-            if (tinTuc != null)
+            var gdv = await _context.TinTucs.FindAsync(id);
+            if (gdv != null)
             {
-                _context.TinTucs.Remove(tinTuc);
+                _context.TinTucs.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool TinTucExists(int id)
         {
             return _context.TinTucs.Any(e => e.IdTinTuc == id);

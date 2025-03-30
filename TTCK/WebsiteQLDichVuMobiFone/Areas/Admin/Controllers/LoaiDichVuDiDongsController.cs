@@ -119,27 +119,16 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
 
         // GET: Admin/LoaiDichVuDiDongs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null) return NotFound();
-
-            var loaiDichVuDiDong = await _context.LoaiDichVuDiDongs.FindAsync(id);
-            if (loaiDichVuDiDong == null) return NotFound();
-
-            return View(loaiDichVuDiDong);
-        }
-
-        // POST: Admin/LoaiDichVuDiDongs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var loaiDichVuDiDong = await _context.LoaiDichVuDiDongs.FindAsync(id);
-            if (loaiDichVuDiDong != null)
+            var gdv = await _context.LoaiDichVuDiDongs.FindAsync(id);
+            if (gdv != null)
             {
-                _context.LoaiDichVuDiDongs.Remove(loaiDichVuDiDong);
+                _context.LoaiDichVuDiDongs.Remove(gdv);
                 await _context.SaveChangesAsync();
             }
+
             return RedirectToAction(nameof(Index));
         }
     }

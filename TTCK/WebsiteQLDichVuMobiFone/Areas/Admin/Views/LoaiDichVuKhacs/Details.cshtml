@@ -1,30 +1,72 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.LoaiDichVuKhac
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Loại Dịch Vụ Khác";
 }
 
-<h1>Details</h1>
+<div class="container mt-4">
+    <h2 class="text-primary fw-bold mb-3">Chi Tiết Loại Dịch Vụ Khác</h2>
 
-<div>
-    <h4>LoaiDichVuKhac</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenLoaiDichVu)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenLoaiDichVu)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IddichVuNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IddichVuNavigation.IddichVu)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdloaiDichVuKhac">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="card shadow-sm p-4 rounded">
+        <table class="table table-bordered">
+            <tbody>
+                <tr>
+                    <th class="bg-light w-25">Tên Loại Dịch Vụ</th>
+                    <td>@Model.TenLoaiDichVu</td>
+                </tr>
+                <tr>
+                    <th class="bg-light">Dịch Vụ</th>
+                    <td>@Model.IddichVuNavigation?.TenDichVu</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Danh sách sản phẩm dịch vụ khác thuộc loại dịch vụ này -->
+        @if (Model.SanPhamDichVuKhacs != null && Model.SanPhamDichVuKhacs.Any())
+        {
+            <h4 class="mt-4 fw-bold">Danh sách sản phẩm dịch vụ</h4>
+            <table class="table table-hover">
+                <thead class="table-primary">
+                    <tr>
+                        <th>Hình Ảnh</th>
+                        <th>Tên Sản Phẩm</th>
+                        <th>Mô Tả</th>
+                        
+                        <th>Thao Tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var sp in Model.SanPhamDichVuKhacs)
+                    {
+                        <tr>
+                            <td class="p-3">
+                                <img src="~/img/dichvu/dichvukhac/@sp.HinhAnh" alt="Ảnh Sản Phẩm" class="rounded shadow-sm" style="width: 80px; height: 80px; object-fit: cover;" />
+                            </td>
+                            <td>@sp.TenSanPham</td>
+                            <td>@sp.MoTa</td>
+                            <td>
+                                <a asp-controller="SanPhamDichVuKhacs" asp-action="Details" asp-route-id="@sp.IdsanPham" class="btn btn-info btn-sm">
+                                    <i class="fa-solid fa-eye"></i> Xem
+                                </a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        }
+        else
+        {
+            <p class="text-muted">Không có sản phẩm nào thuộc loại dịch vụ này.</p>
+        }
+
+        <!-- Nút Chỉnh Sửa và Quay Lại -->
+        <div class="d-flex gap-2 mt-4">
+            <a asp-action="Edit" asp-route-id="@Model.IdloaiDichVuKhac" class="btn btn-warning">
+                <i class="fa-solid fa-pen"></i> Chỉnh Sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary">
+                <i class="fa-solid fa-arrow-left"></i> Quay Lại
+            </a>
+        </div>
+    </div>
 </div>

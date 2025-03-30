@@ -195,6 +195,7 @@ wwwroot\img\dichvu\dichvukhac\c83f31c2-d5c4-424b-bdad-0497cc891e71_Tiktokdata.jp
 wwwroot\img\dichvu\dichvukhac\d9cdc63a-a119-4aee-a03d-0db8d77d7e70_Travellink.jpg
 wwwroot\img\dichvu\dichvukhac\df14ce38-7578-4205-a328-39a856bae90c_VieON.png
 wwwroot\img\dichvu\dichvukhac\eb537608-98a7-4643-b33e-a982e9d33f86_Mobistudy.png
+wwwroot\img\dichvu\dichvukhac\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg
 wwwroot\img\dichvu\doanhnghiep\10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg
 wwwroot\img\dichvu\doanhnghiep\20608e1a-c9e2-4e54-9a96-d5ddc51f5490_MobiFoneMeeting.png
 wwwroot\img\dichvu\doanhnghiep\3afe0246-093b-48c0-ac94-357938ff6f1c_vt_gc_2.png
@@ -350,7 +351,10 @@ wwwroot\img\svg\thumbnail.svg
 wwwroot\img\tintuc\2cc13bd8-36a1-441d-a8d2-3fcb7671689e_tintuc1.jpg
 wwwroot\img\tintuc\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg
 wwwroot\img\tintuc\ab46396d-043d-4f7e-8378-adecebaacb29_tintuc1.jpg
+wwwroot\img\tintuc\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png
 wwwroot\img\tintuc\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg
+wwwroot\img\tintuc\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg
+wwwroot\img\tintuc\Tiktokdata.jpg
 wwwroot\img\tintuc\tintuc1.jpg
 wwwroot\img\tintuc\tintuc2.jpg
 wwwroot\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg

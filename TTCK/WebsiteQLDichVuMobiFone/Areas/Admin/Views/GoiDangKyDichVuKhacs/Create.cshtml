@@ -4,42 +4,54 @@
     ViewData["Title"] = "Thêm Gói Dịch Vụ Khác";
 }
 
-<h1 class="mb-4 text-primary fw-bold text-center">
-    <i class="bi bi-plus-circle"></i> Thêm Gói Dịch Vụ Khác
-</h1>
+<div class="container mt-4">
+    <h2 class="text-center text-white fw-bold py-3 rounded-3" style="background: linear-gradient(90deg, #007bff, #6610f2);">
+        <i class="fa-solid fa-plus-circle"></i> Thêm Gói Dịch Vụ Khác
+    </h2>
 
-<div class="card shadow-lg p-4 rounded-4 border-0">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+    <div class="card shadow-lg p-4 rounded-4 border-0" style="background-color: #f8f9fa;">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <form asp-action="Create" class="needs-validation" novalidate>
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="TenGoi" class="form-label"></label>
-                    <input asp-for="TenGoi" class="form-control shadow-sm border-primary" />
-                    <span asp-validation-for="TenGoi" class="text-danger"></span>
-                </div>
+                    <!-- Nhập Tên Gói -->
+                    <div class="form-group mb-3">
+                        <label asp-for="TenGoi" class="form-label fw-bold"><i class="fa-solid fa-file-signature"></i> Tên Gói</label>
+                        <input asp-for="TenGoi" class="form-control shadow-sm border-primary rounded-3" placeholder="Nhập tên gói..." required />
+                        <span asp-validation-for="TenGoi" class="text-danger"></span>
+                    </div>
+                    <!-- Nhập Giá Gói -->
+                    <div class="form-group mb-3">
+                        <label asp-for="GiaGoi" class="form-label fw-bold"><i class="fa-solid fa-money-bill-wave"></i> Giá Gói</label>
+                        <input asp-for="GiaGoi" class="form-control shadow-sm border-primary rounded-3" placeholder="Nhập giá gói..." required />
+                        <span asp-validation-for="GiaGoi" class="text-danger"></span>
+                    </div>
+                    <!-- Nhập Thời Hạn -->
+                    <div class="form-group mb-3">
+                        <label asp-for="ThoiHan" class="form-label fw-bold"><i class="fa-solid fa-calendar-alt"></i> Thời Hạn</label>
+                        <input asp-for="ThoiHan" class="form-control shadow-sm border-primary rounded-3" placeholder="Nhập thời hạn..." required />
+                        <span asp-validation-for="ThoiHan" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="ThoiHan" class="form-label"></label>
-                    <input asp-for="ThoiHan" class="form-control shadow-sm border-primary" />
-                    <span asp-validation-for="ThoiHan" class="text-danger"></span>
-                </div>
+                    <!-- Chọn Sản Phẩm -->
+                    <div class="form-group mb-3">
+                        <label asp-for="IdsanPham" class="form-label fw-bold"><i class="fa-solid fa-box"></i> Chọn Sản Phẩm</label>
+                        <select asp-for="IdsanPham" class="form-control shadow-sm border-primary rounded-3" asp-items="ViewBag.IdsanPham"></select>
+                        <span asp-validation-for="IdsanPham" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="IdsanPham" class="form-label"></label>
-                    <select asp-for="IdsanPham" class="form-control shadow-sm border-primary" asp-items="ViewBag.IdsanPham"></select>
-                </div>
-
-                <div class="form-group text-center mt-4">
-                    <button type="submit" class="btn btn-primary shadow-sm px-4">
-                        <i class="fa-solid fa-check"></i> Thêm mới
-                    </button>
-                    <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2">
-                        <i class="fa-solid fa-arrow-left"></i> Quay lại
-                    </a>
-                </div>
-            </form>
+                    <!-- Nút bấm -->
+                    <div class="form-group text-center mt-4">
+                        <button type="submit" class="btn btn-success shadow-sm px-4 rounded-3 fw-bold">
+                            <i class="fa-solid fa-check"></i> Thêm Mới
+                        </button>
+                        <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2 rounded-3 fw-bold">
+                            <i class="fa-solid fa-arrow-left"></i> Quay Lại
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>

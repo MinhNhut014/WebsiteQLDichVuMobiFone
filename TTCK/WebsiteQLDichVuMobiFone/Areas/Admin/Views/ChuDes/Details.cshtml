@@ -1,24 +1,72 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.ChuDe
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Chủ Đề";
 }
 
-<h1>Details</h1>
+<div class="container mt-4">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+            <h2 class="mb-0"><i class="bi bi-folder"></i> Chi Tiết Chủ Đề</h2>
+        </div>
 
-<div>
-    <h4>ChuDe</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenChuDe)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenChuDe)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdchuDe">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <div class="card-body p-4">
+            <dl class="row">
+                <dt class="col-sm-3 text-secondary fw-bold">Tên Chủ Đề:</dt>
+                <dd class="col-sm-9 text-dark">@Html.DisplayFor(model => model.TenChuDe)</dd>
+            </dl>
+
+            <hr />
+
+            <!-- Danh sách tin tức thuộc chủ đề này -->
+            <h4 class="text-primary"><i class="bi bi-newspaper"></i> Danh Sách Tin Tức</h4>
+            @if (Model.TinTucs != null && Model.TinTucs.Any())
+            {
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover mt-3 shadow-sm">
+                        <thead class="table-primary">
+                            <tr>
+                                <th>Hình Ảnh</th>
+                                <th>Tiêu Đề</th>
+                                <th>Ngày Đăng</th>
+                                <th>Lượt Xem</th>
+                                <th>Hành Động</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var tin in Model.TinTucs)
+                            {
+                                <tr>
+                                    <td class="p-3">
+                                        <img src="~/img/tintuc/@tin.AnhDaiDien" alt="Ảnh tin tức" class="img-fluid rounded" style="width: 70px; height: 50px; object-fit: cover;" />
+                                    </td>
+                                    <td>@tin.TieuDe</td>
+                                    <td>@tin.NgayDang?.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td>@tin.LuotXem</td>
+                                    <td>
+                                        <a asp-controller="TinTuc" asp-action="Details" asp-route-id="@tin.IdTinTuc" class="btn btn-info btn-sm">
+                                            <i class="fa-solid fa-eye"></i> Xem
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            }
+            else
+            {
+                <p class="text-muted">Không có tin tức nào thuộc chủ đề này.</p>
+            }
+        </div>
+
+        <div class="card-footer text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdchuDe" class="btn btn-warning shadow-sm px-4">
+                <i class="fa-solid fa-edit"></i> Chỉnh sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2">
+                <i class="fa-solid fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+    </div>
 </div>

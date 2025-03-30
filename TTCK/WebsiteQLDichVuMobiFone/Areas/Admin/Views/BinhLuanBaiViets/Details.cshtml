@@ -1,48 +1,57 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.BinhLuanBaiViet
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Bình Luận";
 }
 
-<h1>Details</h1>
+<div class="container mt-4">
+    <div class="card shadow-lg border-0 rounded-4">
+        <div class="card-header bg-primary text-white text-center py-3 rounded-top-4">
+            <h2 class="mb-0"><i class="bi bi-chat-dots"></i> Chi Tiết Bình Luận</h2>
+        </div>
 
-<div>
-    <h4>BinhLuanBaiViet</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HoTen)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HoTen)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NoiDung)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayBinhLuan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayBinhLuan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdTinTucNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdTinTucNavigation.IdTinTuc)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NguoiDung)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NguoiDung.IdnguoiDung)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdbinhLuan">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+        <div class="card-body p-4">
+            <dl class="row">
+                <dt class="col-sm-3 text-secondary fw-bold">Họ Tên:</dt>
+                <dd class="col-sm-9 text-dark">@Html.DisplayFor(model => model.HoTen)</dd>
+
+                <dt class="col-sm-3 text-secondary fw-bold">Nội Dung:</dt>
+                <dd class="col-sm-9 text-dark">@Html.DisplayFor(model => model.NoiDung)</dd>
+
+                <dt class="col-sm-3 text-secondary fw-bold">Ngày Bình Luận:</dt>
+                <dd class="col-sm-9 text-dark">@Html.DisplayFor(model => model.NgayBinhLuan)</dd>
+            </dl>
+
+            <hr />
+
+            <!-- Thông tin tin tức mà bình luận này thuộc về -->
+            <h4 class="text-primary"><i class="bi bi-newspaper"></i> Bài Viết Được Bình Luận</h4>
+            <div class="card border-0 shadow-sm p-3">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <img src="~/img/tintuc/@Model.IdTinTucNavigation.AnhDaiDien" class="img-fluid rounded" style="width: 100px; height: 70px; object-fit: cover;" />
+                    </div>
+                    <div class="col-md-8">
+                        <h5 class="mb-1 text-dark">@Model.IdTinTucNavigation.TieuDe</h5>
+                        <p class="text-muted mb-0">Ngày đăng: @Model.IdTinTucNavigation.NgayDang?.ToString("dd/MM/yyyy HH:mm")</p>
+                        <p class="text-muted mb-0">Lượt xem: @Model.IdTinTucNavigation.LuotXem</p>
+                    </div>
+                    <div class="col-md-2 text-center">
+                        <a asp-controller="TinTucs" asp-action="Details" asp-route-id="@Model.IdTinTucNavigation.IdTinTuc" class="btn btn-info btn-sm">
+                            <i class="fa-solid fa-eye"></i> Xem
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-footer text-center">
+            <a asp-action="Edit" asp-route-id="@Model?.IdbinhLuan" class="btn btn-warning shadow-sm px-4">
+                <i class="fa-solid fa-edit"></i> Chỉnh sửa
+            </a>
+            <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2">
+                <i class="fa-solid fa-arrow-left"></i> Quay lại
+            </a>
+        </div>
+    </div>
 </div>

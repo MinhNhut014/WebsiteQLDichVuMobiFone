@@ -1,37 +1,79 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.SanPhamDichVuKhac
 
 @{
-    ViewData["Title"] = "Chi tiết Sản Phẩm Dịch Vụ Khác";
+    ViewData["Title"] = "Chi Tiết Sản Phẩm Dịch Vụ";
 }
 
-<div class="container mt-4">
+<div class="container mt-5">
     <div class="card shadow-lg border-0 rounded-4">
-        <div class="card-header bg-gradient text-white text-center" style="background: linear-gradient(135deg, #007bff, #0056b3);">
-            <h2 class="mb-0">🔍 Chi tiết Sản Phẩm Dịch Vụ Khác</h2>
+        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
+            <h2 class="mb-0">📌 Chi Tiết Sản Phẩm Dịch Vụ Khác</h2>
         </div>
         <div class="card-body p-4">
-            <div class="row mb-4">
-                <div class="col-md-4 text-center">
-                    <img src="~/images/@Model.HinhAnh" alt="Ảnh Sản Phẩm" class="img-thumbnail rounded-3 shadow-sm" style="max-width: 250px; height: auto;" />
+            <div class="row">
+                <div class="col-md-6 text-center">
+                    <img src="~/img/dichvu/dichvukhac/@Model.HinhAnh" class="rounded img-fluid shadow-lg" style="max-width: 100%; height: auto;" alt="Hình ảnh sản phẩm">
                 </div>
-                <div class="col-md-8">
-                    <h4 class="fw-bold">📄 Tên Sản Phẩm:</h4>
-                    <p>@Model.TenSanPham</p>
-
-                    <h4 class="fw-bold">📝 Mô Tả:</h4>
-                    <p>@Model.MoTa</p>
-
-                    <h4 class="fw-bold">📋 Thông Tin Chi Tiết:</h4>
-                    <div class="p-3 border rounded shadow-sm" style="background-color: #f9f9f9; max-height: 200px; overflow-y: auto;">
-                        @Html.Raw(Model.ThongTinChiTiet)
-                    </div>
-
-                    <h4 class="fw-bold">📂 Loại Dịch Vụ Khác:</h4>
-                    <p>@Model.IdloaiDichVuKhacNavigation?.TenLoaiDichVu</p>
+                <div class="col-md-6">
+                    <h3 class="fw-bold">📄 @Model.TenSanPham</h3>
+                    </br>
+                    <h4 class="text-muted">Loại dịch vụ: <strong>@Model.IdloaiDichVuKhacNavigation?.TenLoaiDichVu</strong></h4>
+                    </br>
+                    <h4 class="fw-semibold">📝 Mô tả:</h4>
+                    </br>
+                    <h5>@Model.MoTa</h5>
                 </div>
             </div>
-            <div class="d-flex justify-content-between">
-                <a asp-action="Edit" asp-route-id="@Model?.IdsanPham" class="btn btn-outline-warning rounded-3 px-4">✏️ Chỉnh sửa</a>
+
+            <hr>
+
+            <div class="mt-4">
+                <h4 class="fw-bold">📋 Thông Tin Chi Tiết</h4>
+                <div class="border rounded p-3 bg-light">@Html.Raw(Model.ThongTinChiTiet)</div>
+            </div>
+
+            <hr>
+
+            <div class="mt-4">
+                <h4 class="fw-bold">📜 Danh Sách Gói Đăng Ký</h4>
+                @if (Model.GoiDangKyDichVuKhacs != null && Model.GoiDangKyDichVuKhacs.Any())
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover table-bordered text-center">
+                            <thead class="table-primary">
+                                <tr>
+                                    <th>Tên Gói</th>
+                                    <th>Giá</th>
+                                    <th>Thời Hạn</th>
+                                    <th>Chi Tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var goi in Model.GoiDangKyDichVuKhacs)
+                                {
+                                    <tr>
+                                        <td>@goi.TenGoi</td>
+                                        <td>@goi.GiaGoi?.ToString("N0") VNĐ</td>
+                                        <td>@goi.ThoiHan ngày</td>
+                                        <td>
+                                        <a asp-area="Admin" asp-controller="GoiDangKyDichVuKhacs" asp-action="Details" asp-route-id="@goi.IdgoiDangKy" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                                            <i class="fa-solid fa-eye"></i>
+                                        </a>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                else
+                {
+                    <hr>
+                    <h6 class="text-muted">⛔ Hiện chưa có gói đăng ký nào cho sản phẩm này.</h6>
+                }
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
                 <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
             </div>
         </div>

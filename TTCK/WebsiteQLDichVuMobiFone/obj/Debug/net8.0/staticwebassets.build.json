@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Q6IgCMvVnp9T0qaCmDQIS+B6q4F7I5jpuwTiOJlE+2k=",
+  "Hash": "RFWGbCrCQ983SRy+zDyBp0k57c0306AmubYP5Z/m2Co=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -4196,6 +4196,27 @@
       "OriginalItemSpec": "wwwroot\\img\\dichvu\\dichvukhac\\eb537608-98a7-4643-b33e-a982e9d33f86_Mobistudy.png"
     },
     {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5wzxmvtk72",
+      "Integrity": "C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dichvu\\dichvukhac\\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg"
+    },
+    {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\doanhnghiep\\10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg",
       "SourceId": "WebsiteQLDichVuMobiFone",
       "SourceType": "Discovered",
@@ -7451,6 +7472,27 @@
       "OriginalItemSpec": "wwwroot\\img\\tintuc\\ab46396d-043d-4f7e-8378-adecebaacb29_tintuc1.jpg"
     },
     {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "77h6wmm953",
+      "Integrity": "k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png"
+    },
+    {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg",
       "SourceId": "WebsiteQLDichVuMobiFone",
       "SourceType": "Discovered",
@@ -7470,6 +7512,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\tintuc\\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yccwiogbuv",
+      "Integrity": "boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\Tiktokdata.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/Tiktokdata#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "yccwiogbuv",
+      "Integrity": "boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\Tiktokdata.jpg"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\tintuc1.jpg",
@@ -24972,6 +25056,88 @@
       ]
     },
     {
+      "Route": "img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.5wzxmvtk72.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "222445"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 04:03:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5wzxmvtk72"
+        },
+        {
+          "Name": "label",
+          "Value": "img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk="
+        }
+      ]
+    },
+    {
+      "Route": "img/dichvu/dichvukhac/fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "222445"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 04:03:22 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk="
+        }
+      ]
+    },
+    {
       "Route": "img/dichvu/doanhnghiep/10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg",
       "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\doanhnghiep\\10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg",
       "Selectors": [],
@@ -37682,6 +37848,88 @@
       ]
     },
     {
+      "Route": "img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image.77h6wmm953.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "65734"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 05:51:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "77h6wmm953"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/ac198fbf-dbb5-4bde-b392-129186b2573f_image.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "65734"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 05:51:39 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-k3S/VJtkxEJ0Cye2TJfpXWjBfII5DxOP7cVNjLvHSI4="
+        }
+      ]
+    },
+    {
       "Route": "img/tintuc/be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg",
       "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg",
       "Selectors": [],
@@ -37760,6 +38008,170 @@
         {
           "Name": "integrity",
           "Value": "sha256-GAUxFwFr20Gr9XCjaBpEtPWCq2ktgvTAxueFUESxqQM="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 05:49:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.yccwiogbuv.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 05:49:30 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yccwiogbuv"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/Tiktokdata.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\Tiktokdata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 05:50:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/Tiktokdata.yccwiogbuv.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\Tiktokdata.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "18559"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 30 Mar 2025 05:50:03 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "yccwiogbuv"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/Tiktokdata.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
         }
       ]
     },

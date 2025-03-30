@@ -11,10 +11,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <!-- Chọn Dịch Vụ -->
-            <div class="form-group mb-3">
-                <label asp-for="IddichVu" class="fw-bold">Chọn Dịch Vụ</label>
-                <select asp-for="IddichVu" class="form-control" asp-items="ViewBag.IddichVu"></select>
-            </div>
+            <!-- Ẩn ID Dịch Vụ (Mặc định = 4) -->
+            <input type="hidden" asp-for="IddichVu" value="4" />
 
             <!-- Nhập Tên Loại Dịch Vụ -->
             <div class="form-group mb-3">

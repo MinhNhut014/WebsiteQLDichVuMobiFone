@@ -126,39 +126,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/GoiDangKyDichVuKhacs/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var goiDangKyDichVuKhac = await _context.GoiDangKyDichVuKhacs
-                .Include(g => g.IdsanPhamNavigation)
-                .FirstOrDefaultAsync(m => m.IdgoiDangKy == id);
-            if (goiDangKyDichVuKhac == null)
-            {
-                return NotFound();
-            }
-
-            return View(goiDangKyDichVuKhac);
-        }
-
-        // POST: Admin/GoiDangKyDichVuKhacs/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var goiDangKyDichVuKhac = await _context.GoiDangKyDichVuKhacs.FindAsync(id);
-            if (goiDangKyDichVuKhac != null)
+            var gdv = await _context.GoiDangKyDichVuKhacs.FindAsync(id);
+            if (gdv != null)
             {
-                _context.GoiDangKyDichVuKhacs.Remove(goiDangKyDichVuKhac);
+                _context.GoiDangKyDichVuKhacs.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool GoiDangKyDichVuKhacExists(int id)
         {
             return _context.GoiDangKyDichVuKhacs.Any(e => e.IdgoiDangKy == id);

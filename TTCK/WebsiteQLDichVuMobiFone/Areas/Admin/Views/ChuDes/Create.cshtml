@@ -4,37 +4,34 @@
     ViewData["Title"] = "Thêm Chủ Đề";
 }
 
-<h1 class="mb-4 text-primary fw-bold text-center">
-    <i class="bi bi-plus-circle"></i> Thêm Chủ Đề
-</h1>
+<div class="container mt-4">
+    <div class="d-flex justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg p-4 rounded-4 border-0">
+                <h2 class="mb-4 text-primary fw-bold text-center">
+                    <i class="bi bi-plus-circle-fill"></i> Thêm Chủ Đề Mới
+                </h2>
 
-<div class="card shadow-lg p-4 rounded-4 border-0">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <form asp-action="Create">
-                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+                <form asp-action="Create">
+                    <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
-                <div class="form-group mb-3">
-                    <label asp-for="TenChuDe" class="form-label"></label>
-                    <input asp-for="TenChuDe" class="form-control shadow-sm border-primary" />
-                    <span asp-validation-for="TenChuDe" class="text-danger"></span>
-                </div>
+                    <div class="mb-3">
+                        <label asp-for="TenChuDe" class="form-label fw-bold text-secondary">Tên Chủ Đề</label>
+                        <input asp-for="TenChuDe" class="form-control shadow-sm border-primary rounded-3"
+                               placeholder="Nhập tên chủ đề..." />
+                        <span asp-validation-for="TenChuDe" class="text-danger"></span>
+                    </div>
 
-                <div class="form-group text-center mt-4">
-                    <button type="submit" class="btn btn-primary shadow-sm px-4">
-                        <i class="fa-solid fa-check"></i> Thêm mới
-                    </button>
-                    <a asp-action="Index" class="btn btn-secondary shadow-sm px-4 ms-2">
-                        <i class="fa-solid fa-arrow-left"></i> Quay lại
-                    </a>
-                </div>
-            </form>
+                    <div class="d-flex justify-content-center mt-4">
+                        <button type="submit" class="btn btn-primary px-4 py-2 fw-bold me-2 rounded-pill shadow-sm">
+                            <i class="fa-solid fa-check"></i> Thêm mới
+                        </button>
+                        <a asp-action="Index" class="btn btn-outline-secondary px-4 py-2 fw-bold rounded-pill shadow-sm">
+                            <i class="fa-solid fa-arrow-left"></i> Quay lại
+                        </a>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
-
-@section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
-}

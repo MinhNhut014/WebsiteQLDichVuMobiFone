@@ -35,6 +35,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             }
 
             var chuDe = await _context.ChuDes
+                .Include(m => m.TinTucs)
                 .FirstOrDefaultAsync(m => m.IdchuDe == id);
             if (chuDe == null)
             {
@@ -118,38 +119,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
 
         // GET: Admin/ChuDes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
-        {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
-            var chuDe = await _context.ChuDes
-                .FirstOrDefaultAsync(m => m.IdchuDe == id);
-            if (chuDe == null)
-            {
-                return NotFound();
-            }
-
-            return View(chuDe);
-        }
-
-        // POST: Admin/ChuDes/Delete/5
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var chuDe = await _context.ChuDes.FindAsync(id);
-            if (chuDe != null)
+            var gdv = await _context.ChuDes.FindAsync(id);
+            if (gdv != null)
             {
-                _context.ChuDes.Remove(chuDe);
+                _context.ChuDes.Remove(gdv);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool ChuDeExists(int id)
         {
             return _context.ChuDes.Any(e => e.IdchuDe == id);
