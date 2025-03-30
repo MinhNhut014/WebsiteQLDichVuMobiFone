@@ -5,44 +5,85 @@
 }
 
 <div class="container mt-5">
-    <div class="text-center mb-5">
-        <h2 class="fw-bold text-success">Đăng Ký SIM Thành Công</h2>
-        <p class="text-muted">Chúc mừng bạn đã đăng ký thành công SIM và gói cước. Vui lòng kiểm tra thông tin dưới đây.</p>
-    </div>
-
-    @if (TempData["SuccessMessage"] != null)
-    {
-        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
-    }
-
-    @if (TempData["ErrorMessage"] != null)
-    {
-        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-    }
-
-    <div class="row g-4">
-        <div class="col-md-12">
-            <div class="card shadow-sm border-0 rounded-4">
-                <div class="card-body p-4">
-                    <h4 class="card-title text-primary mb-3">Thông tin đơn hàng</h4>
-
-                    <p><strong>Mã đơn hàng:</strong> @Model.IdhoaDonSim</p>
-                    <p><strong>Tên khách hàng:</strong> @Model.TenKhachHang</p>
-                    <p><strong>Số điện thoại:</strong> @Model.SoDienThoai</p>
-                    <p><strong>Email:</strong> @Model.Email</p>
-                    <p><strong>Địa chỉ nhận hàng:</strong> @Model.DiaDiemNhan</p>
-
-                    <!-- Kiểm tra null trước khi hiển thị tên phương thức vận chuyển -->
-                    <p><strong>Phương thức vận chuyển:</strong> @(Model.IdphuongThucVcNavigation?.TenVanChuyen ?? "Chưa xác định")</p>
-
-                    <p><strong>Phương thức thanh toán:</strong> @Model.PhuongThucThanhToan</p>
-                    <p><strong>Tổng tiền:</strong> @Model.TongTien VND</p>
-
-                    <h5 class="text-success mt-4">Cảm ơn bạn đã sử dụng dịch vụ của chúng tôi. Đơn hàng của bạn đang được xử lý.</h5>
-
-                    <a href="@Url.Action("Index", "Home")" class="btn btn-primary w-100 py-2 mt-4">Quay lại trang chủ</a>
-                </div>
-            </div>
+    <!-- Breadcrumb chỉ dẫn -->
+    <div class="step-progress d-flex justify-content-center gap-4">
+        <div class="step completed">
+            <div class="circle">1</div>
+            <span>Chọn SIM</span>
+        </div>
+        <div class="step completed">
+            <div class="circle">2</div>
+            <span>Đăng ký</span>
+        </div>
+        <div class="step completed">
+            <div class="circle">3</div>
+            <span>Hoàn tất</span>
         </div>
     </div>
+
+    <div class="text-center mb-5">
+        <h2 class="fw-bold text-success">Đăng Ký Mua SIM Thành Công</h2>
+        <p class="text-muted">Chúc mừng bạn đã đăng ký thành công SIM.Chúng tôi sẽ giao cho bạn trong thời gian sớm nhất có thể.</p>
+        <p class="text-muted">Bấm nút xem đơn hàng để xem chi tiết đơn hàng mà bạn đã đặt</p>
+    </div>
+    <div class="d-flex gap-3 mt-4">
+        <a href="@Url.Action("Index", "Home")" class="btn btn-primary w-50 py-2">Quay lại trang chủ</a>
+        <a href="@Url.Action("ChiTietHoaDonSim", "NguoiDung", new { id = Model.IdhoaDonSim })" class="btn btn-outline-success w-50 py-2">Xem đơn hàng</a>
+    </div>
+   
 </div>
+
+<style>
+    .step-progress {
+        display: flex;
+        gap: 30px;
+        padding-bottom: 20px;
+        position: relative;
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+        .step .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #6c757d;
+            z-index: 2;
+        }
+
+        .step.completed .circle {
+            background: #007bff;
+            color: white;
+        }
+
+        .step::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 5px;
+            background: #e0e0e0;
+            top: 18px;
+            left: 50%;
+            transform: translateX(30px);
+            z-index: 1;
+        }
+
+        .step.completed::after {
+            background: #007bff;
+        }
+
+        .step:last-child::after {
+            content: none;
+        }
+</style>

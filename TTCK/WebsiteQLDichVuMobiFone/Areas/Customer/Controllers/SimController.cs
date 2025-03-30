@@ -75,8 +75,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             // Lấy danh sách gói cước mặc định
             var goiCuoc = _context.GoiDangKies
-                .Where(g => (g.GiaGoi == 90000 || g.GiaGoi == 135000 || g.GiaGoi == 159000) && g.ThoiHan == "30")
-                .ToList();
+                    .Where(g => g.GiaGoi == 90000 && g.ThoiHan == "30")
+                    .Take(3)
+                    .ToList();
+
 
             if (goiCuoc == null || goiCuoc.Count == 0)
             {
@@ -86,7 +88,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             ViewBag.GoiDangKy = goiCuoc;
             ViewBag.Sim = sim;
-
+            ViewBag.MaGoiDaChon = maGoi?.ToString();
             // Xóa dữ liệu cũ trong TempData trước khi thêm mới
             TempData.Remove("Cart");
 
@@ -110,7 +112,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
                 // Chuyển đối tượng thành danh sách để đảm bảo cấu trúc dữ liệu
                 var cart = new List<CartViewModel> { cartItem };
-
+                ViewBag.MaGoiDaChon = goiChon?.IdgoiDangKy.ToString();
                 // Lưu dữ liệu mới vào TempData
                 TempData["Cart"] = Newtonsoft.Json.JsonConvert.SerializeObject(cart);
                 TempData.Keep("Cart"); // Giữ TempData sống sót sau redirect
@@ -269,7 +271,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     // Kiểm tra nếu IdtrangThaiSimNavigation không phải là null
                     if (sim.IdtrangThaiSimNavigation != null)
                     {
-                        sim.IdtrangThaiSim = 3; // "Đang hoạt động"
+                        sim.IdtrangThaiSim = 2; // "Đang hoạt động"
                     }
                     else
                     {

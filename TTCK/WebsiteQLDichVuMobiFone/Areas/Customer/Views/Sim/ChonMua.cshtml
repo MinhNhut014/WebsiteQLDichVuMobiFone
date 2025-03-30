@@ -4,72 +4,76 @@
     var goiCuoc = ViewBag.GoiDangKy as List<WebsiteQLDichVuMobiFone.Models.GoiDangKy>;
     var maGoiDaChon = ViewBag.MaGoiDaChon?.ToString();
 
-    // Lấy thông tin giỏ hàng từ TempData
     var cart = TempData["Cart"] != null ?
         Newtonsoft.Json.JsonConvert.DeserializeObject<List<WebsiteQLDichVuMobiFone.Areas.Customer.ViewModels.CartViewModel>>(TempData["Cart"].ToString())
         : new List<WebsiteQLDichVuMobiFone.Areas.Customer.ViewModels.CartViewModel>();
 
-    // Lấy item hiện tại trong giỏ hàng (nếu có)
     var currentItem = cart.FirstOrDefault(c => c.Idsim == sim?.Idsim);
 }
-<div class="container mt-4">
+<div class="container mt-5">
     <!-- Breadcrumb chỉ dẫn -->
-    <ul class="nav nav-pills mb-3">
-        <li class="nav-item">
-            <a class="nav-link active">Chọn mua</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled">Đăng ký</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link disabled">Hoàn tất</a>
-        </li>
-    </ul>
+    <div class="step-progress d-flex justify-content-center gap-4">
+        <div class="step active">
+            <div class="circle">1</div>
+            <span>Chọn SIM</span>
+        </div>
+        <div class="step">
+            <div class="circle">2</div>
+            <span>Đăng ký</span>
+        </div>
+        <div class="step">
+            <div class="circle">3</div>
+            <span>Hoàn tất</span>
+        </div>
+    </div>
 
-    <div class="row">
+    <div class="row mt-4">
         <!-- Thông tin SIM -->
         <div class="col-md-8">
-            <h4>Thông tin SIM</h4>
-            @if (sim != null)
-            {
-                <p><strong>Số thuê bao:</strong> @sim.SoThueBao</p>
-                <p><strong>Loại thuê bao:</strong> @(sim.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định")</p>
-                <p><strong>Phí hòa mạng:</strong> @sim.PhiHoaMang VND</p>
-                <p><strong>Khu vực:</strong> @sim.KhuVucHoaMang</p>
-                <p><strong>Phí giữ SIM:</strong> Miễn phí</p>
-                <div class="alert alert-warning mt-3">
-                    <strong>Thời gian giữ SIM:</strong> <span id="countdown">03:00</span>
-                </div>
-            }
-            else
-            {
-                <p>Không tìm thấy thông tin SIM.</p>
-            }
+            <div class="card shadow-sm p-3">
+                <h4 class="text-primary">Thông tin SIM</h4>
+                @if (sim != null)
+                {
+                    <p><strong>Số thuê bao:</strong> @sim.SoThueBao</p>
+                    <p><strong>Loại thuê bao:</strong> @(sim.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định")</p>
+                    <p><strong>Phí hòa mạng:</strong> @sim.PhiHoaMang VND</p>
+                    <p><strong>Khu vực:</strong> @sim.KhuVucHoaMang</p>
+                    <p><strong>Phí giữ SIM:</strong> <span class="text-success">Miễn phí</span></p>
+                }
+                else
+                {
+                    <p class="text-danger">Không tìm thấy thông tin SIM.</p>
+                }
+            </div>
         </div>
 
         <!-- Giỏ hàng -->
-        <div class="col-md-4 bg-light p-3">
-            <h4>Giỏ hàng</h4>
-            @if (currentItem != null)
-            {
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <p><strong>Số thuê bao:</strong> @currentItem.SoThueBao</p>
-                        <p><strong>Loại thuê bao:</strong> @currentItem.LoaiThueBao</p>
-                        <p><strong>Tên gói:</strong> @currentItem.TenGoi</p>
-                        <p><strong>Giá gói:</strong> @currentItem.GiaGoi VND</p>
-                    </li>
-                </ul>
-            }
-            else
-            {
-                <p>Giỏ hàng trống.</p>
-            }
+        <div class="col-md-4">
+            <div class="card bg-light shadow-sm p-4">
+                <h4>Giỏ hàng</h4>
+                @if (currentItem != null)
+                {
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <p><strong>Số thuê bao:</strong> @currentItem.SoThueBao</p>
+                            <p><strong>Loại thuê bao:</strong> @currentItem.LoaiThueBao</p>
+                            <p><strong>Tên gói:</strong> @currentItem.TenGoi</p>
+                            <p><strong>Giá gói:</strong> @currentItem.GiaGoi VND</p>
+                        </li>
+                    </ul>
+                }
+                else
+                {
+                    <p class="text-muted">Giỏ hàng trống.</p>
+                }
+            </div>
         </div>
     </div>
 
     <!-- Chọn gói đăng ký -->
-    <h4 class="mt-4">Chọn gói đăng ký</h4>
+    <h4 class="mt-4 text-primary">Gói cước đi kèm</h4>
+    <p>Chọn một trong các gói cước theo nhu cầu sử dụng của bạn</p>
+
     <form asp-action="ChonMua" method="get" id="formChonGoi">
         <input type="hidden" name="id" value="@sim?.Idsim" />
         <div class="row">
@@ -77,17 +81,25 @@
             {
                 foreach (var goi in goiCuoc)
                 {
-                    <div class="col-md-6 mb-3">
-                        <div class="card shadow-sm @(maGoiDaChon == goi.IdgoiDangKy.ToString() ? "border-primary" : "")">
+                    <div class="col-md-4">
+                        <div class="card border border-primary shadow-sm p-3 @(maGoiDaChon == goi.IdgoiDangKy.ToString() ? "border-primary" : "")">
                             <div class="card-body">
-                                <h5 class="card-title">@goi.TenGoi - @goi.GiaGoi VND / @goi.ThoiHan ngày</h5>
-                                <p class="card-text">@Html.Raw(goi.ThongTinGoi)</p>
-                                <input type="radio" name="maGoi" value="@goi.IdgoiDangKy"
-                                       id="goi-@goi.IdgoiDangKy"
-                                       class="form-check-input"
-                                @(maGoiDaChon == goi.IdgoiDangKy.ToString() ? "checked" : "")
-                                       onchange="document.getElementById('formChonGoi').submit()" />
-                                <label class="form-check-label" for="goi-@goi.IdgoiDangKy">Chọn gói này</label>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h5 class="fw-bold mb-0">@goi.TenGoi</h5>
+                                    <input type="radio" name="maGoi" value="@goi.IdgoiDangKy"
+                                           id="goi-@goi.IdgoiDangKy" class="form-check-input"
+                                    @(maGoiDaChon == goi.IdgoiDangKy.ToString() ? "checked" : "")
+                                           onchange="document.getElementById('formChonGoi').submit()" />
+                                </div>
+                                <p class="text-muted">Chu kỳ sử dụng @goi.ThoiHan ngày</p>
+                                <h4 class="fw-bold">@goi.GiaGoi?.ToString("N0")đ / tháng</h4>
+                                <ul class="list-unstyled small text-success short-info" id="short-info-@goi.IdgoiDangKy">
+                                    @Html.Raw(string.Join("", goi.ThongTinGoi.Split("<br>").Take(3)))
+                                </ul>
+                                <ul class="list-unstyled small text-success full-info d-none" id="full-info-@goi.IdgoiDangKy">
+                                    @Html.Raw(goi.ThongTinGoi)
+                                </ul>
+                                <button type="button" class="btn btn-link p-0" onclick="toggleInfo('@goi.IdgoiDangKy')">Xem thêm</button>
                             </div>
                         </div>
                     </div>
@@ -101,29 +113,77 @@
     </form>
 
     <!-- Nút điều hướng -->
-    <a asp-action="QuayLai" class="btn btn-secondary mt-3">Quay lại</a>
-    <a asp-action="DangKy"
-       asp-route-idSim="@currentItem?.Idsim"
-       asp-route-idGoiDangKy="@currentItem?.IdgoiDangKy"
-       class="btn btn-primary mt-3"
-       onclick="return @(currentItem != null ? "true" : "alert('Giỏ hàng trống! Vui lòng chọn gói đăng ký!'); false");">
-        Tiếp tục
-    </a>
-</div>
+    <div class="row mt-4">
+        <div class="col-12 d-flex justify-content-center gap-3">
+            <a asp-action="dichvusim" class="btn btn-secondary px-4">Quay lại</a>
+            <a asp-action="DangKy"
+               asp-route-idSim="@currentItem?.Idsim"
+               asp-route-idGoiDangKy="@currentItem?.IdgoiDangKy"
+               class="btn btn-primary px-4"
+               onclick="return @(currentItem != null ? "true" : "alert('Giỏ hàng trống! Vui lòng chọn gói đăng ký!'); false");">
+                Tiếp tục
+            </a>
+        </div>
+    </div>
 
-<!-- Script đồng hồ đếm ngược -->
+</div>
 <script>
-    var timeLeft = 180;
-    var countdown = document.getElementById("countdown");
-    var timer = setInterval(function () {
-        var minutes = Math.floor(timeLeft / 60);
-        var seconds = timeLeft % 60;
-        countdown.textContent = minutes.toString().padStart(2, '0') + ":" + seconds.toString().padStart(2, '0');
-        timeLeft--;
-        if (timeLeft < 0) {
-            clearInterval(timer);
-            alert("Hết thời gian giữ SIM. Vui lòng chọn lại.");
-            window.location.href = '@Url.Action("QuayLai", "Sim", new { area = "Customer" })';
+    function toggleInfo(id) {
+        let shortInfo = document.getElementById(`short-info-${id}`);
+        let fullInfo = document.getElementById(`full-info-${id}`);
+        if (fullInfo.classList.contains('d-none')) {
+            fullInfo.classList.remove('d-none');
+            shortInfo.classList.add('d-none');
+        } else {
+            fullInfo.classList.add('d-none');
+            shortInfo.classList.remove('d-none');
         }
-    }, 1000);
+    }
 </script>
+<style>
+    .step-progress {
+        display: flex;
+        gap: 30px;
+        padding-bottom: 20px;
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+        .step .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .step.active .circle {
+            background: #007bff;
+            color: white;
+        }
+
+        .step::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 5px;
+            background: #e0e0e0;
+            top: 18px;
+            left: 50%;
+            transform: translateX(30px);
+        }
+
+        .step:last-child::after {
+            content: none;
+        }
+</style>

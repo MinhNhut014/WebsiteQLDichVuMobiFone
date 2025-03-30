@@ -8,6 +8,21 @@
 }
 
 <div class="container mt-5">
+    <!-- Breadcrumb chỉ dẫn -->
+    <div class="step-progress d-flex justify-content-center gap-4">
+        <div class="step completed">
+            <div class="circle">1</div>
+            <span>Chọn SIM</span>
+        </div>
+        <div class="step active">
+            <div class="circle">2</div>
+            <span>Đăng ký</span>
+        </div>
+        <div class="step">
+            <div class="circle">3</div>
+            <span>Hoàn tất</span>
+        </div>
+    </div>
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary">Đăng Ký SIM</h2>
         <p class="text-muted">Hoàn tất thông tin để đăng ký SIM và gói cước</p>
@@ -22,7 +37,7 @@
     {
         <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
     }
-
+    
     <div class="row g-4">
         <div class="col-md-6">
             <div class="card shadow-sm border-0 rounded-4">
@@ -79,8 +94,11 @@
                                 <option value="momo">MoMo</option>
                             </select>
                         </div>
+                        <div class="d-flex justify-content-end gap-3 mt-4">
+                            <a href="javascript:history.back()" class="btn btn-secondary px-4 py-2">Quay lại</a>
+                            <button type="submit" class="btn btn-success px-4 py-2">Tiếp tục</button>
+                        </div>
 
-                        <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
                     </form>
                 </div>
             </div>
@@ -157,4 +175,64 @@
         document.getElementById("inputTongTien").value = tongTien;
     });
 </script>
+<style>
+    .step-progress {
+        display: flex;
+        gap: 30px;
+        padding-bottom: 20px;
+        position: relative;
+    }
 
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+        .step .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #6c757d;
+            z-index: 2;
+        }
+
+        .step.active .circle {
+            background: #007bff;
+            color: white;
+        }
+
+        .step::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 5px;
+            background: #e0e0e0;
+            top: 18px;
+            left: 50%;
+            transform: translateX(30px);
+            z-index: 1;
+        }
+
+        .step.completed .circle {
+            background: #007bff;
+            color: white;
+        }
+        /* Làm sáng thanh khi bước trước đó active */
+        .step.completed::after {
+            background: #007bff;
+        }
+
+        /* Bỏ đường nối cuối cùng */
+        .step:last-child::after {
+            content: none;
+        }
+
+</style>
