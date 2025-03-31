@@ -30,7 +30,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.UserName = tenDangNhap;
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
-        public IActionResult dichvusim(string filters, string search)
+        public IActionResult Index(string filters, string search)
         {
             GetData();
             var sims = _context.Sims
@@ -70,7 +70,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             if (sim == null)
             {
                 TempData["Error"] = "SIM không tồn tại!";
-                return RedirectToAction("dichvusim");
+                return RedirectToAction("Index");
             }
 
             // Lấy danh sách gói cước mặc định
@@ -83,7 +83,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             if (goiCuoc == null || goiCuoc.Count == 0)
             {
                 TempData["Error"] = "Không có gói cước khả dụng!";
-                return RedirectToAction("dichvusim");
+                return RedirectToAction("Index");
             }
 
             ViewBag.GoiDangKy = goiCuoc;

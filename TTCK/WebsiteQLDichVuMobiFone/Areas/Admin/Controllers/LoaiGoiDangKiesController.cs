@@ -90,6 +90,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdloaiGoi,TenLoaiGoi,IdloaiDichVu")] LoaiGoiDangKy loaiGoiDangKy)
         {
+            if (await _context.LoaiGoiDangKies.AnyAsync(g => g.TenLoaiGoi == loaiGoiDangKy.TenLoaiGoi))
+            {
+                ModelState.AddModelError("TenLoaiGoi", "Tên loại gói đăng ký này đã có rồi, vui lòng nhập tên khác.");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(loaiGoiDangKy);

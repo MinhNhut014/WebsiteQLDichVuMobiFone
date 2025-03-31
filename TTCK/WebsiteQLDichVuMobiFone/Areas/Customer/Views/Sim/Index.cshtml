@@ -19,7 +19,7 @@
 
             <!-- Tìm kiếm theo số thuê bao -->
             <div class="mb-4">
-                <form asp-action="dichvusim" method="get">
+                <form asp-action="Index" method="get">
                     <label for="search" class="form-label">Tìm kiếm số thuê bao:</label>
                     <input type="text" name="search" class="form-control" placeholder="Nhập số thuê bao..." value="@ViewBag.Search" />
                 </form>
@@ -32,7 +32,7 @@
                     @foreach (var dauSo in ViewBag.DauSos as List<string>)
                     {
                         bool isSelected = ViewBag.SelectedFilters.Contains(dauSo);
-                        <a asp-action="dichvusim" asp-route-filters="@((isSelected ? string.Join(",", (ViewBag.SelectedFilters as List<string>).Where(f => f != dauSo)) : string.Join(",", ViewBag.SelectedFilters) + "," + dauSo))"
+                        <a asp-action="Index" asp-route-filters="@((isSelected ? string.Join(",", (ViewBag.SelectedFilters as List<string>).Where(f => f != dauSo)) : string.Join(",", ViewBag.SelectedFilters) + "," + dauSo))"
                            class="btn @(isSelected ? "btn-success" : "btn-outline-success") mb-2">
                             @dauSo
                         </a>
@@ -47,7 +47,7 @@
                     @foreach (var loai in ViewBag.LoaiThueBaos as List<string>)
                     {
                         bool isSelected = ViewBag.SelectedFilters.Contains(loai);
-                        <a asp-action="dichvusim" asp-route-filters="@((isSelected ? string.Join(",", (ViewBag.SelectedFilters as List<string>).Where(f => f != loai)) : string.Join(",", ViewBag.SelectedFilters) + "," + loai))"
+                        <a asp-action="Index" asp-route-filters="@((isSelected ? string.Join(",", (ViewBag.SelectedFilters as List<string>).Where(f => f != loai)) : string.Join(",", ViewBag.SelectedFilters) + "," + loai))"
                            class="btn @(isSelected ? "btn-info" : "btn-outline-info") mb-2">
                             @loai
                         </a>

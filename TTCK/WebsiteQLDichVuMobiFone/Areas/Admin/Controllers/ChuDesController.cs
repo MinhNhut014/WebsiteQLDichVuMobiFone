@@ -58,6 +58,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdchuDe,TenChuDe")] ChuDe chuDe)
         {
+            if (await _context.ChuDes.AnyAsync(g => g.TenChuDe == chuDe.TenChuDe))
+            {
+                ModelState.AddModelError("TenChuDe", "Tên chủ đề này đã có rồi, vui lòng nhập tên khác.");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(chuDe);

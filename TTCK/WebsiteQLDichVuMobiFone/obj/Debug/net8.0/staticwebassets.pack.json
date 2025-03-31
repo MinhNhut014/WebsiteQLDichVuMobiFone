@@ -669,6 +669,14 @@
       "PackagePath": "staticwebassets\\img\\customer\\about-3.jpg"
     },
     {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner1.png",
+      "PackagePath": "staticwebassets\\img\\customer\\banner1.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner_sim.png",
+      "PackagePath": "staticwebassets\\img\\customer\\banner_sim.png"
+    },
+    {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\bg-breadcrumb.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\bg-breadcrumb.jpg"
     },
@@ -695,6 +703,22 @@
     {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\contact-img.png",
       "PackagePath": "staticwebassets\\img\\customer\\contact-img.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_di_dong.png",
+      "PackagePath": "staticwebassets\\img\\customer\\dichvu_di_dong.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_doanh_nghiep.png",
+      "PackagePath": "staticwebassets\\img\\customer\\dichvu_doanh_nghiep.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_khac.png",
+      "PackagePath": "staticwebassets\\img\\customer\\dichvu_khac.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_sim.png",
+      "PackagePath": "staticwebassets\\img\\customer\\dichvu_sim.png"
     },
     {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-1.jpg",

@@ -52,48 +52,45 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [HttpPost]
         public async Task<IActionResult> DangNhap(string tenDangNhapHoacEmail, string matKhau)
         {
-            ViewBag.ErrorMessage = TempData["Error"]; // Chuyển TempData sang ViewBag để dùng 1 lần
+            // Không sử dụng TempData mà chuyển thẳng lỗi vào ViewBag
+            ViewBag.ErrorMessage = null;
 
             var nguoiDung = await _context.NguoiDungs
                 .FirstOrDefaultAsync(m => m.TenDangNhap == tenDangNhapHoacEmail || m.Email == tenDangNhapHoacEmail);
 
-            if (nguoiDung != null)
+            if (nguoiDung == null)
             {
-                if (nguoiDung.Trangthai != 1)
-                {
-                    TempData["Error"] = "Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.";
-                    return RedirectToAction("DangNhap");
-                }
-
-                if (nguoiDung.Quyen != 1)
-                {
-                    TempData["Error"] = "Bạn không có quyền truy cập vào hệ thống.";
-                    return RedirectToAction("DangNhap");
-                }
-
-                if (_passwordHasher.VerifyHashedPassword(nguoiDung, nguoiDung.MatKhau, matKhau) == PasswordVerificationResult.Success)
-                {
-                    // Xóa session cũ trước khi đăng nhập
-                    HttpContext.Session.Clear();
-
-                    // Lưu thông tin vào session
-                    HttpContext.Session.SetString("nguoidung", nguoiDung.TenDangNhap);
-                    HttpContext.Session.SetString("UserId", nguoiDung.IdnguoiDung.ToString());
-                    HttpContext.Session.SetString("UserAvatar", string.IsNullOrEmpty(nguoiDung.AnhDaiDien) ? "https://via.placeholder.com/150" : nguoiDung.AnhDaiDien);
-
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    TempData["Error"] = "Mật khẩu không chính xác.";
-                    return RedirectToAction("DangNhap");
-                }
+                ViewBag.ErrorMessage = "Tên đăng nhập hoặc email không tồn tại.";
+                return View();
             }
-            else
+
+            if (nguoiDung.Trangthai != 1)
             {
-                TempData["Error"] = "Tên đăng nhập hoặc email không tồn tại.";
-                return RedirectToAction("DangNhap");
+                ViewBag.ErrorMessage = "Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.";
+                return View();
             }
+
+            if (nguoiDung.Quyen != 1)
+            {
+                ViewBag.ErrorMessage = "Bạn không có quyền truy cập vào hệ thống.";
+                return View();
+            }
+
+            if (_passwordHasher.VerifyHashedPassword(nguoiDung, nguoiDung.MatKhau, matKhau) != PasswordVerificationResult.Success)
+            {
+                ViewBag.ErrorMessage = "Mật khẩu không chính xác.";
+                return View();
+            }
+
+            // Xóa session cũ trước khi đăng nhập
+            HttpContext.Session.Clear();
+
+            // Lưu thông tin vào session
+            HttpContext.Session.SetString("nguoidung", nguoiDung.TenDangNhap);
+            HttpContext.Session.SetString("UserId", nguoiDung.IdnguoiDung.ToString());
+            HttpContext.Session.SetString("UserAvatar", string.IsNullOrEmpty(nguoiDung.AnhDaiDien) ? "https://via.placeholder.com/150" : nguoiDung.AnhDaiDien);
+
+            return RedirectToAction("Index", "Home");
         }
 
         public IActionResult DangXuat()

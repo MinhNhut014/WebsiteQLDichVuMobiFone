@@ -6,11 +6,19 @@
     <div class="col-lg-6 col-md-8 col-sm-10">
         <div class="card shadow-sm rounded-4 p-4">
             <h3 class="text-center text-dark mb-4">ĐĂNG NHẬP</h3>
+            @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+            {
+                <div class="alert alert-danger">
+                    @ViewBag.ErrorMessage
+                </div>
+            }
 
             <form method="post" asp-action="DangNhap">
+                <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control border-dark" id="email" name="tenDangNhapHoacEmail" placeholder="Nhập email của bạn" required>
+                    <input type="text" class="form-control border-dark" id="email" name="tenDangNhapHoacEmail" placeholder="Nhập email của bạn" required>
                 </div>
 
                 <div class="mb-3">
@@ -22,6 +30,7 @@
                     <button type="submit" class="btn btn-dark">Đăng nhập</button>
                 </div>
             </form>
+
 
             <div class="text-center mt-3">
                 <span class="text-muted">Chưa có tài khoản? </span>

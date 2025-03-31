@@ -63,6 +63,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdnhomDichVu,TenNhom")] NhomDichVuDoanhNghiep nhomDichVuDoanhNghiep)
         {
+            if (await _context.NhomDichVuDoanhNghieps.AnyAsync(g => g.TenNhom == nhomDichVuDoanhNghiep.TenNhom))
+            {
+                ModelState.AddModelError("TenNhom", "Tên dịch vụ này đã có rồi, vui lòng nhập tên khác.");
+            }
             nhomDichVuDoanhNghiep.IddichVu = 3; // Gán tự động ID Dịch Vụ = 3
 
             if (ModelState.IsValid)

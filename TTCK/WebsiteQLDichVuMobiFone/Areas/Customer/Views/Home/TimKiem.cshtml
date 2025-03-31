@@ -1,0 +1,122 @@
+﻿@{
+    ViewData["Title"] = "TimKiem";
+}
+
+<h3 class="text-primary">Danh sách kết quả tìm kiếm</h3>
+
+<!-- Gói đăng ký -->
+<div class="container mt-3">
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+        @foreach (var goi in ViewBag.GoiDangKy)
+        {
+            <div class="col">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <a asp-controller="DichVuDiDong" asp-action="ChiTietDichVu" asp-route-id="@goi.IdgoiDangKy">
+                        <div class="card-header bg-primary text-white text-center fw-bold">
+                            @goi.TenGoi
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <p class="mb-2">
+                            <i class="fas fa-wallet me-1"></i>
+                            Giá: <strong>@goi.GiaGoi đ / @goi.ThoiHan Ngày</strong>
+                        </p>
+                        <p class="mb-3">
+                            <i class="fas fa-phone-alt me-1"></i>
+                            Tính năng: <strong>@goi.TinhNang</strong>
+                        </p>
+                        <div class="d-grid">
+                            <a asp-controller="DichVuDiDong" asp-action="DangKyDichVu" asp-route-id="@goi.IdgoiDangKy" class="btn btn-primary w-100">
+                                <i class="fas fa-check-circle me-1"></i> Đăng ký
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Sản phẩm dịch vụ khác -->
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+        @foreach (var sanPham in ViewBag.SanPhamDichVu)
+        {
+            <div class="col">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <img src="~/img/dichvu/dichvukhac/@sanPham.HinhAnh" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;" alt="@sanPham.TenSanPham">
+                    <a asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@sanPham.IdsanPham">
+                        <div class="card-header bg-primary text-white text-center fw-bold text-truncate">
+                            @sanPham.TenSanPham
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <p class="text-truncate" style="overflow: hidden; -webkit-line-clamp: 4; display: -webkit-box; -webkit-box-orient: vertical;" title="@sanPham.MoTa">
+                            @sanPham.MoTa
+                        </p>
+                        <div class="d-grid">
+                            <a asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@sanPham.IdsanPham" class="btn btn-primary w-100">
+                                <i class="fas fa-check-circle me-1"></i> Xem Chi Tiết
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Gói dịch vụ -->
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+        @foreach (var goi in ViewBag.GoiDichVu)
+        {
+            <div class="col">
+                <div class="card border-0 shadow-sm rounded-3">
+                    <img src="~/img/dichvu/doanhnghiep/@goi.HinhAnh" class="card-img-top img-fluid" style="height: 150px; object-fit: cover;" alt="@goi.TenGoiDv">
+                    <a asp-controller="DoanhNghiep" asp-action="ChiTietDichVu" asp-route-id="@goi.IdgoiDichVu">
+                        <div class="card-header bg-primary text-white text-center fw-bold text-truncate">
+                            @goi.TenGoiDv
+                        </div>
+                    </a>
+                    <div class="card-body">
+                        <p class="text-truncate" style="overflow: hidden; -webkit-line-clamp: 4; display: -webkit-box; -webkit-box-orient: vertical;" title="@goi.MoTa">
+                            @goi.MoTa
+                        </p>
+                        <div class="d-grid">
+                            <a asp-controller="DoanhNghiep" asp-action="DangKyDichVu" asp-route-id="@goi.IdgoiDichVu" class="btn btn-primary w-100">
+                                <i class="fas fa-check-circle me-1"></i> Đăng ký
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<!-- Tin tức -->
+<div class="container mt-4">
+    <div class="row row-cols-1 row-cols-md-4 g-3">
+        @foreach (var tin in ViewBag.TinTuc)
+        {
+            <div class="col">
+                <div class="card h-100 shadow-sm border-0 rounded-3">
+                    <img src="~/img/tintuc/@tin.AnhDaiDien" class="card-img-top" alt="Ảnh đại diện" style="height: 120px; object-fit: cover;">
+                    <div class="card-body d-flex flex-column">
+                        <h6 class="card-title text-primary text-truncate" style="font-size: 0.9rem; font-weight: bold;">
+                            @tin.TieuDe
+                        </h6>
+                        <p class="card-text text-muted mb-1" style="font-size: 0.85rem;">
+                            📅 @tin.NgayDang?.ToString("dd/MM/yyyy") - 👀 @tin.LuotXem lượt xem
+                        </p>
+                        <p class="text-info mb-1" style="font-size: 0.85rem;">Chủ đề: @tin.IdTheLoaiNavigation?.TenChuDe</p>
+                        <a asp-controller="TinTucs" asp-action="ChiTiet" asp-route-id="@tin.IdTinTuc" class="btn btn-sm btn-primary mt-auto">
+                            Đọc tiếp →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

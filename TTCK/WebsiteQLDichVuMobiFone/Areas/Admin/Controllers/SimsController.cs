@@ -122,6 +122,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim")] Sim sim)
         {
+            if (await _context.Sims.AnyAsync(g => g.SoThueBao == sim.SoThueBao))
+            {
+                ModelState.AddModelError("SoThueBao", "Số Thuê Bao này đã có rồi, vui lòng nhập tên khác.");
+            }
             sim.IddichVu = 2;
             if (ModelState.IsValid)
             {

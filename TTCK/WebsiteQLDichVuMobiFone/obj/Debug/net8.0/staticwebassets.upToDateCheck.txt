@@ -164,6 +164,8 @@ wwwroot\img\categories\04.webp
 wwwroot\img\customer\about-1.png
 wwwroot\img\customer\about-2.png
 wwwroot\img\customer\about-3.jpg
+wwwroot\img\customer\banner_sim.png
+wwwroot\img\customer\banner1.png
 wwwroot\img\customer\bg-breadcrumb.jpg
 wwwroot\img\customer\blog-1.png
 wwwroot\img\customer\blog-2.png
@@ -171,6 +173,10 @@ wwwroot\img\customer\blog-3.png
 wwwroot\img\customer\blog-4.png
 wwwroot\img\customer\carousel-2.png
 wwwroot\img\customer\contact-img.png
+wwwroot\img\customer\dichvu_di_dong.png
+wwwroot\img\customer\dichvu_doanh_nghiep.png
+wwwroot\img\customer\dichvu_khac.png
+wwwroot\img\customer\dichvu_sim.png
 wwwroot\img\customer\instagram-footer-1.jpg
 wwwroot\img\customer\instagram-footer-2.jpg
 wwwroot\img\customer\instagram-footer-3.jpg

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "RFWGbCrCQ983SRy+zDyBp0k57c0306AmubYP5Z/m2Co=",
+  "Hash": "CYOX2oDUkNxcISZPchzSrgMqi4m/mWoduD6A4V8wYYE=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -3545,6 +3545,48 @@
       "OriginalItemSpec": "wwwroot\\img\\customer\\about-3.jpg"
     },
     {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner_sim.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/customer/banner_sim#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mqazmefs4z",
+      "Integrity": "4iBdhJaeY2z9m2doxvDhKB7Q7/bstBJH9VjmuzZsSQM=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\customer\\banner_sim.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner1.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/customer/banner1#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "zkn4q0lee6",
+      "Integrity": "Y3qnm9IIHko3qkHOSuq+IdIDhCma3s31Ps3hkfcwkDc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\customer\\banner1.png"
+    },
+    {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\bg-breadcrumb.jpg",
       "SourceId": "WebsiteQLDichVuMobiFone",
       "SourceType": "Discovered",
@@ -3690,6 +3732,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\customer\\contact-img.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_di_dong.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/customer/dichvu_di_dong#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mol1w8i0v4",
+      "Integrity": "+ntndLrqtqnppyrQsqzeM/ODbL/GCt1c6fu7tPN1qGY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\customer\\dichvu_di_dong.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_doanh_nghiep.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/customer/dichvu_doanh_nghiep#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wv9oncpxl4",
+      "Integrity": "DD9yX0dFWxMjk9dHw/TMAtBGFLChbO95NfvM1WQV7VE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\customer\\dichvu_doanh_nghiep.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_khac.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/customer/dichvu_khac#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "brtjo5620z",
+      "Integrity": "mbbCX/zZTI/HkQMWwV37yGOy0mBLAFykQpBfmdCQgK8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\customer\\dichvu_khac.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_sim.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/customer/dichvu_sim#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "7b7bldoie6",
+      "Integrity": "w4Ic83/EPU9JIibLnpLMX7oAmvGnPyHGHoMA7h43XGw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\customer\\dichvu_sim.png"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\instagram-footer-1.jpg",
@@ -22514,6 +22640,170 @@
       ]
     },
     {
+      "Route": "img/customer/banner_sim.mqazmefs4z.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner_sim.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2322436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4iBdhJaeY2z9m2doxvDhKB7Q7/bstBJH9VjmuzZsSQM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:35:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mqazmefs4z"
+        },
+        {
+          "Name": "label",
+          "Value": "img/customer/banner_sim.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4iBdhJaeY2z9m2doxvDhKB7Q7/bstBJH9VjmuzZsSQM="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/banner_sim.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner_sim.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2322436"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4iBdhJaeY2z9m2doxvDhKB7Q7/bstBJH9VjmuzZsSQM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 15:35:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4iBdhJaeY2z9m2doxvDhKB7Q7/bstBJH9VjmuzZsSQM="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/banner1.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2208795"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y3qnm9IIHko3qkHOSuq+IdIDhCma3s31Ps3hkfcwkDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:26:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y3qnm9IIHko3qkHOSuq+IdIDhCma3s31Ps3hkfcwkDc="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/banner1.zkn4q0lee6.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner1.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2208795"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Y3qnm9IIHko3qkHOSuq+IdIDhCma3s31Ps3hkfcwkDc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 14:26:09 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zkn4q0lee6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/customer/banner1.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Y3qnm9IIHko3qkHOSuq+IdIDhCma3s31Ps3hkfcwkDc="
+        }
+      ]
+    },
+    {
       "Route": "img/customer/bg-breadcrumb.bb26fodci3.jpg",
       "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\bg-breadcrumb.jpg",
       "Selectors": [],
@@ -23084,6 +23374,334 @@
         {
           "Name": "integrity",
           "Value": "sha256-bJ6F9qEszOsvpk84sLL9X1iwx/N6H+PzqfJ0I/u5DSY="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_di_dong.mol1w8i0v4.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_di_dong.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1533228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+ntndLrqtqnppyrQsqzeM/ODbL/GCt1c6fu7tPN1qGY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 10:17:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mol1w8i0v4"
+        },
+        {
+          "Name": "label",
+          "Value": "img/customer/dichvu_di_dong.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+ntndLrqtqnppyrQsqzeM/ODbL/GCt1c6fu7tPN1qGY="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_di_dong.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_di_dong.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1533228"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+ntndLrqtqnppyrQsqzeM/ODbL/GCt1c6fu7tPN1qGY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 10:17:40 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+ntndLrqtqnppyrQsqzeM/ODbL/GCt1c6fu7tPN1qGY="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_doanh_nghiep.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_doanh_nghiep.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1621275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DD9yX0dFWxMjk9dHw/TMAtBGFLChbO95NfvM1WQV7VE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 11:25:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DD9yX0dFWxMjk9dHw/TMAtBGFLChbO95NfvM1WQV7VE="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_doanh_nghiep.wv9oncpxl4.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_doanh_nghiep.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1621275"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DD9yX0dFWxMjk9dHw/TMAtBGFLChbO95NfvM1WQV7VE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 11:25:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wv9oncpxl4"
+        },
+        {
+          "Name": "label",
+          "Value": "img/customer/dichvu_doanh_nghiep.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DD9yX0dFWxMjk9dHw/TMAtBGFLChbO95NfvM1WQV7VE="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_khac.brtjo5620z.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_khac.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2474757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mbbCX/zZTI/HkQMWwV37yGOy0mBLAFykQpBfmdCQgK8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 11:30:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "brtjo5620z"
+        },
+        {
+          "Name": "label",
+          "Value": "img/customer/dichvu_khac.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mbbCX/zZTI/HkQMWwV37yGOy0mBLAFykQpBfmdCQgK8="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_khac.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_khac.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2474757"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mbbCX/zZTI/HkQMWwV37yGOy0mBLAFykQpBfmdCQgK8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 11:30:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mbbCX/zZTI/HkQMWwV37yGOy0mBLAFykQpBfmdCQgK8="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_sim.7b7bldoie6.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_sim.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1481028"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4Ic83/EPU9JIibLnpLMX7oAmvGnPyHGHoMA7h43XGw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 10:38:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7b7bldoie6"
+        },
+        {
+          "Name": "label",
+          "Value": "img/customer/dichvu_sim.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-w4Ic83/EPU9JIibLnpLMX7oAmvGnPyHGHoMA7h43XGw="
+        }
+      ]
+    },
+    {
+      "Route": "img/customer/dichvu_sim.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\dichvu_sim.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1481028"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"w4Ic83/EPU9JIibLnpLMX7oAmvGnPyHGHoMA7h43XGw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 10:38:58 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-w4Ic83/EPU9JIibLnpLMX7oAmvGnPyHGHoMA7h43XGw="
         }
       ]
     },

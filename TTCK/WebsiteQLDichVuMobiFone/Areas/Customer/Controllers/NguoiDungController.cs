@@ -42,28 +42,27 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
 
-        public IActionResult DangNhap()
+        public IActionResult DangNhap(string returnUrl = null)
         {
             GetData();
+            ViewBag.ReturnUrl = returnUrl; // Lưu URL trước đó để chuyển hướng sau đăng nhập
             return View();
         }
+
         [HttpPost]
-        public async Task<IActionResult> DangNhap(string tenDangNhapHoacEmail, string matKhau)
+        public async Task<IActionResult> DangNhap(string tenDangNhapHoacEmail, string matKhau, string returnUrl = null)
         {
             var nguoiDung = await _context.NguoiDungs
-            .FirstOrDefaultAsync(m => m.TenDangNhap == tenDangNhapHoacEmail || m.Email == tenDangNhapHoacEmail);
+                .FirstOrDefaultAsync(m => m.TenDangNhap == tenDangNhapHoacEmail || m.Email == tenDangNhapHoacEmail);
 
             if (nguoiDung != null)
             {
-                // Kiểm tra trạng thái tài khoản
                 if (nguoiDung.Trangthai != 1)
                 {
-                    TempData["Error"] = "Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.";
+                    ViewBag.ErrorMessage = "Tài khoản của bạn đã bị khóa hoặc chưa được kích hoạt.";
                     return View();
                 }
 
-
-                // Kiểm tra mật khẩu
                 if (_passwordHasher.VerifyHashedPassword(nguoiDung, nguoiDung.MatKhau, matKhau) == PasswordVerificationResult.Success)
                 {
                     // Lưu thông tin vào session
@@ -71,22 +70,27 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     HttpContext.Session.SetString("UserId", nguoiDung.IdnguoiDung.ToString());
                     HttpContext.Session.SetString("UserAvatar", string.IsNullOrEmpty(nguoiDung.AnhDaiDien) ? "https://via.placeholder.com/150" : nguoiDung.AnhDaiDien);
 
-                    // Chuyển hướng người dùng đến trang chính
-                    return RedirectToAction("Index", "Home", new { area = "Customer" });
+                    // Kiểm tra returnUrl và điều hướng về trang trước đó nếu có
+                    if (!string.IsNullOrEmpty(returnUrl) && Url.IsLocalUrl(returnUrl))
+                    {
+                        return Redirect(returnUrl);
+                    }
+
+                    return RedirectToAction("Index", "Home");
                 }
                 else
                 {
-                    TempData["Error"] = "Mật khẩu không chính xác.";
+                    ViewBag.ErrorMessage = "Mật khẩu không chính xác.";
                 }
             }
             else
             {
-                TempData["Error"] = "Tên đăng nhập hoặc email không tồn tại.";
+                ViewBag.ErrorMessage = "Tên đăng nhập hoặc email không tồn tại.";
             }
 
             return View();
-
         }
+
         // Logout
         public IActionResult DangXuat()
         {

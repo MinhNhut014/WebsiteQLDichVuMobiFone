@@ -260,10 +260,10 @@ VALUES
 ---Dữ liệu dịch vụ của mobifone
 INSERT INTO DichVu (TenDichVu, MoTa, AnhDichVu)  
 VALUES  
-(N'Dịch vụ di động', N'Cung cấp các gói cước, gói data cho thuê bao di động', 'dichvu_di_dong.png'),  
-(N'SIM', N'Cung cấp các loại SIM trả trước và trả sau', 'dichvu_sim.png'),  
-(N'Dịch vụ doanh nghiệp', N'Cung cấp giải pháp viễn thông và công nghệ cho doanh nghiệp', 'dichvu_doanh_nghiep.png'),  
-(N'Dịch vụ khác', N'Bao gồm các dịch vụ như giáo dục, giải trí, tài chính, internet an toàn', 'dichvu_khac.png');
+(N'Dịch vụ di động', N'Hỗ trợ đăng ký các gói cước thoại, SMS và gói data tốc độ cao, giúp khách hàng sử dụng dịch vụ di động tiện lợi với chi phí tối ưu.', 'dichvu_di_dong.png'),  
+(N'SIM', N'Cung cấp SIM trả trước và SIM trả sau với nhiều ưu đãi hấp dẫn. Khách hàng có thể chọn số đẹp, đăng ký nhanh chóng và kích hoạt dễ dàng ngay trên hệ thống.', 'dichvu_sim.png'),  
+(N'Dịch vụ doanh nghiệp', N'Cung cấp các giải pháp viễn thông và công nghệ thông tin chuyên biệt cho doanh nghiệp, bao gồm tổng đài, dịch vụ số và hạ tầng mạng.', 'dichvu_doanh_nghiep.png'),  
+(N'Dịch vụ khác', N'Hệ sinh thái đa dạng gồm dịch vụ giáo dục, giải trí, truyền hình và du lịch, mang đến nhiều tiện ích giúp cuộc sống thêm phong phú.', 'dichvu_khac.png');
 
 ---- Thông tin dịch vụ sim của mobifone
 ---Dữ liệu trong các bảng dịch vụ mobifone

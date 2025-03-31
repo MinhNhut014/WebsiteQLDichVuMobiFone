@@ -1,4 +1,19 @@
-﻿<!-- Carousel Start -->
+﻿@{
+    var danhSachTinTuc = ViewBag.DanhSachTinTuc as List<TinTuc>;
+    var danhSachDichVu = ViewBag.DanhSachDichVu as List<DichVu>;
+    var iconDichVu = ViewBag.IconDichVu as Dictionary<string, string>;
+    var controllerDichVu = new Dictionary<string, string>
+    {
+        { "SIM", "Sim" },
+        { "Dịch vụ di động", "DichVuDiDong" },
+        { "Dịch vụ doanh nghiệp", "DoanhNghiep" },
+        { "Dịch vụ khác", "DichVuKhac" }
+    };
+    ViewBag.RouteDichVu = controllerDichVu;
+}
+
+
+<!-- Carousel Start -->
 <div class="header-carousel owl-carousel">
     <!-- Banner 1: Dịch vụ Di động -->
     <div class="header-carousel-item bg-primary">
@@ -115,88 +130,80 @@
 
 <!-- Carousel End -->
 <!-- Feature Start -->
+<!-- Phần 1: Hành Trình Phát Triển & Cam Kết Chất Lượng -->
 <div class="container-fluid feature bg-light py-5">
     <div class="container py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
-            <h4 class="text-primary">Tính Năng Nổi Bật </h4>
-            <h1 class="display-4 mb-4">Quản Lý Dịch Vụ MobiFone Hiệu Quả & Tiện Ích</h1>
+            <h4 class="text-primary">Giới Thiệu Về <span class="fw-bold">MobiFone</span></h4>
+            <h1 class="display-4 mb-4">Hành Trình Phát Triển & Cam Kết Chất Lượng</h1>
             <p class="mb-0">
-                Hệ thống giúp quản lý dịch vụ di động, SIM, doanh nghiệp và các dịch vụ khác của MobiFone một cách dễ dàng.
-                Người dùng có thể tra cứu gói cước, đăng ký dịch vụ, quản lý hóa đơn và thanh toán trực tuyến nhanh chóng,
-                mang lại trải nghiệm tiện lợi và hiệu quả cho khách hàng.
+                <strong>MobiFone</strong> là một trong những nhà mạng viễn thông hàng đầu Việt Nam, không ngừng đổi mới để mang lại dịch vụ chất lượng cao nhất.
+                Chúng tôi cam kết cung cấp giải pháp viễn thông toàn diện, đáp ứng mọi nhu cầu của khách hàng với tiêu chuẩn quốc tế.
             </p>
         </div>
         <div class="row g-4">
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.2s">
                 <div class="feature-item p-4 pt-0">
                     <div class="feature-icon p-4 mb-4">
-                        <i class="far fa-handshake fa-3x"></i>
+                        <i class="fa fa-history fa-3x"></i>
                     </div>
-                    <h4 class="mb-4">Công Ty Uy Tín</h4>
-                    <p class="mb-4">
-                        Mobifone là nhà mạng hàng đầu với hơn 20 năm kinh nghiệm trong lĩnh vực viễn thông, cam kết mang đến dịch vụ tốt nhất cho khách hàng...
-                    </p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    <h4 class="mb-4">Lịch Sử Hình Thành</h4>
+                    <p>MobiFone là mạng di động đầu tiên tại Việt Nam, thành lập từ năm 1993. Với hơn 30 năm phát triển, chúng tôi không ngừng...</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" asp-action="LichSu">Xem Chi Tiết</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.4s">
                 <div class="feature-item p-4 pt-0">
                     <div class="feature-icon p-4 mb-4">
-                        <i class="fa fa-dollar-sign fa-3x"></i>
+                        <i class="fa fa-eye fa-3x"></i>
                     </div>
-                    <h4 class="mb-4">Hoàn Tiền Mọi Lúc</h4>
-                    <p class="mb-4">
-                        Với các chương trình khuyến mãi linh hoạt, Mobifone đảm bảo quyền lợi khách hàng, cho phép hoàn tiền và thay đổi gói cước linh động...
-                    </p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    <h4 class="mb-4">Tầm Nhìn & Sứ Mệnh</h4>
+                    <p>MobiFone hướng tới trở thành doanh nghiệp viễn thông hàng đầu, mang đến dịch vụ chất lượng và sáng tạo.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" asp-action="TamNhin">Xem Chi Tiết</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.6s">
                 <div class="feature-item p-4 pt-0">
                     <div class="feature-icon p-4 mb-4">
-                        <i class="fa fa-bullseye fa-3x"></i>
+                        <i class="fa fa-handshake fa-3x"></i>
                     </div>
-                    <h4 class="mb-4">Gói Cước Linh Hoạt</h4>
-                    <p class="mb-4">
-                        Người dùng có thể lựa chọn các gói cước phù hợp với nhu cầu sử dụng, từ data không giới hạn đến các gói combo tiện ích...
-                    </p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    <h4 class="mb-4">Cam Kết Khách Hàng</h4>
+                    <p>Chúng tôi luôn đặt khách hàng là trung tâm, cam kết mang đến dịch vụ chăm sóc tận tâm và các chính sách ưu đãi hấp dẫn.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" asp-action="CamKet">Xem Chi Tiết</a>
                 </div>
             </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-md-6 col-lg-3 wow fadeInUp" data-wow-delay="0.8s">
                 <div class="feature-item p-4 pt-0">
                     <div class="feature-icon p-4 mb-4">
-                        <i class="fa fa-headphones fa-3x"></i>
+                        <i class="fa fa-check-circle fa-3x"></i>
                     </div>
-                    <h4 class="mb-4">Hỗ Trợ 24/7</h4>
-                    <p class="mb-4">
-                        Mobifone hỗ trợ khách hàng liên tục với đội ngũ chuyên viên tư vấn giàu kinh nghiệm, sẵn sàng giúp đỡ mọi lúc, mọi nơi...
-                    </p>
-                    <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Learn More</a>
+                    <h4 class="mb-4">Quản Lý Chất Lượng</h4>
+                    <p>Chúng tôi áp dụng hệ thống quản lý chất lượng tiên tiến để đảm bảo dịch vụ ổn định và trải nghiệm tốt nhất cho khách hàng.</p>
+                    <a class="btn btn-primary rounded-pill py-2 px-4" asp-action="QuanLy">Xem Chi Tiết</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<!-- Feature End -->
-<!-- About Start -->
+
+<!-- Phần 2: Thành Tựu & Dịch Vụ -->
 <div class="container-fluid bg-light about pb-5">
     <div class="container pb-5">
         <div class="row g-5">
             <div class="col-xl-6 wow fadeInLeft" data-wow-delay="0.2s">
-                <div class="about-item-content bg-white rounded p-5 h-100">
-                    <h4 class="text-primary">Giới Thiệu Về MobiFone</h4>
+                <div class="about-item-content bg-white rounded p-5 h-100 shadow">
+                    <h4 class="text-primary">Dịch Vụ & Thành Tựu</h4>
                     <h1 class="display-4 mb-4">Dịch Vụ Quản Lý Hiệu Quả</h1>
-                    <p>MobiFone không ngừng sáng tạo, đổi mới, kiến tạo hệ sinh thái số mạnh mẽ và hoàn chỉnh, nâng tầm cuộc sống của người Việt và góp phần đưa Việt Nam trở thành quốc gia số.</p>
-                    <p>Chúng tôi cung cấp các dịch vụ hiện đại, tối ưu với đội ngũ nhân sự chất lượng cao trên toàn quốc.</p>
+                    <p>MobiFone không ngừng sáng tạo, kiến tạo hệ sinh thái số mạnh mẽ và góp phần đưa Việt Nam trở thành quốc gia số.</p>
+                    <p>Chúng tôi cung cấp các dịch vụ hiện đại với đội ngũ nhân sự chất lượng cao trên toàn quốc.</p>
                     <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Hệ sinh thái số mạnh mẽ.</p>
                     <p class="text-dark"><i class="fa fa-check text-primary me-3"></i>Dịch vụ khách hàng chuyên nghiệp.</p>
                     <p class="text-dark mb-4"><i class="fa fa-check text-primary me-3"></i>Đội ngũ kỹ thuật viên giàu kinh nghiệm.</p>
-                    <a class="btn btn-primary rounded-pill py-3 px-5" href="#">Tìm Hiểu Thêm</a>
+                    <a class="btn btn-primary rounded-pill py-3 px-5" asp-action="GioiThieu">Tìm Hiểu Thêm</a>
                 </div>
             </div>
             <div class="col-xl-6 wow fadeInRight" data-wow-delay="0.2s">
-                <div class="bg-white rounded p-5 h-100">
+                <div class="bg-white rounded p-5 h-100 shadow">
                     <div class="row g-4 justify-content-center">
                         <div class="col-12">
                             <div class="rounded bg-light">
@@ -205,38 +212,14 @@
                         </div>
                         <div class="col-sm-6">
                             <div class="counter-item bg-light rounded p-3 h-100">
-                                <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold">12.000</span>
-                                    <span class="h1 fw-bold text-primary">+</span>
-                                </div>
+                                <span class="text-primary fs-2 fw-bold">12.000+</span>
                                 <h4 class="mb-0 text-dark">Nhân sự toàn quốc</h4>
                             </div>
                         </div>
                         <div class="col-sm-6">
                             <div class="counter-item bg-light rounded p-3 h-100">
-                                <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold">100.000</span>
-                                    <span class="h1 fw-bold text-primary">+</span>
-                                </div>
+                                <span class="text-primary fs-2 fw-bold">100.000+</span>
                                 <h4 class="mb-0 text-dark">Khách hàng doanh nghiệp</h4>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="counter-item bg-light rounded p-3 h-100">
-                                <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold">63</span>
-                                    <span class="h1 fw-bold text-primary">+</span>
-                                </div>
-                                <h4 class="mb-0 text-dark">Chi nhánh toàn quốc</h4>
-                            </div>
-                        </div>
-                        <div class="col-sm-6">
-                            <div class="counter-item bg-light rounded p-3 h-100">
-                                <div class="counter-counting">
-                                    <span class="text-primary fs-2 fw-bold">100</span>
-                                    <span class="h1 fw-bold text-primary">+</span>
-                                </div>
-                                <h4 class="mb-0 text-dark">Chứng chỉ chuyên gia cấp cao</h4>
                             </div>
                         </div>
                     </div>
@@ -248,6 +231,8 @@
 
 <!-- About End -->
 <!-- Service Start -->
+
+
 <div class="container-fluid service py-5">
     <div class="container py-5">
         <div class="text-center mx-auto pb-5 wow fadeInUp" data-wow-delay="0.2s" style="max-width: 800px;">
@@ -260,80 +245,40 @@
             </p>
         </div>
         <div class="row g-4 justify-content-center">
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="~/img/customer/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                        <div class="service-icon p-3">
-                            <i class="fa fa-users fa-2x"></i>
+            @foreach (var dichVu in danhSachDichVu)
+            {
+                // Lấy đường dẫn dựa vào dịch vụ
+                var route = ViewBag.RouteDichVu.ContainsKey(dichVu.TenDichVu)
+                ? ViewBag.RouteDichVu[dichVu.TenDichVu]
+                : "Home/Index"; // Mặc định về trang chủ nếu không có route
+                <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="service-item">
+                        <div class="service-img">
+                            <img src="~/img/customer/@(dichVu.AnhDichVu ?? "default.png")" class="img-fluid rounded-top w-100" style="height: 150px; object-fit: cover;" alt="@dichVu.TenDichVu">
+                            <div class="service-icon p-3">
+                                <i class="fa @(iconDichVu != null && iconDichVu.ContainsKey(dichVu.TenDichVu) ? iconDichVu[dichVu.TenDichVu] : "fa-cogs") fa-2x"></i>
+
+                            </div>
                         </div>
-                    </div>
-                    <div class="service-content p-4">
-                        <div class="service-content-inner">
-                            <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Sim</a>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.4s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="~/img/customer/blog-2.png" class="img-fluid rounded-top w-100" alt="">
-                        <div class="service-icon p-3">
-                            <i class="fa fa-hospital fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="service-content p-4">
-                        <div class="service-content-inner">
-                            <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Di Động</a>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
+                        <div class="service-content p-4">
+                            <div class="service-content-inner">
+                                <a href="#" class="d-inline-block h4 mb-4">@dichVu.TenDichVu</a>
+                                <p class="mb-4 text-truncate d-inline-block text-wrap" style="max-width: 100%; height: 6em; overflow: hidden;">
+                                    @dichVu.MoTa
+                                </p>
+                                <a class="btn btn-primary rounded-pill py-2 px-4"
+                                   href="@Url.Action("Index", controllerDichVu.ContainsKey(dichVu.TenDichVu) ? controllerDichVu[dichVu.TenDichVu] : "Home")">
+                                    Xem chi tiết
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.6s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="~/img/customer/blog-3.png" class="img-fluid rounded-top w-100" alt="">
-                        <div class="service-icon p-3">
-                            <i class="fa fa-car fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="service-content p-4">
-                        <div class="service-content-inner">
-                            <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Doanh Nghiệp</a>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 col-lg-6 col-xl-3 wow fadeInUp" data-wow-delay="0.8s">
-                <div class="service-item">
-                    <div class="service-img">
-                        <img src="~/img/customer/blog-4.png" class="img-fluid rounded-top w-100" alt="">
-                        <div class="service-icon p-3">
-                            <i class="fa fa-home fa-2x"></i>
-                        </div>
-                    </div>
-                    <div class="service-content p-4">
-                        <div class="service-content-inner">
-                            <a href="#" class="d-inline-block h4 mb-4">Dịch Vụ Khác</a>
-                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, eum!</p>
-                            <a class="btn btn-primary rounded-pill py-2 px-4" href="#">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
-                <a class="btn btn-primary rounded-pill py-3 px-5" href="#">More Services</a>
-            </div>
+            }
         </div>
     </div>
 </div>
+
 <!-- Service End -->
 <!-- FAQs Start -->
 <div class="container-fluid faq-section bg-light py-5">
@@ -405,81 +350,31 @@
             <button class="mobifone-btn-prev" onclick="mobifonePrevSlide()">&#10094;</button>
             <div class="mobifone-news-slider-wrapper overflow-hidden row g-4 justify-content-center">
                 <div class="mobifone-news-slider d-flex row g-4 justify-content-center" id="newsSlider">
-                    <div class="mobifone-news-item col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="~/img/customer/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Kinh Doanh</span>
+                    @foreach (var tin in danhSachTinTuc)
+                    {
+                        <div class="col-md-3 col-sm-6 mb-4">
+                            <div class="card h-100 shadow-sm border-0 rounded-3" style="transition: transform 0.3s, box-shadow 0.3s;">
+                                <img src="~/img/tintuc/@tin.AnhDaiDien" class="card-img-top" alt="Ảnh đại diện" style="height: 150px; object-fit: cover;">
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-title text-primary" style="font-size: 0.95rem; font-weight: bold; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+                                        @tin.TieuDe
+                                    </h6>
+                                    <p class="card-text text-muted mb-1" style="font-size: 0.85rem;">
+                                        📅 @tin.NgayDang?.ToString("dd/MM/yyyy") - 👀 @tin.LuotXem lượt xem
+                                    </p>
+                                    <p class="text-info mb-1" style="font-size: 0.85rem;">Chủ đề: @tin.IdTheLoaiNavigation?.TenChuDe</p>
+
+                                    <a asp-controller="TinTucs" asp-action="ChiTiet" asp-route-id="@tin.IdTinTuc" class="btn btn-sm btn-primary mt-auto">
+                                        Đọc tiếp →
+                                    </a>
                                 </div>
                             </div>
-                            <div class="blog-content p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">MobiFone chuyển mình mạnh mẽ để định vị tương lai</a>
-                                <p class="mb-3">MobiFone không ngừng đổi mới với các giải pháp công nghệ hiện đại...</p>
-                                <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/mobifone-chuyen-minh-manh-me-de-dinh-vi-tuong-lai-15583" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
-                            </div>
                         </div>
-                    </div>
-                    <div class="mobifone-news-item col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="~/img/customer/blog-2.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Công Nghệ</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">DATA NGẬP TRÀN - RỘN RÀNG ƯU ĐÃI</a>
-                                <p class="mb-3">Khởi động ngày mới đầy hứng khởi, chọn ngay gói CLVIP trên ClipTV để...</p>
-                                <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mobifone-news-item col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="~/img/customer/blog-3.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Khuyến Mãi</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">HỌC TIẾNG ANH ĐỈNH CÙNG MOBIENGLISH</a>
-                                <p class="mb-3">Chào đón mùa xuân rực rỡ, tận hưởng ngay ưu đãi cực đỉnh...</p>
-                                <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mobifone-news-item col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="~/img/customer/blog-1.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Công Nghệ</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">Giải pháp hiện thực hóa ước mơ sử dụng AI hiệu quả</a>
-                                <p class="mb-3">MobiFone mang đến các giải pháp ứng dụng trí tuệ nhân tạo (AI)...</p>
-                                <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="mobifone-news-item col-lg-4">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <img src="~/img/customer/blog-4.png" class="img-fluid rounded-top w-100" alt="">
-                                <div class="blog-categiry py-2 px-4">
-                                    <span>Gói Cước</span>
-                                </div>
-                            </div>
-                            <div class="blog-content p-4">
-                                <a href="#" class="h4 d-inline-block mb-3">MobiFone ra mắt gói cước siêu hời dành cho game thủ</a>
-                                <p class="mb-3">Đáp ứng nhu cầu chơi game trực tuyến của khách hàng, MobiFone...</p>
-                                <a href="https://www.mobifone.vn/tin-tuc/chi-tiet/giai-phap-hien-thuc-hoa-uoc-mo-su-dung-ai-hieu-qua-va-tiet-kiem-15582" class="btn p-0">Xem Thêm <i class="fa fa-arrow-right"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    }
+                    
+                </div>
+                <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.2s">
+                    <a class="btn btn-primary rounded-pill py-3 px-5" asp-controller="TinTucs" asp-action="Index">Xem Nhiều Hơn</a>
                 </div>
             </div>
             <button class="mobifone-btn-next" onclick="mobifoneNextSlide()">&#10095;</button>

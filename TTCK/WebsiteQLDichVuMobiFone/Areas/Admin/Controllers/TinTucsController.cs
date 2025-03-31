@@ -127,6 +127,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(IFormFile AnhDaiDien, [Bind("IdTinTuc,TieuDe,NoiDung,AnhDaiDien,NgayDang,LuotXem,IdTheLoai")] TinTuc tinTuc)
         {
+            if (await _context.TinTucs.AnyAsync(g => g.TieuDe == tinTuc.TieuDe))
+            {
+                ModelState.AddModelError("TieuDe", "Tiêu Đề tin tức này đã có rồi, vui lòng nhập tên khác.");
+            }
             if (ModelState.IsValid)
             {
                 tinTuc.AnhDaiDien = Upload(AnhDaiDien);

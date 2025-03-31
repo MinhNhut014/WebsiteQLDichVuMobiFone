@@ -19,9 +19,13 @@
         <!-- Sidebar Danh mục -->
         <div class="col-md-4">
             <aside class="bg-white p-4 rounded-3 shadow-sm">
-                <input type="text" name="searchTerm" value="@ViewBag.SearchTerm"
-                       class="form-control mb-3" placeholder="🔎 Tìm kiếm..."
-                       oninput="this.form.submit()" />
+                <form method="get" asp-action="Index" onsubmit="return submitSearch()">
+                    <div class="d-flex mb-3">
+                        <input type="text" id="searchTerm" name="searchTerm" value="@ViewBag.SearchTerm"
+                               class="form-control" placeholder="🔎 Tìm kiếm..." />
+                        <button type="submit" class="btn btn-primary ms-2" style="display: none;">Tìm</button>
+                    </div>
+                </form>
 
                 <h4 class="mb-3 text-primary fw-bold">Loại dịch vụ khác</h4>
                 <ul class="list-unstyled">
@@ -75,8 +79,8 @@
                             <div class="card-body">
                                 <p class="text-truncate-3" title="@sanPham.MoTa">@sanPham.MoTa</p>
                                 <div class="d-grid">
-                                    <button class="btn btn-primary w-100">
-                                        <i class="fas fa-check-circle me-1"></i> Đăng ký
+                                    <button asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@sanPham.IdsanPham" class="btn btn-primary w-100">
+                                        <i class="fas fa-check-circle me-1"></i> Xem Chi Tiết
                                     </button>
                                 </div>
                             </div>

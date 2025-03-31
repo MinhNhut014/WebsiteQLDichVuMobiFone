@@ -5,6 +5,17 @@
 }
 
 <div class="container mt-5">
+    <!-- Breadcrumb chỉ dẫn -->
+    <div class="step-progress d-flex justify-content-center gap-4">
+        <div class="step active">
+            <div class="circle">1</div>
+            <span>Đăng Ký</span>
+        </div>
+        <div class="step">
+            <div class="circle">2</div>
+            <span>Hoàn tất</span>
+        </div>
+    </div>
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary">Đăng Ký Dịch Vụ</h2>
         <p class="text-muted">Hoàn tất thông tin để đăng ký dịch vụ</p>
@@ -92,3 +103,50 @@
         </div>
     </div>
 </div>
+<style>
+    .step-progress {
+        display: flex;
+        gap: 30px;
+        padding-bottom: 20px;
+    }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+        .step .circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 18px;
+            color: #6c757d;
+        }
+
+        .step.active .circle {
+            background: #007bff;
+            color: white;
+        }
+
+        .step::after {
+            content: "";
+            position: absolute;
+            width: 60px;
+            height: 5px;
+            background: #e0e0e0;
+            top: 18px;
+            left: 50%;
+            transform: translateX(30px);
+        }
+
+        .step:last-child::after {
+            content: none;
+        }
+</style>

@@ -57,7 +57,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdloaiSo,TenLoaiSo")] LoaiSo loaiSo)
         {
-            
+            if (await _context.LoaiSos.AnyAsync(g => g.TenLoaiSo == loaiSo.TenLoaiSo))
+            {
+                ModelState.AddModelError("TenLoaiSo", "Thể loại sim này đã có rồi, vui lòng nhập tên khác.");
+            }
             if (ModelState.IsValid)
             {
                 _context.Add(loaiSo);

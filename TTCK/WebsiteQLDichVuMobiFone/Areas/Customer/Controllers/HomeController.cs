@@ -36,6 +36,80 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         public IActionResult Index()
         {
             GetData();
+            var danhSachDichVu = _context.DichVus.ToList();
+            // Dictionary ánh xạ tên dịch vụ với icon
+            var iconDichVu = new Dictionary<string, string>
+            {
+                { "SIM", "fa-sim-card" }, // Icon thẻ SIM
+                { "Dịch vụ di động", "fa-mobile-alt" }, // Icon điện thoại di động
+                { "Dịch vụ doanh nghiệp", "fa-briefcase" }, // Icon cặp tài liệu (liên quan đến doanh nghiệp)
+                { "Dịch vụ khác", "fa-cogs" } // Icon bánh răng (biểu thị các dịch vụ khác)
+            };
+            
+            ViewBag.DanhSachDichVu = danhSachDichVu;
+            ViewBag.IconDichVu = iconDichVu;
+            ViewBag.DanhSachTinTuc = _context.TinTucs.ToList();
+            return View();
+        }
+        public async Task<IActionResult> KetQuaTimKiem(string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return View("TimKiem");
+            }
+
+            ViewBag.GoiDangKys = await _context.GoiDangKies
+                .Where(g => g.TenGoi.Contains(keyword))
+                .ToListAsync();
+
+            ViewBag.SanPhamDichVuKhacs = await _context.SanPhamDichVuKhacs
+                .Where(sp => sp.TenSanPham.Contains(keyword))
+                .ToListAsync();
+
+            ViewBag.GoiDichVus = await _context.GoiDichVus
+                .Where(gd => gd.TenGoiDv.Contains(keyword))
+                .ToListAsync();
+
+            ViewBag.TinTucs = await _context.TinTucs
+                .Where(tt => tt.TieuDe.Contains(keyword))
+                .ToListAsync();
+
+            return View("TimKiem");
+        }
+
+        public IActionResult TimKiem(string searchTerm)
+        {
+            if (string.IsNullOrEmpty(searchTerm))
+            {
+                return View();
+            }
+
+            // Tìm kiếm gói đăng ký
+            var goiDangKyResults = _context.GoiDangKies
+                .Where(g => g.TenGoi.Contains(searchTerm))
+                .ToList();
+
+            // Tìm kiếm sản phẩm dịch vụ khác
+            var sanPhamDichVuResults = _context.SanPhamDichVuKhacs
+                .Where(s => s.TenSanPham.Contains(searchTerm))
+                .ToList();
+
+            // Tìm kiếm gói dịch vụ
+            var goiDichVuResults = _context.GoiDichVus
+                .Where(g => g.TenGoiDv.Contains(searchTerm))
+                .ToList();
+
+            // Tìm kiếm tin tức
+            var tinTucResults = _context.TinTucs
+                .Where(t => t.TieuDe.Contains(searchTerm) || t.NoiDung.Contains(searchTerm))
+                .ToList();
+
+            // Chuyển dữ liệu vào ViewBag
+            ViewBag.GoiDangKy = goiDangKyResults;
+            ViewBag.SanPhamDichVu = sanPhamDichVuResults;
+            ViewBag.GoiDichVu = goiDichVuResults;
+            ViewBag.TinTuc = tinTucResults;
+
             return View();
         }
         public IActionResult LienHe()

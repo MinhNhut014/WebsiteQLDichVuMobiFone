@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\DuLieuoD\\TTCK\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\sim\\dichvusim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\sim\\dichvusim.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\home\\timkiem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\home\\timkiem.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\sim\\chonmua.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\sim\\chonmua.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\doanhnghiep\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\doanhnghiep\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\dichvukhac\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\dichvukhac\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\tintucs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\tintucs\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\dichvudidong\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\dichvudidong\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|c:\\dulieuod\\ttck\\websiteqldichvumobifone\\areas\\customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{EF431D1B-AB16-442E-ACB0-157D50011656}|WebsiteQLDichVuMobiFone\\WebsiteQLDichVuMobiFone.csproj|solutionrelative:websiteqldichvumobifone\\areas\\customer\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,32 +38,97 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "dichvusim.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\dichvusim.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\dichvusim.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\dichvusim.cshtml",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\dichvusim.cshtml",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 6,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAPgAAAAAAAAAAAAuwAIBAABQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T14:32:56.917Z",
+              "WhenOpened": "2025-03-31T15:54:42.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TimKiem.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\TimKiem.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\TimKiem.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\TimKiem.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Home\\TimKiem.cshtml",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAGIAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-31T15:52:48.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\TinTucs\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\TinTucs\\Index.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\TinTucs\\Index.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\TinTucs\\Index.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAuwEIAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-31T15:47:12.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ChonMua.cshtml",
-              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\ChonMua.cshtml",
-              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\ChonMua.cshtml",
-              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\ChonMua.cshtml",
-              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\Sim\\ChonMua.cshtml",
-              "ViewState": "AgIAAIUAAAAAAAAAAAAAAIoAAAAxAAAAAAAAAA==",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\Index.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\Index.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DoanhNghiep\\Index.cshtml",
+              "ViewState": "AgIAAEgAAAAAAAAAAAAqwF0AAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-03-30T10:52:54.45Z",
+              "WhenOpened": "2025-03-31T15:46:42.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\Index.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\Index.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuKhac\\Index.cshtml",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAEEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-31T15:46:12.307Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\Index.cshtml",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\Index.cshtml",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\Index.cshtml",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Views\\DichVuDiDong\\Index.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAAAGMAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-03-31T15:45:34.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "WebsiteQLDichVuMobiFone\\Areas\\Customer\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAFsAAAAAAAAAAAAAAG4AAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-31T09:55:08.802Z",
               "EditorCaption": ""
             }
           ]

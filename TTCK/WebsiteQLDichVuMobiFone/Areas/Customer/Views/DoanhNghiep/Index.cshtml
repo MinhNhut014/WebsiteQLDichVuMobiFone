@@ -20,11 +20,11 @@
         <!-- Phần Sidebar -->
         <div class="col-md-4">
             <aside class="bg-white p-4 rounded-3 shadow-sm">
-                <input type="text" name="searchTerm" value="@ViewBag.SearchTerm"
-                       class="form-control mb-3"
-                       placeholder="🔎 Tìm kiếm..."
-                       oninput="this.form.submit()" />
-
+                <form method="get" class="d-flex mb-3">
+                    <input type="text" name="searchTerm" value="@ViewBag.SearchTerm"
+                           class="form-control mb-3"
+                           placeholder="🔎 Tìm kiếm..." />
+                </form>
                 <h4 class="mb-3 text-primary fw-bold">Danh mục sản phẩm</h4>
                 <ul class="list-unstyled">
                     @foreach (var danhMuc in Model)

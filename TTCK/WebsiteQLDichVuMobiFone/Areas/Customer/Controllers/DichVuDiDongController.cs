@@ -45,7 +45,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             var goiDangKy = _context.GoiDangKies.AsQueryable();
 
             // Tìm kiếm theo từ khóa
-            if (!string.IsNullOrEmpty(searchTerm))
+            if (!string.IsNullOrWhiteSpace(searchTerm))
             {
                 goiDangKy = goiDangKy.Where(g => g.TenGoi.Contains(searchTerm));
             }

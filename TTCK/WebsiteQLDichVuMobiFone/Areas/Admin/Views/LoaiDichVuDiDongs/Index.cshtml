@@ -33,15 +33,32 @@
                         <a asp-action="Details" asp-route-id="@item.IdloaiDichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm mx-1">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <form asp-action="Delete" method="post" class="d-inline" onsubmit="return confirm('Bạn có chắc muốn xóa không?')">
-                            <input type="hidden" name="id" value="@item.IdloaiDichVu" />
-                            <button type="submit" class="btn btn-danger btn-sm rounded-circle shadow-sm mx-1">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IddichVu, '@item.TenLoaiDichVu')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
                     </td>
                 </tr>
             }
         </tbody>
     </table>
 </div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, tenLoaiDichVu) {
+        Swal.fire({
+            title: "Bạn có chắc chắn?",
+            text: "Bạn có chắc chắn muốn xóa '" + tenLoaiDichVu + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/LoaiDichVuDiDongs/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>
