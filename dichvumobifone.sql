@@ -143,8 +143,7 @@ CREATE TABLE HoaDonDichVu (
     IDTrangThai INT NOT NULL FOREIGN KEY REFERENCES TrangThaiDonHang(IDTrangThai),
 	TenKhachHang NVARCHAR(255) NOT NULL,
     SoDienThoai NVARCHAR(11) NOT NULL,
-    Email NVARCHAR(100),
-    DiaChi NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(100)
 );
 
 -- Chi Tiết Hóa Đơn Dịch Vụ
@@ -190,22 +189,19 @@ CREATE TABLE HoaDonDoanhNghiep (
     IDHoaDonDN INT IDENTITY(1,1) PRIMARY KEY,
     IDNguoiDung INT NOT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
     NgayDatHang DATETIME DEFAULT GETDATE(),
-    TongTien INT DEFAULT 0,
-    IDTrangThai INT NOT NULL FOREIGN KEY REFERENCES TrangThaiDonHang(IDTrangThai),
+	IDTrangThai INT NOT NULL FOREIGN KEY REFERENCES TrangThaiDonHang(IDTrangThai),
     TenCongTy NVARCHAR(255) NOT NULL,
     SoDienThoaiCongTy NVARCHAR(11) NOT NULL,
     EmailCongTy NVARCHAR(100),
     DiaChiCongTy NVARCHAR(255) NOT NULL
+    
 );
 
 -- Chi Tiết Hóa Đơn Dịch Vụ Doanh Nghiệp
 CREATE TABLE CTHoaDonDoanhNghiep (
     IDCTHoaDonDN INT IDENTITY(1,1) PRIMARY KEY,
     IDHoaDonDN INT NOT NULL FOREIGN KEY REFERENCES HoaDonDoanhNghiep(IDHoaDonDN) ON DELETE CASCADE,
-    IDGoiDichVu INT NOT NULL FOREIGN KEY REFERENCES GoiDichVu(IDGoiDichVu),
-    DonGia INT DEFAULT 0,
-    SoLuong SMALLINT DEFAULT 1,
-    ThanhTien INT 
+    IDGoiDichVu INT NOT NULL FOREIGN KEY REFERENCES GoiDichVu(IDGoiDichVu)
 );
 
 --Bổ sung thêm bảng chức năng tin tức và bình luận bài viết 
@@ -245,6 +241,8 @@ select * from PhuongThucVanChuyen;
 select *from TrangThaiSim;
 select *from HoaDonSim;
 select *from NguoiDung;
+DELETE FROM NguoiDung;
+
 ---Dữ liệu bảng giao hàng tiết kiệm
 INSERT INTO PhuongThucVanChuyen (TenVanChuyen, MoTa, GiaVanChuyen)
 VALUES 

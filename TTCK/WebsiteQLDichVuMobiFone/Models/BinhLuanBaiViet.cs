@@ -13,13 +13,13 @@ public partial class BinhLuanBaiViet
     [Column("IDBinhLuan")]
     public int IdbinhLuan { get; set; }
 
-    public int IdTinTuc { get; set; }
+    public int? IdTinTuc { get; set; }
 
     [StringLength(100)]
-    public string HoTen { get; set; } = null!;
+    public string? HoTen { get; set; } = null!;
 
     [StringLength(1000)]
-    public string NoiDung { get; set; } = null!;
+    public string? NoiDung { get; set; } = null!;
 
     [Column(TypeName = "datetime")]
     public DateTime? NgayBinhLuan { get; set; }
@@ -29,7 +29,7 @@ public partial class BinhLuanBaiViet
 
     [ForeignKey("IdTinTuc")]
     [InverseProperty("BinhLuanBaiViets")]
-    public virtual TinTuc IdTinTucNavigation { get; set; } = null!;
+    public virtual TinTuc? IdTinTucNavigation { get; set; } = null!;
 
     [ForeignKey("NguoiDungId")]
     [InverseProperty("BinhLuanBaiViets")]

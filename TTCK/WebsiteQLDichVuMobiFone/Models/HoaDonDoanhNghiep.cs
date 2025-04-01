@@ -19,22 +19,20 @@ public partial class HoaDonDoanhNghiep
     [Column(TypeName = "datetime")]
     public DateTime? NgayDatHang { get; set; }
 
-    public int? TongTien { get; set; }
-
     [Column("IDTrangThai")]
     public int IdtrangThai { get; set; }
 
     [StringLength(255)]
-    public string? TenCongTy { get; set; } = null!;
+    public string TenCongTy { get; set; } = null!;
 
     [StringLength(11)]
-    public string? SoDienThoaiCongTy { get; set; } = null!;
+    public string SoDienThoaiCongTy { get; set; } = null!;
 
     [StringLength(100)]
     public string? EmailCongTy { get; set; }
 
     [StringLength(255)]
-    public string? DiaChiCongTy { get; set; } = null!;
+    public string DiaChiCongTy { get; set; } = null!;
 
     [InverseProperty("IdhoaDonDnNavigation")]
     public virtual ICollection<CthoaDonDoanhNghiep> CthoaDonDoanhNghieps { get; set; } = new List<CthoaDonDoanhNghiep>();

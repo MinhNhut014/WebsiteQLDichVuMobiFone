@@ -157,11 +157,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 hoaDon.IdtrangThai = 1; // Trạng thái "Chờ xử lý"
                 hoaDon.TongTien = goiDangKy.GiaGoi;
 
-                // Gán giá trị mặc định cho DiaChi nếu NULL
-                if (string.IsNullOrEmpty(hoaDon.DiaChi))
-                {
-                    hoaDon.DiaChi = "Không có";
-                }
 
                 // Bắt đầu transaction
                 using var transaction = await _context.Database.BeginTransactionAsync();

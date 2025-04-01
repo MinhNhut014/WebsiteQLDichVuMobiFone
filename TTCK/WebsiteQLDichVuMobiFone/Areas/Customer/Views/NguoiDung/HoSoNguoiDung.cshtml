@@ -194,7 +194,6 @@
                                 <tr>
                                     <th>Mã đơn hàng</th>
                                     <th>Ngày đặt</th>
-                                    <th>Tổng tiền</th>
                                     <th>Trạng thái</th>
                                     <th>Chi tiết</th>
                                 </tr>
@@ -205,7 +204,6 @@
                                     <tr>
                                         <td>@don.IdhoaDonDn</td>
                                         <td>@(don.NgayDatHang?.ToString("dd/MM/yyyy") ?? "N/A")</td>
-                                        <td>@don.TongTien đ</td>
                                         <td>@don.IdtrangThaiNavigation?.TenTrangThai</td>
                                         <td>
                                             <a asp-action="ChiTietHoaDonDoanhNghiep" asp-controller="NguoiDung" asp-route-id="@don.IdhoaDonDn"

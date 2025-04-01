@@ -51,32 +51,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.DanhSachTinTuc = _context.TinTucs.ToList();
             return View();
         }
-        public async Task<IActionResult> KetQuaTimKiem(string keyword)
-        {
-            if (string.IsNullOrWhiteSpace(keyword))
-            {
-                return View("TimKiem");
-            }
-
-            ViewBag.GoiDangKys = await _context.GoiDangKies
-                .Where(g => g.TenGoi.Contains(keyword))
-                .ToListAsync();
-
-            ViewBag.SanPhamDichVuKhacs = await _context.SanPhamDichVuKhacs
-                .Where(sp => sp.TenSanPham.Contains(keyword))
-                .ToListAsync();
-
-            ViewBag.GoiDichVus = await _context.GoiDichVus
-                .Where(gd => gd.TenGoiDv.Contains(keyword))
-                .ToListAsync();
-
-            ViewBag.TinTucs = await _context.TinTucs
-                .Where(tt => tt.TieuDe.Contains(keyword))
-                .ToListAsync();
-
-            return View("TimKiem");
-        }
-
         public IActionResult TimKiem(string searchTerm)
         {
             if (string.IsNullOrEmpty(searchTerm))

@@ -137,7 +137,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 hoaDon.IdnguoiDung = int.Parse(nguoiDungId);
                 hoaDon.NgayDatHang = DateTime.Now;
                 hoaDon.IdtrangThai = 1;
-                hoaDon.TongTien = 0;
 
                 using var transaction = await _context.Database.BeginTransactionAsync();
 
@@ -152,9 +151,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     {
                         IdhoaDonDn = hoaDon.IdhoaDonDn,
                         IdgoiDichVu = idGoiDangKy,
-                        DonGia = 0,
-                        SoLuong = 1,
-                        ThanhTien = 0,
                     };
                     _context.CthoaDonDoanhNghieps.Add(chiTietHoaDon);
                     await _context.SaveChangesAsync();

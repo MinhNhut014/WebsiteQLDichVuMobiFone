@@ -13,7 +13,7 @@ using WebsiteQLDichVuMobiFone.Models;
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    [AdminAuthorize]
+    //[AdminAuthorize]
     public class NguoiDungsController : Controller
     {
         private readonly ApplicationDbContext _context;

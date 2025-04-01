@@ -19,12 +19,6 @@ public partial class CthoaDonDoanhNghiep
     [Column("IDGoiDichVu")]
     public int IdgoiDichVu { get; set; }
 
-    public int? DonGia { get; set; }
-
-    public short? SoLuong { get; set; }
-
-    public int? ThanhTien { get; set; }
-
     [ForeignKey("IdgoiDichVu")]
     [InverseProperty("CthoaDonDoanhNghieps")]
     public virtual GoiDichVu? IdgoiDichVuNavigation { get; set; } = null!;

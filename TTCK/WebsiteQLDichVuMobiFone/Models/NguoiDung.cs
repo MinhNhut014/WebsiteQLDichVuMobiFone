@@ -2,16 +2,15 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("NguoiDung")]
-[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BD05D90289", IsUnique = true)]
-[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0FCB58BFA", IsUnique = true)]
-[Index("Cccd", Name = "UQ__NguoiDun__A955A0AA364AE806", IsUnique = true)]
-[Index("Email", Name = "UQ__NguoiDun__A9D10534904170A5", IsUnique = true)]
+[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BDEEFEDE95", IsUnique = true)]
+[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0A13DCB34", IsUnique = true)]
+[Index("Cccd", Name = "UQ__NguoiDun__A955A0AAA6E8E259", IsUnique = true)]
+[Index("Email", Name = "UQ__NguoiDun__A9D105342D594B35", IsUnique = true)]
 public partial class NguoiDung
 {
     [Key]

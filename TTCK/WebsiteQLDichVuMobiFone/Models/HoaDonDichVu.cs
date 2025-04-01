@@ -33,17 +33,14 @@ public partial class HoaDonDichVu
     [StringLength(100)]
     public string? Email { get; set; }
 
-    [StringLength(255)]
-    public string? DiaChi { get; set; } = null!;
-
     [InverseProperty("IdhoaDonDvNavigation")]
     public virtual ICollection<CthoaDonDichVu> CthoaDonDichVus { get; set; } = new List<CthoaDonDichVu>();
 
     [ForeignKey("IdnguoiDung")]
     [InverseProperty("HoaDonDichVus")]
-    public virtual NguoiDung IdnguoiDungNavigation { get; set; } = null!;
+    public virtual NguoiDung? IdnguoiDungNavigation { get; set; } = null!;
 
     [ForeignKey("IdtrangThai")]
     [InverseProperty("HoaDonDichVus")]
-    public virtual TrangThaiDonHang IdtrangThaiNavigation { get; set; } = null!;
+    public virtual TrangThaiDonHang? IdtrangThaiNavigation { get; set; } = null!;
 }

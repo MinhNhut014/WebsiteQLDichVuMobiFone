@@ -121,7 +121,9 @@
             extraPlugins: 'table',
             filebrowserUploadUrl: '/DichVu/Upload',
             filebrowserUploadMethod: 'form',
-            allowedContent: true
+            enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true,
+            extraAllowedContent: 'table tr th td tbody thead tfoot'
         });
 
         function showPreview() {

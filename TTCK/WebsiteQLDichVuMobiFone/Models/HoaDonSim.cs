@@ -14,7 +14,7 @@ public partial class HoaDonSim
     public int IdhoaDonSim { get; set; }
 
     [Column("IDNguoiDung")]
-    public int? IdnguoiDung { get; set; }
+    public int IdnguoiDung { get; set; }
 
     [Column(TypeName = "datetime")]
     public DateTime? NgayDatHang { get; set; }

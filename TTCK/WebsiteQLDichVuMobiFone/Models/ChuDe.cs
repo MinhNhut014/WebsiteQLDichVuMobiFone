@@ -14,7 +14,7 @@ public partial class ChuDe
     public int IdchuDe { get; set; }
 
     [StringLength(100)]
-    public string TenChuDe { get; set; } = null!;
+    public string? TenChuDe { get; set; } = null!;
 
     [InverseProperty("IdTheLoaiNavigation")]
     public virtual ICollection<TinTuc> TinTucs { get; set; } = new List<TinTuc>();

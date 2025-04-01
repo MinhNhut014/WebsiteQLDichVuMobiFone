@@ -121,7 +121,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdhoaDonDn,IdnguoiDung,NgayDatHang,TongTien,IdtrangThai,TenCongTy,SoDienThoaiCongTy,EmailCongTy,DiaChiCongTy")] HoaDonDoanhNghiep hoaDonDoanhNghiep)
+        public async Task<IActionResult> Create([Bind("IdhoaDonDn,IdnguoiDung,NgayDatHang,IdtrangThai,TenCongTy,SoDienThoaiCongTy,EmailCongTy,DiaChiCongTy")] HoaDonDoanhNghiep hoaDonDoanhNghiep)
         {
             if (ModelState.IsValid)
             {
@@ -157,7 +157,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdhoaDonDn,IdnguoiDung,NgayDatHang,TongTien,IdtrangThai,TenCongTy,SoDienThoaiCongTy,EmailCongTy,DiaChiCongTy")] HoaDonDoanhNghiep hoaDonDoanhNghiep)
+        public async Task<IActionResult> Edit(int id, [Bind("IdhoaDonDn,IdnguoiDung,NgayDatHang,IdtrangThai,TenCongTy,SoDienThoaiCongTy,EmailCongTy,DiaChiCongTy")] HoaDonDoanhNghiep hoaDonDoanhNghiep)
         {
             if (id != hoaDonDoanhNghiep.IdhoaDonDn)
             {
