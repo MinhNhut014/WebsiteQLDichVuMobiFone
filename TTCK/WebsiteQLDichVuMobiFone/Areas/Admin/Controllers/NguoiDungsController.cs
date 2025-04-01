@@ -13,7 +13,7 @@ using WebsiteQLDichVuMobiFone.Models;
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
-    //[AdminAuthorize]
+    [AdminAuthorize]
     public class NguoiDungsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -93,6 +93,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/NguoiDungs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            GetData();
             if (id == null)
             {
                 return NotFound();
@@ -111,6 +112,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/NguoiDungs/Create
         public IActionResult Create()
         {
+            GetData();
             return View();
         }
 
@@ -121,6 +123,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(IFormFile AnhDaiDien,[Bind("IdnguoiDung,AnhDaiDien,HoTen,Cccd,Email,SoDienThoai,DiaChi,TenDangNhap,MatKhau,Quyen,Trangthai")] NguoiDung nguoiDung)
         {
+            GetData();
             if (ModelState.IsValid)
             {
                 nguoiDung.AnhDaiDien = Upload(AnhDaiDien);
@@ -134,6 +137,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/NguoiDungs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            GetData();
             if (id == null)
             {
                 return NotFound();
@@ -154,6 +158,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(IFormFile? AnhDaiDien, int id, [Bind("IdnguoiDung,HoTen,Cccd,Email,SoDienThoai,DiaChi,TenDangNhap,MatKhau,Quyen,Trangthai")] NguoiDung nguoiDung)
         {
+            GetData();
             if (id != nguoiDung.IdnguoiDung)
             {
                 return NotFound();
@@ -201,6 +206,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [HttpGet]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
+            GetData();
             var nguoiDung = await _context.NguoiDungs.FindAsync(id);
             if (nguoiDung != null)
             {

@@ -15,7 +15,8 @@
     <link href="~/admin/css/style.css" rel="stylesheet" />
     <link href="~/admin/css/style.min.css" rel="stylesheet" />
     <a href="~/admin/css/style.min.css.map"></a>
-
+    <!-- Thêm Chart.js từ CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     
     <script src="https://cdn.ckeditor.com/4.20.2/full/ckeditor.js"></script>
@@ -74,7 +75,7 @@
                 <div class="sidebar-body">
                     <ul class="sidebar-body-menu">
                         <li>
-                            <a class="active" href="/"><span class="icon home" aria-hidden="true"></span>Bảng Điều Khiển</a>
+                            <a class="active" asp-controller="Home" asp-action="Index"><span class="icon home" aria-hidden="true"></span>Bảng Điều Khiển</a>
                         </li>
                         <li>
                             <a asp-controller="NguoiDungs" asp-action="Index"><span class="icon user-3" aria-hidden="true"></span>Quản Lý Người Dùng</a>

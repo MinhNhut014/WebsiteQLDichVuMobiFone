@@ -3510,6 +3510,114 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\customer\testimonial-3.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\03572577-549a-48c8-a788-a1e412bc52c0_Travellink.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/03572577-549a-48c8-a788-a1e412bc52c0_Travellink.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4uem16jhug</Fingerprint>
+      <Integrity>ZCIoo5uY1Eik68N4rANCGIM/PctZ+VeuLO7dx3Upx80=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\03572577-549a-48c8-a788-a1e412bc52c0_Travellink.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\1a4a3657-94a4-402d-9ee2-abb6883d5682_Spotifydata.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/1a4a3657-94a4-402d-9ee2-abb6883d5682_Spotifydata.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>rqfptt8t65</Fingerprint>
+      <Integrity>86wdy7mPJRJEIO862GPNQIWsHV7AW0FeWng7azfudeg=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\1a4a3657-94a4-402d-9ee2-abb6883d5682_Spotifydata.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\3052a7cc-f773-43fd-b8ce-ff1c6d2ba9dc_Mobistudy.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/3052a7cc-f773-43fd-b8ce-ff1c6d2ba9dc_Mobistudy.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>uurpy3txgt</Fingerprint>
+      <Integrity>ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\3052a7cc-f773-43fd-b8ce-ff1c6d2ba9dc_Mobistudy.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\339a76b1-5e9a-4732-a77b-5375df2a1b8f_CongThiDaiHocMobiEdu.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/339a76b1-5e9a-4732-a77b-5375df2a1b8f_CongThiDaiHocMobiEdu.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>xe316vg6xe</Fingerprint>
+      <Integrity>ielzj/BALTRsi5p0a3JT0rWAXq/UvQIrhfkh+zBXetE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\339a76b1-5e9a-4732-a77b-5375df2a1b8f_CongThiDaiHocMobiEdu.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\3be6b0eb-8ee5-46ee-9b2d-e47de7856e00_Tiktokdata.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/3be6b0eb-8ee5-46ee-9b2d-e47de7856e00_Tiktokdata.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>yccwiogbuv</Fingerprint>
+      <Integrity>boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\3be6b0eb-8ee5-46ee-9b2d-e47de7856e00_Tiktokdata.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>jp6drb8ua2</Fingerprint>
+      <Integrity>N2oIPrK/pHMKjB1COfadEPSE/wSEg4CNt1RakzmgnnI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\7ce3da83-49ed-4f87-8008-be4de9ec680e_MobiFoneMoney.png'))">
       <SourceType>Package</SourceType>
       <SourceId>WebsiteQLDichVuMobiFone</SourceId>
@@ -3581,6 +3689,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\b014284c-8940-4af0-ba6e-cb8d1b06155c_Spotifydata.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\b355317c-95aa-4403-ac76-a68d95a3ebb3_MobiFoneMoney.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/dichvukhac/b355317c-95aa-4403-ac76-a68d95a3ebb3_MobiFoneMoney.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>w3o7ra3ekl</Fingerprint>
+      <Integrity>NHe/QHVLJji1G/seo8Vwr87bnJQo6Bg1oGuP9vG+T4E=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\b355317c-95aa-4403-ac76-a68d95a3ebb3_MobiFoneMoney.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\c83f31c2-d5c4-424b-bdad-0497cc891e71_Tiktokdata.jpg'))">
       <SourceType>Package</SourceType>
@@ -3672,6 +3798,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\fc1c3a4e-1c2e-49e9-b039-c8bd8e00aef6_tintuc1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\00300005-86bc-4664-9098-eb67b9736988_MobiVideoSMS.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/00300005-86bc-4664-9098-eb67b9736988_MobiVideoSMS.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>ickaru4g8w</Fingerprint>
+      <Integrity>fgf9x76Gu5OBFlntobk63v6gWvDQaYPsH8IMeXtK9uw=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\00300005-86bc-4664-9098-eb67b9736988_MobiVideoSMS.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>WebsiteQLDichVuMobiFone</SourceId>
@@ -3689,6 +3833,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\10c634ac-963f-4343-820d-73dddff5b2cd_Tiktokdata.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\1630f426-574e-4eaa-8036-0c9293d10dbe_vt_gc_2.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/1630f426-574e-4eaa-8036-0c9293d10dbe_vt_gc_2.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>6z6xxg9gu5</Fingerprint>
+      <Integrity>bs3ygqu06RWPRoelFNaWaIsZ6ER917d5wOd0w4zwbik=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\1630f426-574e-4eaa-8036-0c9293d10dbe_vt_gc_2.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\20608e1a-c9e2-4e54-9a96-d5ddc51f5490_MobiFoneMeeting.png'))">
       <SourceType>Package</SourceType>
@@ -3744,6 +3906,42 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\44d0330a-8569-49c5-9bc5-aa9172f0feac_dichvu_EClass_1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\5f69e95c-51a8-4675-9fef-1e65604373c8_dichvu_EClass_1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/5f69e95c-51a8-4675-9fef-1e65604373c8_dichvu_EClass_1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>4h4sc4da2v</Fingerprint>
+      <Integrity>qHEitksTb9UBaxbJh50f34bveU1r3CQZ7I1NeVaGpkM=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\5f69e95c-51a8-4675-9fef-1e65604373c8_dichvu_EClass_1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\69fc9ea5-61dd-40a0-8fd2-8f5fb3385bc6_MobiFoneSIPTrunk.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/69fc9ea5-61dd-40a0-8fd2-8f5fb3385bc6_MobiFoneSIPTrunk.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>7v5ju7nsvi</Fingerprint>
+      <Integrity>jZG2aMQ8tI2WEGXhLVCYfHDBZrlP0kbQdngoLYGtZ0g=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\69fc9ea5-61dd-40a0-8fd2-8f5fb3385bc6_MobiFoneSIPTrunk.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\8599ac2f-0b2c-4d8d-9f94-2fec171f7fb9_MobiFoneSmartSales.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>WebsiteQLDichVuMobiFone</SourceId>
@@ -3761,6 +3959,42 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\8599ac2f-0b2c-4d8d-9f94-2fec171f7fb9_MobiFoneSmartSales.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\8d4cc6cb-a82c-4d76-b5c1-90d7bc3d8b27_HeThongQuanLyThongTinNguon.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/8d4cc6cb-a82c-4d76-b5c1-90d7bc3d8b27_HeThongQuanLyThongTinNguon.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>wcqr4zz4tq</Fingerprint>
+      <Integrity>0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\8d4cc6cb-a82c-4d76-b5c1-90d7bc3d8b27_HeThongQuanLyThongTinNguon.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\8d87d828-de84-41d3-bd4d-4b75e77b6134_TruyenThanhThongMinh.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/8d87d828-de84-41d3-bd4d-4b75e77b6134_TruyenThanhThongMinh.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>nhmqiygpng</Fingerprint>
+      <Integrity>W04GgO1+A9gsyHzY31aieLRcOOma1oV4bj3WzpwggtI=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\8d87d828-de84-41d3-bd4d-4b75e77b6134_TruyenThanhThongMinh.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\933a18f2-c2bd-48fe-8d08-6f7f303b3460_MobiVideoSMS.jpg'))">
       <SourceType>Package</SourceType>
@@ -3798,6 +4032,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\9f8e4d34-60b6-405b-badc-9b96eb04be38_ProConnect.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\a3d8cdc4-e6e5-4700-99f5-dc81259f8440_VoiceBrandname.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/a3d8cdc4-e6e5-4700-99f5-dc81259f8440_VoiceBrandname.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>j6tn24lpm2</Fingerprint>
+      <Integrity>e1VNOGSGGdxLduJAp2L51FcLMh5Qj8AJyCXKnpqXTm0=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\a3d8cdc4-e6e5-4700-99f5-dc81259f8440_VoiceBrandname.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\c8c2255e-e51f-476e-9d6d-2393a95a50b5_MobiFoneSIPTrunk.png'))">
       <SourceType>Package</SourceType>
       <SourceId>WebsiteQLDichVuMobiFone</SourceId>
@@ -3833,6 +4085,60 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\d63a3410-89ce-4ead-a809-3b4dbda6a63b_Tiktokdata.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\d7062754-706f-411d-872a-780df357d221_mBiz360.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/d7062754-706f-411d-872a-780df357d221_mBiz360.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>gdsthvrsib</Fingerprint>
+      <Integrity>HI7prqxMpqWPtB0kkskRm39oSGbBXoflhJV5eVpXSvA=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\d7062754-706f-411d-872a-780df357d221_mBiz360.png'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\da19bda2-faa2-43ce-a625-50435ba50932_MobiFoneSmartSales.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/da19bda2-faa2-43ce-a625-50435ba50932_MobiFoneSmartSales.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>8la8srp4cj</Fingerprint>
+      <Integrity>nF+M8p8IWqp5n2XjhI72orFWPqsHaIRVliJA/Md2HQ8=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\da19bda2-faa2-43ce-a625-50435ba50932_MobiFoneSmartSales.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\e3ff30f7-99b8-465c-9a44-5462f683b11f_MobiFoneMeeting.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/dichvu/doanhnghiep/e3ff30f7-99b8-465c-9a44-5462f683b11f_MobiFoneMeeting.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>3h4g2furhd</Fingerprint>
+      <Integrity>WQfImi0lnWLkVD3+c44wPn2KZUIGcnibwnkVbG4o9LE=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\e3ff30f7-99b8-465c-9a44-5462f683b11f_MobiFoneMeeting.png'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\doanhnghiep\ebd33c84-2348-4718-bb01-7cbbcb7f9d18_HeThongQuanLyThongTinNguon.png'))">
       <SourceType>Package</SourceType>
@@ -6444,6 +6750,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\a04c3f52-327c-4f97-9a83-b7108b872907_tintuc_km1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/tintuc/a04c3f52-327c-4f97-9a83-b7108b872907_tintuc_km1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>t1zrim1dda</Fingerprint>
+      <Integrity>MaToAqXhpqtGT3tbojMmoe3SjndoPXuXfrA5qgZRFXk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\a04c3f52-327c-4f97-9a83-b7108b872907_tintuc_km1.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\ab46396d-043d-4f7e-8378-adecebaacb29_tintuc1.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>WebsiteQLDichVuMobiFone</SourceId>
@@ -6497,6 +6821,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/tintuc/ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>5wzxmvtk72</Fingerprint>
+      <Integrity>C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg'))">
       <SourceType>Package</SourceType>
@@ -6569,6 +6911,24 @@
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\tintuc2.jpg'))</OriginalItemSpec>
+    </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\tintuc_km1.jpg'))">
+      <SourceType>Package</SourceType>
+      <SourceId>WebsiteQLDichVuMobiFone</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/WebsiteQLDichVuMobiFone</BasePath>
+      <RelativePath>img/tintuc/tintuc_km1.jpg</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>t1zrim1dda</Fingerprint>
+      <Integrity>MaToAqXhpqtGT3tbojMmoe3SjndoPXuXfrA5qgZRFXk=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\tintuc_km1.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg'))">
       <SourceType>Package</SourceType>

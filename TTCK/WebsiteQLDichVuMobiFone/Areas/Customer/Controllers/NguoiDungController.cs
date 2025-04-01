@@ -257,6 +257,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         [HttpPost]
         public async Task<IActionResult> CapNhatHoSo(IFormFile AnhDaiDien, NguoiDung nguoiDungMoi)
         {
+            GetData();
             var tenDangNhap = HttpContext.Session.GetString("nguoidung");
             if (string.IsNullOrEmpty(tenDangNhap))
             {
@@ -300,6 +301,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         }
         public async Task<IActionResult> ChiTietHoaDonDichVu(int id)
         {
+            GetData();
             var hoaDon = await _context.HoaDonDichVus
                                 .Include(x => x.CthoaDonDichVus)
                                     .ThenInclude(x => x.IdgoiDangKyNavigation)
@@ -320,6 +322,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         // Chi tiết hóa đơn doanh nghiệp
         public async Task<IActionResult> ChiTietHoaDonDoanhNghiep(int id)
         {
+            GetData();
             var hoaDon = await _context.HoaDonDoanhNghieps
                 .Include(x => x.CthoaDonDoanhNghieps)
                     .ThenInclude(x => x.IdgoiDichVuNavigation)
@@ -338,6 +341,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         // Chi tiết hóa đơn SIM
         public async Task<IActionResult> ChiTietHoaDonSim(int id)
         {
+            GetData();
             var hoaDonSim = await _context.HoaDonSims
                 .Include(x => x.CthoaDonSims)
                     .ThenInclude(x => x.IdgoiDangKyNavigation)

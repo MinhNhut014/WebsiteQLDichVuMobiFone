@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteQLDichVuMobiFone.Data;
+using WebsiteQLDichVuMobiFone.Filters;
 using WebsiteQLDichVuMobiFone.Models;
 
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class HomeController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -34,10 +36,50 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
         // GET: Admin/Home
+        // Trang chính của bảng điều khiển Admin
+        
         public async Task<IActionResult> Index()
         {
+            // Gọi GetData() nếu cần thông tin người dùng hay dữ liệu gì đó
             GetData();
-            return View(await _context.NguoiDungs.ToListAsync());
+
+            // Lấy các số liệu cần thiết
+            var simCount = await _context.Sims.CountAsync();
+            var mobileServiceCount = await _context.LoaiDichVuDiDongs.CountAsync();
+            var otherServiceCount = await _context.LoaiDichVuKhacs.CountAsync();
+            var businessServiceCount = await _context.NhomDichVuDoanhNghieps.CountAsync();
+
+            // Lấy số lượng hóa đơn dịch vụ SIM
+            var simInvoiceCount = await _context.HoaDonSims.CountAsync();
+
+            // Lấy số lượng hóa đơn dịch vụ di động
+            var mobileServiceInvoiceCount = await _context.HoaDonDichVus.CountAsync(h => h.CthoaDonDichVus.All(ct => ct.IdgoiDangKy != null));
+
+            // Lấy số lượng hóa đơn dịch vụ khác
+            var otherServiceInvoiceCount = await _context.HoaDonDichVus
+                .Where(h => h.CthoaDonDichVus.Any(ct => ct.IdgoiDangKyDvk != null))
+                .Where(h => h.CthoaDonDichVus.All(ct => ct.IdgoiDangKy == null))
+                .CountAsync();
+
+            // Lấy số lượng hóa đơn dịch vụ doanh nghiệp
+            var businessServiceInvoiceCount = await _context.HoaDonDoanhNghieps.CountAsync();
+
+            // Truyền dữ liệu vào ViewBag
+            ViewBag.SimCount = simCount;
+            ViewBag.MobileServiceCount = mobileServiceCount;
+            ViewBag.OtherServiceCount = otherServiceCount;
+            ViewBag.BusinessServiceCount = businessServiceCount;
+
+            ViewBag.SimInvoiceCount = simInvoiceCount;
+            ViewBag.MobileServiceInvoiceCount = mobileServiceInvoiceCount;
+            ViewBag.OtherServiceInvoiceCount = otherServiceInvoiceCount;
+            ViewBag.BusinessServiceInvoiceCount = businessServiceInvoiceCount;
+
+            // Truyền dữ liệu cho biểu đồ
+            ViewBag.InvoiceCounts = new int[] { simInvoiceCount, mobileServiceInvoiceCount, otherServiceInvoiceCount, businessServiceInvoiceCount };
+
+            // Trả View
+            return View();
         }
 
         // GET: Admin/Home/Details/5

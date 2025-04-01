@@ -7,11 +7,13 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using WebsiteQLDichVuMobiFone.Data;
+using WebsiteQLDichVuMobiFone.Filters;
 using WebsiteQLDichVuMobiFone.Models;
 
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class SimsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -86,6 +88,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/Sims/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            GetData();
             if (id == null)
             {
                 return NotFound();
@@ -108,6 +111,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/Sims/Create
         public IActionResult Create()
         {
+            GetData();
             ViewData["GoiDangKyDiKem"] = new SelectList(_context.GoiDangKies, "IdgoiDangKy", "IdgoiDangKy");
             ViewData["IddichVu"] = new SelectList(_context.DichVus, "IddichVu", "TenDichVu");
             ViewData["IdloaiSo"] = new SelectList(_context.LoaiSos, "IdloaiSo", "TenLoaiSo");
@@ -122,6 +126,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim")] Sim sim)
         {
+            GetData();
             if (await _context.Sims.AnyAsync(g => g.SoThueBao == sim.SoThueBao))
             {
                 ModelState.AddModelError("SoThueBao", "Số Thuê Bao này đã có rồi, vui lòng nhập tên khác.");
@@ -142,6 +147,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/Sims/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            GetData();
             if (id == null)
             {
                 return NotFound();
@@ -166,6 +172,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Idsim,IddichVu,SoThueBao,IdloaiSo,KhuVucHoaMang,PhiHoaMang,IdtrangThaiSim,GoiDangKyDiKem")] Sim sim)
         {
+            GetData();
             if (id != sim.Idsim)
             {
                 return NotFound();

@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteQLDichVuMobiFone.Data;
+using WebsiteQLDichVuMobiFone.Filters;
 using WebsiteQLDichVuMobiFone.Models;
 
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class ChuDesController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,16 +21,32 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         {
             _context = context;
         }
+        public void GetData()
+        {
+            // Kiểm tra xem người dùng đã đăng nhập chưa bằng cách kiểm tra session "nguoidung"
+            var tenDangNhap = HttpContext.Session.GetString("nguoidung");
+
+            if (!string.IsNullOrEmpty(tenDangNhap))
+            {
+                // Tìm người dùng từ cơ sở dữ liệu bằng tên đăng nhập đã lưu trong session
+                ViewBag.khachHang = _context.NguoiDungs.FirstOrDefault(k => k.TenDangNhap == tenDangNhap);
+            }
+            // Truyền thông tin vào ViewData hoặc ViewBag
+            ViewBag.UserName = tenDangNhap;
+            ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
+        }
 
         // GET: Admin/ChuDes
         public async Task<IActionResult> Index()
         {
+            GetData();
             return View(await _context.ChuDes.ToListAsync());
         }
 
         // GET: Admin/ChuDes/Details/5
         public async Task<IActionResult> Details(int? id)
         {
+            GetData();
             if (id == null)
             {
                 return NotFound();
@@ -48,6 +66,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/ChuDes/Create
         public IActionResult Create()
         {
+            GetData();
             return View();
         }
 
@@ -58,6 +77,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdchuDe,TenChuDe")] ChuDe chuDe)
         {
+            GetData();
             if (await _context.ChuDes.AnyAsync(g => g.TenChuDe == chuDe.TenChuDe))
             {
                 ModelState.AddModelError("TenChuDe", "Tên chủ đề này đã có rồi, vui lòng nhập tên khác.");
@@ -74,6 +94,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/ChuDes/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            GetData();
             if (id == null)
             {
                 return NotFound();
@@ -94,6 +115,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("IdchuDe,TenChuDe")] ChuDe chuDe)
         {
+            GetData();
             if (id != chuDe.IdchuDe)
             {
                 return NotFound();

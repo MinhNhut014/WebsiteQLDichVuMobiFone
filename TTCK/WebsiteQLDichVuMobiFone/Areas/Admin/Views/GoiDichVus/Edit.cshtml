@@ -93,8 +93,9 @@
             extraPlugins: 'table',
             filebrowserUploadUrl: '/DichVu/Upload',
             filebrowserUploadMethod: 'form',
-            enterMode: CKEDITOR.ENTER_BR, // Sử dụng <br> thay vì <p> khi xuống dòng
-            allowedContent: true
+            enterMode: CKEDITOR.ENTER_BR,
+            allowedContent: true,
+            extraAllowedContent: 'table tr th td tbody thead tfoot'
         });
 
         function showPreview() {

@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteQLDichVuMobiFone.Data;
+using WebsiteQLDichVuMobiFone.Filters;
 using WebsiteQLDichVuMobiFone.Models;
 using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class HoaDonDichVuKhacsController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -19,6 +22,11 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         public HoaDonDichVuKhacsController(ApplicationDbContext context)
         {
             _context = context;
+        }
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            GetData(); // Gọi hàm lấy dữ liệu
+            base.OnActionExecuting(context);
         }
         public void GetData()
         {

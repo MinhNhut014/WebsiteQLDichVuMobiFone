@@ -13,7 +13,7 @@ namespace WebsiteQLDichVuMobiFone.Filters
 
             if (string.IsNullOrEmpty(user))
             {
-                context.Result = new RedirectToActionResult("Index", "DangNhap", new { area = "" });
+                context.Result = new RedirectToActionResult("Index", "DangNhap", new { area = "Admin" });
             }
 
             base.OnActionExecuting(context);

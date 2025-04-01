@@ -90,7 +90,9 @@
             filebrowserUploadUrl: '/DichVu/Upload',
             filebrowserUploadMethod: 'form',
             enterMode: CKEDITOR.ENTER_BR, // Sử dụng <br> thay vì <p> khi xuống dòng
-            allowedContent: true
+            allowedContent: true,
+            shiftEnterMode: CKEDITOR.ENTER_P,
+            extraAllowedContent: 'table tr th td tbody thead tfoot'
         });
         function showPreview() {
             var editorData = CKEDITOR.instances.ThongTinChiTiet.getData();

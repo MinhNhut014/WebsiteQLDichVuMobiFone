@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Filters;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using WebsiteQLDichVuMobiFone.Data;
+using WebsiteQLDichVuMobiFone.Filters;
 using WebsiteQLDichVuMobiFone.Models;
 
 namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [AdminAuthorize]
     public class GoiDichVusController : Controller
     {
         private readonly ApplicationDbContext _context;
@@ -20,6 +23,25 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             _context = context;
         }
         // GET: Admin/GoiDichVus
+        public override void OnActionExecuting(ActionExecutingContext context)
+        {
+            GetData(); // Gọi hàm lấy dữ liệu
+            base.OnActionExecuting(context);
+        }
+        public void GetData()
+        {
+            // Kiểm tra xem người dùng đã đăng nhập chưa bằng cách kiểm tra session "nguoidung"
+            var tenDangNhap = HttpContext.Session.GetString("nguoidung");
+
+            if (!string.IsNullOrEmpty(tenDangNhap))
+            {
+                // Tìm người dùng từ cơ sở dữ liệu bằng tên đăng nhập đã lưu trong session
+                ViewBag.khachHang = _context.NguoiDungs.FirstOrDefault(k => k.TenDangNhap == tenDangNhap);
+            }
+            // Truyền thông tin vào ViewData hoặc ViewBag
+            ViewBag.UserName = tenDangNhap;
+            ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
+        }
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.GoiDichVus.Include(g => g.IddichVuDnNavigation);
