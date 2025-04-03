@@ -4488,6 +4488,18 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"222445"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022C0o5QWEJfr7/i/zz2BI1PfWGWu2I3y8ESyYvrqElDKk=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 04:05:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.0l8ez6wrgj.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0l8ez6wrgj"},{"Name":"integrity","Value":"sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"509057"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:18:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"509057"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:18:26 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.5wzxmvtk72.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -4547,6 +4559,54 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"osm2n1oma6"},{"Name":"integrity","Value":"sha256-GAUxFwFr20Gr9XCjaBpEtPWCq2ktgvTAxueFUESxqQM="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"136008"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022GAUxFwFr20Gr9XCjaBpEtPWCq2ktgvTAxueFUESxqQM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 06:28:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-ekyc.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-cccd-ekyc.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF\u002BeXbJOfs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"133161"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF\u002BeXbJOfs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:16:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-ekyc.xooujashxa.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-cccd-ekyc.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xooujashxa"},{"Name":"integrity","Value":"sha256-gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF\u002BeXbJOfs="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-ekyc.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"133161"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF\u002BeXbJOfs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:16:01 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-my-mobifone.0l8ez6wrgj.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-cccd-my-mobifone.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"0l8ez6wrgj"},{"Name":"integrity","Value":"sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-my-mobifone.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"509057"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:13:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-my-mobifone.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-cccd-my-mobifone.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"509057"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:13:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-xac-nhan.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-cccd-xac-nhan.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-5tUCL/btp6cZor\u002BH6chlj3kTxzBSyjrEwc3umjkjMg4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"90299"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00225tUCL/btp6cZor\u002BH6chlj3kTxzBSyjrEwc3umjkjMg4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:17:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-xac-nhan.qvnk8eygyz.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-cccd-xac-nhan.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"qvnk8eygyz"},{"Name":"integrity","Value":"sha256-5tUCL/btp6cZor\u002BH6chlj3kTxzBSyjrEwc3umjkjMg4="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-cccd-xac-nhan.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"90299"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00225tUCL/btp6cZor\u002BH6chlj3kTxzBSyjrEwc3umjkjMg4=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:17:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-thong-tin-iphone.g00jdn7xos.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-thong-tin-iphone.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g00jdn7xos"},{"Name":"integrity","Value":"sha256-0B\u002BnO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-thong-tin-iphone.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"883810"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00220B\u002BnO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:14:44 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/cap-nhat-thong-tin-iphone.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\cap-nhat-thong-tin-iphone.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0B\u002BnO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"883810"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u00220B\u002BnO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 04:14:44 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/tintuc/ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.5wzxmvtk72.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\tintuc\ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.jpg'))</AssetFile>
@@ -4631,6 +4691,30 @@
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x6jyqrwg11"},{"Name":"integrity","Value":"sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"130335"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 09:33:22 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-0CEEVhdSm\u002BDbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"68588"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220CEEVhdSm\u002BDbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 03:24:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.wcqr4zz4tq.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"wcqr4zz4tq"},{"Name":"integrity","Value":"sha256-0CEEVhdSm\u002BDbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"68588"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00220CEEVhdSm\u002BDbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 03:24:17 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"130335"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 03:24:46 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.x6jyqrwg11.jpg">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"x6jyqrwg11"},{"Name":"integrity","Value":"sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"130335"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t\u002BMK5FSp\u002Bo8Dg=\u0022"},{"Name":"Last-Modified","Value":"Thu, 03 Apr 2025 03:24:46 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/user/ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\user\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg'))</AssetFile>

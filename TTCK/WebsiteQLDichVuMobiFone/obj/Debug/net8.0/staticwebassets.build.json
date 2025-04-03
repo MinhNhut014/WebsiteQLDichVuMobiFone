@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "APpOJUHnz796EmD5madLzC4sP3da9gBHmSPJIM//5aE=",
+  "Hash": "T8i69aAtMmuXMdKz/nGmGXG05NblB8zvjgwXOUYaQHg=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -7913,6 +7913,27 @@
       "OriginalItemSpec": "wwwroot\\img\\tintuc\\2cc13bd8-36a1-441d-a8d2-3fcb7671689e_tintuc1.jpg"
     },
     {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0l8ez6wrgj",
+      "Integrity": "DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg"
+    },
+    {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg",
       "SourceId": "WebsiteQLDichVuMobiFone",
       "SourceType": "Discovered",
@@ -8016,6 +8037,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\tintuc\\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-ekyc.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/cap-nhat-cccd-ekyc#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "xooujashxa",
+      "Integrity": "gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF+eXbJOfs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\cap-nhat-cccd-ekyc.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-my-mobifone.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/cap-nhat-cccd-my-mobifone#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "0l8ez6wrgj",
+      "Integrity": "DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\cap-nhat-cccd-my-mobifone.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-xac-nhan.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/cap-nhat-cccd-xac-nhan#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qvnk8eygyz",
+      "Integrity": "5tUCL/btp6cZor+H6chlj3kTxzBSyjrEwc3umjkjMg4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\cap-nhat-cccd-xac-nhan.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-thong-tin-iphone.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/tintuc/cap-nhat-thong-tin-iphone#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "g00jdn7xos",
+      "Integrity": "0B+nO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\tintuc\\cap-nhat-thong-tin-iphone.jpg"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.jpg",
@@ -8163,6 +8268,48 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\user\\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "wcqr4zz4tq",
+      "Integrity": "0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user\\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "x6jyqrwg11",
+      "Integrity": "qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\user\\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg",
@@ -40116,6 +40263,88 @@
       ]
     },
     {
+      "Route": "img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.0l8ez6wrgj.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:18:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0l8ez6wrgj"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:18:26 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="
+        }
+      ]
+    },
+    {
       "Route": "img/tintuc/7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.5wzxmvtk72.jpg",
       "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg",
       "Selectors": [],
@@ -40522,6 +40751,334 @@
         {
           "Name": "integrity",
           "Value": "sha256-GAUxFwFr20Gr9XCjaBpEtPWCq2ktgvTAxueFUESxqQM="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-cccd-ekyc.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-ekyc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133161"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF+eXbJOfs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:16:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF+eXbJOfs="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-cccd-ekyc.xooujashxa.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-ekyc.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "133161"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF+eXbJOfs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:16:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xooujashxa"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/cap-nhat-cccd-ekyc.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gTNo2xm/SztHwyJv8lcCrgywn5bR3eX0qCF+eXbJOfs="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-cccd-my-mobifone.0l8ez6wrgj.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-my-mobifone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:13:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0l8ez6wrgj"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/cap-nhat-cccd-my-mobifone.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-cccd-my-mobifone.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-my-mobifone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "509057"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:13:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-DEL2ZK6NNlb0cXyMNX3CU4xA9jNj9sFNAn33xAYRHwc="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-cccd-xac-nhan.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-xac-nhan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90299"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5tUCL/btp6cZor+H6chlj3kTxzBSyjrEwc3umjkjMg4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:17:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-5tUCL/btp6cZor+H6chlj3kTxzBSyjrEwc3umjkjMg4="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-cccd-xac-nhan.qvnk8eygyz.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-cccd-xac-nhan.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90299"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5tUCL/btp6cZor+H6chlj3kTxzBSyjrEwc3umjkjMg4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:17:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qvnk8eygyz"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/cap-nhat-cccd-xac-nhan.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5tUCL/btp6cZor+H6chlj3kTxzBSyjrEwc3umjkjMg4="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-thong-tin-iphone.g00jdn7xos.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-thong-tin-iphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "883810"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0B+nO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:14:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "g00jdn7xos"
+        },
+        {
+          "Name": "label",
+          "Value": "img/tintuc/cap-nhat-thong-tin-iphone.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0B+nO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc="
+        }
+      ]
+    },
+    {
+      "Route": "img/tintuc/cap-nhat-thong-tin-iphone.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\tintuc\\cap-nhat-thong-tin-iphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "883810"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0B+nO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 04:14:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0B+nO5yXm/9na2OJylZUaZcOq7Y3Sn9QWr40C5boFjc="
         }
       ]
     },
@@ -41092,6 +41649,170 @@
         {
           "Name": "label",
           "Value": "img/user/8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68588"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 03:24:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.wcqr4zz4tq.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "68588"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 03:24:17 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "wcqr4zz4tq"
+        },
+        {
+          "Name": "label",
+          "Value": "img/user/9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0CEEVhdSm+DbnNmiz24BYH/JhAfQjrIuRyyXlyZbfQY="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "130335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 03:24:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg="
+        }
+      ]
+    },
+    {
+      "Route": "img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.x6jyqrwg11.jpg",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\user\\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "130335"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qTudwqWxCz9/a/a0mqZhlgRJSIHgZ1t+MK5FSp+o8Dg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 03 Apr 2025 03:24:46 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "x6jyqrwg11"
+        },
+        {
+          "Name": "label",
+          "Value": "img/user/acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg"
         },
         {
           "Name": "integrity",

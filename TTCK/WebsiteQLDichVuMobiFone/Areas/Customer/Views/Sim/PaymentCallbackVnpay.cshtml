@@ -1,0 +1,12 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.VNPay.PaymentResponseModel
+@{
+    ViewData["Title"] = "Kết quả thông tin giao dịch VNPay thành công";
+}
+
+<h5>Thanh toán VNPay thành công với:</h5>
+<h6>Order Id: @Model.OrderId</h6>
+<h6>OrderInfo: @Model.OrderDescription</h6>
+<h6>Tổng Tiền: @Model.PaymentMethod</h6>
+<h6>Mã Giao dịch: @Model.TransactionId</h6>
+<h6>Mã Giao dịch: @Model.PaymentId</h6>
+<h5>Xem<a asp-controller="NguoiDung" asp-action="HoSoNguoiDung">Lịch Sử Đơn hàng đã đặt</a></h5>

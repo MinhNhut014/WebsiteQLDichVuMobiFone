@@ -37,34 +37,39 @@
     {
         <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
     }
-    
+
     <div class="row g-4">
         <div class="col-md-6">
             <div class="card shadow-sm border-0 rounded-4">
                 <div class="card-body p-4">
                     <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
-                    <form method="post" asp-action="HoanTatDangKySim" asp-controller="Sim">
+                    <form id="paymentForm" method="post" asp-action="CreatePaymentUrlVnpay" asp-controller="Payment">
                         <input type="hidden" name="idSim" value="@sim?.Idsim" />
                         <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
-
+                        <!-- Hidden fields for VNPay -->
+                        <input type="hidden" id="OrderType" name="OrderType" value="DichVuSim" />
+                        <input type="hidden" id="Amount" name="Amount" value="0" />
+                        <input type="hidden" id="OrderDescription" name="OrderDescription" value="" />
+                        <input type="hidden" id="Name" name="Name" value="" />
+                        <input type="hidden" id="idPhuongThucVc" name="idPhuongThucVc" value="" />
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Tên khách hàng:</label>
-                            <input type="text" name="TenKhachHang" class="form-control border-secondary" placeholder="Nhập tên khách hàng" required />
+                            <input type="text" id="TenKhachHang" name="TenKhachHang" class="form-control border-secondary" placeholder="Nhập tên khách hàng" required />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Số điện thoại:</label>
-                            <input type="text" name="SoDienThoai" class="form-control border-secondary" placeholder="Nhập số điện thoại" required />
+                            <input type="text" id="SoDienThoai" name="SoDienThoai" class="form-control border-secondary" placeholder="Nhập số điện thoại" required />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Email:</label>
-                            <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email" />
+                            <input type="email" id="Email" name="Email" class="form-control border-secondary" placeholder="Nhập email" />
                         </div>
 
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Địa chỉ nhận hàng:</label>
-                            <input type="text" name="DiaDiemNhan" class="form-control border-secondary" placeholder="Nhập địa chỉ nhận hàng" required />
+                            <input type="text" id="DiaDiemNhan" name="DiaDiemNhan" class="form-control border-secondary" placeholder="Nhập địa chỉ nhận hàng" required />
                         </div>
 
                         <div class="mb-3">
@@ -87,19 +92,20 @@
 
                         <div class="mb-4">
                             <label class="form-label fw-semibold">Phương thức thanh toán:</label>
-                            <select name="PhuongThucThanhToan" class="form-select border-secondary" required>
+                            <select id="PhuongThucThanhToan" name="PhuongThucThanhToan" class="form-select border-secondary" required onchange="updateFormAction()">
                                 <option selected disabled>Chọn phương thức thanh toán</option>
-                                <option value="paypal">PayPal</option>
+                                <option value="cod">COD</option>
                                 <option value="vnpay">VNPay</option>
                                 <option value="momo">MoMo</option>
                             </select>
                         </div>
+
                         <div class="d-flex justify-content-end gap-3 mt-4">
                             <a href="javascript:history.back()" class="btn btn-secondary px-4 py-2">Quay lại</a>
                             <button type="submit" class="btn btn-success px-4 py-2">Tiếp tục</button>
                         </div>
-
                     </form>
+
                 </div>
             </div>
         </div>
@@ -172,9 +178,55 @@
 
         document.getElementById("phiVanChuyen").innerText = phiVanChuyen.toLocaleString() + " VND";
         document.getElementById("tongTien").innerText = tongTien.toLocaleString() + " VND";
-        document.getElementById("inputTongTien").value = tongTien;
+        document.getElementById("Amount").value = tongTien;
+        document.getElementById("idPhuongThucVc").value = selectedOption.value;
+    });
+
+    function updateFormAction() {
+        var paymentMethod = document.getElementById("PhuongThucThanhToan").value;
+        var form = document.getElementById("paymentForm");
+
+        if (paymentMethod === "vnpay") {
+            form.action = "/Customer/Payment/CreatePaymentUrlVnpay";
+        } else {
+            form.action = "/Customer/Sim/HoanTatDangKySim";
+        }
+
+        // Gán giá trị cho các input hidden để gửi sang VNPay
+        var tenKhachHang = document.getElementById("TenKhachHang").value;
+        document.getElementById("OrderDescription").value = "Thanh toán SIM cho " + tenKhachHang;
+        document.getElementById("Name").value = tenKhachHang;
+
+        // Cập nhật tổng tiền
+        updateAmount();
+    }
+
+    function updateAmount() {
+        var selectedOption = document.getElementById("phuongThucVanChuyen").selectedOptions[0];
+        var shippingCost = selectedOption ? parseFloat(selectedOption.getAttribute("data-gia")) : 0;
+        var phiHoaMang = parseFloat(@(sim?.PhiHoaMang ?? 0));
+        var giaGoiCuoc = parseFloat(@(goiDaChon?.GiaGoi ?? 0));
+        var totalAmount = phiHoaMang + giaGoiCuoc + shippingCost;
+
+        // Cập nhật hiển thị trên giao diện
+        document.getElementById("phiVanChuyen").textContent = shippingCost.toLocaleString() + " VND";
+        document.getElementById("tongTien").textContent = totalAmount.toLocaleString() + " VND";
+
+        // Gán tổng tiền vào input hidden để gửi đi
+        document.getElementById("Amount").value = totalAmount;
+        document.getElementById("idPhuongThucVc").value = selectedOption.value;
+    }
+
+    // Gọi updateAmount khi chọn phương thức vận chuyển
+    document.getElementById("phuongThucVanChuyen").addEventListener("change", updateAmount);
+
+    // Đảm bảo cập nhật tổng tiền trước khi submit form
+    document.getElementById("paymentForm").addEventListener("submit", function () {
+        updateFormAction();
     });
 </script>
+
+
 <style>
     .step-progress {
         display: flex;

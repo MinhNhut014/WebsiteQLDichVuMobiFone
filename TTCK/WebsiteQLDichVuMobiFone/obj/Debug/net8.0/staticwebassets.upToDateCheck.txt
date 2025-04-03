@@ -372,11 +372,16 @@ wwwroot\img\svg\move.svg
 wwwroot\img\svg\radio.svg
 wwwroot\img\svg\thumbnail.svg
 wwwroot\img\tintuc\2cc13bd8-36a1-441d-a8d2-3fcb7671689e_tintuc1.jpg
+wwwroot\img\tintuc\4257d298-c524-4425-bbad-8b88d1452381_cap-nhat-cccd-my-mobifone.jpg
 wwwroot\img\tintuc\7584353d-4a7a-409a-af9e-fa50762d36a9_tintuc1.jpg
 wwwroot\img\tintuc\a04c3f52-327c-4f97-9a83-b7108b872907_tintuc_km1.jpg
 wwwroot\img\tintuc\ab46396d-043d-4f7e-8378-adecebaacb29_tintuc1.jpg
 wwwroot\img\tintuc\ac198fbf-dbb5-4bde-b392-129186b2573f_image.png
 wwwroot\img\tintuc\be0bdc3d-f431-4a92-bb9b-aab3681c4ba8_2.jpg
+wwwroot\img\tintuc\cap-nhat-cccd-ekyc.png
+wwwroot\img\tintuc\cap-nhat-cccd-my-mobifone.jpg
+wwwroot\img\tintuc\cap-nhat-cccd-xac-nhan.png
+wwwroot\img\tintuc\cap-nhat-thong-tin-iphone.jpg
 wwwroot\img\tintuc\ce3e31da-848a-447d-b206-450f8737cc31_tintuc1.jpg
 wwwroot\img\tintuc\e9232e4a-8b79-4bff-8166-bde5d75fabd1_Tiktokdata.jpg
 wwwroot\img\tintuc\Tiktokdata.jpg
@@ -384,6 +389,8 @@ wwwroot\img\tintuc\tintuc_km1.jpg
 wwwroot\img\tintuc\tintuc1.jpg
 wwwroot\img\tintuc\tintuc2.jpg
 wwwroot\img\user\8c52e44c-9932-4b02-a03f-6db98c6ae70f_ProConnect.jpg
+wwwroot\img\user\9d4306ed-1f8f-4744-8a77-8005976f66a0_HeThongQuanLyThongTinNguon.png
+wwwroot\img\user\acaba4b5-24d6-499d-83bc-0e425fea4545_ProConnect.jpg
 wwwroot\img\user\ca5bbad2-792b-49e8-b01b-1d29e594e1b6_Tiktokdata.jpg
 wwwroot\img\user\fa63efc4-4623-4cfe-8ee0-5d5638aa375d_Spotifydata.jpg
 wwwroot\img\user\user.jpg
