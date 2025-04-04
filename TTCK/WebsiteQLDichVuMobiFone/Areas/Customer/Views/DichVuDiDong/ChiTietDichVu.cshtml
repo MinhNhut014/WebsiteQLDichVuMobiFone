@@ -1,9 +1,31 @@
 ﻿@model GoiDangKy
+@if (ViewBag.ErrorMessage != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "Thông báo",
+            text: "Bạn chưa đăng nhập! Vui lòng đăng nhập để mua sim.",
+            icon: "warning",
+            confirmButtonText: "OK"
+        });
+    </script>
+}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-        <li class="breadcrumb-item"><a href="#">Dịch vụ di động</a></li>
-        <li class="breadcrumb-item"><a href="#">Gói Đăng Ký</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+        <li class="dropdown-breadcrumb breadcrumb-item">
+            <a href="#" class="dropdown-toggle-breadcrumb">
+                Dịch Vụ
+            </a>
+            <div class="dropdown-menu-breadcrumb">
+                <a asp-controller="Sim" asp-action="Index">Dịch Vụ Sim</a>
+                <a asp-controller="DichVuDiDong" asp-action="Index">Dịch Vụ Di Động</a>
+                <a asp-controller="DoanhNghiep" asp-action="Index">Dịch Vụ Doanh Nghiệp</a>
+                <a asp-controller="DichVuKhac" asp-action="Index">Dịch Vụ Khác</a>
+            </div>
+        </li>
+        <li class="breadcrumb-item"><a asp-controller="DichVuDiDong" asp-action="Index">Dịch Vụ Di Động</a></li>
         <li class="breadcrumb-item active" aria-current="page">@Model.TenGoi</li>
     </ol>
 </nav>
@@ -62,10 +84,12 @@
         </div>
     </div>
 </div>
-<div class="card shadow-lg p-4 position-relative mb-4">
-    <h4>Gói cước tương tự</h4>
+<div class="card shadow-lg p-4 position-relative mb-4 rounded-4 bg-light-subtle">
+    <h4 class="mb-4 text-primary-emphasis">
+        <i class="fas fa-layer-group me-2 text-primary"></i> Gói cước tương tự
+    </h4>
 
-    <div class="row row-cols-1 row-cols-md-2 g-3">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
         @foreach (var goi in ViewBag.GoiCuocTuongTu)
         {
             <div class="col">
@@ -78,12 +102,13 @@
                     <div class="card-body">
                         <p class="mb-2">
                             <i class="fas fa-wallet me-1"></i>
-                            Giá: <strong>@goi.GiaGoi đ / @goi.ThoiHan Ngày</strong>
+                            Giá: <strong>@goi.GiaGoi đ / @goi.ThoiHan</strong>
                         </p>
-                        <p class="mb-3">
+                        <p class="mb-3" style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;">
                             <i class="fas fa-phone-alt me-1"></i>
                             Tính năng: <strong>@goi.TinhNang</strong>
                         </p>
+
                         <div class="d-grid">
                             <a asp-controller="DichVuDiDong" asp-action="DangKyDichVu" asp-route-id="@goi.IdgoiDangKy"
                                class="btn btn-primary w-100">
@@ -95,6 +120,7 @@
             </div>
         }
     </div>
+
 </div>
 
 <style>
@@ -127,6 +153,12 @@
         border: none;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
+
+    .transition-all:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
 </style>
 <style>
     .custom-divider {

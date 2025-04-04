@@ -338,13 +338,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         }
 
 
-        // Chi tiết hóa đơn SIM
         public async Task<IActionResult> ChiTietHoaDonSim(int id)
         {
             GetData();
             var hoaDonSim = await _context.HoaDonSims
                 .Include(x => x.CthoaDonSims)
-                    .ThenInclude(x => x.IdgoiDangKyNavigation)
+                    .ThenInclude(x => x.IdgoiDangKyNavigation) // Lấy thông tin gói đăng ký
+                .Include(x => x.CthoaDonSims)
+                    .ThenInclude(x => x.IdsimNavigation) // Lấy thông tin SIM
+                        .ThenInclude(s => s.IdloaiSoNavigation) // Lấy thông tin loại SIM
+                .Include(x => x.CthoaDonSims)
+                    .ThenInclude(x => x.IdsimNavigation)
+                        .ThenInclude(s => s.IdtrangThaiSimNavigation) // Lấy thông tin trạng thái SIM
                 .FirstOrDefaultAsync(x => x.IdhoaDonSim == id);
 
             if (hoaDonSim == null)
@@ -355,5 +360,23 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             return View(hoaDonSim);
         }
 
+        public async Task<IActionResult> ChiTietHoaDonDichVuKhac(int id)
+        {
+            GetData();
+            var hoaDon = await _context.HoaDonDichVus
+                                .Include(x => x.CthoaDonDichVus)
+                                    .ThenInclude(x => x.IdgoiDangKyNavigation)
+                                .Include(x => x.CthoaDonDichVus)
+                                    .ThenInclude(x => x.IdgoiDangKyDvkNavigation)
+                                .Include(x => x.IdnguoiDungNavigation) // Thêm thông tin người dùng
+                                .FirstOrDefaultAsync(x => x.IdhoaDonDv == id);
+
+            if (hoaDon == null)
+            {
+                return NotFound();
+            }
+
+            return View(hoaDon);
+        }
     }
 }

@@ -28,9 +28,12 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.UserName = tenDangNhap;
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
-        public async Task<IActionResult> Index(string searchTerm, List<int> selectedCategories)
+        public async Task<IActionResult> Index(string searchTerm, List<int> selectedCategories, int page = 1)
         {
             GetData();
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
+            const int pageSize = 15; // Number of items per page
+
             // Lấy danh sách nhóm dịch vụ doanh nghiệp cùng với dịch vụ doanh nghiệp
             var danhMucDichVu = _context.NhomDichVuDoanhNghieps
                                         .Select(ndv => new NhomDichVuDoanhNghiep
@@ -55,14 +58,31 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 goiDichVu = goiDichVu.Where(g => selectedCategories.Contains(g.IddichVuDn));
             }
 
-            ViewBag.GoiDichVu = goiDichVu.ToList();
+            // Pagination logic
+            var totalItems = await goiDichVu.CountAsync();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            var paginatedGoiDichVu = await goiDichVu
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.GoiDichVu = paginatedGoiDichVu;
             ViewBag.SelectedCategories = selectedCategories ?? new List<int>();
             ViewBag.SearchTerm = searchTerm;
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
 
             return View(danhMucDichVu);
         }
+
         public async Task<IActionResult> ChiTietDichVu(int id)
         {
+            GetData();
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
             var goiDichVu = await _context.GoiDichVus
                                          .Include(g => g.IddichVuDnNavigation)
                                          .ThenInclude(dv => dv.GoiDichVus)
@@ -86,8 +106,19 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         public IActionResult DangKyDichVu(int id)
         {
             GetData();
-            // Kiểm tra ID gói dịch vụ được truyền vào
-            Console.WriteLine("ID được truyền vào: " + id);
+            // Kiểm tra người dùng đã đăng nhập hay chưa
+            var nguoiDungId = HttpContext.Session.GetString("UserId");
+            if (string.IsNullOrEmpty(nguoiDungId))
+            {
+                // Nếu chưa đăng nhập, đặt thông báo vào TempData và chuyển hướng về trang trước đó
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập để đăng ký.";
+                var referrer = Request.Headers["Referer"].ToString();
+                if (!string.IsNullOrEmpty(referrer))
+                {
+                    return Redirect(referrer);
+                }
+                return RedirectToAction("Index");
+            }
 
             // Tìm kiếm gói đăng ký trong cơ sở dữ liệu
             var goiDangKy = _context.GoiDichVus.FirstOrDefault(g => g.IdgoiDichVu == id);

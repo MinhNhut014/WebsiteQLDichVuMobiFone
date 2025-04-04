@@ -32,9 +32,12 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.UserName = tenDangNhap;
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
-        public IActionResult Index(string filters, string search)
+        public IActionResult Index(string filters, string search, int page = 1)
         {
             GetData();
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
+            const int pageSize = 15; // Number of items per page
+
             var sims = _context.Sims
                             .Include(s => s.IdloaiSoNavigation)
                             .Where(s => s.IdtrangThaiSim == 1) // Chỉ hiển thị SIM ở trạng thái 1
@@ -56,17 +59,41 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 );
             }
 
+            // Pagination logic
+            var totalItems = sims.Count();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            var paginatedSims = sims
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
             ViewBag.DauSos = _context.Sims.Select(s => s.SoThueBao.Substring(0, 3)).Distinct().ToList();
             ViewBag.LoaiThueBaos = _context.LoaiSos.Select(l => l.TenLoaiSo).Distinct().ToList();
             ViewBag.SelectedFilters = selectedFilters;
             ViewBag.Search = search;
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
 
-            return View(sims.ToList());
+            return View(paginatedSims);
         }
 
         public IActionResult ChonMua(int id, int? maGoi)
         {
             GetData();
+
+            // Kiểm tra người dùng đã đăng nhập hay chưa
+            var nguoiDungId = HttpContext.Session.GetString("UserId");
+            if (string.IsNullOrEmpty(nguoiDungId))
+            {
+                // Nếu chưa đăng nhập, đặt thông báo vào ViewBag và chuyển hướng về trang Index
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập để mua SIM.";
+                return RedirectToAction("Index");
+            }
+
             // Lấy thông tin SIM cần mua
             var sim = _context.Sims.Include(s => s.IdloaiSoNavigation).FirstOrDefault(s => s.Idsim == id);
             if (sim == null)
@@ -352,6 +379,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
         public IActionResult ThongBaoHoanTat(int idHoaDon)
         {
+            GetData();
             var hoaDonSim = _context.HoaDonSims
                                     .Include(h => h.IdphuongThucVcNavigation)
                                     .FirstOrDefault(h => h.IdhoaDonSim == idHoaDon);
@@ -524,6 +552,9 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 return RedirectToAction("Index", "Sim");
             }
         }
-
+        public IActionResult ThongBaoThatBai()
+        {
+            return View();
+        }
     }
 }

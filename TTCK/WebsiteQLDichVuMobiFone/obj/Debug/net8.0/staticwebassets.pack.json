@@ -625,6 +625,14 @@
       "PackagePath": "staticwebassets\\img\\banner\\banner-1.jpg"
     },
     {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\banner\\banner1.png",
+      "PackagePath": "staticwebassets\\img\\banner\\banner1.png"
+    },
+    {
+      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\banner\\banner_sim.png",
+      "PackagePath": "staticwebassets\\img\\banner\\banner_sim.png"
+    },
+    {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\categories\\01.jpg",
       "PackagePath": "staticwebassets\\img\\categories\\01.jpg"
     },
@@ -667,14 +675,6 @@
     {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\about-3.jpg",
       "PackagePath": "staticwebassets\\img\\customer\\about-3.jpg"
-    },
-    {
-      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner1.png",
-      "PackagePath": "staticwebassets\\img\\customer\\banner1.png"
-    },
-    {
-      "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\banner_sim.png",
-      "PackagePath": "staticwebassets\\img\\customer\\banner_sim.png"
     },
     {
       "Id": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\customer\\bg-breadcrumb.jpg",

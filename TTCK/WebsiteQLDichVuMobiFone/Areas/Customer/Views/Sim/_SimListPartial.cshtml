@@ -1,5 +1,21 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.Sim>
-
+@{
+    ViewData["Title"] = "Danh Sách SIM";
+    var currentPage = ViewBag.CurrentPage as int? ?? 1;
+    var totalPages = ViewBag.TotalPages as int? ?? 1;
+}
+@if (ViewBag.ErrorMessage != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "Thông báo",
+            text: "Bạn chưa đăng nhập! Vui lòng đăng nhập để mua sim.",
+            icon: "warning",
+            confirmButtonText: "OK"
+        });
+    </script>
+}
 <table class="table table-bordered table-hover mt-3">
     <thead class="table-dark">
         <tr>
@@ -36,3 +52,25 @@
         }
     </tbody>
 </table>
+
+<!-- Pagination controls -->
+<nav aria-label="Page navigation" class="mt-5">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+            <a class="page-link" asp-action="Index" asp-route-page="@(currentPage - 1)" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+            </a>
+        </li>
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            <li class="page-item @(i == currentPage ? "active" : "")">
+                <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+            </li>
+        }
+        <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+            <a class="page-link" asp-action="Index" asp-route-page="@(currentPage + 1)" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+            </a>
+        </li>
+    </ul>
+</nav>

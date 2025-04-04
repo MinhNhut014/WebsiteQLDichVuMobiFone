@@ -3,13 +3,34 @@
 @{
     ViewData["Title"] = "Chi Tiết Dịch Vụ - " + Model.TenSanPham;
 }
-
+@if (ViewBag.ErrorMessage != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "Thông báo",
+            text: "Bạn chưa đăng nhập! Vui lòng đăng nhập để đăng ký.",
+            icon: "warning",
+            confirmButtonText: "OK"
+        });
+    </script>
+}
 <div class="container mt-5">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
-            <li class="breadcrumb-item"><a href="#">Khác</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="dropdown-breadcrumb breadcrumb-item">
+                <a href="#" class="dropdown-toggle-breadcrumb">
+                    Dịch Vụ
+                </a>
+                <div class="dropdown-menu-breadcrumb">
+                    <a asp-controller="Sim" asp-action="Index">Dịch Vụ Sim</a>
+                    <a asp-controller="DichVuDiDong" asp-action="Index">Dịch Vụ Di Động</a>
+                    <a asp-controller="DoanhNghiep" asp-action="Index">Dịch Vụ Doanh Nghiệp</a>
+                    <a asp-controller="DichVuKhac" asp-action="Index">Dịch Vụ Khác</a>
+                </div>
+            </li>
+            <li class="breadcrumb-item"><a asp-controller="DichVuKhac" asp-action="Index">Dịch Vụ Khác</a></li>
             <li class="breadcrumb-item active" aria-current="page">@Model.TenSanPham</li>
         </ol>
     </nav>
@@ -39,7 +60,7 @@
                                         <h6 class="fw-bold">@goi.TenGoi</h6>
                                         <p class="text-primary mb-2">Giá: @goi.GiaGoi VNĐ</p>
                                         <p>Thời hạn: @goi.ThoiHan</p>
-                                        <a asp-controller="DichVuKhac" asp-action="DangKyDichVu" asp-route-id="@goi.IdgoiDangKy" class="btn btn-success w-100">
+                                        <a asp-controller="DichVuKhac" asp-action="DangKyDichVu" asp-route-id="@goi.IdgoiDangKy" asp-route-idsanpham="@Model.IdsanPham" class="btn btn-success w-100">
                                             <i class="fas fa-check-circle me-1"></i> Đăng ký
                                         </a>
                                     </div>
@@ -80,9 +101,9 @@
                             <div class="card-body">
                                 <p class="text-truncate-3" title="@dv.MoTa" style="overflow: hidden; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical;">@dv.MoTa</p>
                                 <div class="d-grid">
-                                    <button asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@dv.IdsanPham" class="btn btn-primary w-100">
+                                    <a asp-controller="DichVuKhac" asp-action="ChiTietSanPham" asp-route-id="@dv.IdsanPham" class="btn btn-primary w-100">
                                         <i class="fas fa-check-circle me-1"></i> Xem Chi Tiết
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

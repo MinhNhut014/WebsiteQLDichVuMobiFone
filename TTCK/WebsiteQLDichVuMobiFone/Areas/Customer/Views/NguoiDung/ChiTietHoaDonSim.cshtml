@@ -62,5 +62,29 @@
         </tbody>
     </table>
 
-    <a asp-controller="NguoiDung" asp-action="HoSoNguoiDung" class="btn btn-secondary">Quay Lại</a>
+    <h4>Thông Tin SIM Đã Mua</h4>
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Số SIM</th>
+                <th>Loại SIM</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CthoaDonSims)
+            {
+                <tr>
+                    <td>@item.IdsimNavigation?.SoThueBao</td>
+                    <td>@item.IdsimNavigation?.IdloaiSoNavigation?.TenLoaiSo</td>
+                    <td>@item.IdsimNavigation?.IdtrangThaiSimNavigation?.TenTrangThai</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="NguoiDung" asp-action="HoSoNguoiDung" asp-route-section="sim" class="btn btn-secondary">
+        Quay Lại
+    </a>
+
 </div>

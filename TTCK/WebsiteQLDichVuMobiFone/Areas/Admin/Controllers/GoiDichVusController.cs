@@ -44,6 +44,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         }
         public async Task<IActionResult> Index()
         {
+            TempData.Remove("SuccessMessage");
             var applicationDbContext = _context.GoiDichVus.Include(g => g.IddichVuDnNavigation);
             return View(await applicationDbContext.ToListAsync());
         }

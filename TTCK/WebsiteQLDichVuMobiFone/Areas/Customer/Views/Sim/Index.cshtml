@@ -1,16 +1,28 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.Sim>
+
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
     <div class="container text-center py-5" style="max-width: 900px;">
         <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Dịch Vụ Của Chúng Tôi</h4>
         <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
+            <li class="dropdown-breadcrumb breadcrumb-item">
+                <a href="#" class="dropdown-toggle-breadcrumb">
+                    Dịch Vụ
+                </a>
+                <div class="dropdown-menu-breadcrumb">
+                    <a asp-controller="DichVuDiDong" asp-action="Index" class="text-dark text-start">Dịch Vụ Di Động</a>
+                    <a asp-controller="DoanhNghiep" asp-action="Index" class="text-dark text-start">Dịch Vụ Doanh Nghiệp</a>
+                    <a asp-controller="DichVuKhac" asp-action="Index" class="text-dark text-start">Dịch Vụ Khác</a>
+                </div>
+            </li>
             <li class="breadcrumb-item active text-primary">Sim</li>
         </ol>
     </div>
 </div>
+
 <!-- Header End -->
+
 <div class="container mt-5">
     <div class="row">
         <!-- Khu vực bộ lọc -->
@@ -60,6 +72,7 @@
         <div class="col-md-9">
             <h5 class="mb-3">Danh sách SIM</h5>
             @await Html.PartialAsync("_SimListPartial", Model)
+           
         </div>
     </div>
 </div>

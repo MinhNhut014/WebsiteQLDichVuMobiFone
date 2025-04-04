@@ -29,9 +29,12 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.UserName = tenDangNhap;
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
-        public IActionResult Index(string searchTerm, List<int> selectedCategories, List<int> selectedProducts)
+        public IActionResult Index(string searchTerm, List<int> selectedCategories, List<int> selectedProducts, int page = 1)
         {
             GetData();
+            
+            const int pageSize = 15; // Number of items per page
+
             // Lấy dữ liệu danh mục dịch vụ khác kèm sản phẩm dịch vụ
             var danhMucs = _context.LoaiDichVuKhacs
                 .Include(dm => dm.SanPhamDichVuKhacs)
@@ -57,17 +60,33 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     .Where(sp => selectedProducts.Contains(sp.IdsanPham));
             }
 
+            // Pagination logic
+            var totalItems = sanPhamQuery.Count();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            var paginatedSanPham = sanPhamQuery
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToList();
+
             ViewBag.SearchTerm = searchTerm;
             ViewBag.SelectedCategories = selectedCategories ?? new List<int>();
             ViewBag.SelectedProducts = selectedProducts ?? new List<int>();
-            ViewBag.SanPhamDichVu = sanPhamQuery.ToList();
+            ViewBag.SanPhamDichVu = paginatedSanPham;
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
 
             return View(danhMucs);
         }
+
         public IActionResult ChiTietSanPham(int id)
         {
             GetData();
-
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
+            ViewBag.SanPhamId = TempData["SanPhamId"] as int? ?? id;
             var sanPham = _context.SanPhamDichVuKhacs
                             .Include(sp => sp.GoiDangKyDichVuKhacs)
                             .FirstOrDefault(sp => sp.IdsanPham == id);
@@ -90,12 +109,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             return View(sanPham);
         }
         [HttpGet]
-        public IActionResult DangKyDichVu(int id)
+        public IActionResult DangKyDichVu(int id, int idsanpham)
         {
             GetData();
-            // Kiểm tra ID gói dịch vụ được truyền vào
-            Console.WriteLine("ID được truyền vào: " + id);
-
+            // Kiểm tra người dùng đã đăng nhập hay chưa
+            var nguoiDungId = HttpContext.Session.GetString("UserId");
+            if (string.IsNullOrEmpty(nguoiDungId))
+            {
+                // Nếu chưa đăng nhập, đặt thông báo vào ViewBag và chuyển hướng về trang Index
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập để mua đăng ký.";
+                TempData["SanPhamId"] = idsanpham; // Lưu lại ID sản phẩm để chuyển hướng sau khi đăng nhập
+                return RedirectToAction("ChiTietSanPham", new { id = idsanpham });
+            }
             // Tìm kiếm gói đăng ký trong cơ sở dữ liệu
             var goiDangKy = _context.GoiDangKyDichVuKhacs.FirstOrDefault(g => g.IdgoiDangKy == id);
 

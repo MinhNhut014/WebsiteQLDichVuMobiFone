@@ -3,14 +3,35 @@
 @{
     ViewData["Title"] = "Chi Tiết Giải Pháp - " + Model.TenGoiDv;
 }
-
+@if (ViewBag.ErrorMessage != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            title: "Thông báo",
+            text: "Bạn chưa đăng nhập! Vui lòng đăng nhập để mua sim.",
+            icon: "warning",
+            confirmButtonText: "OK"
+        });
+    </script>
+}
 <div class="container mt-5">
     <!-- Đường dẫn breadcrumb -->
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
-            <li class="breadcrumb-item"><a href="#">Doanh Nghiệp</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+            <li class="dropdown-breadcrumb breadcrumb-item">
+                <a href="#" class="dropdown-toggle-breadcrumb">
+                    Dịch Vụ
+                </a>
+                <div class="dropdown-menu-breadcrumb">
+                    <a asp-controller="Sim" asp-action="Index">Dịch Vụ Sim</a>
+                    <a asp-controller="DichVuDiDong" asp-action="Index">Dịch Vụ Di Động</a>
+                    <a asp-controller="DoanhNghiep" asp-action="Index">Dịch Vụ Doanh Nghiệp</a>
+                    <a asp-controller="DichVuKhac" asp-action="Index">Dịch Vụ Khác</a>
+                </div>
+            </li>
+            <li class="breadcrumb-item"><a asp-controller="DoanhNghiep" asp-action="Index">Dịch Vụ Doanh Nghiệp</a></li>
             <li class="breadcrumb-item active" aria-current="page">@Model.TenGoiDv</li>
         </ol>
     </nav>

@@ -41,7 +41,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         public async Task<IActionResult> Index(int? idLoaiSo)
         {
             GetData();
-
+            TempData.Remove("SuccessMessage");
             var query = _context.Sims
                 .Include(s => s.GoiDangKyDiKemNavigation)
                 .Include(s => s.IddichVuNavigation)

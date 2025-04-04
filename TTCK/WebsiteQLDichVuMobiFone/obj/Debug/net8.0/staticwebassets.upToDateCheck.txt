@@ -152,7 +152,9 @@ wwwroot\img\avatar\avatar-illustrated-03.png
 wwwroot\img\avatar\avatar-illustrated-03.webp
 wwwroot\img\avatar\avatar-illustrated-04.png
 wwwroot\img\avatar\avatar-illustrated-04.webp
+wwwroot\img\banner\banner_sim.png
 wwwroot\img\banner\banner-1.jpg
+wwwroot\img\banner\banner1.png
 wwwroot\img\categories\01.jpg
 wwwroot\img\categories\01.webp
 wwwroot\img\categories\02.jpg
@@ -164,8 +166,6 @@ wwwroot\img\categories\04.webp
 wwwroot\img\customer\about-1.png
 wwwroot\img\customer\about-2.png
 wwwroot\img\customer\about-3.jpg
-wwwroot\img\customer\banner_sim.png
-wwwroot\img\customer\banner1.png
 wwwroot\img\customer\bg-breadcrumb.jpg
 wwwroot\img\customer\blog-1.png
 wwwroot\img\customer\blog-2.png

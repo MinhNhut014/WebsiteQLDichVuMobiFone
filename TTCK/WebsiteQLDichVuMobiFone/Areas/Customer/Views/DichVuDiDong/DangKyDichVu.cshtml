@@ -61,8 +61,14 @@
                             <label class="form-label fw-semibold">Email:</label>
                             <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email (nếu có)" />
                         </div>
-
-                        <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
+                        <div class="row">
+                            <div class="col-6">
+                                <a asp-action="ChiTietDichVu" asp-route-id="@goiDaChon?.IdgoiDangKy" class="btn btn-primary w-100 py-2">Quay Lại</a>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>

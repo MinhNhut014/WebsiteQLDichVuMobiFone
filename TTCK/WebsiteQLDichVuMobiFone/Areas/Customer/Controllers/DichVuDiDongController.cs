@@ -29,9 +29,12 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.UserName = tenDangNhap;
             ViewBag.UserAvatar = HttpContext.Session.GetString("UserAvatar");
         }
-        public async Task<IActionResult> Index(string searchTerm, List<int> selectedCategories)
+        public async Task<IActionResult> Index(string searchTerm, List<int> selectedCategories, int page = 1)
         {
             GetData();
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
+            const int pageSize = 15; // Number of items per page
+
             // Lấy danh sách danh mục dịch vụ di động cùng với loại gói đăng ký
             var danhMucDichVu = _context.LoaiDichVuDiDongs
                                         .Select(dm => new LoaiDichVuDiDong
@@ -56,15 +59,30 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 goiDangKy = goiDangKy.Where(g => selectedCategories.Contains(g.IdloaiGoi));
             }
 
-            ViewBag.GoiDangKy = goiDangKy.ToList();
+            // Pagination logic
+            var totalItems = await goiDangKy.CountAsync();
+            var totalPages = (int)Math.Ceiling(totalItems / (double)pageSize);
+
+            if (page < 1) page = 1;
+            if (page > totalPages) page = totalPages;
+
+            var paginatedGoiDangKy = await goiDangKy
+                .Skip((page - 1) * pageSize)
+                .Take(pageSize)
+                .ToListAsync();
+
+            ViewBag.GoiDangKy = paginatedGoiDangKy;
             ViewBag.SelectedCategories = selectedCategories ?? new List<int>();
             ViewBag.SearchTerm = searchTerm;
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
 
             return View(danhMucDichVu);
         }
         public async Task<IActionResult> ChiTietDichVu(int id)
         {
             GetData();
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
             var goiDangKy = await _context.GoiDangKies
                 .FirstOrDefaultAsync(g => g.IdgoiDangKy == id);
 
@@ -86,8 +104,20 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         public IActionResult DangKyDichVu(int id)
         {
             GetData();
-            // Kiểm tra ID gói dịch vụ được truyền vào
-            Console.WriteLine("ID được truyền vào: " + id);
+
+            // Kiểm tra người dùng đã đăng nhập hay chưa
+            var nguoiDungId = HttpContext.Session.GetString("UserId");
+            if (string.IsNullOrEmpty(nguoiDungId))
+            {
+                // Nếu chưa đăng nhập, đặt thông báo vào TempData và chuyển hướng về trang trước đó
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập để mua đăng ký.";
+                var referrer = Request.Headers["Referer"].ToString();
+                if (!string.IsNullOrEmpty(referrer))
+                {
+                    return Redirect(referrer);
+                }
+                return RedirectToAction("Index");
+            }
 
             // Tìm kiếm gói đăng ký trong cơ sở dữ liệu
             var goiDangKy = _context.GoiDangKies.FirstOrDefault(g => g.IdgoiDangKy == id);

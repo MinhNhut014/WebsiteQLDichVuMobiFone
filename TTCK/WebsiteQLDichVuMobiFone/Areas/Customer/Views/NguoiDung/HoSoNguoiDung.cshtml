@@ -54,7 +54,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/Account/Logout" class="nav-link text-danger">
+                        <a asp-controller="NguoiDung" asp-action="DangXuat" class="nav-link text-danger">
                             <i class="bi bi-box-arrow-right"></i> Đăng xuất
                         </a>
                     </li>
@@ -247,7 +247,7 @@
                                         <td>@don.TongTien đ</td>
                                         <td>@don.IdtrangThaiNavigation?.TenTrangThai</td>
                                         <td>
-                                            <a asp-action="ChiTietHoaDonDichVu" asp-controller="NguoiDung" asp-route-id="@don.IdhoaDonDv"
+                                            <a asp-action="ChiTietHoaDonDichVuKhac" asp-controller="NguoiDung" asp-route-id="@don.IdhoaDonDv"
                                                class="btn btn-sm btn-info text-white">Xem</a>
                                         </td>
                                     </tr>

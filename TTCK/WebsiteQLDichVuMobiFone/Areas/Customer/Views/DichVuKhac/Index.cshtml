@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.LoaiDichVuKhac>
 @{
     ViewData["Title"] = "Danh mục Dịch Vụ Khác";
+    var currentPage = ViewBag.CurrentPage as int? ?? 1;
+    var totalPages = ViewBag.TotalPages as int? ?? 1;
 }
 <!-- Header Start -->
 <div class="container-fluid bg-breadcrumb">
@@ -8,12 +10,23 @@
         <h4 class="text-white display-4 mb-4 wow fadeInDown" data-wow-delay="0.1s">Dịch Vụ Của Chúng Tôi</h4>
         <ol class="breadcrumb d-flex justify-content-center mb-0 wow fadeInDown" data-wow-delay="0.3s">
             <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang Chủ</a></li>
-            <li class="breadcrumb-item"><a href="#">Dịch Vụ</a></li>
-            <li class="breadcrumb-item active text-primary">Khác</li>
+            <li class="dropdown-breadcrumb breadcrumb-item">
+                <a href="#" class="dropdown-toggle-breadcrumb">
+                    Dịch Vụ
+                </a>
+                <div class="dropdown-menu-breadcrumb">
+                    <a asp-controller="Sim" asp-action="Index" class="text-dark text-start">Sim</a>
+                    <a asp-controller="DichVuDiDong" asp-action="Index" class="text-dark text-start">Dịch Vụ Di Động</a>
+                    <a asp-controller="DoanhNghiep" asp-action="Index" class="text-dark text-start">Dịch Vụ Doanh Nghiệp</a>
+                    
+                </div>
+            </li>
+            <li class="breadcrumb-item active text-primary">Dịch Vụ Khác</li>
         </ol>
     </div>
 </div>
 <!-- Header End -->
+
 <form method="get" asp-action="Index">
     <div class="row">
         <!-- Sidebar Danh mục -->
@@ -60,7 +73,7 @@
         </div>
 
         <!-- Danh sách sản phẩm dịch vụ khác -->
-        <div class="col-md-8">
+        <div class="col-md-8 mt-3">
             <h4 class="text-primary fw-bold mb-3">Danh sách sản phẩm</h4>
             <div class="row row-cols-1 row-cols-md-3 g-4">
                 @foreach (var sanPham in ViewBag.SanPhamDichVu)
@@ -87,7 +100,29 @@
                         </div>
                     </div>
                 }
+                
             </div>
+            <!-- Pagination controls -->
+            <nav aria-label="Page navigation" class="mt-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item @(currentPage == 1 ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@(currentPage - 1)" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    @for (int i = 1; i <= totalPages; i++)
+                    {
+                        <li class="page-item @(i == currentPage ? "active" : "")">
+                            <a class="page-link" asp-action="Index" asp-route-page="@i">@i</a>
+                        </li>
+                    }
+                    <li class="page-item @(currentPage == totalPages ? "disabled" : "")">
+                        <a class="page-link" asp-action="Index" asp-route-page="@(currentPage + 1)" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </form>
