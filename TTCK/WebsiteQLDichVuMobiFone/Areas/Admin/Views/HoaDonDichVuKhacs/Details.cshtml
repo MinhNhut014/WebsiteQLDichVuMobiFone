@@ -1,60 +1,67 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonDichVu
 
-@{
-    ViewData["Title"] = "Details";
-}
+<h2 class="text-primary">Chi tiết hóa đơn dịch vụ khác</h2>
 
-<h1>Details</h1>
+<h4>Thông Tin Hóa Đơn</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>ID Hóa Đơn</th>
+        <td>@Model.IdhoaDonDv</td>
+    </tr>
+    <tr>
+        <th>Ngày Đặt Hàng</th>
+        <td>@Model.NgayDatHang?.ToString("dd/MM/yyyy")</td>
+    </tr>
+    <tr>
+        <th>Tổng Tiền</th>
+        <td>@Model.TongTien?.ToString("N0") VNĐ</td>
+    </tr>
+</table>
 
-<div>
-    <h4>HoaDonDichVu</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayDatHang)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayDatHang)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TongTien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TongTien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenKhachHang)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenKhachHang)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoDienThoai)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoDienThoai)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdnguoiDungNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdnguoiDungNavigation.IdnguoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdtrangThaiNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdtrangThaiNavigation.IdtrangThai)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdhoaDonDv">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+<h4>Thông Tin Người Đặt Hàng</h4>
+<table class="table table-bordered">
+    <tr>
+        <th>Họ Tên</th>
+        <td>@Model.IdnguoiDungNavigation?.HoTen</td>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <td>@Model.IdnguoiDungNavigation?.Email</td>
+    </tr>
+    <tr>
+        <th>Số Điện Thoại</th>
+        <td>@Model.IdnguoiDungNavigation?.SoDienThoai</td>
+    </tr>
+    <tr>
+        <th>Địa Chỉ</th>
+        <td>@Model.IdnguoiDungNavigation?.DiaChi</td>
+    </tr>
+</table>
+
+<h4>Chi Tiết Dịch Vụ</h4>
+<table class="table table-bordered table-striped">
+    <thead class="table-primary">
+        <tr>
+            <th>Tên Gói</th>
+            <th>Đơn Giá</th>
+            <th>Số Lượng</th>
+            <th>Thành Tiền</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.CthoaDonDichVus)
+        {
+            <tr>
+                <td>@item.IdgoiDangKyDvkNavigation?.TenGoi</td>
+                <td>@item.DonGia?.ToString("N0") VNĐ</td>
+                <td>@item.SoLuong</td>
+                <td>@item.ThanhTien?.ToString("N0") VNĐ</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-controller="HoaDonDichVuKhacs" asp-action="Index" class="btn btn-secondary">
+    Quay Lại
+</a>
+

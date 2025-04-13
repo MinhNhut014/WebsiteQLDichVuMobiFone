@@ -1,0 +1,44 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.LienHe
+
+@{
+    ViewData["Title"] = "Chi tiết liên hệ";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-4">Chi tiết Liên Hệ</h2>
+    <div class="card shadow-sm rounded p-4">
+        <dl class="row mb-0">
+            <dt class="col-sm-3 fw-bold">Người dùng</dt>
+            <dd class="col-sm-9">@Model.IdnguoiDungNavigation?.IdnguoiDung</dd>
+
+            <dt class="col-sm-3 fw-bold">Họ tên</dt>
+            <dd class="col-sm-9">@Model.HoTen</dd>
+
+            <dt class="col-sm-3 fw-bold">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+
+            <dt class="col-sm-3 fw-bold">Số điện thoại</dt>
+            <dd class="col-sm-9">@Model.SoDienThoai</dd>
+
+            <dt class="col-sm-3 fw-bold">Ngày gửi</dt>
+            <dd class="col-sm-9">@Model.NgayGui?.ToString("dd/MM/yyyy HH:mm")</dd>
+
+            <dt class="col-sm-3 fw-bold">Trạng thái</dt>
+            <dd class="col-sm-9">
+                @(Model.TrangThai == true ? "Đã xử lý" : "Chưa xử lý")
+            </dd>
+
+            <dt class="col-sm-3 fw-bold">Nội dung liên hệ</dt>
+            <dd class="col-sm-9">@Model.NoiDung</dd>
+        </dl>
+    </div>
+
+    <div class="mt-4 d-flex justify-content-between">
+        <a asp-action="Index" class="btn btn-secondary">
+            <i class="fa-solid fa-list"></i> Quay lại danh sách
+        </a>
+        <a asp-action="Edit" asp-route-id="@Model?.IdlienHe" class="btn btn-primary">
+            <i class="fa-solid fa-pen-to-square"></i> Chỉnh sửa
+        </a>
+    </div>
+</div>

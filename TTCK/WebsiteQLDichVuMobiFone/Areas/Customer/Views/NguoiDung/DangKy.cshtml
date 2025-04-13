@@ -2,65 +2,132 @@
     ViewData["Title"] = "Đăng Ký Tài Khoản";
 }
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <div class="col-lg-6 col-md-8 col-sm-10">
-        <div class="card shadow-sm rounded-4 p-4">
-            <h3 class="text-center text-dark mb-4">ĐĂNG KÝ TÀI KHOẢN</h3>
+<style>
+    body {
+        background: linear-gradient(to right, #cceeff, #e6f7ff);
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-            @if (TempData["Success"] != null)
-            {
-                <div class="alert alert-success">@TempData["Success"]</div>
-            }
-            @if (TempData["Error"] != null)
-            {
-                <div class="alert alert-danger">@TempData["Error"]</div>
-            }
+    .register-container {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 40px 20px;
+    }
 
-            <form method="post" asp-action="DangKy">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="email" class="form-control border-dark" id="email" name="email" placeholder="Nhập email" required>
-                </div>
+    .register-form {
+        background: #fff;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+        padding: 40px;
+        max-width: 700px;
+        width: 100%;
+    }
 
-                <div class="mb-3">
-                    <label for="matkhau" class="form-label">Mật khẩu</label>
-                    <input type="password" class="form-control border-dark" id="matkhau" name="matkhau" placeholder="Nhập mật khẩu" required>
-                </div>
+    .register-title {
+        font-size: 28px;
+        font-weight: bold;
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-                <div class="mb-3">
+    .form-label {
+        font-weight: 600;
+        color: #0056b3;
+    }
+
+    .form-control {
+        border-radius: 12px;
+        border: 1px solid #b6dcff;
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+        }
+
+    .btn-register {
+        background-color: #007bff;
+        color: white;
+        font-weight: 600;
+        border-radius: 25px;
+        padding: 10px 0;
+        transition: 0.3s;
+    }
+
+        .btn-register:hover {
+            background-color: #0056b3;
+        }
+
+    .login-link {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .alert {
+        font-size: 14px;
+    }
+</style>
+
+<div class="register-container">
+    <div class="register-form">
+        <h3 class="register-title">ĐĂNG KÝ TÀI KHOẢN</h3>
+
+        @if (TempData["Success"] != null)
+        {
+            <div class="alert alert-success text-center">@TempData["Success"]</div>
+        }
+        @if (TempData["Error"] != null)
+        {
+            <div class="alert alert-danger text-center">@TempData["Error"]</div>
+        }
+
+        <form method="post" asp-action="DangKy">
+            <div class="row">
+                <div class="col-md-6 mb-3">
                     <label for="tenDangNhap" class="form-label">Tên Đăng Nhập</label>
-                    <input type="text" class="form-control border-dark" id="tenDangNhap" name="tenDangNhap" placeholder="Nhập tên đăng nhập" required>
+                    <input type="text" class="form-control" id="tenDangNhap" name="tenDangNhap" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="matkhau" class="form-label">Mật khẩu</label>
+                    <input type="password" class="form-control" id="matkhau" name="matkhau" required />
                 </div>
 
-                <div class="mb-3">
+                <div class="col-md-6 mb-3">
                     <label for="hoten" class="form-label">Họ và Tên</label>
-                    <input type="text" class="form-control border-dark" id="hoten" name="hoten" placeholder="Nhập họ và tên" required>
+                    <input type="text" class="form-control" id="hoten" name="hoten" required />
+                </div>
+                <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required />
                 </div>
 
-                <div class="mb-3">
+                <div class="col-md-6 mb-3">
                     <label for="dienthoai" class="form-label">Số Điện Thoại</label>
-                    <input type="text" class="form-control border-dark" id="dienthoai" name="soDienThoai" placeholder="Nhập số điện thoại" required>
+                    <input type="text" class="form-control" id="dienthoai" name="soDienThoai" required />
                 </div>
-
-                <div class="mb-3">
+                <div class="col-md-6 mb-3">
                     <label for="cccd" class="form-label">CCCD/CMND</label>
-                    <input type="text" class="form-control border-dark" id="cccd" name="cccd" placeholder="Nhập CCCD/CMND" required>
+                    <input type="text" class="form-control" id="cccd" name="cccd" required />
                 </div>
 
-                <div class="mb-3">
+                <div class="col-12 mb-3">
                     <label for="diaChi" class="form-label">Địa chỉ</label>
-                    <input type="text" class="form-control border-dark" id="diaChi" name="diaChi" placeholder="Nhập địa chỉ" required>
+                    <input type="text" class="form-control" id="diaChi" name="diaChi" required />
                 </div>
-
-                <div class="d-grid gap-2 mt-4">
-                    <button type="submit" class="btn btn-dark">Đăng Ký</button>
-                </div>
-            </form>
-
-            <div class="text-center mt-3">
-                <span class="text-muted">Đã có tài khoản? </span>
-                <a asp-action="DangNhap" class="text-decoration-none text-dark fw-bold">Đăng nhập ngay</a>
             </div>
+
+            <div class="d-grid mt-3">
+                <button type="submit" class="btn btn-register">Đăng Ký</button>
+            </div>
+        </form>
+
+        <div class="login-link">
+            <span class="text-muted">Đã có tài khoản?</span>
+            <a asp-action="DangNhap" class="text-decoration-none text-primary fw-semibold">Đăng nhập ngay</a>
         </div>
     </div>
 </div>

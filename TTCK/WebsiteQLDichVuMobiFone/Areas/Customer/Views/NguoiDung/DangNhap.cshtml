@@ -2,44 +2,152 @@
     ViewData["Title"] = "Đăng Nhập";
 }
 
-<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
-    <div class="col-lg-6 col-md-8 col-sm-10">
-        <div class="card shadow-sm rounded-4 p-4">
-            <h3 class="text-center text-dark mb-4">ĐĂNG NHẬP</h3>
-            @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
-            {
-                <div class="alert alert-danger">
-                    @ViewBag.ErrorMessage
-                </div>
-            }
+<!-- Custom CSS -->
+<style>
+    body {
+        background: linear-gradient(to right, #cceeff, #e6f7ff);
+        font-family: 'Segoe UI', sans-serif;
+    }
 
-            <form method="post" asp-action="DangNhap">
-                <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+    .login-wrapper {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+    }
 
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control border-dark" id="email" name="tenDangNhapHoacEmail" placeholder="Nhập email của bạn" required>
-                </div>
+    .login-box {
+        background: #ffffff;
+        padding: 50px 40px;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(0, 123, 255, 0.15);
+        max-width: 500px;
+        width: 100%;
+    }
 
-                <div class="mb-3">
-                    <label for="matkhau" class="form-label">Mật khẩu</label>
-                    <input type="password" class="form-control border-dark" id="matkhau" name="matKhau" placeholder="Nhập mật khẩu" required>
-                </div>
+    .login-title {
+        font-size: 28px;
+        font-weight: 700;
+        color: #007bff;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 
-                <div class="d-grid gap-2 mt-4">
-                    <button type="submit" class="btn btn-dark">Đăng nhập</button>
-                </div>
-            </form>
+    .form-label {
+        color: #0056b3;
+        font-weight: 600;
+    }
 
+    .form-control {
+        border-radius: 12px;
+        border: 1px solid #b6dcff;
+        transition: all 0.3s ease;
+    }
 
-            <div class="text-center mt-3">
-                <span class="text-muted">Chưa có tài khoản? </span>
-                <a asp-action="DangKy" class="text-decoration-none text-dark fw-bold">Đăng ký ngay</a>
+        .form-control:focus {
+            border-color: #007bff;
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.2);
+        }
+
+    .btn-login {
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 30px;
+        font-weight: 600;
+        padding: 10px 0;
+        transition: all 0.3s ease;
+    }
+
+        .btn-login:hover {
+            background-color: #0056b3;
+        }
+
+    .password-wrapper {
+        position: relative;
+    }
+
+        .password-wrapper input {
+            padding-right: 40px;
+        }
+
+    .toggle-password {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        color: #007bff;
+        font-size: 18px;
+    }
+
+    .register-link {
+        text-align: center;
+        margin-top: 25px;
+    }
+
+    .alert {
+        font-size: 14px;
+        padding: 10px;
+    }
+</style>
+
+<!-- Login Layout -->
+<div class="login-wrapper">
+    <div class="login-box">
+        <h3 class="login-title">ĐĂNG NHẬP</h3>
+
+        @if (!string.IsNullOrEmpty(ViewBag.ErrorMessage))
+        {
+            <div class="alert alert-danger text-center">
+                @ViewBag.ErrorMessage
+            </div>
+        }
+
+        <form method="post" asp-action="DangNhap">
+            <input type="hidden" name="returnUrl" value="@ViewBag.ReturnUrl" />
+
+            <div class="mb-4">
+                <label for="email" class="form-label">Email hoặc Tên đăng nhập</label>
+                <input type="text" class="form-control" id="email" name="tenDangNhapHoacEmail" placeholder="Nhập email hoặc tên đăng nhập" required />
             </div>
 
-            <div class="text-center mt-2">
-                <a href="#" class="text-decoration-none text-primary">Quên mật khẩu?</a>
+            <div class="mb-4">
+                <label for="matkhau" class="form-label">Mật khẩu</label>
+                <div class="password-wrapper">
+                    <input type="password" class="form-control" id="matkhau" name="matKhau" placeholder="Nhập mật khẩu" required />
+                    <span class="toggle-password" onclick="togglePassword()">
+                        <i class="bi bi-eye" id="eyeIcon"></i>
+                    </span>
+                </div>
             </div>
+
+            <div class="d-grid">
+                <button type="submit" class="btn btn-login">Đăng nhập</button>
+            </div>
+        </form>
+
+        <div class="register-link mt-4">
+            <span class="text-muted">Chưa có tài khoản?</span>
+            <a asp-action="DangKy" class="text-primary fw-semibold text-decoration-none">Đăng ký ngay</a>
         </div>
     </div>
 </div>
+
+@section Scripts {
+    <script>
+        function togglePassword() {
+            const input = document.getElementById("matkhau");
+            const icon = document.getElementById("eyeIcon");
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("bi-eye");
+                icon.classList.add("bi-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("bi-eye-slash");
+                icon.classList.add("bi-eye");
+            }
+        }
+    </script>
+}

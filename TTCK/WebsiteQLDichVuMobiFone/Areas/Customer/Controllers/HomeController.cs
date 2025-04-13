@@ -48,7 +48,8 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             
             ViewBag.DanhSachDichVu = danhSachDichVu;
             ViewBag.IconDichVu = iconDichVu;
-            ViewBag.DanhSachTinTuc = _context.TinTucs.ToList();
+            ViewBag.DanhSachTinTuc = _context.TinTucs.OrderBy(t => t.IdTinTuc).ToList();
+
             return View();
         }
         public IActionResult TimKiem(string searchTerm)
@@ -86,11 +87,63 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             return View();
         }
+        // GET: Liên hệ
         public IActionResult LienHe()
         {
             GetData();
+            ViewBag.ErrorMessage = TempData["ErrorMessage"] as string;
+            ViewBag.SuccessMessage = TempData["SuccessMessage"] as string;
             return View();
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult LienHe(string HoTen, string Email, string SoDienThoai, string NoiDung)
+        {
+            GetData();
+            // Kiểm tra người dùng đã đăng nhập chưa
+            var nguoiDungId = HttpContext.Session.GetString("UserId");
+            if (string.IsNullOrEmpty(nguoiDungId))
+            {
+                TempData["ErrorMessage"] = "Vui lòng đăng nhập để thực hiện mua SIM.";
+                return RedirectToAction("LienHe");
+            }
+
+            // Kiểm tra từng trường đầu vào
+            if (string.IsNullOrWhiteSpace(HoTen) || string.IsNullOrWhiteSpace(Email) ||
+                string.IsNullOrWhiteSpace(SoDienThoai) || string.IsNullOrWhiteSpace(NoiDung))
+            {
+                TempData["ErrorMessage"] = "Vui lòng điền đầy đủ tất cả các trường trước khi gửi.";
+                return RedirectToAction("LienHe");
+            }
+
+            // Nếu hợp lệ, tạo lời nhắn
+            var lienHe = new LienHe
+            {
+                HoTen = HoTen,
+                Email = Email,
+                SoDienThoai = SoDienThoai,
+                NoiDung = NoiDung,
+                NgayGui = DateTime.Now
+            };
+
+            lienHe.IdnguoiDung = int.Parse(nguoiDungId);
+
+            try
+            {
+                _context.LienHes.Add(lienHe);
+                _context.SaveChanges();
+                TempData["SuccessMessage"] = "Cảm ơn bạn đã liên hệ. Chúng tôi sẽ phản hồi sớm nhất!";
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = "Đã xảy ra lỗi khi gửi lời nhắn. Vui lòng thử lại.";
+                // Có thể ghi log tại đây nếu cần
+            }
+
+            return RedirectToAction("LienHe");
+        }
+
         public IActionResult GioiThieu()
         {
             GetData();

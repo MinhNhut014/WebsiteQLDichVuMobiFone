@@ -10,125 +10,90 @@
         { "Dịch vụ khác", "DichVuKhac" }
     };
     ViewBag.RouteDichVu = controllerDichVu;
+    int index = 0;
 }
 
+<style>
+    .carousel-item {
+        background-size: cover;
+        background-position: center;
+        height: 700px;
+        position: relative;
+        .carousel-item
+        transition: none !important;
+    
+    }
 
-<!-- Carousel Start -->
-<div class="header-carousel owl-carousel">
-    <!-- Banner 1: Dịch vụ Di động -->
-    <div class="header-carousel-item bg-primary">
-        <div class="carousel-caption">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-7 animated fadeInLeft">
-                        <div class="text-sm-center text-md-start">
-                            <h4 class="text-white text-uppercase fw-bold mb-4">Dịch vụ Di động</h4>
-                            <h1 class="display-1 text-white mb-4">Kết nối nhanh chóng - Trải nghiệm vượt trội</h1>
-                            <p class="mb-5 fs-5">
-                                Cung cấp các gói cước, gói data tốc độ cao phù hợp với mọi nhu cầu sử dụng, từ cá nhân đến doanh nghiệp.
-                            </p>
-                            <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                                <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#">Xem chi tiết</a>
-                                <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Đăng ký ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 animated fadeInRight">
-                        <div class="carousel-img">
-                            <img src="~/img/banner/dich-vu-di-dong.jpg" class="img-fluid w-100" alt="Dịch vụ Di động">
-                        </div>
-                    </div>
+    .carousel-caption {
+        position: absolute;
+        bottom: 40px; /* cách đáy khung */
+        left: 175px; /* cách lề trái */
+        width: 75%; /* độ rộng hợp lý để hiển thị nội dung */
+        background: rgba(0, 0, 0, 0.65);
+        padding: 30px 25px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    }
+
+        .carousel-caption h4 {
+            font-size: 1.8rem;
+            color: #fff;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+            margin-bottom: 15px;
+        }
+
+        .carousel-caption p {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 4.5em;
+            color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .carousel-caption .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 25px;
+            align-self: flex-start;
+        }
+</style>
+<div id="newsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+    <div class="carousel-inner">
+        @for (int i = 0; i < danhSachTinTuc.Count; i++)
+        {
+            var tin = danhSachTinTuc[i];
+            <div class="carousel-item @(i  == 0 ? "active" : "")" style="background-image: url('@Url.Content("~/img/tintuc/" + tin.AnhDaiDien)');">
+                
+                 
+                <div class="carousel-caption d-none d-md-block">
+                    <h4 class="text-white fw-bold mb-4">@tin.TieuDe</h4>
+                    <p class="mb-4">
+                        @Html.Raw(tin.NoiDung.Length > 150 ? tin.NoiDung.Substring(0, 150) + "..." : tin.NoiDung)
+                    </p>
+                    <a class="btn btn-light rounded-pill" href="@Url.Action("ChiTiet", "TinTucs", new { id = tin.IdTinTuc })">
+                        Tìm Hiểu Thêm
+                    </a>
                 </div>
             </div>
-        </div>
+            index++;
+        }
     </div>
-
-    <!-- Banner 2: Dịch vụ Doanh nghiệp -->
-    <div class="header-carousel-item bg-dark">
-        <div class="carousel-caption">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-5 animated fadeInLeft">
-                        <div class="carousel-img">
-                            <img src="~/img/banner/banner-1.jpg" class="img-fluid w-100" alt="Dịch vụ Doanh nghiệp">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 animated fadeInRight">
-                        <div class="text-sm-center text-md-end">
-                            <h4 class="text-white text-uppercase fw-bold mb-4">Dịch vụ Doanh nghiệp</h4>
-                            <h1 class="display-1 text-white mb-4">Giải pháp số hóa cho doanh nghiệp</h1>
-                            <p class="mb-5 fs-5">
-                                Cung cấp các giải pháp viễn thông, CNTT, truyền dẫn và băng rộng, giúp doanh nghiệp tối ưu hóa vận hành và phát triển bền vững.
-                            </p>
-                            <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
-                                <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#">Tìm hiểu ngay</a>
-                                <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Liên hệ tư vấn</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Banner 3: Dịch vụ SIM -->
-    <div class="header-carousel-item bg-success">
-        <div class="carousel-caption">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-7 animated fadeInLeft">
-                        <div class="text-sm-center text-md-start">
-                            <h4 class="text-white text-uppercase fw-bold mb-4">Dịch vụ SIM</h4>
-                            <h1 class="display-1 text-white mb-4">Chọn số đẹp, kích hoạt nhanh chóng</h1>
-                            <p class="mb-5 fs-5">
-                                SIM trả trước & trả sau, nhiều ưu đãi hấp dẫn, dễ dàng hòa mạng và lựa chọn số đẹp theo nhu cầu.
-                            </p>
-                            <div class="d-flex justify-content-center justify-content-md-start flex-shrink-0 mb-4">
-                                <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#">Xem SIM</a>
-                                <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Đăng ký ngay</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-5 animated fadeInRight">
-                        <div class="carousel-img">
-                            <img src="~/img/banner/dich-vu-sim.jpg" class="img-fluid w-100" alt="Dịch vụ SIM">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Banner 4: Dịch vụ Khác -->
-    <div class="header-carousel-item bg-info">
-        <div class="carousel-caption">
-            <div class="container">
-                <div class="row g-4 align-items-center">
-                    <div class="col-lg-5 animated fadeInLeft">
-                        <div class="carousel-img">
-                            <img src="~/img/banner/dich-vu-khac.jpg" class="img-fluid w-100" alt="Dịch vụ Khác">
-                        </div>
-                    </div>
-                    <div class="col-lg-7 animated fadeInRight">
-                        <div class="text-sm-center text-md-end">
-                            <h4 class="text-white text-uppercase fw-bold mb-4">Dịch vụ Khác</h4>
-                            <h1 class="display-1 text-white mb-4">Giải pháp số tiện ích cho cuộc sống</h1>
-                            <p class="mb-5 fs-5">
-                                Cung cấp các dịch vụ Giáo dục, Tài chính, Giải trí, Internet an toàn, đáp ứng nhu cầu đa dạng của khách hàng.
-                            </p>
-                            <div class="d-flex justify-content-center justify-content-md-end flex-shrink-0 mb-4">
-                                <a class="btn btn-light rounded-pill py-3 px-4 px-md-5 me-2" href="#">Khám phá ngay</a>
-                                <a class="btn btn-dark rounded-pill py-3 px-4 px-md-5 ms-2" href="#">Đăng ký sử dụng</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#newsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Trước</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#newsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Tiếp</span>
+    </button>
 </div>
-
-<!-- Carousel End -->
 <!-- Feature Start -->
 <!-- Phần 1: Hành Trình Phát Triển & Cam Kết Chất Lượng -->
 <div class="container-fluid feature bg-light py-5">

@@ -4,46 +4,137 @@
     ViewData["Title"] = "Chi tiết SIM";
 }
 
-<div class="container mt-5">
-    <div class="card shadow-lg border-0 rounded-4">
-        <div class="card-header bg-gradient text-white text-center py-3" style="background: linear-gradient(135deg, #4c84ff, #1c39bb);">
-            <h2 class="mb-0">📋 Chi Tiết SIM</h2>
-        </div>
-        <div class="card-body p-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="form-group mb-4">
-                        <label class="form-label fw-semibold">📞 Số Thuê Bao</label>
-                        <input class="form-control rounded-3 shadow-sm" value="@Model.SoThueBao" readonly />
-                    </div>
-                    <div class="form-group mb-4">
-                        <label class="form-label fw-semibold">💰 Phí Hòa Mạng</label>
-                        <input class="form-control rounded-3 shadow-sm" value="@Model.PhiHoaMang" readonly />
-                    </div>
-                    <div class="form-group mb-4">
-                        <label class="form-label fw-semibold">🔢 Loại Số</label>
-                        <input class="form-control rounded-3 shadow-sm" value="@Model.IdloaiSoNavigation.TenLoaiSo" readonly />
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="form-group mb-4">
-                        <label class="form-label fw-semibold">🌍 Khu Vực Hòa Mạng</label>
-                        <input class="form-control rounded-3 shadow-sm" value="@Model.KhuVucHoaMang" readonly />
-                    </div>
-                    <div class="form-group mb-4">
-                        <label class="form-label fw-semibold">📋 Trạng Thái SIM</label>
-                        <input class="form-control rounded-3 shadow-sm" value="@Model.IdtrangThaiSimNavigation.TenTrangThai" readonly />
-                    </div>
-                    <div class="form-group mb-4">
-                        <label class="form-label fw-semibold">📦 Gói Đăng Ký Đi Kèm</label>
-                        <input class="form-control rounded-3 shadow-sm" value="@Model.GoiDangKyDiKemNavigation?.TenGoi " Không có"" readonly />
-                    </div>
-                </div>
-            </div>
-            <div class="d-flex justify-content-between">
-                <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
-                <a asp-action="Edit" asp-route-id="@Model?.Idsim" class="btn btn-primary rounded-3 px-4">✏️ Chỉnh sửa</a>
-            </div>
-        </div>
+<h2>Chi tiết SIM</h2>
+
+<div class="card mb-4">
+    <div class="card-header">
+        <h4>Thông tin SIM</h4>
     </div>
+    <div class="card-body">
+        <dl class="row">
+            <dt class="col-sm-3">Số Thuê Bao</dt>
+            <dd class="col-sm-9">@Model.SoThueBao</dd>
+
+            <dt class="col-sm-3">Loại Số</dt>
+            <dd class="col-sm-9">@Model.IdloaiSoNavigation?.TenLoaiSo</dd>
+
+            <dt class="col-sm-3">Khu Vực Hòa Mạng</dt>
+            <dd class="col-sm-9">@Model.KhuVucHoaMang</dd>
+
+            <dt class="col-sm-3">Phí Hòa Mạng</dt>
+            <dd class="col-sm-9">@Model.PhiHoaMang?.ToString("C0")</dd>
+
+            <dt class="col-sm-3">Trạng Thái SIM</dt>
+            <dd class="col-sm-9">@Model.IdtrangThaiSimNavigation?.TenTrangThai</dd>
+        </dl>
+    </div>
+</div>
+
+<h3>Danh sách gói đăng ký</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Tên Gói</th>
+            <th>Ngày Đăng Ký</th>
+            <th>Loại Gói</th>
+            <th>Hành Động</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var goi in Model.SimGoiDangKies)
+        {
+            <tr>
+                <td>@goi.IdgoiDangKyNavigation?.TenGoi</td>
+                <td>@goi.NgayDangKy?.ToString("dd/MM/yyyy")</td>
+                <td>Gói SIM</td>
+                <td>
+                    <form asp-action="RemoveGoiDangKy" method="post">
+                        <input type="hidden" name="idSim" value="@Model.Idsim" />
+                        <input type="hidden" name="idGoiDangKy" value="@goi.IdgoiDangKy" />
+                        <input type="hidden" name="loaiGoi" value="SimGoiDangKy" />
+                        <a asp-controller="GoiDangKies" asp-action="Details" asp-route-id="@goi.IdgoiDangKy" class="btn btn-info btn-sm text-white mx-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+        @foreach (var goiKhac in Model.SimGoiDangKyDichVuKhacs)
+        {
+            <tr>
+                <td>@goiKhac.IdgoiDangKyNavigation?.TenGoi</td>
+                <td>@goiKhac.NgayDangKy?.ToString("dd/MM/yyyy")</td>
+                <td>Gói Dịch Vụ Khác</td>
+                <td>
+                    <form asp-action="RemoveGoiDangKy" method="post">
+                        <input type="hidden" name="idSim" value="@Model.Idsim" />
+                        <input type="hidden" name="idGoiDangKy" value="@goiKhac.IdgoiDangKy" />
+                        <input type="hidden" name="loaiGoi" value="SimGoiDangKyDichVuKhac" />
+                        <a asp-controller="GoiDangKyDichVuKhacs" asp-action="Details" asp-route-id="@goiKhac.IdgoiDangKy" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <button type="submit" class="btn btn-danger btn-sm">Xóa</button>
+                    </form>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<h3>Thêm gói đăng ký</h3>
+<form asp-action="AddGoiDangKy" method="post">
+    <input type="hidden" name="idSim" value="@Model.Idsim" />
+    <div class="form-group">
+        <label for="loaiGoi">Loại Gói</label>
+        <select id="loaiGoi" name="loaiGoi" class="form-control" required>
+            <option value="SimGoiDangKy">Gói SIM</option>
+            <option value="SimGoiDangKyDichVuKhac">Gói Dịch Vụ Khác</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label for="idGoiDangKy">Chọn Gói Đăng Ký</label>
+        <select id="idGoiDangKy" name="idGoiDangKy" class="form-control" required>
+            <!-- Danh sách gói đăng ký sẽ được cập nhật bằng JavaScript -->
+        </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Thêm</button>
+</form>
+
+<script>
+    // Dữ liệu gói đăng ký được truyền từ server
+    const goiSim = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.GoiDangKySim));
+    const goiDichVuKhac = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.GoiDangKyDichVuKhac));
+
+    // Hàm cập nhật danh sách gói đăng ký
+    function updateGoiDangKyList() {
+        const loaiGoi = document.getElementById("loaiGoi").value;
+        const goiDangKySelect = document.getElementById("idGoiDangKy");
+
+        // Xóa các tùy chọn hiện tại
+        goiDangKySelect.innerHTML = "";
+
+        // Lấy danh sách gói đăng ký tương ứng
+        const danhSachGoi = loaiGoi === "SimGoiDangKy" ? goiSim : goiDichVuKhac;
+
+        // Thêm các tùy chọn mới
+        danhSachGoi.forEach(goi => {
+            const option = document.createElement("option");
+            option.value = goi.Value;
+            option.textContent = goi.Text;
+            goiDangKySelect.appendChild(option);
+        });
+    }
+
+    // Gọi hàm khi trang được tải
+    document.addEventListener("DOMContentLoaded", updateGoiDangKyList);
+
+    // Gọi hàm khi người dùng thay đổi loại gói
+    document.getElementById("loaiGoi").addEventListener("change", updateGoiDangKyList);
+</script>
+
+
+<div class="d-flex justify-content-between mt-4">
+    <a asp-action="Index" class="btn btn-outline-primary rounded-3 px-4">🔙 Quay lại</a>
+    <a asp-action="Edit" asp-route-id="@Model?.Idsim" class="btn btn-primary rounded-3 px-4">✏️ Chỉnh sửa</a>
 </div>

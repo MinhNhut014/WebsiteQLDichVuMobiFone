@@ -94,8 +94,7 @@ CREATE TABLE Sim (
     IDLoaiSo INT NOT NULL FOREIGN KEY REFERENCES LoaiSo(IDLoaiSo),
     KhuVucHoaMang NVARCHAR(255),
     PhiHoaMang INT DEFAULT 0,
-	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim),
-	GoiDangKyDiKem INT NULL FOREIGN KEY REFERENCES GoiDangKy(IDGoiDangKy)
+	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim)
 );
 
 -- Dịch vụ Khác (Giáo dục, Tài chính, Giải trí, Internet An toàn, Du lịch) --
@@ -121,6 +120,31 @@ CREATE TABLE GoiDangKyDichVuKhac (
     ThoiHan NVARCHAR(50),
     IDSanPham INT NOT NULL FOREIGN KEY REFERENCES SanPhamDichVuKhac(IDSanPham) ON DELETE CASCADE
 );
+-- Bảng trung gian giữa SIM và GoiDangKy (dịch vụ Di động)
+CREATE TABLE Sim_GoiDangKy (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    IDSim INT NULL FOREIGN KEY REFERENCES Sim(IDSim) ON DELETE CASCADE,
+    IDGoiDangKy INT NULL FOREIGN KEY REFERENCES GoiDangKy(IDGoiDangKy),
+    NgayDangKy DATETIME DEFAULT GETDATE()
+);
+
+-- Bảng trung gian giữa SIM và GoiDangKyDichVuKhac (dịch vụ khác)
+CREATE TABLE Sim_GoiDangKyDichVuKhac (
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    IDSim INT NULL FOREIGN KEY REFERENCES Sim(IDSim) ON DELETE CASCADE,
+    IDGoiDangKy INT NULL FOREIGN KEY REFERENCES GoiDangKyDichVuKhac(IDGoiDangKy),
+    NgayDangKy DATETIME DEFAULT GETDATE()
+);
+CREATE TABLE LienHe (
+    IDLienHe INT IDENTITY(1,1) PRIMARY KEY,
+	IDNguoiDung INT NOT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
+    HoTen NVARCHAR(255) NOT NULL,
+    Email NVARCHAR(255) NOT NULL,
+    SoDienThoai NVARCHAR(15) NOT NULL,
+    NoiDung NVARCHAR(MAX),
+    NgayGui DATETIME DEFAULT GETDATE(),
+    TrangThai BIT DEFAULT 0 -- 0: chưa xử lý, 1: đã xử lý
+);
 
 -- Bảng Trạng Thái Đơn Hàng
 CREATE TABLE TrangThaiDonHang (
@@ -134,6 +158,11 @@ CREATE TABLE PhuongThucVanChuyen (
     MoTa NVARCHAR(1000),
     GiaVanChuyen INT DEFAULT 0 CHECK (GiaVanChuyen >= 0)
 );
+CREATE TABLE TrangThaiThanhToan (
+    IDTrangThaiThanhToan INT IDENTITY(1,1) PRIMARY KEY,
+    TenTrangThai NVARCHAR(100) NOT NULL -- VD: "Chưa thanh toán", "Đã thanh toán", "Đang xử lý"
+);
+
 -- Bảng Hóa Đơn Dịch Vụ (Dịch vụ Di động + Dịch vụ Khác)
 CREATE TABLE HoaDonDichVu (
     IDHoaDonDV INT IDENTITY(1,1) PRIMARY KEY,
@@ -169,6 +198,7 @@ CREATE TABLE HoaDonSim (
     Email NVARCHAR(100),
     DiaDiemNhan NVARCHAR(255) NOT NULL,
     PhuongThucThanhToan NVARCHAR(50) NOT NULL,
+	IDTrangThaiThanhToan INT NOT NULL FOREIGN KEY REFERENCES TrangThaiThanhToan(IDTrangThaiThanhToan),
     IDPhuongThucVC INT NOT NULL FOREIGN KEY REFERENCES PhuongThucVanChuyen(IDPhuongThucVC) -- Thay thế cột cũ
 );
 
@@ -274,154 +304,35 @@ VALUES
     (N'Bị khóa một chiều'),  
     (N'Bị khóa hai chiều'),  
     (N'Đã hủy');  
---2. Dữ liệu bảng loại sim
-INSERT INTO LoaiSo (TenLoaiSo)  
-VALUES  
-    (N'Trả Trước'),  
-    (N'Trả Sau');
---3. Dữ liệu sim
-INSERT INTO Sim (IDDichVu, SoThueBao, IDLoaiSo, KhuVucHoaMang, PhiHoaMang, IDTrangThaiSim, GoiDangKyDiKem)
-VALUES 
-(2, '0783212416', 1, 'Toàn quốc', 50000, 1, NULL),
-(2, '0783329026', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783329050', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783213630', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783213710', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783213728', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783214309', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783214370', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783214408', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783218610', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783225810', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783329546', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783329820', 1, 'Toàn quốc', 50000, 1, NULL),  
-(2, '0783214808', 1, 'Toàn quốc', 50000, 1, NULL)
+INSERT INTO TrangThaiThanhToan (TenTrangThai)
+VALUES
+(N'Chưa thanh toán'),
+(N'Đã thanh toán'),
+(N'Đang xử lý'),
+(N'Thanh toán thất bại'),
+(N'Hoàn tiền');
 
-
-----Thông tin dịch vụ di đông của mobifone
----1. Loại dịch vụ di động
-INSERT INTO LoaiDichVuDiDong (IDDichVu, TenLoaiDichVu)  
-VALUES  
-(1, 'Gói cước'),  
-(1, 'Gói data');
----2. loại gói đăng ký
--- Thêm dữ liệu vào bảng LoaiGoiDangKy (Loại gói cước)
-INSERT INTO LoaiGoiDangKy (TenLoaiGoi, IDLoaiDichVu)  
-VALUES  
-('Thoại quốc tế', 1),  
-('Chuyển vùng quốc tế', 1),  
-('MOBISAFE', 1),  
-('Tích điểm', 1),  
-('Siêu data', 1),  
-('Quốc tế linh hoạt', 1);  
-
--- Thêm dữ liệu vào bảng LoaiGoiDangKy (Loại gói Data)
-INSERT INTO LoaiGoiDangKy (TenLoaiGoi, IDLoaiDichVu)  
-VALUES  
-('Miễn phí MXH', 2),  
-('Dài kỳ', 2),  
-('Data bổ sung', 2),  
-('Tháng', 2),  
-('Data thường', 2),  
-('Ngày', 2);  
----3. Gói đăng ký dịch vụ di động
-INSERT INTO GoiDangKy (TenGoi, GiaGoi, ThoiHan, TinhNang, IDLoaiGoi, ThongTinGoi, ThongTinChiTiet)
-VALUES 
-	---Gói Data
-    -- Gói Data - Miễn phí MXH
-    (N'MXH80', 80000, N'30 Ngày', N'Data: 30GB', 7, N'80.000 đ / 30 Ngày - 30GB', N'Chi tiết gói MXH80...'),
-    (N'12MXH80', 960000, N'360 Ngày', N'Data: 360GB', 7, N'960.000 đ / 360 Ngày - 360GB', N'Chi tiết gói 12MXH80...'),
-    (N'6MXH80', 480000, N'180 Ngày', N'Data: 180GB', 7, N'480.000 đ / 180 Ngày - 180GB', N'Chi tiết gói 6MXH80...'),
-
-    (N'MXH90', 90000, N'30 Ngày', N'Data: 30GB', 7, N'90.000 đ / 30 Ngày - 30GB', N'Chi tiết gói MXH90...'),
-    (N'12MXH90', 1080000, N'360 Ngày', N'Data: 360GB', 7, N'1.080.000 đ / 360 Ngày - 360GB', N'Chi tiết gói 12MXH90...'),
-    (N'6MXH90', 540000, N'180 Ngày', N'Data: 180GB', 7, N'540.000 đ / 180 Ngày - 180GB', N'Chi tiết gói 6MXH90...'),
-
-    (N'MXH100', 100000, N'30 Ngày', N'Data: 30GB', 7, N'100.000 đ / 30 Ngày - 30GB', N'Chi tiết gói MXH100...'),
-    (N'6MXH100', 600000, N'180 Ngày', N'Data: 180GB', 7, N'600.000 đ / 180 Ngày - 180GB', N'Chi tiết gói 6MXH100...'),
-
-    -- Gói Data - Dài Kỳ (IDLoaiGoi = 8)
-    (N'12MFV250', 3000000, N'360 Ngày', N'Thoại nội mạng: 2500 phút. Thoại ngoại mạng: 250 phút. Data: 250 GB', 8, N'3.000.000 đ / 360 Ngày - 2500 phút thoại', N'Chi tiết gói 12MFV250...'),
-    (N'6MFV250', 1500000, N'180 Ngày', N'Thoại nội mạng: 2000 phút. Thoại ngoại mạng: 250 phút. Data: 250 GB', 8, N'1.500.000 đ / 180 Ngày - 2000 phút thoại', N'Chi tiết gói 6MFV250...'),
-    (N'24MFV250', 6000000, N'720 Ngày', N'Thoại nội mạng: 3000 phút. Thoại ngoại mạng: 250 phút. Data: 250 GB', 8, N'6.000.000 đ / 720 Ngày - 3000 phút thoại', N'Chi tiết gói 24MFV250...'),
-    (N'5GV24', 4800000, N'720 Ngày', N'Thoại liên mạng: 250 phút...', 8, N'4.800.000 đ / 720 Ngày - 250 phút thoại', N'Chi tiết gói 5GV24...'),
-    (N'5GC24', 4800000, N'720 Ngày', N'Thoại liên mạng: 250 phút...', 8, N'4.800.000 đ / 720 Ngày - 250 phút thoại', N'Chi tiết gói 5GC24...'),
-    (N'5GV12', 2400000, N'360 Ngày', N'Thoại liên mạng: 250 phút...', 8, N'2.400.000 đ / 360 Ngày - 250 phút thoại', N'Chi tiết gói 5GV12...'),
-    (N'5GC12', 2400000, N'360 Ngày', N'Thoại liên mạng: 250 phút...', 8, N'2.400.000 đ / 360 Ngày - 250 phút thoại', N'Chi tiết gói 5GC12...'),
-    (N'5GLQ12', 2400000, N'360 Ngày', N'Thoại liên mạng: 250 phút...', 8, N'2.400.000 đ / 360 Ngày - 250 phút thoại', N'Chi tiết gói 5GLQ12...'),
-
-    -- Gói Data Bổ Sung (IDLoaiGoi = 9)
-    (N'2H', 2000, N'2 Giờ', N'Data: 0.49GB', 9, N'2.000 đ / 2 Giờ - 0.49GB', N'Chi tiết gói 2H...'),
-    (N'3H', 9000, N'3 Giờ', N'Data: 3GB', 9, N'9.000 đ / 3 Giờ - 3GB', N'Chi tiết gói 3H...'),
-    (N'1H', 5000, N'1 Giờ', N'Data: 1GB', 9, N'5.000 đ / 1 Giờ - 1GB', N'Chi tiết gói 1H...'),
-
-	---Gói Cước
-	--Gói cước Thoại Quốc Tế
-    (N'QTTK15', 15000, N'1 Tháng', N'', 1, N'15.000 đ / 1 Tháng', N'Chi tiết gói QTTK15...'),
-
-    (N'TQT9', 9000, N'1 Ngày', N'Thoại quốc tế: 6 phút', 1, N'9.000 đ / 1 Ngày - 6 phút', N'Chi tiết gói TQT9...'),
-    (N'TQT19', 19000, N'1 Ngày', N'Thoại quốc tế: 10 phút', 1, N'19.000 đ / 1 Ngày - 10 phút', N'Chi tiết gói TQT19...'),
-    (N'TQT49', 49000, N'7 Ngày', N'Thoại quốc tế: 40 phút', 1, N'49.000 đ / 7 Ngày - 40 phút', N'Chi tiết gói TQT49...'),
-    
-    (N'TQT99', 99000, N'15 Ngày', N'Thoại quốc tế: 100 phút', 1, N'99.000 đ / 15 Ngày - 100 phút', N'Chi tiết gói TQT99...'),
-    (N'TQT199', 199000, N'30 Ngày', N'Thoại quốc tế: 250 phút', 1, N'199.000 đ / 30 Ngày - 250 phút', N'Chi tiết gói TQT199...'),
-    (N'TQT299', 299000, N'30 Ngày', N'Thoại quốc tế: 380 phút', 1, N'299.000 đ / 30 Ngày - 380 phút', N'Chi tiết gói TQT299...'),
-
-	--Gói cước chuyển vùng quốc tế
-	(N'GC', 500000, N'10 Ngày', N'Data: 5.00 GB', 2, N'500.000 đ / 10 Ngày - 5GB', N'Chi tiết gói GC...'),
-    (N'GHK', 250000, N'15 Ngày', N'Data: 20.00 GB', 2, N'250.000 đ / 15 Ngày - 20GB', N'Chi tiết gói GHK...'),
-    (N'GJ', 500000, N'10 Ngày', N'Data: 5.00 GB', 2, N'500.000 đ / 10 Ngày - 5GB', N'Chi tiết gói GJ...'),
-    
-    (N'RB2', 200000, N'30 Ngày', N'Data: 2.00 GB', 2, N'200.000 đ / 30 Ngày - 2GB', N'Chi tiết gói RB2...'),
-    (N'GUS', 350000, N'15 Ngày', N'Data: 25.00 GB', 2, N'350.000 đ / 15 Ngày - 25GB', N'Chi tiết gói GUS...'),
-    (N'GMA', 250000, N'15 Ngày', N'Data: 19.77 GB', 2, N'250.000 đ / 15 Ngày - 19.77GB', N'Chi tiết gói GMA...'),
-
-    (N'RB3', 450000, N'30 Ngày', N'Data: 2.00 GB', 2, N'450.000 đ / 30 Ngày - 2GB', N'Chi tiết gói RB3...'),
-    (N'CVQT', 0, N'0', N'', 2, N'0 đ / 0', N'Chi tiết gói CVQT...'),
-
-	--Gói cước mobisafe
-	(N'AT5', 25000, N'1 Tháng', N'', 3, N'25.000 đ / 1 Tháng', N'Chi tiết gói AT5...'),
-    (N'AT10', 30000, N'1 Tháng', N'', 3, N'30.000 đ / 1 Tháng', N'Chi tiết gói AT10...'),
-    (N'AT25', 40000, N'1 Tháng', N'', 3, N'40.000 đ / 1 Tháng', N'Chi tiết gói AT25...'),
-
-    (N'6AT5', 150000, N'6 Tháng', N'', 3, N'150.000 đ / 6 Tháng', N'Chi tiết gói 6AT5...'),
-    (N'6AT10', 180000, N'6 Tháng', N'', 3, N'180.000 đ / 6 Tháng', N'Chi tiết gói 6AT10...'),
-    (N'6AT25', 240000, N'6 Tháng', N'', 3, N'240.000 đ / 6 Tháng', N'Chi tiết gói 6AT25...'),
-
-    (N'12AT5', 300000, N'12 Tháng', N'', 3, N'300.000 đ / 12 Tháng', N'Chi tiết gói 12AT5...'),
-    (N'12AT10', 360000, N'12 Tháng', N'', 3, N'360.000 đ / 12 Tháng', N'Chi tiết gói 12AT10...');
-
----===Thông tin dịch vụ doanh nghiệp của mobifone===---
----1. Nhóm dịch vụ doanh nghiệp của mobifone
-INSERT INTO NhomDichVuDoanhNghiep (IDDichVu, TenNhom)
-VALUES 
-    (3, N'Viễn thông'),
-    (3, N'Công nghệ thông tin');
-
----2.Loại dịch vụ doanh nghiệp của mobifone
-INSERT INTO DichVuDoanhNghiep (TenDichVu, IDNhomDichVu)
-VALUES 
-	--Loại dịch vụ của nhóm dịch vụ viễn thông 
-    (N'Giải pháp cho doanh nghiệp', 1),
-    (N'Gói cước', 1),
-	(N'Ưu đãi M-Business', 1),
-
-	--Loại dịch vụ của nhóm dịch vụ Công nghệ thông tin
-	(N'Doanh Nghiệp Số', 2),
-    (N'Chính Phủ Số', 2),
-	(N'Quảng Cáo Số', 2);
-
----3. Gói dịch vụ doanh nghiệp
-INSERT INTO GoiDichVu (TenGoiDV, HinhAnh, MoTa, ThongTinChiTiet, IDDichVuDN)
-VALUES 
-    ('Voice Brandname', 'voice_brandname.png', 
-     'Voice Brandname là giải pháp cho phép gán tên thương hiệu của doanh nghiệp trên cuộc gọi từ doanh nghiệp đến khách hàng là thuê bao MobiFone.', 
-     'Voice Brandname giúp doanh nghiệp hiển thị tên thương hiệu khi gọi đến khách hàng.',1),
-
-    ('mBiz360', 'mbiz360.png', 
-     'Gói dịch vụ giúp khách hàng Doanh nghiệp tiết kiệm chi phí thuận tiện trong việc Đăng ký sử dụng dịch vụ thông qua hình thức đăng ký SMS hoặc App Mobile', 
-     'mBiz360 giúp tiết kiệm chi phí và thuận tiện trong việc đăng ký dịch vụ thông qua SMS hoặc App Mobile.',1),
-
-    ('MobiData Sponsor', 'MobiData_Sponsor.png', 
-     'Tổng đài ảo giúp doanh nghiệp linh hoạt trong liên lạc', 
-     'Cloud PBX là tổng đài điện thoại sử dụng công nghệ điện toán đám mây, giúp doanh nghiệp dễ dàng quản lý cuộc gọi nội bộ và ngoại tuyến.',1);
+INSERT INTO NguoiDung (
+    AnhDaiDien,
+    HoTen,
+    CCCD,
+    Email,
+    SoDienThoai,
+    DiaChi,
+    TenDangNhap,
+    MatKhau,
+    quyen,
+    trangthai
+)
+VALUES (
+    N'/img/user/user.jpg',          -- Đường dẫn ảnh đại diện (tùy chọn)
+    N'Quản trị viên',
+    N'012345678901',              -- CCCD mẫu
+    N'admin@mobifone.vn',
+    N'0912345678',
+    N'Hà Nội',
+    N'admin',                     -- Tên đăng nhập
+    N'123',                  -- Mật khẩu (nên mã hóa khi sử dụng thực tế)
+    1,                            -- Quyền = 1 (admin)
+    1                             -- Trạng thái = 1 (đang hoạt động)
+);

@@ -1,6 +1,30 @@
 ﻿@{
     ViewData["Title"] = "LienHe";
 }
+@if (ViewBag.ErrorMessage != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+        title: "Thông báo",
+        text: "Bạn chưa đăng nhập! Vui lòng đăng nhập để gửi tin nhấn.",
+        icon: "warning",
+        confirmButtonText: "OK"
+        });
+    </script>
+}
+@if (ViewBag.SuccessMessage != null)
+{
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+        title: "Thông báo",
+        text: "Bạn đã gửi tin nhắn liên hệ thành công.",
+        icon: "success",
+        confirmButtonText: "OK"
+        });
+    </script>
+}
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -122,11 +146,11 @@
             <div class="col-md-6">
                 <div class="contact-form">
                     <h5 class="mb-3">Để lại lời nhắn</h5>
-                    <form>
-                        <input type="text" class="form-control" placeholder="Họ và tên" required>
-                        <input type="email" class="form-control" placeholder="Địa chỉ email" required>
-                        <input type="text" class="form-control" placeholder="Số điện thoại" required>
-                        <textarea class="form-control" rows="4" placeholder="Nội dung tin nhắn"></textarea>
+                    <form asp-action="LienHe" method="post">
+                        <input type="text" name="HoTen" class="form-control" placeholder="Họ và tên" required />
+                        <input type="email" name="Email" class="form-control" placeholder="Địa chỉ email" required />
+                        <input type="text" name="SoDienThoai" class="form-control" placeholder="Số điện thoại" required />
+                        <textarea name="NoiDung" class="form-control" rows="4" placeholder="Nội dung tin nhắn"></textarea>
                         <button type="submit" class="btn btn-primary mt-2">Gửi lời nhắn</button>
                     </form>
                 </div>

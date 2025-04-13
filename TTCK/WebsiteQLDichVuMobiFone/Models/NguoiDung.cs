@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("NguoiDung")]
-[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BDEEFEDE95", IsUnique = true)]
-[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0A13DCB34", IsUnique = true)]
-[Index("Cccd", Name = "UQ__NguoiDun__A955A0AAA6E8E259", IsUnique = true)]
-[Index("Email", Name = "UQ__NguoiDun__A9D105342D594B35", IsUnique = true)]
+[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BD0380D079", IsUnique = true)]
+[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0EB541006", IsUnique = true)]
+[Index("Cccd", Name = "UQ__NguoiDun__A955A0AA564514F6", IsUnique = true)]
+[Index("Email", Name = "UQ__NguoiDun__A9D10534158467E1", IsUnique = true)]
 public partial class NguoiDung
 {
     [Key]
@@ -59,4 +59,7 @@ public partial class NguoiDung
 
     [InverseProperty("IdnguoiDungNavigation")]
     public virtual ICollection<HoaDonSim> HoaDonSims { get; set; } = new List<HoaDonSim>();
+
+    [InverseProperty("IdnguoiDungNavigation")]
+    public virtual ICollection<LienHe> LienHes { get; set; } = new List<LienHe>();
 }

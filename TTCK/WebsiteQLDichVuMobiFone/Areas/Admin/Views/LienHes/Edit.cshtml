@@ -1,0 +1,75 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.LienHe
+
+@{
+    ViewData["Title"] = "Chỉnh sửa Liên Hệ";
+}
+
+<div class="container mt-4">
+    <h2 class="text-primary mb-3">Chỉnh sửa Liên Hệ</h2>
+    <div class="card shadow-sm p-4 rounded">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="IdlienHe" />
+
+            <div class="form-group mb-3">
+                <label asp-for="IdnguoiDung" class="fw-bold">Người Dùng</label>
+                <select asp-for="IdnguoiDung" class="form-control" asp-items="ViewBag.IdnguoiDung">
+                    <option value="">-- Chọn người dùng --</option>
+                </select>
+                <span asp-validation-for="IdnguoiDung" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="HoTen" class="fw-bold">Họ Tên</label>
+                <input asp-for="HoTen" class="form-control" placeholder="Nhập họ tên..." />
+                <span asp-validation-for="HoTen" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Email" class="fw-bold">Email</label>
+                <input asp-for="Email" class="form-control" placeholder="Nhập email..." />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="SoDienThoai" class="fw-bold">Số Điện Thoại</label>
+                <input asp-for="SoDienThoai" class="form-control" placeholder="Nhập số điện thoại..." />
+                <span asp-validation-for="SoDienThoai" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NoiDung" class="fw-bold">Nội Dung</label>
+                <textarea asp-for="NoiDung" class="form-control" rows="4" placeholder="Nội dung liên hệ..."></textarea>
+                <span asp-validation-for="NoiDung" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="NgayGui" class="fw-bold">Ngày Gửi</label>
+                <input asp-for="NgayGui" class="form-control" type="datetime-local" />
+                <span asp-validation-for="NgayGui" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="TrangThai" class="fw-bold">Trạng Thái</label>
+                <select asp-for="TrangThai" class="form-control">
+                    <option value="false">Chưa xử lý</option>
+                    <option value="true">Đã xử lý</option>
+                </select>
+                <span asp-validation-for="TrangThai" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex justify-content-between mt-4">
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="fa-solid fa-arrow-left"></i> Quay lại
+                </a>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-save"></i> Lưu thay đổi
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -173,9 +173,9 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
 
-                // Kiểm tra SIM đã đăng ký gói này chưa
-                bool daDangKy = await _context.CthoaDonDichVus.AnyAsync(ct =>
-                    ct.IdgoiDangKy == idGoiDangKy && ct.IdhoaDonDvNavigation.SoDienThoai == SoDienThoai);
+                // Kiểm tra SIM đã đăng ký gói này chưa trong bảng SimGoiDangKy
+                bool daDangKy = await _context.SimGoiDangKies.AnyAsync(sg =>
+                    sg.Idsim == sim.Idsim && sg.IdgoiDangKy == idGoiDangKy);
 
                 if (daDangKy)
                 {
@@ -189,7 +189,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 hoaDon.NgayDatHang = DateTime.Now;
                 hoaDon.IdtrangThai = 1; // Trạng thái "Chờ xử lý"
                 hoaDon.TongTien = goiDangKy.GiaGoi;
-
 
                 // Bắt đầu transaction
                 using var transaction = await _context.Database.BeginTransactionAsync();
@@ -212,9 +211,14 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     _context.CthoaDonDichVus.Add(chiTietHoaDon);
                     await _context.SaveChangesAsync();
 
-                    // Cập nhật gói đăng ký vào SIM đã kiểm tra
-                    sim.GoiDangKyDiKem = idGoiDangKy; // Cột IdgoiDangKy trong bảng SIM
-                    _context.Sims.Update(sim);
+                    // Thêm gói đăng ký vào bảng SimGoiDangKy
+                    var simGoiDangKy = new SimGoiDangKy
+                    {
+                        Idsim = sim.Idsim,
+                        IdgoiDangKy = idGoiDangKy,
+                        NgayDangKy = DateTime.Now
+                    };
+                    _context.SimGoiDangKies.Add(simGoiDangKy);
                     await _context.SaveChangesAsync();
 
                     await transaction.CommitAsync();
@@ -241,6 +245,8 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
             }
         }
+
+
         public IActionResult ThongBaoHoanTat(int idHoaDon)
         {
             GetData();

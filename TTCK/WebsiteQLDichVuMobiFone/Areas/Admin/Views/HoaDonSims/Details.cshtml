@@ -1,78 +1,90 @@
 ﻿@model WebsiteQLDichVuMobiFone.Models.HoaDonSim
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Chi Tiết Hóa Đơn SIM";
 }
 
-<h1>Details</h1>
+<h2 class="text-center text-primary">Chi Tiết Hóa Đơn SIM</h2>
 
-<div>
-    <h4>HoaDonSim</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NgayDatHang)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NgayDatHang)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TongTien)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TongTien)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenKhachHang)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenKhachHang)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.SoDienThoai)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.SoDienThoai)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DiaDiemNhan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DiaDiemNhan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PhuongThucThanhToan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PhuongThucThanhToan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdnguoiDungNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdnguoiDungNavigation.IdnguoiDung)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdphuongThucVcNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdphuongThucVcNavigation.IdphuongThucVc)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.IdtrangThaiNavigation)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdtrangThaiNavigation.IdtrangThai)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.IdhoaDonSim">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="card shadow p-4">
+    <h4>Thông Tin Hóa Đơn</h4>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>ID Hóa Đơn SIM</th>
+            <td>@Model.IdhoaDonSim</td>
+        </tr>
+        <tr>
+            <th>Ngày Đặt Hàng</th>
+            <td>@Model.NgayDatHang?.ToString("dd/MM/yyyy") ?? "N/A"</td>
+        </tr>
+        <tr>
+            <th>Tổng Tiền</th>
+            <td>@Model.TongTien?.ToString("N0") VNĐ</td>
+        </tr>
+        <tr>
+            <th>Tên Khách Hàng</th>
+            <td>@Model.TenKhachHang</td>
+        </tr>
+        <tr>
+            <th>Số Điện Thoại</th>
+            <td>@Model.SoDienThoai</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>@Model.Email</td>
+        </tr>
+    </table>
+
+    <h4>Chi Tiết Gói Đăng Ký</h4>
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Tên Gói</th>
+                <th>Giá Gói</th>
+                <th>Thời Hạn</th>
+                <th>Tính Năng</th>
+                <th>Số Lượng</th>
+                <th>Thành Tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CthoaDonSims)
+            {
+                <tr>
+                    <td>@item.IdgoiDangKyNavigation?.TenGoi</td>
+                    <td>@item.IdgoiDangKyNavigation?.GiaGoi?.ToString("N0") VNĐ</td>
+                    <td>@item.IdgoiDangKyNavigation?.ThoiHan tháng</td>
+                    <td>@item.IdgoiDangKyNavigation?.TinhNang</td>
+                    <td>@item.SoLuong</td>
+                    <td>@item.ThanhTien?.ToString("N0") VNĐ</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>Thông Tin SIM Đã Mua</h4>
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Số SIM</th>
+                <th>Loại SIM</th>
+                <th>Trạng Thái</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CthoaDonSims)
+            {
+                <tr>
+                    <td>@item.IdsimNavigation?.SoThueBao</td>
+                    <td>@item.IdsimNavigation?.IdloaiSoNavigation?.TenLoaiSo</td>
+                    <td>@item.IdsimNavigation?.IdtrangThaiSimNavigation?.TenTrangThai</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <a asp-controller="HoaDonSims" asp-action="Index" class="btn btn-secondary">
+        Quay Lại
+    </a>
+
 </div>

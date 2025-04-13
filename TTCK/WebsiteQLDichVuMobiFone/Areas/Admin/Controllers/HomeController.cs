@@ -77,11 +77,14 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
 
             // Truyền dữ liệu cho biểu đồ
             ViewBag.InvoiceCounts = new int[] { simInvoiceCount, mobileServiceInvoiceCount, otherServiceInvoiceCount, businessServiceInvoiceCount };
-
+            
+            // đếm só tin liên hệ chưa xử lý 
+            int soLienHeChuaXuLy = _context.LienHes.Count(x => x.TrangThai == false);
+            HttpContext.Session.SetInt32("SoLienHeChuaXuLy", soLienHeChuaXuLy);
+            ViewBag.SoLienHeChuaXuLy = soLienHeChuaXuLy;
             // Trả View
             return View();
         }
-
         // GET: Admin/Home/Details/5
         public async Task<IActionResult> Details(int? id)
         {

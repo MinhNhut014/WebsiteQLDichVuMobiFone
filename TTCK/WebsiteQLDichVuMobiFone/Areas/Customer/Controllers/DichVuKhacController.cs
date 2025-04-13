@@ -167,11 +167,21 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
 
-                // Kiểm tra gói đăng ký
+                // Kiểm tra gói đăng ký khác
                 var goiDangKy = await _context.GoiDangKyDichVuKhacs.FindAsync(idGoiDangKy);
                 if (goiDangKy == null)
                 {
                     TempData["ErrorMessage"] = "Gói đăng ký không tồn tại.";
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
+
+                // Kiểm tra SIM đã đăng ký gói này chưa trong bảng SimGoiDangKyKhac
+                bool daDangKy = await _context.SimGoiDangKyDichVuKhacs.AnyAsync(sg =>
+                    sg.Idsim == sim.Idsim && sg.IdgoiDangKy == idGoiDangKy);
+
+                if (daDangKy)
+                {
+                    TempData["ErrorMessage"] = "Số thuê bao này đã đăng ký gói dịch vụ này rồi.";
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
 
@@ -181,7 +191,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 hoaDon.NgayDatHang = DateTime.Now;
                 hoaDon.IdtrangThai = 1; // Trạng thái "Chờ xử lý"
                 hoaDon.TongTien = goiDangKy.GiaGoi;
-
 
                 // Bắt đầu transaction
                 using var transaction = await _context.Database.BeginTransactionAsync();
@@ -204,6 +213,15 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     _context.CthoaDonDichVus.Add(chiTietHoaDon);
                     await _context.SaveChangesAsync();
 
+                    // Thêm gói đăng ký vào bảng SimGoiDangKyKhac
+                    var simGoiDangKy = new SimGoiDangKyDichVuKhac
+                    {
+                        Idsim = sim.Idsim,
+                        IdgoiDangKy = idGoiDangKy,
+                        NgayDangKy = DateTime.Now
+                    };
+                    _context.SimGoiDangKyDichVuKhacs.Add(simGoiDangKy);
+                    await _context.SaveChangesAsync();
 
                     await transaction.CommitAsync();
 
@@ -229,6 +247,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
             }
         }
+
         public IActionResult ThongBaoHoanTat(int idHoaDon)
         {
             GetData();

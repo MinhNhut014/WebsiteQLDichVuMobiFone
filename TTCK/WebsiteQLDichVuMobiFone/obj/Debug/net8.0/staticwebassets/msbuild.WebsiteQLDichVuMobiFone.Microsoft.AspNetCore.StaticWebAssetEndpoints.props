@@ -2400,6 +2400,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"yccwiogbuv"},{"Name":"integrity","Value":"sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/3be6b0eb-8ee5-46ee-9b2d-e47de7856e00_Tiktokdata.jpg"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"18559"},{"Name":"Content-Type","Value":"image/jpeg"},{"Name":"ETag","Value":"\u0022boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 14:27:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"2155"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 12 Apr 2025 13:39:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.uurpy3txgt.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uurpy3txgt"},{"Name":"integrity","Value":"sha256-ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4="},{"Name":"label","Value":"_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2155"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=\u0022"},{"Name":"Last-Modified","Value":"Sat, 12 Apr 2025 13:39:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/WebsiteQLDichVuMobiFone/img/dichvu/dichvukhac/7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jp6drb8ua2.jpg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\img\dichvu\dichvukhac\7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jpg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

@@ -11,8 +11,8 @@
     <!-- Breadcrumb chỉ dẫn -->
     <div class="step-progress d-flex justify-content-center gap-4">
         <div class="step completed">
-            <div class="circle">1</div>
-            <span>Chọn SIM</span>
+            <div class="circle"><i class="bi bi-check-circle"></i></div>
+            <span class="d-block mt-2">Chọn Mua</span>
         </div>
         <div class="step active">
             <div class="circle">2</div>
@@ -46,6 +46,7 @@
                     <form id="paymentForm" method="post" asp-action="CreatePaymentUrlVnpay" asp-controller="Payment">
                         <input type="hidden" name="idSim" value="@sim?.Idsim" />
                         <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
+                        <input type="hidden" name="LoaiDichVu" value="sim" />
                         <!-- Hidden fields for VNPay -->
                         <input type="hidden" id="OrderType" name="OrderType" value="DichVuSim" />
                         <input type="hidden" id="Amount" name="Amount" value="0" />

@@ -39,6 +39,9 @@ public partial class HoaDonSim
     [StringLength(50)]
     public string PhuongThucThanhToan { get; set; } = null!;
 
+    [Column("IDTrangThaiThanhToan")]
+    public int IdtrangThaiThanhToan { get; set; }
+
     [Column("IDPhuongThucVC")]
     public int IdphuongThucVc { get; set; }
 
@@ -56,4 +59,8 @@ public partial class HoaDonSim
     [ForeignKey("IdtrangThai")]
     [InverseProperty("HoaDonSims")]
     public virtual TrangThaiDonHang? IdtrangThaiNavigation { get; set; } = null!;
+
+    [ForeignKey("IdtrangThaiThanhToan")]
+    [InverseProperty("HoaDonSims")]
+    public virtual TrangThaiThanhToan? IdtrangThaiThanhToanNavigation { get; set; } = null!;
 }

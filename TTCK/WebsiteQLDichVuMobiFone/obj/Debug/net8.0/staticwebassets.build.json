@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+uAyXX26PNfzSxyieQ0/IFS8gOObX9GRP863VoAwp+4=",
+  "Hash": "QnhPoT57bbuv/erPEDaAZevjcegmf7V7tSBZcPIK1NY=",
   "Source": "WebsiteQLDichVuMobiFone",
   "BasePath": "_content/WebsiteQLDichVuMobiFone",
   "Mode": "Default",
@@ -4257,6 +4257,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\dichvu\\dichvukhac\\3be6b0eb-8ee5-46ee-9b2d-e47de7856e00_Tiktokdata.jpg"
+    },
+    {
+      "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png",
+      "SourceId": "WebsiteQLDichVuMobiFone",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\",
+      "BasePath": "_content/WebsiteQLDichVuMobiFone",
+      "RelativePath": "img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "uurpy3txgt",
+      "Integrity": "ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\dichvu\\dichvukhac\\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png"
     },
     {
       "Identity": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jpg",
@@ -25991,6 +26012,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-boeEiraUpECpqnNEgkeiAm7/aXUSarStDTdyQmkpgTA="
+        }
+      ]
+    },
+    {
+      "Route": "img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 13:39:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4="
+        }
+      ]
+    },
+    {
+      "Route": "img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.uurpy3txgt.png",
+      "AssetFile": "C:\\DuLieuoD\\TTCK\\WebsiteQLDichVuMobiFone\\wwwroot\\img\\dichvu\\dichvukhac\\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2155"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 13:39:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "uurpy3txgt"
+        },
+        {
+          "Name": "label",
+          "Value": "img/dichvu/dichvukhac/7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ukhXDUOpiQnsvna83C4UBcjhVf1Fjich2nPx5DmqrC4="
         }
       ]
     },

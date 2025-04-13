@@ -198,6 +198,7 @@ wwwroot\img\dichvu\dichvukhac\1a4a3657-94a4-402d-9ee2-abb6883d5682_Spotifydata.j
 wwwroot\img\dichvu\dichvukhac\3052a7cc-f773-43fd-b8ce-ff1c6d2ba9dc_Mobistudy.png
 wwwroot\img\dichvu\dichvukhac\339a76b1-5e9a-4732-a77b-5375df2a1b8f_CongThiDaiHocMobiEdu.png
 wwwroot\img\dichvu\dichvukhac\3be6b0eb-8ee5-46ee-9b2d-e47de7856e00_Tiktokdata.jpg
+wwwroot\img\dichvu\dichvukhac\7030350d-4f91-4e44-9c0b-e5201f1ea750_Mobistudy.png
 wwwroot\img\dichvu\dichvukhac\7c2c4f3e-5462-4e72-a9fc-3c88076cbe8a_LiXi.jpg
 wwwroot\img\dichvu\dichvukhac\7ce3da83-49ed-4f87-8008-be4de9ec680e_MobiFoneMoney.png
 wwwroot\img\dichvu\dichvukhac\9ee4b8fb-db52-401a-bd4a-fe4f08f91be3_LiXi.jpg

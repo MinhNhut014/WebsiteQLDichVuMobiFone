@@ -99,21 +99,19 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/HoaDonDoanhNghieps/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
+            GetData();
+            var hoaDon = await _context.HoaDonDoanhNghieps
+                .Include(x => x.CthoaDonDoanhNghieps)
+                    .ThenInclude(x => x.IdgoiDichVuNavigation)
+                .Include(x => x.IdnguoiDungNavigation) // Thêm thông tin người dùng
+                .FirstOrDefaultAsync(x => x.IdhoaDonDn == id);
+
+            if (hoaDon == null)
             {
                 return NotFound();
             }
 
-            var hoaDonDoanhNghiep = await _context.HoaDonDoanhNghieps
-                .Include(h => h.IdnguoiDungNavigation)
-                .Include(h => h.IdtrangThaiNavigation)
-                .FirstOrDefaultAsync(m => m.IdhoaDonDn == id);
-            if (hoaDonDoanhNghiep == null)
-            {
-                return NotFound();
-            }
-
-            return View(hoaDonDoanhNghiep);
+            return View(hoaDon);
         }
 
         // GET: Admin/HoaDonDoanhNghieps/Create

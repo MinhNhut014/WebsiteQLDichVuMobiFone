@@ -7,7 +7,7 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("Sim")]
-[Index("SoThueBao", Name = "UQ__Sim__F0752C9720166A58", IsUnique = true)]
+[Index("SoThueBao", Name = "UQ__Sim__F0752C97E661FA5E", IsUnique = true)]
 public partial class Sim
 {
     [Key]
@@ -31,14 +31,8 @@ public partial class Sim
     [Column("IDTrangThaiSim")]
     public int IdtrangThaiSim { get; set; }
 
-    public int? GoiDangKyDiKem { get; set; }
-
     [InverseProperty("IdsimNavigation")]
     public virtual ICollection<CthoaDonSim> CthoaDonSims { get; set; } = new List<CthoaDonSim>();
-
-    [ForeignKey("GoiDangKyDiKem")]
-    [InverseProperty("Sims")]
-    public virtual GoiDangKy? GoiDangKyDiKemNavigation { get; set; }
 
     [ForeignKey("IddichVu")]
     [InverseProperty("Sims")]
@@ -51,4 +45,10 @@ public partial class Sim
     [ForeignKey("IdtrangThaiSim")]
     [InverseProperty("Sims")]
     public virtual TrangThaiSim? IdtrangThaiSimNavigation { get; set; } = null!;
+
+    [InverseProperty("IdsimNavigation")]
+    public virtual ICollection<SimGoiDangKy> SimGoiDangKies { get; set; } = new List<SimGoiDangKy>();
+
+    [InverseProperty("IdsimNavigation")]
+    public virtual ICollection<SimGoiDangKyDichVuKhac> SimGoiDangKyDichVuKhacs { get; set; } = new List<SimGoiDangKyDichVuKhac>();
 }

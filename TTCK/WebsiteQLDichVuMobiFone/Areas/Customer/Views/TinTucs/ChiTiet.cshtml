@@ -4,7 +4,13 @@
     ViewData["Title"] = Model.TieuDe;
     var user = ViewBag.khachHang as NguoiDung; // Lấy thông tin người dùng từ ViewBag
 }
-
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Trang chủ</a></li>
+        <li class="breadcrumb-item"><a asp-controller="TinTucs" asp-action="Index">Tin Tức</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Chi Tiết Tin Tức</li>
+    </ol>
+</nav>
 <div class="container mt-4">
     <!-- Tiêu đề bài viết -->
     <h2 class="fw-bold text-primary">@Model.TieuDe</h2>

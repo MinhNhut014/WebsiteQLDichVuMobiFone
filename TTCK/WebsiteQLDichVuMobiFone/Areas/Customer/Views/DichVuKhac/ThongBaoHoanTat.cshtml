@@ -8,20 +8,21 @@
     <!-- Breadcrumb chỉ dẫn -->
     <div class="step-progress d-flex justify-content-center gap-4">
         <div class="step completed">
-            <div class="circle">1</div>
-            <span>Đăng ký</span>
+            <div class="circle"><i class="bi bi-check-circle"></i></div>
+            <span class="d-block mt-2">Đăng ký</span>
         </div>
         <div class="step completed">
-            <div class="circle">2</div>
-            <span>Hoàn tất</span>
+            <div class="circle"><i class="bi bi-check-circle"></i></div>
+            <span class="d-block mt-2">Hoàn tất</span>
         </div>
     </div>
 
     <div class="text-center mb-5">
-        <h2 class="fw-bold text-success">Đăng Ký Thành Công</h2>
-        <p class="text-muted">Chúc mừng bạn đã đăng ký thành công SIM.Chúng tôi sẽ xử lý đơn hàng của bạn trong thời gian sớm nhất có thể.</p>
-        <p class="text-muted">Bấm nút xem đơn hàng để xem chi tiết đơn hàng mà bạn đã đăng ký</p>
+        <h2 class="fw-bold text-success">Đăng Ký Thành Công Dịch Vụ</h2>
+        <p class="text-muted">Chúc mừng bạn đã đăng ký thành công dịch vụ của chúng tôi. Đơn hàng của bạn sẽ được xử lý trong thời gian sớm nhất.</p>
+        <p class="text-muted">Vui lòng bấm nút "Xem đơn hàng" để kiểm tra chi tiết về đơn hàng của bạn.</p>
     </div>
+
     <div class="d-flex gap-3 mt-4">
         <a href="@Url.Action("Index", "Home")" class="btn btn-primary w-50 py-2">Quay lại trang chủ</a>
         <a href="@Url.Action("ChiTietHoaDonDichVu", "NguoiDung", new { id = Model.IdhoaDonDv })" class="btn btn-outline-success w-50 py-2">Xem đơn hàng</a>
@@ -82,4 +83,21 @@
         .step:last-child::after {
             content: none;
         }
+
+    .btn-lg {
+        padding: 12px 24px;
+        font-size: 1.1rem;
+    }
+
+    .mb-5 {
+        margin-bottom: 3rem;
+    }
+
+    .text-muted {
+        font-size: 1rem;
+    }
+
+    .fw-bold {
+        font-weight: 600;
+    }
 </style>

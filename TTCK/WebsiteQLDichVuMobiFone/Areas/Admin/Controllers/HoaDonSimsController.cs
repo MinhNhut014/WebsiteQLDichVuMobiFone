@@ -97,16 +97,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
         // GET: Admin/HoaDonSims/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
-
+            GetData();
             var hoaDonSim = await _context.HoaDonSims
-                .Include(h => h.IdnguoiDungNavigation)
-                .Include(h => h.IdphuongThucVcNavigation)
-                .Include(h => h.IdtrangThaiNavigation)
-                .FirstOrDefaultAsync(m => m.IdhoaDonSim == id);
+                .Include(x => x.CthoaDonSims)
+                    .ThenInclude(x => x.IdgoiDangKyNavigation) // Lấy thông tin gói đăng ký
+                .Include(x => x.CthoaDonSims)
+                    .ThenInclude(x => x.IdsimNavigation) // Lấy thông tin SIM
+                        .ThenInclude(s => s.IdloaiSoNavigation) // Lấy thông tin loại SIM
+                .Include(x => x.CthoaDonSims)
+                    .ThenInclude(x => x.IdsimNavigation)
+                        .ThenInclude(s => s.IdtrangThaiSimNavigation) // Lấy thông tin trạng thái SIM
+                .FirstOrDefaultAsync(x => x.IdhoaDonSim == id);
+
             if (hoaDonSim == null)
             {
                 return NotFound();

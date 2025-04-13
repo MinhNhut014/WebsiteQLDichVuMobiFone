@@ -1,7 +1,7 @@
 ﻿@{
     ViewData["Title"] = "Đăng Ký Dịch Vụ";
     var goiDaChon = ViewBag.GoiDaChon as WebsiteQLDichVuMobiFone.Models.GoiDangKy;
-    var tongTien = ViewBag.TongTien ?? 0;
+    var tongTien = ViewBag.TongTien ?? goiDaChon?.GiaGoi ?? 0;
 }
 
 <div class="container mt-5">
@@ -16,18 +16,17 @@
             <span>Hoàn tất</span>
         </div>
     </div>
+
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary">Đăng Ký Dịch Vụ</h2>
         <p class="text-muted">Hoàn tất thông tin để đăng ký dịch vụ</p>
     </div>
 
-    <!-- Hiển thị thông báo thành công -->
+    <!-- Hiển thị thông báo -->
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
     }
-
-    <!-- Hiển thị thông báo lỗi -->
     @if (TempData["ErrorMessage"] != null)
     {
         <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
@@ -40,27 +39,31 @@
                 <div class="card-body p-4">
                     <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
 
-                    <form method="post" asp-controller="DichVuDiDong" asp-action="HoanTatDangKyDichVu">
-                        <!-- Truyền ID gói đăng ký ẩn -->
+                    <form id="paymentForm" method="post" asp-controller="Payment" asp-action="CreatePaymentUrlVnpay" onsubmit="updateFormAction()">
+                        @Html.AntiForgeryToken()
+
+                        <input type="hidden" name="LoaiDichVu" value="didong" />
+                        <input type="hidden" id="OrderType" name="OrderType" value="DichVuDiDong" />
+                        <input type="hidden" id="Amount" name="Amount" value="@tongTien" />
+                        <input type="hidden" id="OrderDescription" name="OrderDescription" value="" />
+                        <input type="hidden" id="Name" name="Name" value="" />
                         <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
 
-                        <!-- Nhập tên khách hàng -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Tên khách hàng:</label>
-                            <input type="text" name="TenKhachHang" class="form-control border-secondary" required placeholder="Nhập tên khách hàng" />
+                            <input type="text" name="TenKhachHang" id="TenKhachHang" class="form-control border-secondary" required placeholder="Nhập tên khách hàng" />
                         </div>
 
-                        <!-- Nhập số điện thoại -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Số điện thoại:</label>
                             <input type="text" name="SoDienThoai" class="form-control border-secondary" required placeholder="Nhập số điện thoại" />
                         </div>
 
-                        <!-- Nhập email -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Email:</label>
                             <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email (nếu có)" />
                         </div>
+
                         <div class="row">
                             <div class="col-6">
                                 <a asp-action="ChiTietDichVu" asp-route-id="@goiDaChon?.IdgoiDangKy" class="btn btn-primary w-100 py-2">Quay Lại</a>
@@ -93,12 +96,11 @@
                         }
                     </div>
 
-                    <!-- Thông tin thanh toán -->
                     <div class="bg-light p-3 rounded-3 text-center">
                         <h5 class="text-danger">Chi tiết thanh toán</h5>
                         <div class="d-flex justify-content-between border-top pt-2 mt-2 fw-bold">
                             <span>Tổng tiền:</span>
-                            <span>@((tongTien != null) ? Convert.ToInt32(tongTien).ToString("N0") : "0") VND</span>
+                            <span>@Convert.ToInt32(tongTien).ToString("N0") VND</span>
                         </div>
                     </div>
                 </div>
@@ -106,6 +108,7 @@
         </div>
     </div>
 </div>
+
 <style>
     .step-progress {
         display: flex;
@@ -153,3 +156,16 @@
             content: none;
         }
 </style>
+
+<script>
+    function updateFormAction() {
+        const tenKhachHang = document.getElementById("TenKhachHang").value;
+        const orderDescription = "Thanh toán gói đăng ký cho " + tenKhachHang;
+
+        document.getElementById("OrderDescription").value = orderDescription;
+        document.getElementById("Name").value = tenKhachHang;
+
+        const amount = "@Convert.ToInt32(tongTien)";
+        document.getElementById("Amount").value = amount;
+    }
+</script>

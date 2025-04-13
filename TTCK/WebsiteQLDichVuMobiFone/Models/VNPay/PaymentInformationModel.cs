@@ -14,5 +14,6 @@
         public string Email { get; set; }
         public string DiaDiemNhan { get; set; }
         public string PhuongThucThanhToan { get; set; }
+        public string LoaiDichVu { get; set; }  // <- thêm dòng này
     }
 }

@@ -105,17 +105,21 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             {
                 return NotFound();
             }
+            GetData();
+            var hoaDon = await _context.HoaDonDichVus
+                                .Include(x => x.CthoaDonDichVus)
+                                    .ThenInclude(x => x.IdgoiDangKyNavigation)
+                                .Include(x => x.CthoaDonDichVus)
+                                    .ThenInclude(x => x.IdgoiDangKyDvkNavigation)
+                                .Include(x => x.IdnguoiDungNavigation) // Thêm thông tin người dùng
+                                .FirstOrDefaultAsync(x => x.IdhoaDonDv == id);
 
-            var hoaDonDichVu = await _context.HoaDonDichVus
-                .Include(h => h.IdnguoiDungNavigation)
-                .Include(h => h.IdtrangThaiNavigation)
-                .FirstOrDefaultAsync(m => m.IdhoaDonDv == id);
-            if (hoaDonDichVu == null)
+            if (hoaDon == null)
             {
                 return NotFound();
             }
 
-            return View(hoaDonDichVu);
+            return View(hoaDon);
         }
 
         // GET: Admin/HoaDonDichVuKhacs/Create

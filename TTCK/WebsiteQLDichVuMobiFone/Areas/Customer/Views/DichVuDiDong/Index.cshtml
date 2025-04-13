@@ -31,12 +31,13 @@
     <script>
         Swal.fire({
             title: "Thông báo",
-            text: "Bạn chưa đăng nhập! Vui lòng đăng nhập để đăng ký.",
+            text: @Html.Raw(System.Text.Json.JsonSerializer.Serialize(ViewBag.ErrorMessage)),
             icon: "warning",
             confirmButtonText: "OK"
         });
     </script>
 }
+
 <form method="get" asp-action="Index">
     <div class="row">
         <!-- Phần Sidebar -->

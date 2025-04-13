@@ -538,3 +538,4 @@ C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\refint\WebsiteQLDichVu
 C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\WebsiteQLDichVuMobiFone.pdb
 C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\WebsiteQLDichVuMobiFone.genruntimeconfig.cache
 C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\ref\WebsiteQLDichVuMobiFone.dll
+C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
