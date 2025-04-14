@@ -72,7 +72,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             }
             // Truy vấn danh sách trạng thái đơn hàng
             ViewBag.TrangThaiDonHang = await _context.TrangThaiDonHangs.ToListAsync();
-
+            ViewBag.TrangThaiThanhToan = await _context.TrangThaiThanhToans.ToListAsync();
             return View(await query.ToListAsync());
         }
 
@@ -88,6 +88,22 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
 
             hdsim.IdtrangThai = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusThanhToan(int id, int trangthai)
+        {
+            var hdsim = await _context.HoaDonSims.FindAsync(id);
+            if (hdsim == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiThanhToans.AnyAsync(t => t.IdtrangThaiThanhToan == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hdsim.IdtrangThaiThanhToan = trangthai;
             await _context.SaveChangesAsync();
 
             TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";

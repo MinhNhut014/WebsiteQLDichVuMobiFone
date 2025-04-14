@@ -55,9 +55,9 @@
                 <th class="p-3">Tên Khách Hàng</th>
                 <th class="p-3">Số Điện Thoại</th>
                 <th class="p-3">Email</th>
-                <th class="p-3">Địa Điểm Nhận</th>
                 <th class="p-3">Phương Thức Thanh Toán</th>
                 <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Trạng Thái Thanh Toán</th>
                 <th class="p-3">Hành động</th>
             </tr>
         </thead>
@@ -70,7 +70,6 @@
                     <td class="p-3">@Html.DisplayFor(modelItem => item.TenKhachHang)</td>
                     <td class="p-3">@Html.DisplayFor(modelItem => item.SoDienThoai)</td>
                     <td class="p-3">@Html.DisplayFor(modelItem => item.Email)</td>
-                    <td class="p-3">@Html.DisplayFor(modelItem => item.DiaDiemNhan)</td>
                     <td class="p-3">@Html.DisplayFor(modelItem => item.PhuongThucThanhToan)</td>
 
                     <!-- Dropdown chỉnh sửa trạng thái -->
@@ -88,6 +87,19 @@
                         </form>
                     </td>
 
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusThanhToan" method="post">
+                            <input type="hidden" name="id" value="@item.IdhoaDonSim" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiThanhToan)
+                                {
+                                    <option value="@trangThai.IdtrangThaiThanhToan" selected="@(item.IdtrangThaiThanhToan == trangThai.IdtrangThaiThanhToan)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
 
                     <td class="p-3 d-flex justify-content-center gap-2">
                         <a asp-action="Edit" asp-route-id="@item.IdhoaDonSim" class="btn btn-warning btn-sm rounded-circle shadow-sm">
@@ -126,3 +138,19 @@
         });
     }
 </script>
+<style>
+    .table th, .table td {
+        padding: 0.5rem !important;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .table thead th {
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+</style>

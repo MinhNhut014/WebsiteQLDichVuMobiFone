@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="~/WebsiteQLDichVuMobiFone.styles.css" asp-append-version="true" />
     <!-- Favicon -->
 
-    <link rel="shortcut icon" href="~/img/svg/logo.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="~/img/logo/logo-1.png" type="image/x-icon">
     <!-- Custom styles -->
     <link href="~/admin/css/style.css" rel="stylesheet" />
     <link href="~/admin/css/style.min.css" rel="stylesheet" />
@@ -149,11 +149,12 @@
 
                         <li>
                             <a class="show-cat-btn d-flex justify-content-between align-items-center toggle-cat-btn" href="#">
-                                <div><i class="bi bi-file-earmark me-1 text-white"></i> Đơn Đăng Ký</div>
+                                <div><i class="bi bi-file-earmark me-1 text-white"></i> Quản Lý Đơn Hàng</div>
                                 <i class="arrow-icon bi bi-chevron-right text-white"></i>
                             </a>
                             <ul class="cat-sub-menu" style="display: none;">
-                                <li><a asp-controller="HoaDonSims" asp-action="Index">Đăng Ký Sim</a></li>
+                                <li><a asp-controller="GiaoDichNapTiens" asp-action="Index">Đơn Nạp Tiền Sim</a></li>
+                                <li><a asp-controller="HoaDonSims" asp-action="Index">Đơn Đăng Ký Sim</a></li>
                                 <li><a asp-controller="HoaDonDichVus" asp-action="Index">Dịch Vụ Di Động</a></li>
                                 <li><a asp-controller="HoaDonDoanhNghieps" asp-action="Index">Dịch Vụ Doanh Nghiệp</a></li>
                                 <li><a asp-controller="HoaDonDichVuKhacs" asp-action="Index">Dịch Vụ Khác</a></li>

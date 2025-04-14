@@ -247,6 +247,7 @@ wwwroot\img\gioithieu\gioithieu1.jpg
 wwwroot\img\gioithieu\lichsu.jpg
 wwwroot\img\gioithieu\qlchatluong.jpg
 wwwroot\img\icon\sim.png
+wwwroot\img\logo\logo.png
 wwwroot\img\logo\logo-1.png
 wwwroot\img\logo\logo-2.ico
 wwwroot\img\logo\logo2.jfif

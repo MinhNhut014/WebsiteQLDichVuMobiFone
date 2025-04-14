@@ -53,15 +53,15 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 HttpContext.Session.SetString("PhuongThucThanhToan", model.PhuongThucThanhToan);
 
                 if (model.LoaiDichVu == "sim" || model.LoaiDichVu == "naptien")
-{
-    HttpContext.Session.SetInt32("IdSim", model.IdSim);
-}
+                {
+                    HttpContext.Session.SetInt32("IdSim", model.IdSim);
+                }
 
-if (model.LoaiDichVu == "sim")
-{
-    HttpContext.Session.SetInt32("IdPhuongThucVc", model.IdPhuongThucVc);
-    HttpContext.Session.SetString("DiaDiemNhan", model.DiaDiemNhan);
-}
+                if (model.LoaiDichVu == "sim")
+                {
+                    HttpContext.Session.SetInt32("IdPhuongThucVc", model.IdPhuongThucVc);
+                    HttpContext.Session.SetString("DiaDiemNhan", model.DiaDiemNhan);
+                }
 
                 // Tạo URL thanh toán
                 var url = _vnPayService.CreatePaymentUrl(model, HttpContext);
@@ -432,7 +432,7 @@ if (model.LoaiDichVu == "sim")
                     SoTienNap = Convert.ToDecimal(response.Amount), // VNPay trả về số tiền nhân 100, cần chia lại
                     PhuongThucNap = phuongThucThanhToan,
                     MaGiaoDichNapTien = response.OrderId,
-                    IdtrangThaiThanhToan = 1 // Đã thanh toán
+                    IdtrangThaiThanhToan = 2 // Đã thanh toán
                 };
 
                 _context.GiaoDichNapTiens.Add(giaoDich);

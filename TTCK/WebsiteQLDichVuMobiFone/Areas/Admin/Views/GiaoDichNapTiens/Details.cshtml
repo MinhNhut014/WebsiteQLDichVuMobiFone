@@ -1,0 +1,53 @@
+﻿@model WebsiteQLDichVuMobiFone.Models.GiaoDichNapTien
+
+@{
+    ViewData["Title"] = "Chi Tiết Giao Dịch Nạp Tiền";
+}
+
+<h2 class="text-center text-primary">Chi Tiết Giao Dịch Nạp Tiền</h2>
+
+<div class="card shadow p-4">
+    <h4>Thông Tin Giao Dịch</h4>
+    <table class="table table-bordered table-striped">
+        <tr>
+            <th>Mã Giao Dịch</th>
+            <td>@Model.MaGiaoDichNapTien</td>
+        </tr>
+        <tr>
+            <th>Số Tiền Nạp</th>
+            <td>@Model.SoTienNap?.ToString("N0") VNĐ</td>
+        </tr>
+        <tr>
+            <th>Ngày Nạp</th>
+            <td>@Model.NgayNap?.ToString("dd/MM/yyyy") ?? "N/A"</td>
+        </tr>
+        <tr>
+            <th>Ghi Chú</th>
+            <td>@Model.GhiChu</td>
+        </tr>
+        <tr>
+            <th>Phương Thức Nạp</th>
+            <td>@Model.PhuongThucNap</td>
+        </tr>
+    </table>
+
+    <h4>Thông Tin Liên Quan</h4>
+    <table class="table table-hover table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Người Dùng</th>
+                <th>SIM</th>
+                <th>Trạng Thái Thanh Toán</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.IdnguoiDungNavigation?.HoTen (@Model.IdnguoiDungNavigation?.SoDienThoai)</td>
+                <td>@Model.IdsimNavigation?.SoThueBao</td>
+                <td>@Model.IdtrangThaiThanhToanNavigation?.TenTrangThai</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a asp-action="Index" class="btn btn-secondary">Quay Lại</a>
+</div>

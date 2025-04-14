@@ -221,6 +221,8 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             }
 
             var nguoiDung = _context.NguoiDungs
+                    .Include(nd => nd.GiaoDichNapTiens.OrderByDescending(gd => gd.NgayNap)) // Lấy lịch sử nạp tiền
+                        .ThenInclude(nd => nd.IdtrangThaiThanhToanNavigation)
                     .Include(nd => nd.Sims)
                         .ThenInclude(sim => sim.IdloaiSoNavigation)
                     .Include(nd => nd.Sims)

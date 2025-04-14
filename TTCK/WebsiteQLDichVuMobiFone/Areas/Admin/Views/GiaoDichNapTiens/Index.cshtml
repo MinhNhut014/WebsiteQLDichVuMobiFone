@@ -1,0 +1,107 @@
+﻿@model IEnumerable<WebsiteQLDichVuMobiFone.Models.GiaoDichNapTien>
+
+@{
+    ViewData["Title"] = "Giao Dịch Nạp Tiền";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="text-primary fw-bold m-0">💰 Giao Dịch Nạp Tiền SIM</h1>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}
+
+<div class="table-responsive">
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Mã Giao Dịch</th>
+                <th class="p-3">Số Tiền Nạp</th>
+                <th class="p-3">Ngày Nạp</th>
+                <th class="p-3">Phương Thức Nạp</th>
+                <th class="p-3">Người Dùng</th>
+                <th class="p-3">SIM</th>
+                <th class="p-3">Trạng Thái Thanh Toán</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in Model)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@item.MaGiaoDichNapTien</td>
+                    <td class="p-3">@item.SoTienNap?.ToString("N0") VNĐ</td>
+                    <td class="p-3">@item.NgayNap?.ToString("dd/MM/yyyy")</td>
+                    <td class="p-3">@item.PhuongThucNap</td>
+                    <td class="p-3">@item.IdnguoiDungNavigation?.HoTen</td>
+                    <td class="p-3">@item.IdsimNavigation?.SoThueBao</td>
+
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusThanhToan" method="post">
+                            <input type="hidden" name="id" value="@item.IdgiaoDich" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiThanhToan)
+                                {
+                                    <option value="@trangThai.IdtrangThaiThanhToan" selected="@(item.IdtrangThaiThanhToan == trangThai.IdtrangThaiThanhToan)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-action="Details" asp-route-id="@item.IdgiaoDich" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a href="javascript:void(0);" onclick="confirmDelete(@item.IdgiaoDich, '@item.MaGiaoDichNapTien')"
+                           class="btn btn-danger btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    function confirmDelete(id, maGiaoDich) {
+        Swal.fire({
+            title: "Xác nhận xóa?",
+            text: "Bạn có chắc chắn muốn xóa giao dịch '" + maGiaoDich + "' không?",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
+            confirmButtonText: "Xóa ngay!",
+            cancelButtonText: "Hủy"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                window.location.href = "/Admin/GiaoDichNapTiens/DeleteConfirmed/" + id;
+            }
+        });
+    }
+</script>
+
+<style>
+    .table th, .table td {
+        padding: 0.5rem !important;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .table thead th {
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+</style>
