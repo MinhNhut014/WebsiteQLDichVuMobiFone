@@ -3,7 +3,6 @@
     var goiDaChon = ViewBag.GoiDaChon as WebsiteQLDichVuMobiFone.Models.GoiDangKyDichVuKhac;
     var tongTien = ViewBag.TongTien ?? 0;
 }
-
 <div class="container mt-5">
     <!-- Breadcrumb chỉ dẫn -->
     <div class="step-progress d-flex justify-content-center gap-4">
@@ -16,18 +15,17 @@
             <span>Hoàn tất</span>
         </div>
     </div>
+
     <div class="text-center mb-5">
         <h2 class="fw-bold text-primary">Đăng Ký Dịch Vụ</h2>
         <p class="text-muted">Hoàn tất thông tin để đăng ký dịch vụ</p>
     </div>
 
-    <!-- Hiển thị thông báo thành công -->
+    <!-- Hiển thị thông báo -->
     @if (TempData["SuccessMessage"] != null)
     {
         <div class="alert alert-success text-center">@TempData["SuccessMessage"]</div>
     }
-
-    <!-- Hiển thị thông báo lỗi -->
     @if (TempData["ErrorMessage"] != null)
     {
         <div class="alert alert-danger text-center">@TempData["ErrorMessage"]</div>
@@ -41,8 +39,6 @@
                     <h4 class="card-title text-primary mb-3">Thông tin khách hàng</h4>
 
                     <form id="paymentForm" method="post" asp-controller="Payment" asp-action="CreatePaymentUrlVnpay" onsubmit="updateFormAction()">
-                        <!-- Truyền ID gói đăng ký ẩn -->
-                        <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
                         @Html.AntiForgeryToken()
 
                         <input type="hidden" name="LoaiDichVu" value="dichvukhac" />
@@ -50,25 +46,38 @@
                         <input type="hidden" id="Amount" name="Amount" value="@tongTien" />
                         <input type="hidden" id="OrderDescription" name="OrderDescription" value="" />
                         <input type="hidden" id="Name" name="Name" value="" />
-                        <!-- Nhập tên khách hàng -->
+                        <input type="hidden" name="idGoiDangKy" value="@goiDaChon?.IdgoiDangKy" />
+
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Tên khách hàng:</label>
-                            <input type="text" name="TenKhachHang" class="form-control border-secondary" required placeholder="Nhập tên khách hàng" />
+                            <input type="text" name="TenKhachHang" id="TenKhachHang" class="form-control border-secondary" required placeholder="Nhập tên khách hàng" />
                         </div>
 
-                        <!-- Nhập số điện thoại -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Số điện thoại:</label>
                             <input type="text" name="SoDienThoai" class="form-control border-secondary" required placeholder="Nhập số điện thoại" />
                         </div>
 
-                        <!-- Nhập email -->
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Email:</label>
                             <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email (nếu có)" />
                         </div>
-
-                        <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Phương thức thanh toán:</label>
+                            <select id="PhuongThucThanhToan" name="PhuongThucThanhToan" class="form-select border-secondary" required onchange="updateFormAction()">
+                                <option selected disabled>Chọn phương thức thanh toán</option>
+                                <option value="TaiKhoanSim">Thanh toán bằng số dư thuê bao</option>
+                                <option value="VNPay">Thanh Toán bằng VNPay</option>
+                            </select>
+                        </div>
+                        <div class="row">
+                            <div class="col-6">
+                                <a asp-action="ChiTietDichVu" asp-route-id="@goiDaChon?.IdgoiDangKy" class="btn btn-primary w-100 py-2">Quay Lại</a>
+                            </div>
+                            <div class="col-6">
+                                <button type="submit" class="btn btn-success w-100 py-2">Hoàn tất đăng ký</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -93,12 +102,11 @@
                         }
                     </div>
 
-                    <!-- Thông tin thanh toán -->
                     <div class="bg-light p-3 rounded-3 text-center">
                         <h5 class="text-danger">Chi tiết thanh toán</h5>
                         <div class="d-flex justify-content-between border-top pt-2 mt-2 fw-bold">
                             <span>Tổng tiền:</span>
-                            <span>@((tongTien != null) ? Convert.ToInt32(tongTien).ToString("N0") : "0") VND</span>
+                            <span>@Convert.ToInt32(tongTien).ToString("N0") VND</span>
                         </div>
                     </div>
                 </div>
@@ -106,10 +114,11 @@
         </div>
     </div>
 </div>
+
 <style>
     .step-progress {
         display: flex;
-        gap: 60px;
+        gap: 30px;
         padding-bottom: 20px;
     }
 
@@ -153,6 +162,7 @@
             content: none;
         }
 </style>
+
 <script>
     function updateFormAction() {
         const tenKhachHang = document.getElementById("TenKhachHang").value;
@@ -163,5 +173,23 @@
 
         const amount = "@Convert.ToInt32(tongTien)";
         document.getElementById("Amount").value = amount;
+    }
+    function updateFormAction() {
+        var paymentMethod = document.getElementById("PhuongThucThanhToan").value;
+        var form = document.getElementById("paymentForm");
+
+        if (paymentMethod === "VNPay") {
+            form.action = "/Customer/Payment/CreatePaymentUrlVnpay";
+        } else {
+            form.action = "/Customer/DichVuKhac/HoanTatDangKyDichVu";
+        }
+
+        // Gán giá trị cho các input hidden để gửi sang VNPay
+        var tenKhachHang = document.getElementById("TenKhachHang").value;
+        document.getElementById("OrderDescription").value = "Thanh toán Gói đăng ký cho " + tenKhachHang;
+        document.getElementById("Name").value = tenKhachHang;
+
+        // Cập nhật tổng tiền
+        updateAmount();
     }
 </script>

@@ -78,7 +78,22 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             return View(danhMucDichVu);
         }
+        private string GenerateUniqueInvoiceCode()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string newCode;
+            do
+            {
+                // Phát sinh mã hóa đơn theo định dạng: HD-YYYYMMDD-XXXXXX
+                var random = new Random();
+                var randomString = new string(Enumerable.Repeat(chars, 6)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+                newCode = $"HDDN-{DateTime.Now:yyyyMMdd}-{randomString}";
+            }
+            while (_context.HoaDonDoanhNghieps.Any(h => h.MaHoaDonDoanhNghiep == newCode)); // Kiểm tra trùng lặp
 
+            return newCode;
+        }
         public async Task<IActionResult> ChiTietDichVu(int id)
         {
             GetData();
@@ -161,6 +176,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     TempData["ErrorMessage"] = "Gói dịch vụ không tồn tại.";
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
+                hoaDon.MaHoaDonDoanhNghiep = GenerateUniqueInvoiceCode();
                 hoaDon.TenCongTy = TenCongTy;
                 hoaDon.SoDienThoaiCongTy = SoDienThoai;
                 hoaDon.EmailCongTy = Email;

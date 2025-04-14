@@ -221,6 +221,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             }
 
             var nguoiDung = _context.NguoiDungs
+                    .Include(nd => nd.Sims)
+                        .ThenInclude(sim => sim.IdloaiSoNavigation)
+                    .Include(nd => nd.Sims)
+                        .ThenInclude(sim => sim.IdtrangThaiSimNavigation)
                      .Include(x => x.HoaDonDichVus.OrderByDescending(hd => hd.NgayDatHang))
                          .ThenInclude(hd => hd.IdtrangThaiNavigation)
                      .Include(x => x.HoaDonDichVus.OrderByDescending(hd => hd.NgayDatHang))
@@ -248,12 +252,44 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             nguoiDung.HoaDonDichVus ??= new List<HoaDonDichVu>();
             nguoiDung.HoaDonDoanhNghieps ??= new List<HoaDonDoanhNghiep>();
             nguoiDung.HoaDonSims ??= new List<HoaDonSim>();
+            nguoiDung.Sims ??= new List<Sim>();
 
             TempData["ThanhCong"] = "Thông tin hồ sơ được tải thành công.";
             ViewBag.Section = section; // Xác định phần nội dung hiển thị
             return View(nguoiDung);
         }
+        [HttpGet]
+        public IActionResult NapTien(int id)
+        {
+            // Lấy thông tin SIM từ cơ sở dữ liệu
+            var sim = _context.Sims
+                .FirstOrDefault(s => s.Idsim == id);
 
+            if (sim == null)
+            {
+                TempData["ErrorMessage"] = "SIM không tồn tại.";
+                return RedirectToAction("HoSoNguoiDung", "NguoiDung", new { section = "quanlysim" });
+            }
+
+            // Truyền thông tin SIM sang view
+            return View(sim);
+        }
+        public IActionResult ChiTietSim(int id)
+        {
+            var sim = _context.Sims
+                .Include(s => s.IdloaiSoNavigation)
+                .Include(s => s.IdtrangThaiSimNavigation)
+                .Include(s => s.SimGoiDangKies)
+                    .ThenInclude(sg => sg.IdgoiDangKyNavigation)
+                .FirstOrDefault(s => s.Idsim == id);
+
+            if (sim == null)
+            {
+                return NotFound();
+            }
+
+            return View(sim);
+        }
         [HttpPost]
         public async Task<IActionResult> CapNhatHoSo(IFormFile AnhDaiDien, NguoiDung nguoiDungMoi)
         {

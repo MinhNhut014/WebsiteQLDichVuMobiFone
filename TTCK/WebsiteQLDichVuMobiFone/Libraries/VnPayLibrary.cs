@@ -23,6 +23,12 @@ namespace WebsiteQLDichVuMobiFone.Libraries
             }
             var orderId = Convert.ToInt64(vnPay.GetResponseData("vnp_TxnRef"));
             var vnPayTranId = Convert.ToInt64(vnPay.GetResponseData("vnp_TransactionNo"));
+            var amountRaw = vnPay.GetResponseData("vnp_Amount");
+            double amount = 0;
+            if (!string.IsNullOrEmpty(amountRaw) && double.TryParse(amountRaw, out var rawAmount))
+            {
+                amount = rawAmount / 100.0; // Chia lại vì VNPay nhân 100
+            }
             var vnpResponseCode = vnPay.GetResponseData("vnp_ResponseCode");
             var vnpSecureHash =
                 collection.FirstOrDefault(k => k.Key == "vnp_SecureHash").Value; //hash của dữ liệu trả về
@@ -43,7 +49,8 @@ namespace WebsiteQLDichVuMobiFone.Libraries
                 PaymentId = vnPayTranId.ToString(),
                 TransactionId = vnPayTranId.ToString(),
                 Token = vnpSecureHash,
-                VnPayResponseCode = vnpResponseCode
+                VnPayResponseCode = vnpResponseCode,
+                Amount = amount
             };
         }
         public string GetIpAddress(HttpContext context)

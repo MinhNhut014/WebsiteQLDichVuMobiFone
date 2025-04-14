@@ -119,20 +119,33 @@
 </div>
 
 <script>
-    const slider = document.getElementById('goiDangKySlider');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
+    document.addEventListener("DOMContentLoaded", function () {
+        const slider = document.getElementById('goiDangKySlider');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
 
-    prevBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: -300, behavior: 'smooth' });
-    });
+        if (slider && prevBtn && nextBtn) {
+            prevBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: -300, behavior: 'smooth' });
+            });
 
-    nextBtn.addEventListener('click', () => {
-        slider.scrollBy({ left: 300, behavior: 'smooth' });
+            nextBtn.addEventListener('click', () => {
+                slider.scrollBy({ left: 300, behavior: 'smooth' });
+            });
+        }
     });
 </script>
 
+
 <style>
+    #goiDangKySlider {
+        overflow-x: auto;
+    }
+
+        #goiDangKySlider::-webkit-scrollbar {
+            display: none; /* Ẩn thanh scroll */
+        }
+
     .breadcrumb {
         background-color: transparent;
         padding: 0;

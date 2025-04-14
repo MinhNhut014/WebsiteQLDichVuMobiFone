@@ -32,10 +32,16 @@
     {
         <div class="alert alert-success">@TempData["SuccessMessage"]</div>
     }
-
-    @if (TempData["ErrorMessage"] != null)
+    @if (!ViewData.ModelState.IsValid)
     {
-        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+        <div class="alert alert-danger">
+            <ul>
+                @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    <li>@error.ErrorMessage</li>
+                }
+            </ul>
+        </div>
     }
 
     <div class="row g-4">

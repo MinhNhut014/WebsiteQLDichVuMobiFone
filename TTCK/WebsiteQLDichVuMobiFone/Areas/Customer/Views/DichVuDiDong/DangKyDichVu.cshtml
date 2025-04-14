@@ -63,7 +63,14 @@
                             <label class="form-label fw-semibold">Email:</label>
                             <input type="email" name="Email" class="form-control border-secondary" placeholder="Nhập email (nếu có)" />
                         </div>
-
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Phương thức thanh toán:</label>
+                            <select id="PhuongThucThanhToan" name="PhuongThucThanhToan" class="form-select border-secondary" required onchange="updateFormAction()">
+                                <option selected disabled>Chọn phương thức thanh toán</option>
+                                <option value="TaiKhoanSim">Thanh toán bằng số dư thuê bao</option>
+                                <option value="VNPay">Thanh Toán bằng VNPay</option>
+                            </select>
+                        </div>
                         <div class="row">
                             <div class="col-6">
                                 <a asp-action="ChiTietDichVu" asp-route-id="@goiDaChon?.IdgoiDangKy" class="btn btn-primary w-100 py-2">Quay Lại</a>
@@ -167,5 +174,23 @@
 
         const amount = "@Convert.ToInt32(tongTien)";
         document.getElementById("Amount").value = amount;
+    }
+    function updateFormAction() {
+        var paymentMethod = document.getElementById("PhuongThucThanhToan").value;
+        var form = document.getElementById("paymentForm");
+
+        if (paymentMethod === "VNPay") {
+            form.action = "/Customer/Payment/CreatePaymentUrlVnpay";
+        } else {
+            form.action = "/Customer/DichVuDiDong/HoanTatDangKyDichVu";
+        }
+
+        // Gán giá trị cho các input hidden để gửi sang VNPay
+        var tenKhachHang = document.getElementById("TenKhachHang").value;
+        document.getElementById("OrderDescription").value = "Thanh toán Gói đăng ký cho " + tenKhachHang;
+        document.getElementById("Name").value = tenKhachHang;
+
+        // Cập nhật tổng tiền
+        updateAmount();
     }
 </script>

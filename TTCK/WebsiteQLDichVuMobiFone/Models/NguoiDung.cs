@@ -7,10 +7,10 @@ using Microsoft.EntityFrameworkCore;
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("NguoiDung")]
-[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BD0380D079", IsUnique = true)]
-[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC0EB541006", IsUnique = true)]
-[Index("Cccd", Name = "UQ__NguoiDun__A955A0AA564514F6", IsUnique = true)]
-[Index("Email", Name = "UQ__NguoiDun__A9D10534158467E1", IsUnique = true)]
+[Index("SoDienThoai", Name = "UQ__NguoiDun__0389B7BD8006EB75", IsUnique = true)]
+[Index("TenDangNhap", Name = "UQ__NguoiDun__55F68FC04E91E382", IsUnique = true)]
+[Index("Cccd", Name = "UQ__NguoiDun__A955A0AA562F518D", IsUnique = true)]
+[Index("Email", Name = "UQ__NguoiDun__A9D105344A1C5B45", IsUnique = true)]
 public partial class NguoiDung
 {
     [Key]
@@ -52,6 +52,9 @@ public partial class NguoiDung
     public virtual ICollection<BinhLuanBaiViet> BinhLuanBaiViets { get; set; } = new List<BinhLuanBaiViet>();
 
     [InverseProperty("IdnguoiDungNavigation")]
+    public virtual ICollection<GiaoDichNapTien> GiaoDichNapTiens { get; set; } = new List<GiaoDichNapTien>();
+
+    [InverseProperty("IdnguoiDungNavigation")]
     public virtual ICollection<HoaDonDichVu> HoaDonDichVus { get; set; } = new List<HoaDonDichVu>();
 
     [InverseProperty("IdnguoiDungNavigation")]
@@ -62,4 +65,7 @@ public partial class NguoiDung
 
     [InverseProperty("IdnguoiDungNavigation")]
     public virtual ICollection<LienHe> LienHes { get; set; } = new List<LienHe>();
+
+    [InverseProperty("IdnguoiDungNavigation")]
+    public virtual ICollection<Sim> Sims { get; set; } = new List<Sim>();
 }

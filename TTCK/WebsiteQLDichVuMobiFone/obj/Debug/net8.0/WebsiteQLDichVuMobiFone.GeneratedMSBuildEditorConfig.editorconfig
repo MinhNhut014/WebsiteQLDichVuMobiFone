@@ -664,6 +664,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXENoaVRpZXRIb2FEb25TaW0uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/NguoiDung/ChiTietSim.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXENoaVRpZXRTaW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/NguoiDung/DangKy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXERhbmdLeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -674,6 +678,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/NguoiDung/HoSoNguoiDung.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXEhvU29OZ3VvaUR1bmcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/NguoiDung/NapTien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQ3VzdG9tZXJcVmlld3NcTmd1b2lEdW5nXE5hcFRpZW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/DuLieuoD/TTCK/WebsiteQLDichVuMobiFone/Areas/Customer/Views/Shared/Error.cshtml]

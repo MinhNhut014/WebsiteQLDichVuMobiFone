@@ -29,6 +29,30 @@
         </dl>
     </div>
 </div>
+<div class="card mb-4">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Thông tin Người Sở Hữu</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dd class="col-sm-12">
+                @if (Model.IdnguoiDungNavigation != null)
+                {
+                    <div class="ms-2">
+                        <p><strong>Họ tên:</strong> @Model.IdnguoiDungNavigation.HoTen</p>
+                        <p><strong>SĐT:</strong> @Model.IdnguoiDungNavigation.SoDienThoai</p>
+                        <p><strong>Email:</strong> @Model.IdnguoiDungNavigation.Email</p>
+                        <p><strong>Địa chỉ:</strong> @Model.IdnguoiDungNavigation.DiaChi</p>
+                    </div>
+                }
+                else
+                {
+                    <span class="text-muted fst-italic">Chưa có người sở hữu</span>
+                }
+            </dd>
+        </dl>
+    </div>
+</div>
 
 <h3>Danh sách gói đăng ký</h3>
 <table class="table table-bordered">

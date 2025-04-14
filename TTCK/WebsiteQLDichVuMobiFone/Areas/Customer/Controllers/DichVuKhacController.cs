@@ -135,14 +135,28 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             ViewBag.TongTien = goiDangKy.GiaGoi;
             return View();
         }
+        private string GenerateUniqueInvoiceCode()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string newCode;
+            do
+            {
+                // Phát sinh mã hóa đơn theo định dạng: HD-YYYYMMDD-XXXXXX
+                var random = new Random();
+                var randomString = new string(Enumerable.Repeat(chars, 6)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+                newCode = $"HDDV-{DateTime.Now:yyyyMMdd}-{randomString}";
+            }
+            while (_context.HoaDonDichVus.Any(h => h.MaHoaDonDichVu == newCode)); // Kiểm tra trùng lặp
 
+            return newCode;
+        }
         // Xử lý hoàn tất đăng ký dịch vụ
         [HttpPost]
         public async Task<IActionResult> HoanTatDangKyDichVu(HoaDonDichVu hoaDon, int idGoiDangKy, [FromForm] string SoDienThoai)
         {
             GetData();
 
-            // Kiểm tra đăng nhập
             var nguoiDungId = HttpContext.Session.GetString("UserId");
             if (string.IsNullOrEmpty(nguoiDungId))
             {
@@ -150,7 +164,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 return RedirectToAction("DangNhap", "NguoiDung");
             }
 
-            // Kiểm tra số điện thoại trống
             if (string.IsNullOrEmpty(SoDienThoai))
             {
                 TempData["ErrorMessage"] = "Vui lòng nhập số điện thoại.";
@@ -159,23 +172,20 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             try
             {
-                // Kiểm tra số thuê bao trong bảng SIM
                 var sim = await _context.Sims.FirstOrDefaultAsync(s => s.SoThueBao == SoDienThoai);
-                if (sim == null || sim.IdtrangThaiSim != 3)  // Trạng thái SIM kích hoạt (IdtrangThaiSim == 3)
+                if (sim == null || sim.IdtrangThaiSim != 3)
                 {
                     TempData["ErrorMessage"] = "SIM không tồn tại hoặc chưa kích hoạt.";
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
 
-                // Kiểm tra gói đăng ký khác
                 var goiDangKy = await _context.GoiDangKyDichVuKhacs.FindAsync(idGoiDangKy);
                 if (goiDangKy == null)
                 {
-                    TempData["ErrorMessage"] = "Gói đăng ký không tồn tại.";
+                    TempData["ErrorMessage"] = "Gói dịch vụ không tồn tại.";
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
 
-                // Kiểm tra SIM đã đăng ký gói này chưa trong bảng SimGoiDangKyKhac
                 bool daDangKy = await _context.SimGoiDangKyDichVuKhacs.AnyAsync(sg =>
                     sg.Idsim == sim.Idsim && sg.IdgoiDangKy == idGoiDangKy);
 
@@ -185,35 +195,44 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
                 }
 
-                // Thiết lập thông tin hóa đơn
+                // ✅ Kiểm tra số dư SIM
+                decimal soDuHienTai = sim.SoDu ?? 0;
+                decimal giaGoi = goiDangKy.GiaGoi ?? 0;
+
+                if (soDuHienTai < giaGoi)
+                {
+                    TempData["ErrorMessage"] = "Số dư không đủ để thanh toán gói dịch vụ.";
+                    return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
+                }
+
+                // ✅ Tiếp tục xử lý đăng ký nếu đủ tiền
+                hoaDon.MaHoaDonDichVu = GenerateUniqueInvoiceCode();
                 hoaDon.SoDienThoai = SoDienThoai;
                 hoaDon.IdnguoiDung = int.Parse(nguoiDungId);
                 hoaDon.NgayDatHang = DateTime.Now;
-                hoaDon.IdtrangThai = 1; // Trạng thái "Chờ xử lý"
-                hoaDon.TongTien = goiDangKy.GiaGoi;
+                hoaDon.PhuongThucThanhToan = "Thanh toán trực tiếp";
+                hoaDon.IdtrangThaiThanhToan = 2;
+                hoaDon.IdtrangThai = 3;
+                hoaDon.TongTien = (int)giaGoi;
 
-                // Bắt đầu transaction
                 using var transaction = await _context.Database.BeginTransactionAsync();
 
                 try
                 {
-                    // Thêm hóa đơn vào bảng HoaDonDichVu
                     _context.HoaDonDichVus.Add(hoaDon);
                     await _context.SaveChangesAsync();
 
-                    // Thêm chi tiết hóa đơn vào bảng CthoaDonDichVu
                     var chiTietHoaDon = new CthoaDonDichVu
                     {
                         IdhoaDonDv = hoaDon.IdhoaDonDv,
                         IdgoiDangKyDvk = idGoiDangKy,
-                        DonGia = goiDangKy.GiaGoi,
+                        DonGia = (int)giaGoi,
                         SoLuong = 1,
-                        ThanhTien = goiDangKy.GiaGoi
+                        ThanhTien = (int)giaGoi
                     };
                     _context.CthoaDonDichVus.Add(chiTietHoaDon);
                     await _context.SaveChangesAsync();
 
-                    // Thêm gói đăng ký vào bảng SimGoiDangKyKhac
                     var simGoiDangKy = new SimGoiDangKyDichVuKhac
                     {
                         Idsim = sim.Idsim,
@@ -221,8 +240,12 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                         NgayDangKy = DateTime.Now
                     };
                     _context.SimGoiDangKyDichVuKhacs.Add(simGoiDangKy);
-                    await _context.SaveChangesAsync();
 
+                    // ✅ Trừ tiền trong tài khoản SIM
+                    sim.SoDu = soDuHienTai - giaGoi;
+                    _context.Sims.Update(sim);
+
+                    await _context.SaveChangesAsync();
                     await transaction.CommitAsync();
 
                     TempData["SuccessMessage"] = "Đăng ký dịch vụ thành công.";
@@ -247,7 +270,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 return RedirectToAction("DangKyDichVu", new { id = idGoiDangKy });
             }
         }
-
         public IActionResult ThongBaoHoanTat(int idHoaDon)
         {
             GetData();

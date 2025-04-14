@@ -94,7 +94,9 @@ CREATE TABLE Sim (
     IDLoaiSo INT NOT NULL FOREIGN KEY REFERENCES LoaiSo(IDLoaiSo),
     KhuVucHoaMang NVARCHAR(255),
     PhiHoaMang INT DEFAULT 0,
-	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim)
+	IDTrangThaiSim INT NOT NULL FOREIGN KEY REFERENCES TrangThaiSim(IDTrangThaiSim),
+	IDNguoiDung INT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
+	SoDu DECIMAL(18,2) DEFAULT 0
 );
 
 -- Dịch vụ Khác (Giáo dục, Tài chính, Giải trí, Internet An toàn, Du lịch) --
@@ -162,17 +164,30 @@ CREATE TABLE TrangThaiThanhToan (
     IDTrangThaiThanhToan INT IDENTITY(1,1) PRIMARY KEY,
     TenTrangThai NVARCHAR(100) NOT NULL -- VD: "Chưa thanh toán", "Đã thanh toán", "Đang xử lý"
 );
-
+CREATE TABLE GiaoDichNapTien(
+	IDGiaoDich INT IDENTITY(1,1) PRIMARY KEY,
+	MaGiaoDichNapTien NVARCHAR(50),
+	IDSim INT NULL FOREIGN KEY REFERENCES Sim(IDSim) ON DELETE CASCADE,
+	IDNguoiDung INT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
+	SoTienNap DECIMAL(18,2),
+	NgayNap DATETIME DEFAULT GETDATE(),
+	GhiChu NVARCHAR(255),
+	IDTrangThaiThanhToan INT NULL FOREIGN KEY REFERENCES TrangThaiThanhToan(IDTrangThaiThanhToan),
+	PhuongThucNap NVARCHAR(100)
+);
 -- Bảng Hóa Đơn Dịch Vụ (Dịch vụ Di động + Dịch vụ Khác)
 CREATE TABLE HoaDonDichVu (
     IDHoaDonDV INT IDENTITY(1,1) PRIMARY KEY,
+	MaHoaDonDichVu NVARCHAR(50) UNIQUE NOT NULL,
     IDNguoiDung INT NOT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
     NgayDatHang DATETIME DEFAULT GETDATE(),
     TongTien INT DEFAULT 0,
     IDTrangThai INT NOT NULL FOREIGN KEY REFERENCES TrangThaiDonHang(IDTrangThai),
 	TenKhachHang NVARCHAR(255) NOT NULL,
     SoDienThoai NVARCHAR(11) NOT NULL,
-    Email NVARCHAR(100)
+    Email NVARCHAR(100),
+	IDTrangThaiThanhToan INT NOT NULL FOREIGN KEY REFERENCES TrangThaiThanhToan(IDTrangThaiThanhToan),
+	PhuongThucThanhToan NVARCHAR(100)
 );
 
 -- Chi Tiết Hóa Đơn Dịch Vụ
@@ -189,6 +204,7 @@ CREATE TABLE CTHoaDonDichVu (
 -- Bảng Hóa Đơn SIM
 CREATE TABLE HoaDonSim (
     IDHoaDonSim INT IDENTITY(1,1) PRIMARY KEY,
+	MaHoaDonSim NVARCHAR(50) UNIQUE NOT NULL,
     IDNguoiDung INT NOT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
     NgayDatHang DATETIME DEFAULT GETDATE(),
     TongTien INT DEFAULT 0,
@@ -217,6 +233,7 @@ CREATE TABLE CTHoaDonSim (
 -- Bảng Hóa Đơn Dịch Vụ Doanh Nghiệp
 CREATE TABLE HoaDonDoanhNghiep (
     IDHoaDonDN INT IDENTITY(1,1) PRIMARY KEY,
+	MaHoaDonDoanhNghiep NVARCHAR(50) UNIQUE NOT NULL,
     IDNguoiDung INT NOT NULL FOREIGN KEY REFERENCES NguoiDung(IDNguoiDung),
     NgayDatHang DATETIME DEFAULT GETDATE(),
 	IDTrangThai INT NOT NULL FOREIGN KEY REFERENCES TrangThaiDonHang(IDTrangThai),
@@ -262,7 +279,6 @@ CREATE TABLE BinhLuanBaiViet (
     FOREIGN KEY (IdTinTuc) REFERENCES TinTuc(IdTinTuc) ON DELETE CASCADE,
     NguoiDungID INT FOREIGN KEY (NguoiDungID) REFERENCES NguoiDung(IDNguoiDung)
 );
-
 
 ---Kiểm tra dữ liệu trong các bảng---
 select *from DichVu;
@@ -311,28 +327,3 @@ VALUES
 (N'Đang xử lý'),
 (N'Thanh toán thất bại'),
 (N'Hoàn tiền');
-
-INSERT INTO NguoiDung (
-    AnhDaiDien,
-    HoTen,
-    CCCD,
-    Email,
-    SoDienThoai,
-    DiaChi,
-    TenDangNhap,
-    MatKhau,
-    quyen,
-    trangthai
-)
-VALUES (
-    N'/img/user/user.jpg',          -- Đường dẫn ảnh đại diện (tùy chọn)
-    N'Quản trị viên',
-    N'012345678901',              -- CCCD mẫu
-    N'admin@mobifone.vn',
-    N'0912345678',
-    N'Hà Nội',
-    N'admin',                     -- Tên đăng nhập
-    N'123',                  -- Mật khẩu (nên mã hóa khi sử dụng thực tế)
-    1,                            -- Quyền = 1 (admin)
-    1                             -- Trạng thái = 1 (đang hoạt động)
-);

@@ -85,6 +85,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             if (id == null) return NotFound();
 
             var sim = await _context.Sims
+                .Include(s => s.IdnguoiDungNavigation)
                 .Include(s => s.IddichVuNavigation)
                 .Include(s => s.IdloaiSoNavigation)
                 .Include(s => s.IdtrangThaiSimNavigation)

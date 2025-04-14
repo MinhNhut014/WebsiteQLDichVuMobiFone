@@ -10,6 +10,7 @@
         public bool Success { get; set; }
         public string Token { get; set; }
         public string VnPayResponseCode { get; set; }
+        public double Amount { get; set; }
 
         // Additional properties
         public int IdSim { get; set; }

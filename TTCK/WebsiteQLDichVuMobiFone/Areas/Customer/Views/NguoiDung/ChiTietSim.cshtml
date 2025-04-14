@@ -1,0 +1,35 @@
+﻿@model Sim
+
+<div class="container mt-4">
+    <h4>Chi tiết SIM</h4>
+    <p><strong>Số thuê bao:</strong> @Model.SoThueBao</p>
+    <p><strong>Loại thuê bao:</strong> @(Model.IdloaiSoNavigation?.TenLoaiSo ?? "Không xác định")</p>
+    <p><strong>Số dư:</strong> @(Model.SoDu?.ToString("N0") ?? "0") đ</p>
+    <p><strong>Trạng thái:</strong> @(Model.IdtrangThaiSimNavigation?.TenTrangThai ?? "Không xác định")</p>
+
+    <h5>Danh sách gói đã đăng ký</h5>
+    @if (Model.SimGoiDangKies != null && Model.SimGoiDangKies.Any())
+    {
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Tên gói</th>
+                    <th>Ngày đăng ký</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var goi in Model.SimGoiDangKies)
+                {
+                    <tr>
+                        <td>@goi.IdgoiDangKyNavigation?.TenGoi</td>
+                        <td>@(goi.NgayDangKy?.ToString("dd/MM/yyyy") ?? "N/A")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <p class="text-muted">Không có gói nào được đăng ký.</p>
+    }
+</div>

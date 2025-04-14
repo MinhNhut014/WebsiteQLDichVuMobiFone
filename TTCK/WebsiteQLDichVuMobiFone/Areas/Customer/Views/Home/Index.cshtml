@@ -12,7 +12,10 @@
     ViewBag.RouteDichVu = controllerDichVu;
     int index = 0;
 }
-
+@if (TempData["ErrorMessage"] != null)
+{
+    <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+}
 <style>
     .carousel-item {
         background-size: cover;

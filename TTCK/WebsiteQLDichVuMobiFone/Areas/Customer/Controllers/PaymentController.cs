@@ -50,14 +50,18 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 HttpContext.Session.SetString("SoDienThoai", model.SoDienThoai);
                 HttpContext.Session.SetString("Email", model.Email);
                 HttpContext.Session.SetInt32("IdGoiDangKy", model.IdGoiDangKy);
+                HttpContext.Session.SetString("PhuongThucThanhToan", model.PhuongThucThanhToan);
 
-                if (model.LoaiDichVu == "sim")
-                {
-                    HttpContext.Session.SetInt32("IdSim", model.IdSim);
-                    HttpContext.Session.SetInt32("IdPhuongThucVc", model.IdPhuongThucVc);
-                    HttpContext.Session.SetString("DiaDiemNhan", model.DiaDiemNhan);
-                    HttpContext.Session.SetString("PhuongThucThanhToan", model.PhuongThucThanhToan);
-                }
+                if (model.LoaiDichVu == "sim" || model.LoaiDichVu == "naptien")
+{
+    HttpContext.Session.SetInt32("IdSim", model.IdSim);
+}
+
+if (model.LoaiDichVu == "sim")
+{
+    HttpContext.Session.SetInt32("IdPhuongThucVc", model.IdPhuongThucVc);
+    HttpContext.Session.SetString("DiaDiemNhan", model.DiaDiemNhan);
+}
 
                 // Tạo URL thanh toán
                 var url = _vnPayService.CreatePaymentUrl(model, HttpContext);
@@ -98,6 +102,10 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 {
                     return await HandlePaymentForOtherService(response);
                 }
+                else if (response.Success && response.VnPayResponseCode == "00" && loaiDichVu == "naptien")
+                {
+                    return await HandlePaymentForNapTien(response);
+                }
                 else
                 {
                     TempData["ErrorMessage"] = "Thanh toán không thành công hoặc sai loại dịch vụ.";
@@ -126,6 +134,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 var soDienThoai = HttpContext.Session.GetString("SoDienThoai");
                 var email = HttpContext.Session.GetString("Email");
                 var nguoiDungId = HttpContext.Session.GetString("UserId");
+                var phuongThucThanhToan = HttpContext.Session.GetString("PhuongThucThanhToan");
 
                 if (string.IsNullOrEmpty(nguoiDungId) || idGoiDangKy == null || string.IsNullOrEmpty(soDienThoai))
                 {
@@ -159,8 +168,11 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     TenKhachHang = tenKhachHang,
                     Email = email,
                     NgayDatHang = DateTime.Now,
-                    IdtrangThai = 1, // Chờ xử lý
-                    TongTien = goiDangKy.GiaGoi
+                    IdtrangThaiThanhToan = 2,
+                    IdtrangThai = 3, // Chờ xử lý
+                    TongTien = goiDangKy.GiaGoi, 
+                    PhuongThucThanhToan = phuongThucThanhToan,
+                    MaHoaDonDichVu = response.OrderId
                 };
 
                 _context.HoaDonDichVus.Add(hoaDon);
@@ -254,7 +266,8 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     Email = email,
                     DiaDiemNhan = diaDiemNhan,
                     PhuongThucThanhToan = phuongThucThanhToan,
-                    IdphuongThucVc = idPhuongThucVc.Value
+                    IdphuongThucVc = idPhuongThucVc.Value,
+                    MaHoaDonSim = response.OrderId
                 };
 
                 _context.HoaDonSims.Add(hoaDon);
@@ -273,6 +286,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 _context.CthoaDonSims.Add(chiTietHoaDon);
 
                 sim.IdtrangThaiSim = 2; // Cập nhật trạng thái SIM
+                sim.IdnguoiDung = hoaDon.IdnguoiDung;
                 _context.Sims.Update(sim);
 
                 var simGoi = new SimGoiDangKy
@@ -305,6 +319,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 var tenKhachHang = HttpContext.Session.GetString("TenKhachHang");
                 var soDienThoai = HttpContext.Session.GetString("SoDienThoai");
                 var email = HttpContext.Session.GetString("Email");
+                var phuongThucThanhToan = HttpContext.Session.GetString("PhuongThucThanhToan");
                 var nguoiDungId = HttpContext.Session.GetString("UserId");
 
                 if (string.IsNullOrEmpty(nguoiDungId) || idGoiDangKy == null || string.IsNullOrEmpty(soDienThoai))
@@ -339,8 +354,11 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     TenKhachHang = tenKhachHang,
                     Email = email,
                     NgayDatHang = DateTime.Now,
-                    IdtrangThai = 1, // Chờ xử lý
-                    TongTien = goiDangKy.GiaGoi
+                    IdtrangThaiThanhToan = 2,
+                    IdtrangThai = 3, // Chờ xử lý
+                    TongTien = goiDangKy.GiaGoi,
+                    PhuongThucThanhToan = phuongThucThanhToan,
+                    MaHoaDonDichVu = response.OrderId
                 };
 
                 _context.HoaDonDichVus.Add(hoaDon);
@@ -378,6 +396,65 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                 var innerMessage = ex.InnerException?.Message ?? ex.Message;
                 TempData["ErrorMessage"] = "Có lỗi xảy ra: " + innerMessage;
                 return RedirectToAction("Index", "DichVuKhac");
+            }
+        }
+        private async Task<IActionResult> HandlePaymentForNapTien(PaymentResponseModel response)
+        {
+            using var transaction = await _context.Database.BeginTransactionAsync();
+            try
+            {
+                // Lấy thông tin từ Session
+                var idSim = HttpContext.Session.GetInt32("IdSim");
+                var tenKhachHang = HttpContext.Session.GetString("TenKhachHang");
+                var phuongThucThanhToan = HttpContext.Session.GetString("PhuongThucThanhToan");
+
+                // Kiểm tra thông tin cần thiết
+                if (idSim == null || response.Amount <= 0)
+                {
+                    TempData["ErrorMessage"] = "Thiếu thông tin giao dịch hoặc số tiền không hợp lệ.";
+                    return RedirectToAction("NapTien", "NguoiDung", new { id = idSim });
+                }
+
+                // Lấy thông tin SIM từ cơ sở dữ liệu
+                var sim = await _context.Sims.FirstOrDefaultAsync(s => s.Idsim == idSim);
+                if (sim == null)
+                {
+                    TempData["ErrorMessage"] = "SIM không tồn tại.";
+                    return RedirectToAction("NapTien", "NguoiDung", new { id = idSim });
+                }
+
+                // Lưu giao dịch nạp tiền
+                var giaoDich = new GiaoDichNapTien
+                {
+                    Idsim = sim.Idsim,
+                    IdnguoiDung = sim.IdnguoiDung, // Lấy ID người dùng từ SIM
+                    NgayNap = DateTime.Now,
+                    SoTienNap = Convert.ToDecimal(response.Amount), // VNPay trả về số tiền nhân 100, cần chia lại
+                    PhuongThucNap = phuongThucThanhToan,
+                    MaGiaoDichNapTien = response.OrderId,
+                    IdtrangThaiThanhToan = 1 // Đã thanh toán
+                };
+
+                _context.GiaoDichNapTiens.Add(giaoDich);
+
+                // Cộng tiền vào số dư SIM
+                sim.SoDu = (sim.SoDu ?? 0) + giaoDich.SoTienNap;
+                _context.Sims.Update(sim);
+
+                // Lưu thay đổi vào cơ sở dữ liệu
+                await _context.SaveChangesAsync();
+                await transaction.CommitAsync();
+
+                ViewBag.SimSuccessMessage = "Nạp tiền thành công.";
+                return RedirectToAction("HoSoNguoiDung", "NguoiDung", new { section = "quanlysim" });
+
+            }
+            catch (Exception ex)
+            {
+                await transaction.RollbackAsync();
+                var innerMessage = ex.InnerException?.Message ?? ex.Message;
+                TempData["ErrorMessage"] = "Có lỗi xảy ra khi nạp tiền: " + innerMessage;
+                return RedirectToAction("NapTien", "NguoiDung", new { id = HttpContext.Session.GetInt32("IdSim") });
             }
         }
 

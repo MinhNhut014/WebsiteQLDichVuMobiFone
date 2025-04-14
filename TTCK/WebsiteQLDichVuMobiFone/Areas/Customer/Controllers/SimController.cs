@@ -104,7 +104,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             // Lấy danh sách gói cước mặc định
             var goiCuoc = _context.GoiDangKies
-                    .Where(g => g.GiaGoi == 90000 && g.ThoiHan == "30")
+                    .Where(g => g.GiaGoi == 90000 && g.ThoiHan == "30 Ngày")
                     .Take(3)
                     .ToList();
 
@@ -149,7 +149,22 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
             return View();
         }
+        private string GenerateUniqueInvoiceCode()
+        {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            string newCode;
+            do
+            {
+                // Phát sinh mã hóa đơn theo định dạng: HD-YYYYMMDD-XXXXXX
+                var random = new Random();
+                var randomString = new string(Enumerable.Repeat(chars, 6)
+                    .Select(s => s[random.Next(s.Length)]).ToArray());
+                newCode = $"HD-{DateTime.Now:yyyyMMdd}-{randomString}";
+            }
+            while (_context.HoaDonSims.Any(h => h.MaHoaDonSim == newCode)); // Kiểm tra trùng lặp
 
+            return newCode;
+        }
 
         /// chức năng đăng ksy đơn hàng sim
         // Action chuyển qua trang đăng ký SIM
@@ -207,7 +222,6 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
         }
 
         // hoàn tất đăng ký sim
-        // hoàn tất đăng ký sim
         [HttpPost]
         public IActionResult HoanTatDangKySim(HoaDonSim hoaDonModel, int idSim, int idGoiDangKy)
         {
@@ -221,13 +235,22 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
             }
 
             hoaDonModel.IdnguoiDung = int.Parse(nguoiDungId);
-
             if (!ModelState.IsValid)
             {
-                TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại thông tin.";
-                return RedirectToAction("DangKy", "Sim", new { idSim, idGoiDangKy });
-            }
+                foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
+                {
+                    Console.WriteLine($"Lỗi: {error.ErrorMessage}");
+                }
 
+                TempData["ErrorMessage"] = "Dữ liệu không hợp lệ. Vui lòng kiểm tra lại thông tin.";
+
+                // Truyền lại dữ liệu cần thiết vào ViewBag
+                ViewBag.Sim = _context.Sims.FirstOrDefault(s => s.Idsim == idSim);
+                ViewBag.GoiDaChon = _context.GoiDangKies.FirstOrDefault(g => g.IdgoiDangKy == idGoiDangKy);
+                ViewBag.PhuongThucVanChuyen = _context.PhuongThucVanChuyens.ToList();
+
+                return View("DangKy");
+            }
             using var transaction = _context.Database.BeginTransaction();
             try
             {
@@ -262,6 +285,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
 
                 var hoaDon = new HoaDonSim
                 {
+                    MaHoaDonSim = GenerateUniqueInvoiceCode(), // Gán mã hóa đơn
                     IdnguoiDung = hoaDonModel.IdnguoiDung,
                     NgayDatHang = DateTime.Now,
                     TongTien = tongTien,
@@ -297,6 +321,7 @@ namespace WebsiteQLDichVuMobiFone.Areas.Customer.Controllers
                     if (sim.IdtrangThaiSimNavigation != null)
                     {
                         sim.IdtrangThaiSim = 2; // Đang hoạt động
+                        sim.IdnguoiDung = hoaDonModel.IdnguoiDung;
                     }
                     else
                     {

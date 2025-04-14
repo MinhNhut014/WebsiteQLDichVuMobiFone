@@ -1,0 +1,50 @@
+﻿@model Sim
+
+@{
+    ViewData["Title"] = "Nạp tiền qua VNPay";
+}
+
+<div class="container mt-4">
+    <h4 class="text-primary">Nạp tiền cho SIM</h4>
+    <p><strong>Số thuê bao:</strong> @Model.SoThueBao</p>
+    <p><strong>Số dư hiện tại:</strong> @(Model.SoDu?.ToString("N0") ?? "0") đ</p>
+
+    <form id="napTienForm" method="post" asp-action="CreatePaymentUrlVnpay" asp-controller="Payment">
+        <!-- Giả sử bạn lấy thông tin từ ViewBag -->
+        <input type="hidden" name="TenKhachHang" value="@ViewBag.TenKhachHang ?? " Khách SIM"" />
+        <input type="hidden" name="SoDienThoai" value="@Model.SoThueBao" />
+        <input type="hidden" name="Email" value="@ViewBag.Email ?? " khachhang@example.com"" />
+        <input type="hidden" name="IdGoiDangKy" value="0" />
+        <input type="hidden" name="idSim" value="@Model.Idsim" />
+        <input type="hidden" name="LoaiDichVu" value="naptien" />
+        <input type="hidden" id="OrderDescription" name="OrderDescription" value="Nạp tiền cho SIM @Model.SoThueBao" />
+        <input type="hidden" id="OrderType" name="OrderType" value="NapTien" />
+
+        <div class="mb-3">
+            <label for="Amount" class="form-label">Số tiền nạp (VND)</label>
+            <input type="number" id="Amount" name="Amount" class="form-control" required min="10000" step="1000" placeholder="Nhập số tiền cần nạp" />
+        </div>
+
+        <div class="mb-3">
+            <label for="phuongThucThanhToan" class="form-label">Phương thức thanh toán</label>
+            <select id="phuongThucThanhToan" name="PhuongThucThanhToan" class="form-select" required>
+                <option value="vnpay" selected>VNPay</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Nạp tiền</button>
+    </form>
+</div>
+
+<script>
+    // Kiểm tra số tiền trước khi submit
+    document.getElementById("napTienForm").addEventListener("submit", function (e) {
+        const amountField = document.getElementById("Amount");
+        const soTien = parseFloat(amountField.value);
+
+        if (isNaN(soTien) || soTien < 10000) {
+            e.preventDefault();
+            alert("Số tiền nạp tối thiểu là 10,000 VND.");
+        }
+    });
+</script>

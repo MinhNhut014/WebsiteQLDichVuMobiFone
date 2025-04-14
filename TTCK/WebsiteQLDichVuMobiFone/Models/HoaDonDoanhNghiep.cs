@@ -2,16 +2,22 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.EntityFrameworkCore;
 
 namespace WebsiteQLDichVuMobiFone.Models;
 
 [Table("HoaDonDoanhNghiep")]
+[Index("MaHoaDonDoanhNghiep", Name = "UQ__HoaDonDo__0762DD6B9611208E", IsUnique = true)]
 public partial class HoaDonDoanhNghiep
 {
     [Key]
     [Column("IDHoaDonDN")]
     public int IdhoaDonDn { get; set; }
+
+    [StringLength(50)]
+    [BindNever]
+    public string MaHoaDonDoanhNghiep { get; set; } = string.Empty;
 
     [Column("IDNguoiDung")]
     public int IdnguoiDung { get; set; }
