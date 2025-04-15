@@ -127,6 +127,11 @@
             </div>
         </form>
 
+        <!-- Quên mật khẩu -->
+        <div class="mt-3 text-center">
+            <a href="javascript:void(0);" class="text-primary fw-semibold text-decoration-none" onclick="handleForgotPassword()">Quên mật khẩu?</a>
+        </div>
+
         <div class="register-link mt-4">
             <span class="text-muted">Chưa có tài khoản?</span>
             <a asp-action="DangKy" class="text-primary fw-semibold text-decoration-none">Đăng ký ngay</a>
@@ -148,6 +153,29 @@
                 icon.classList.remove("bi-eye-slash");
                 icon.classList.add("bi-eye");
             }
+        }
+
+        function handleForgotPassword() {
+            const emailInput = document.getElementById("email").value;
+            if (!emailInput) {
+                alert("Vui lòng nhập email hoặc tên đăng nhập trước khi sử dụng chức năng quên mật khẩu.");
+                return;
+            }
+
+            console.log("Đang gửi yêu cầu quên mật khẩu với tên đăng nhập:", emailInput);
+
+            const form = document.createElement("form");
+            form.method = "post";
+            form.action = "/Customer/NguoiDung/QuenMatKhau";
+
+            const input = document.createElement("input");
+            input.type = "hidden";
+            input.name = "tenDangNhap";
+            input.value = emailInput;
+
+            form.appendChild(input);
+            document.body.appendChild(form);
+            form.submit();
         }
     </script>
 }

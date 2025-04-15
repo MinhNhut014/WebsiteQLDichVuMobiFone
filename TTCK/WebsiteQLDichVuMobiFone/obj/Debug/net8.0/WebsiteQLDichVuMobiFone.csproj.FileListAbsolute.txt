@@ -539,3 +539,6 @@ C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\WebsiteQLDichVuMobiFon
 C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\WebsiteQLDichVuMobiFone.genruntimeconfig.cache
 C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\obj\Debug\net8.0\ref\WebsiteQLDichVuMobiFone.dll
 C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.Google.dll
+C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\bin\Debug\net8.0\MailKit.dll
+C:\DuLieuoD\TTCK\WebsiteQLDichVuMobiFone\bin\Debug\net8.0\MimeKit.dll

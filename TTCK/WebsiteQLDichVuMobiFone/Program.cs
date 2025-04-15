@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using WebsiteQLDichVuMobiFone.Models;
 using WebsiteQLDichVuMobiFone.Services.VNPay;
+using WebsiteQLDichVuMobiFone.Services.Mail;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,8 @@ builder.Services.AddDbContext<ApplicationDbContext>();
 builder.Services.AddScoped<IPasswordHasher<NguoiDung>, PasswordHasher<NguoiDung>>();
 //connect VnPay API
 builder.Services.AddScoped<IVnPayService, VnPayService>();
+//connect email service
+builder.Services.AddScoped<IEmailService, EmailService>();
 // Thêm dịch vụ Session vào container
 builder.Services.AddDistributedMemoryCache();  // Đảm bảo có bộ nhớ đệm
 builder.Services.AddSession(options =>

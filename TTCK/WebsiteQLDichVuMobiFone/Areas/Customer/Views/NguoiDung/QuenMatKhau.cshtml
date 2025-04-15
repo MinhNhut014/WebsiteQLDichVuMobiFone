@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Quên Mật Khẩu";
+}
+
+<h2>Quên Mật Khẩu</h2>
+
+<form method="post" asp-action="GuiOTP">
+    <div class="mb-3">
+        <label for="tenDangNhap" class="form-label">Tên Đăng Nhập</label>
+        <input type="text" id="tenDangNhap" name="tenDangNhap" class="form-control" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Gửi OTP</button>
+</form>
+
