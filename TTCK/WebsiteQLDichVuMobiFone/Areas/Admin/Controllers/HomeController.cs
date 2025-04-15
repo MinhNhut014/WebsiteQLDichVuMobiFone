@@ -85,6 +85,213 @@ namespace WebsiteQLDichVuMobiFone.Areas.Admin.Controllers
             // Trả View
             return View();
         }
+        [HttpGet]
+        public async Task<IActionResult> Search(string query)
+        {
+            GetData();
+            if (string.IsNullOrEmpty(query))
+            {
+                TempData["ErrorMessage"] = "Vui lòng nhập từ khóa tìm kiếm.";
+                return RedirectToAction("Index");
+            }
+
+            // Tìm kiếm trong các bảng khác nhau (ví dụ: Người dùng, SIM, Dịch vụ)
+            var users = _context.NguoiDungs
+                .Where(u => u.HoTen.Contains(query) || u.Email.Contains(query) || u.TenDangNhap.Contains(query))
+                .ToList();
+
+            var sims = _context.Sims
+                .Where(s => s.SoThueBao.Contains(query) || s.IdloaiSoNavigation.TenLoaiSo.Contains(query))
+                .Include(s => s.IddichVuNavigation)
+                .Include(s => s.IdloaiSoNavigation)
+                .Include(s => s.IdtrangThaiSimNavigation)
+                .Include(s => s.SimGoiDangKies)
+                .ThenInclude(sg => sg.IdgoiDangKyNavigation)
+                .OrderByDescending(s => s.Idsim)
+                .AsQueryable()
+                .ToList();
+
+            var services = _context.GoiDangKies
+                .Where(g => g.TenGoi.Contains(query) || g.IdloaiGoiNavigation.TenLoaiGoi.Contains(query))
+                .Include(g => g.IdloaiGoiNavigation)
+                .ThenInclude(lg => lg.IdloaiDichVuNavigation)
+                .ToList();
+
+            var spdichvukhac = _context.SanPhamDichVuKhacs
+                .Where(g => g.TenSanPham.Contains(query) || g.IdloaiDichVuKhacNavigation.TenLoaiDichVu.Contains(query))
+                .Include(s => s.IdloaiDichVuKhacNavigation)
+                .ToList();
+
+            var tintuc = _context.TinTucs
+                .Where(g => g.TieuDe.Contains(query) || g.IdTheLoaiNavigation.TenChuDe.Contains(query))
+                .Include(t => t.IdTheLoaiNavigation)
+                .OrderByDescending(t => t.NgayDang)
+                .ToList();
+
+            var dichvudoanhnghiep = _context.GoiDichVus
+                .Where(u => u.TenGoiDv.Contains(query) || u.IddichVuDnNavigation.TenDichVu.Contains(query))
+                .Include(g => g.IddichVuDnNavigation)
+                .ToList();
+            var hoadondichvu = _context.HoaDonDichVus
+                .Where(u => u.MaHoaDonDichVu.Contains(query))
+                .Include(h => h.IdnguoiDungNavigation)
+                .Include(h => h.IdtrangThaiNavigation)
+                .ToList();
+            var hoadondoanhnghiep = _context.HoaDonDoanhNghieps
+                .Where(u => u.MaHoaDonDoanhNghiep.Contains(query))
+                .Include(h => h.IdnguoiDungNavigation)
+                .Include(h => h.IdtrangThaiNavigation)
+                .ToList();
+
+            var hoadonsim = _context.HoaDonSims
+                .Where(u => u.MaHoaDonSim.Contains(query))
+                .Include(h => h.IdnguoiDungNavigation)
+                .Include(h => h.IdphuongThucVcNavigation)
+                .Include(h => h.IdtrangThaiNavigation)
+                .OrderByDescending(h => h.NgayDatHang)
+                .ToList();
+            var hoadonnap = _context.GiaoDichNapTiens
+                .Where(u => u.MaGiaoDichNapTien.Contains(query))
+                .Include(g => g.IdnguoiDungNavigation).Include(g => g.IdsimNavigation).Include(g => g.IdtrangThaiThanhToanNavigation)
+                .ToList();
+            var trangthaisim = await _context.TrangThaiSims.ToListAsync();
+            // Truyền tất cả kết quả tìm kiếm vào ViewBag
+            ViewBag.Users = users;
+            ViewBag.Sims = sims;
+            ViewBag.Services = services;
+            ViewBag.SPDichVuKhac = spdichvukhac;
+            ViewBag.TinTuc = tintuc;
+            ViewBag.DichVuDoanhNghiep = dichvudoanhnghiep;
+            ViewBag.HoaDonDichVu = hoadondichvu;
+            ViewBag.HoaDonDoanhNghiep = hoadondoanhnghiep;
+            ViewBag.HoaDonSim = hoadonsim;
+            ViewBag.HoaDonNap = hoadonnap;
+            ViewBag.Query = query;
+
+            ViewBag.TrangThaiSim = trangthaisim;
+            ViewBag.TrangThaiDonHang = await _context.TrangThaiDonHangs.ToListAsync();
+            ViewBag.TrangThaiThanhToan = await _context.TrangThaiThanhToans.ToListAsync();
+            return View();
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateRole(int id, int quyen)
+        {
+            var user = await _context.NguoiDungs.FindAsync(id);
+            if (user == null) return NotFound();
+
+            // Giới hạn giá trị quyền (1 = Admin, 0 = Người dùng)
+            user.Quyen = (quyen == 0 || quyen == 1) ? quyen : user.Quyen;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusHDDN(int id, int trangthai)
+        {
+            var hoadon = await _context.HoaDonDoanhNghieps.FindAsync(id);
+            if (hoadon == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiDonHangs.AnyAsync(t => t.IdtrangThai == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hoadon.IdtrangThai = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusHDDV(int id, int trangthai)
+        {
+            var hoadon = await _context.HoaDonDichVus.FindAsync(id);
+            if (hoadon == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiDonHangs.AnyAsync(t => t.IdtrangThai == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hoadon.IdtrangThai = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusUser(int id, int trangthai)
+        {
+            var user = await _context.NguoiDungs.FindAsync(id);
+            if (user == null) return NotFound();
+
+            // Giới hạn trạng thái (1 = Hoạt động, 0 = Bị khóa)
+            user.Trangthai = (trangthai == 0 || trangthai == 1) ? trangthai : user.Trangthai;
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusSim(int id, int trangthai)
+        {
+            var sim = await _context.Sims.FindAsync(id);
+            if (sim == null) return NotFound();
+
+            var trangThaiTonTai = await _context.TrangThaiSims.AnyAsync(t => t.IdtrangThaiSim == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            sim.IdtrangThaiSim = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái SIM thành công!";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusHDSim(int id, int trangthai)
+        {
+            var hdsim = await _context.HoaDonSims.FindAsync(id);
+            if (hdsim == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiDonHangs.AnyAsync(t => t.IdtrangThai == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hdsim.IdtrangThai = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusThanhToanSim(int id, int trangthai)
+        {
+            var hdsim = await _context.HoaDonSims.FindAsync(id);
+            if (hdsim == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiThanhToans.AnyAsync(t => t.IdtrangThaiThanhToan == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hdsim.IdtrangThaiThanhToan = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
+        }
+        [HttpPost]
+        public async Task<IActionResult> UpdateStatusThanhToanNapTien(int id, int trangthai)
+        {
+            var hdsim = await _context.GiaoDichNapTiens.FindAsync(id);
+            if (hdsim == null) return NotFound();
+
+            // Kiểm tra xem trạng thái có tồn tại trong bảng TrangThaiDonHang không
+            var trangThaiTonTai = await _context.TrangThaiThanhToans.AnyAsync(t => t.IdtrangThaiThanhToan == trangthai);
+            if (!trangThaiTonTai) return BadRequest("Trạng thái không hợp lệ");
+
+            hdsim.IdtrangThaiThanhToan = trangthai;
+            await _context.SaveChangesAsync();
+
+            TempData["SuccessMessage"] = "Cập nhật trạng thái thành công!";
+            return RedirectToAction("Index");
+        }
         // GET: Admin/Home/Details/5
         public async Task<IActionResult> Details(int? id)
         {

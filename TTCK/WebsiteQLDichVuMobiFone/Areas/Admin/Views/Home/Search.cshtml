@@ -1,0 +1,540 @@
+﻿@{
+    ViewData["Title"] = "Kết quả tìm kiếm";
+}
+
+<h2>Kết quả tìm kiếm cho: "@ViewBag.Query"</h2>
+
+@if (ViewBag.Users != null && ViewBag.Users.Count > 0)
+{
+    <h4>Người dùng</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ảnh Đại Diện</th>
+                <th class="p-3">Họ Tên</th>
+                <th class="p-3">Tên Đăng Nhập</th>
+                <th class="p-3">Mật Khẩu</th>
+                <th class="p-3">Quyền</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.Users)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">
+                        <img src="~/img/user/@item.AnhDaiDien" alt="Ảnh đại diện" class="img-fluid rounded-circle" style="width: 50px; height: 50px; object-fit: cover;" />
+                    </td>
+                    <td class="p-3">@item.HoTen</td>
+                    <td class="p-3">@item.TenDangNhap</td>
+                    <td class="p-3">******</td>
+
+                    <!-- Dropdown chỉnh sửa quyền -->
+                    <td class="p-3">
+                        <form asp-action="UpdateRole" method="post">
+                            <input type="hidden" name="id" value="@item.IdnguoiDung" />
+                            <select name="quyen" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                <option value="0" selected="@(item.Quyen == 0)">User</option>
+                                <option value="1" selected="@(item.Quyen == 1)">Admin</option>
+                            </select>
+                        </form>
+                    </td>
+
+                    <!-- Dropdown chỉnh sửa trạng thái -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusUser" method="post">
+                            <input type="hidden" name="id" value="@item.IdnguoiDung" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                <option value="1" selected="@(item.Trangthai == 1)">Hoạt động</option>
+                                <option value="0" selected="@(item.Trangthai == 0)">Khóa</option>
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="NguoiDungs" asp-action="Edit" asp-route-id="@item.IdnguoiDung" class="btn btn-warning btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-controller="NguoiDungs" asp-action="Details" asp-route-id="@item.IdnguoiDung" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="NguoiDungs" asp-action="DeleteConfirmed" asp-route-id="@item.IdnguoiDung" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.Sims != null && ViewBag.Sims.Count > 0)
+{
+    <h4>SIM</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">📞 Số Thuê Bao</th>
+                <th class="p-3">📍 Khu Vực Hòa Mạng</th>
+                <th class="p-3">💰 Phí Hòa Mạng</th>
+                <th class="p-3">🔗 Dịch Vụ</th>
+                <th class="p-3">🔢 Loại Số</th>
+                <th class="p-3">✅ Trạng Thái SIM</th>
+                <th class="p-3">⚙️ Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.Sims)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3 fw-medium">@item.SoThueBao</td>
+                    <td class="p-3">@item.KhuVucHoaMang</td>
+                    <td class="p-3 text-success fw-bold">@item.PhiHoaMang?.ToString("N0") đ</td>
+                    <td class="p-3">@item.IddichVuNavigation?.TenDichVu</td>
+                    <td class="p-3">@item.IdloaiSoNavigation?.TenLoaiSo</td>
+
+                    <!-- Dropdown chỉnh sửa trạng thái SIM -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusSim" method="post">
+                            <input type="hidden" name="id" value="@item.Idsim" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiSim)
+                                {
+                                    <option value="@trangThai.IdtrangThaiSim" selected="@(item.IdtrangThaiSim == trangThai.IdtrangThaiSim)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="Sims" asp-action="Edit" asp-route-id="@item.Idsim" class="btn btn-warning btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-controller="Sims" asp-action="Details" asp-route-id="@item.Idsim" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="Sims" asp-action="DeleteConfirmed" asp-route-id="@item.Idsim" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@if (ViewBag.Services != null && ViewBag.Services.Count > 0)
+{
+    <h4>Dịch vụ</h4>
+    <table class="table table-hover table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Tên Gói</th>
+                <th class="p-3">Giá Gói</th>
+                <th class="p-3">Thời Hạn</th>
+                <th class="p-3">Tính Năng</th>
+                <th class="p-3">ID Loại Gói</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.Services)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3 text-start fw-medium">@item.TenGoi</td>
+                    <td class="p-3">@item.GiaGoi</td>
+                    <td class="p-3">@item.ThoiHan</td>
+                    <td class="p-3">@item.TinhNang</td>
+                    <td class="p-3">@item.IdloaiGoiNavigation.TenLoaiGoi</td>
+                    <td class="p-3 d-flex justify-content-center">
+                        <a asp-controller="GoiDangKies" asp-action="Edit" asp-route-id="@item.IdgoiDangKy" class="btn btn-warning btn-sm mx-1">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-controller="GoiDangKies" asp-action="Details" asp-route-id="@item.IdgoiDangKy" class="btn btn-info btn-sm text-white mx-1">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="GoiDangKies" asp-action="DeleteConfirmed" asp-route-id="@item.IdgoiDangKy" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+@if (ViewBag.SPDichVuKhac != null && ViewBag.SPDichVuKhac.Count > 0)
+{
+    <h4>Sản phẩm dịch vụ khác</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Hình Ảnh</th>
+                <th class="p-3 text-start">Tên Sản Phẩm</th>
+
+                <th class="p-3">Mô Tả</th>
+                <th class="p-3">Dịch Vụ</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.SPDichVuKhac)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">
+                        <img src="~/img/dichvu/dichvukhac/@item.HinhAnh" alt="Ảnh Sản Phẩm" class="rounded shadow-sm" style="width: 80px; height: 80px; object-fit: cover;" />
+                    </td>
+                    <td class="p-3 text-start fw-medium">@item.TenSanPham</td>
+
+                    <td class="p-3 text-start">@item.MoTa</td>
+                    <td class="p-3">@item.IdloaiDichVuKhacNavigation?.TenLoaiDichVu</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="SanPhamDichVuKhacs" asp-action="Edit" asp-route-id="@item.IdsanPham" class="btn btn-warning btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-controller="SanPhamDichVuKhacs" asp-action="Details" asp-route-id="@item.IdsanPham" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="SanPhamDichVuKhacs" asp-action="DeleteConfirmed" asp-route-id="@item.IdsanPham" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.TinTuc != null && ViewBag.TinTuc.Count > 0)
+{
+    <h4>Tin tức</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ảnh Đại Diện</th>
+                <th class="p-3">Tiêu Đề</th>
+                <th class="p-3">Ngày Đăng</th>
+                <th class="p-3">Lượt Xem</th>
+                <th class="p-3">Thể Loại</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.TinTuc)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">
+                        <img src="~/img/tintuc/@item.AnhDaiDien" alt="Ảnh tin tức" class="img-fluid rounded" style="width: 70px; height: 50px; object-fit: cover;" />
+                    </td>
+                    <td class="p-3 text-start fw-medium">@item.TieuDe</td>
+                    <td class="p-3">@item.NgayDang?.ToString("dd/MM/yyyy")</td>
+                    <td class="p-3">@item.LuotXem</td>
+                    <td class="p-3">@item.IdTheLoaiNavigation.TenChuDe</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="TinTucs" asp-action="Edit" asp-route-id="@item.IdTinTuc" class="btn btn-warning btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-controller="TinTucs" asp-action="Details" asp-route-id="@item.IdTinTuc" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="TinTucs" asp-action="DeleteConfirmed" asp-route-id="@item.IdTinTuc" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.DichVuDoanhNghiep != null && ViewBag.DichVuDoanhNghiep.Count > 0)
+{
+    <h4>Gói dịch vụ doanh nghiệp</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Hình Ảnh</th>
+                <th class="p-3">Tên Gói</th>
+
+                <th class="p-3">Mô Tả</th>
+                <th class="p-3">Dịch Vụ DN</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.DichVuDoanhNghiep)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">
+                        <img src="~/img/dichvu/doanhnghiep/@item.HinhAnh" alt="Hình ảnh dịch vụ" class="img-fluid rounded" style="width: 50px; height: 50px; object-fit: cover;" />
+                    </td>
+                    <td class="p-3 text-start fw-medium">@Html.Raw(item.TenGoiDv)</td>
+
+                    <td class="p-3">@Html.Raw(item.MoTa)</td>
+                    <td class="p-3">@Html.Raw(item.IddichVuDnNavigation.TenDichVu)</td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="GoiDichVus" asp-action="Edit" asp-route-id="@item.IdgoiDichVu" class="btn btn-warning btn-sm rounded-circle shadow-sm">
+                            <i class="fa-solid fa-pen"></i>
+                        </a>
+                        <a asp-controller="GoiDichVus" asp-action="Details" asp-route-id="@item.IdgoiDichVu" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="GoiDichVus" asp-action="DeleteConfirmed" asp-route-id="@item.IdgoiDichVu" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.HoaDonDichVu != null && ViewBag.HoaDonDichVu.Count > 0)
+{
+    <h4>Hóa đơn dịch vụ</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ngày Đặt Hàng</th>
+                <th class="p-3">Tổng Tiền</th>
+                <th class="p-3">Tên Khách Hàng</th>
+                <th class="p-3">Số Điện Thoại</th>
+                <th class="p-3">Email</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.HoaDonDichVu)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@item.NgayDatHang</td>
+                    <td class="p-3">@item.TongTien</td>
+                    <td class="p-3">@item.TenKhachHang</td>
+                    <td class="p-3">@item.SoDienThoai</td>
+                    <td class="p-3">@item.Email</td>
+                    <!-- Dropdown chỉnh sửa trạng thái -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusHDDV" method="post">
+                            <input type="hidden" name="id" value="@item.IdhoaDonDv" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiDonHang)
+                                {
+                                    <option value="@trangThai.IdtrangThai" selected="@(item.IdtrangThai == trangThai.IdtrangThai)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="HoaDonDichVus" asp-action="Details" asp-route-id="@item.IdhoaDonDv" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="HoaDonDichVus" asp-action="DeleteConfirmed" asp-route-id="@item.IdhoaDonDv" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.HoaDonDoanhNghiep != null && ViewBag.HoaDonDoanhNghiep.Count > 0)
+{
+    <h4>Hóa đơn doanh nghiệp</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ngày Đặt Hàng</th>
+                <th class="p-3">Tên Công Ty</th>
+                <th class="p-3">SĐT Công Ty</th>
+                <th class="p-3">Email Công Ty</th>
+                <th class="p-3">Địa Chỉ Công Ty</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.HoaDonDoanhNghiep)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@item.NgayDatHang</td>
+                    <td class="p-3">@item.TenCongTy</td>
+                    <td class="p-3">@item.SoDienThoaiCongTy</td>
+                    <td class="p-3">@item.EmailCongTy</td>
+                    <td class="p-3">@item.DiaChiCongTy</td>
+                    <!-- Dropdown chỉnh sửa trạng thái -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusHDDN" method="post">
+                            <input type="hidden" name="id" value="@item.IdhoaDonDn" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiDonHang)
+                                {
+                                    <option value="@trangThai.IdtrangThai" selected="@(item.IdtrangThai == trangThai.IdtrangThai)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="HoaDonDoanhNghieps" asp-action="Details" asp-route-id="@item.IdhoaDonDn" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="HoaDonDoanhNghieps" asp-action="DeleteConfirmed" asp-route-id="@item.IdhoaDonDn" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.HoaDonSim != null && ViewBag.HoaDonSim.Count > 0)
+{
+    <h4>Hóa đơn SIM</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Ngày Đặt Hàng</th>
+                <th class="p-3">Tổng Tiền</th>
+                <th class="p-3">Tên Khách Hàng</th>
+                <th class="p-3">Số Điện Thoại</th>
+                <th class="p-3">Email</th>
+                <th class="p-3">Phương Thức Thanh Toán</th>
+                <th class="p-3">Trạng Thái</th>
+                <th class="p-3">Trạng Thái Thanh Toán</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.HoaDonSim)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3 text-start fw-medium">@item.NgayDatHang</td>
+                    <td class="p-3">@item.TongTien</td>
+                    <td class="p-3">@item.TenKhachHang</td>
+                    <td class="p-3">@item.SoDienThoai</td>
+                    <td class="p-3">@item.Email</td>
+                    <td class="p-3">@item.PhuongThucThanhToan</td>
+
+                    <!-- Dropdown chỉnh sửa trạng thái -->
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusHDSim" method="post">
+                            <input type="hidden" name="id" value="@item.IdhoaDonSim" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiDonHang)
+                                {
+                                    <option value="@trangThai.IdtrangThai" selected="@(item.IdtrangThai == trangThai.IdtrangThai)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusThanhToanSim" method="post">
+                            <input type="hidden" name="id" value="@item.IdhoaDonSim" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiThanhToan)
+                                {
+                                    <option value="@trangThai.IdtrangThaiThanhToan" selected="@(item.IdtrangThaiThanhToan == trangThai.IdtrangThaiThanhToan)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="HoaDonSims" asp-action="Details" asp-route-id="@item.IdhoaDonSim" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="HoaDonSims" asp-action="DeleteConfirmed" asp-route-id="@item.IdhoaDonSim" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@if (ViewBag.HoaDonNap != null && ViewBag.HoaDonNap.Count > 0)
+{
+    <h4>Giao dịch nạp tiền</h4>
+    <table class="table table-hover table-striped table-bordered align-middle shadow-sm rounded-3 overflow-hidden">
+        <thead class="bg-gradient bg-primary text-white text-center">
+            <tr>
+                <th class="p-3">Mã Giao Dịch</th>
+                <th class="p-3">Số Tiền Nạp</th>
+                <th class="p-3">Ngày Nạp</th>
+                <th class="p-3">Phương Thức Nạp</th>
+                <th class="p-3">Người Dùng</th>
+                <th class="p-3">SIM</th>
+                <th class="p-3">Trạng Thái Thanh Toán</th>
+                <th class="p-3">Hành động</th>
+            </tr>
+        </thead>
+        <tbody class="bg-light">
+            @foreach (var item in ViewBag.HoaDonNap)
+            {
+                <tr class="text-center border-bottom">
+                    <td class="p-3">@item.MaGiaoDichNapTien</td>
+                    <td class="p-3">@item.SoTienNap?.ToString("N0") VNĐ</td>
+                    <td class="p-3">@item.NgayNap?.ToString("dd/MM/yyyy")</td>
+                    <td class="p-3">@item.PhuongThucNap</td>
+                    <td class="p-3">@item.IdnguoiDungNavigation?.HoTen</td>
+                    <td class="p-3">@item.IdsimNavigation?.SoThueBao</td>
+
+                    <td class="p-3">
+                        <form asp-action="UpdateStatusThanhToanNapTien" method="post">
+                            <input type="hidden" name="id" value="@item.IdgiaoDich" />
+                            <select name="trangthai" class="form-select w-auto d-inline" onchange="this.form.submit()">
+                                @foreach (var trangThai in ViewBag.TrangThaiThanhToan)
+                                {
+                                    <option value="@trangThai.IdtrangThaiThanhToan" selected="@(item.IdtrangThaiThanhToan == trangThai.IdtrangThaiThanhToan)">
+                                        @trangThai.TenTrangThai
+                                    </option>
+                                }
+                            </select>
+                        </form>
+                    </td>
+
+                    <td class="p-3 d-flex justify-content-center gap-2">
+                        <a asp-controller="GiaoDichNapTiens" asp-action="Details" asp-route-id="@item.IdgiaoDich" class="btn btn-info btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                        <a asp-controller="GiaoDichNapTiens" asp-action="DeleteConfirmed" asp-route-id="@item.IdgiaoDich" class="btn btn-danger btn-sm text-white rounded-circle shadow-sm">
+                            <i class="fa-solid fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+<style>
+    .table th, .table td {
+        padding: 0.5rem !important;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+
+    .table thead th {
+        font-size: 0.85rem;
+        font-weight: 600;
+    }
+
+    .table-responsive {
+        overflow-x: auto;
+    }
+</style>
